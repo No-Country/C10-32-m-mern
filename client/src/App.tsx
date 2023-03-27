@@ -2,6 +2,8 @@ import { useReducer } from "react";
 import AppRouter from "./app/router/AppRouter";
 import { AuthContext } from "./app/views/store/contexts/AuthContext";
 import { authReducer } from "./app/views/store/reducers/authReducers";
+import Header from "./components/Header";
+import Prueba from "./components/Prueba";
 
 const init = () => {
   let sessionUser: any = sessionStorage.getItem("user");
@@ -21,9 +23,9 @@ function App() {
     init
   );
   return (
-    <AuthContext.Provider value={{ user, dispatchUser }}>
-      <AppRouter />
-    </AuthContext.Provider>
+    <div>
+      <Header />
+    </div>
   );
 }
 
