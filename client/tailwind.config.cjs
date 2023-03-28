@@ -9,7 +9,11 @@ module.exports = {
     colors: {
       backgroundColor: '#EEFBFA',
       primary: { start: '#1C6ACC', end: '#2384FF' },
-      secondary: '#E9F3FF'
+      secondary: '#E9F3FF',
+      borders: '#828282',
+      lightGreen: '#76D9D5',
+      lightBlue: '#7BB5FF',
+      lightYellow: '#E8D633',
     },
     screens: {
       '2xl': { 'max': '1535px' },
