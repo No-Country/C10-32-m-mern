@@ -1,5 +1,3 @@
-import React from "react";
-
 const Logo = () => {
   return (
     <div className="lg:absolute lg:top-[4rem]">
