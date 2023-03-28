@@ -1,11 +1,14 @@
-import Header from "./components/Header";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Link,
+} from "react-router-dom";
+import Login from "./components/LogIn";
+import Register from "./components/Register";
 
 function App() {
-  return (
-    <div className="App">
-      <Header />
-    </div>
-  );
+  return <div></div>;
 }
 
 export default App;
