@@ -1,10 +1,8 @@
 import React, { useState } from "react";
 
-interface LogInProps {
-  onLogIn: (email: string, password: string) => void;
-}
 
-const LogIn = ({ onLogIn }: LogInProps) => {
+
+const Login = ({ onLogIn }: any) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -42,4 +40,4 @@ const LogIn = ({ onLogIn }: LogInProps) => {
   );
 };
 
-export default LogIn;
+export default Login;

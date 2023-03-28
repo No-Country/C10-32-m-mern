@@ -5,21 +5,28 @@ import {
   Link,
 } from "react-router-dom";
 import Header from "./components/Header";
-import Home from "./components/Home";
 import Login from "./components/LogIn";
 import Register from "./components/Register";
+import Home from "./pages/home/Home";
+import Login from "./pages/login/Login";
+import { ProtectedRoute } from "./routes/protectedRouted/ProtectedRoutes";
+
+const App = () => {
 
 function App() {
   return (
-    <div id="App">
-      <Header/>
-        <main className="p-6">
-        <Home/>
-
-        </main>
+    <div>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login/>} />
+        <Route path="/register" element={<Register />} />
+      </Routes>
     </div>
-
   )
 }
 
-export default App;
+export default App
+
+
+
