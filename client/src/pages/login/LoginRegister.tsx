@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 
-
-
-const Login = ({ onLogIn }: any) => {
+const LoginRegister = ({ onLogIn }: any) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -40,4 +38,4 @@ const Login = ({ onLogIn }: any) => {
   );
 };
 
-export default Login;
+export default LoginRegister;

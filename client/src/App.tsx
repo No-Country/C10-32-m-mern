@@ -7,7 +7,7 @@ import {
 import Header from "./components/Header";
 import Register from "./components/Register";
 import Home from "./pages/home/Home";
-import Login from "./pages/login/Login";
+import LoginRegister from "./pages/login/LoginRegister";
 import { ProtectedRoute } from "./routes/protectedRouted/ProtectedRoutes";
 
 const App = () => {
@@ -15,15 +15,17 @@ const App = () => {
     <div>
       <Header />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login/>} />
-        <Route path="/register" element={<Register />} />
+        <Route
+          path="/"
+          element={<Home />}
+        />
+        <Route
+          path="/login-register"
+          element={<LoginRegister />}
+        />
       </Routes>
     </div>
-  )
-}
+  );
+};
 
-export default App
-
-
-
+export default App;
