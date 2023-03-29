@@ -14,6 +14,7 @@ module.exports = {
       lightGreen: '#76D9D5',
       lightBlue: '#7BB5FF',
       lightYellow: '#E8D633',
+      buttonBg: '#1C1B1F'
     },
     screens: {
       '2xl': { 'max': '1535px' },

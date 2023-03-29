@@ -27,7 +27,6 @@ const LoginRegister = () => {
 
   return (
     <div>
-      <Header />
       <LogIn onLogIn={handleLogIn} />
       {/* <Register onRegister={handleRegister} /> */}
     </div>
