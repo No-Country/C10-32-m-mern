@@ -1,40 +1,36 @@
 import React, { useState } from "react";
+import Header from "../../components/Header";
+import LogIn from "../../components/LogIn";
 
-const LoginRegister = ({ onLogIn }: any) => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+interface User {
+  email: string;
+  password: string;
+}
 
-  const handleSubmit = (
-    e: React.FormEvent<HTMLFormElement>
+const LoginRegister = () => {
+  const [user, setUser] = useState<User | null>(null);
+
+  const handleLogIn = (email: string, password: string) => {
+    // Aquí debería hacer una petición al servidor para autenticar al usuario
+    // y almacenar el token de autenticación en el estado de la aplicación.
+    setUser({ email, password });
+  };
+
+  const handleRegister = (
+    email: string,
+    password: string
   ) => {
-    e.preventDefault();
-    onLogIn(email, password);
+    // Aquí debería hacer una petición al servidor para crear un nuevo usuario
+    // y almacenar el token de autenticación en el estado de la aplicación.
+    setUser({ email, password });
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label htmlFor="email">Email:</label>
-        <input
-          type="email"
-          id="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-        />
-      </div>
-      <div>
-        <label htmlFor="password">Password:</label>
-        <input
-          type="password"
-          id="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-        />
-      </div>
-      <button type="submit">Log In</button>
-    </form>
+    <div>
+      <Header />
+      <LogIn onLogIn={handleLogIn} />
+      {/* <Register onRegister={handleRegister} /> */}
+    </div>
   );
 };
 
