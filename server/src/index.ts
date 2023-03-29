@@ -1,5 +1,10 @@
-import app from './app'
-import { sequelize } from './database/db'
+
+import dotenv from 'dotenv';
+dotenv.config();
+import app from './app';
+
+import { sequelize } from './database/db';
+
 
 import './models/user.model'
 
@@ -10,3 +15,4 @@ async function main() {
 }
 
 main()
+

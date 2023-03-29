@@ -1,34 +1,53 @@
 
 import { Request, Response } from "express";
-//import   {User, UserAttributes} from "../models/user.model";
-//mport { v4 as uuid } from 'uuid';
-import uuid = require('uuid');
+import {User} from "../models/user.model";
+import jwt from 'jsonwebtoken';
+
+const bcrypt = require('bcrypt');
 
 
-export const signup = (req : Request,res : Response)=> {
-    console.log(req.body)
-    // let uuidv4: string = uuid.v4();
 
-    // const user = new User({
-    //     id: 1,
-    //     email: req.body.email,
-    //     password: req.body.password,
 
-        
-    // })
-    // const email = req.body.email;
-    // const password = req.body.password;
-    // User.create()
-
-   
+//Registro usuario. 
+export const signup = async (req : Request,res : Response)=> {
     
-    //res.send(email, password)
+    const {body} = req;
+   
+    // chequear que el usuario exista en la BD de asociados
 
-
+    //registrando usuario//
+    try {
+         //const newUser = await User.create(body);
+        const hashpass = await  bcrypt.hash(body.password, 10)
+        
+        
+         const newUser = await User.create({email: body.email, password: hashpass});
+         // creo token
+         const token : string = jwt.sign({_id: newUser.dataValues.id}, process.env.TOKEN_SECRET || 'tokenalternativo')      
+        res.header('auth-token', token).json(newUser);        
+    } catch (error) {
+         res.status(400).json(error)
+    }   
+  
 };
 
 
+
+
 //login
-export const signin = (req : Request,res : Response)=> {
-    res.send('signin')
+export const signin = async (req : Request,res : Response)=> {
+    try {
+        const loginuser = await User.findAll({  where: {email : req.body.email} })
+        if (!loginuser) return res.status(400).json('your credentials are not valid')     
+      
+        if (!bcrypt.compareSync(req.body.password, loginuser[0].dataValues.password) ) return res.status(400).json('your credentials are not valid')
+         
+        const token : string = jwt.sign({_id: loginuser[0].dataValues.id}, process.env.TOKEN_SECRET || 'tokenalternativo')     
+        res.header('auth-token', token).json(loginuser);        
+        
+      } catch (error) {
+        res.status(404).json(error)
+        
+      }
+      
 };
