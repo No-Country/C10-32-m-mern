@@ -7,11 +7,14 @@ const express_1 = __importDefault(require("express"));
 const morgan_1 = __importDefault(require("morgan"));
 const app = (0, express_1.default)();
 const auth_routes_1 = __importDefault(require("./routes/auth.routes"));
+const user_routes_1 = __importDefault(require("./routes/user.routes"));
 //settings
-app.set("port", 3000);
+app.set('port', 3000);
 //midleware
-app.use((0, morgan_1.default)("dev"));
+app.use((0, morgan_1.default)('dev'));
+app.use(express_1.default.json());
 //routes
-app.use(auth_routes_1.default);
+app.use('/api', auth_routes_1.default);
+app.use('/users', user_routes_1.default);
 exports.default = app;
 //# sourceMappingURL=app.js.map

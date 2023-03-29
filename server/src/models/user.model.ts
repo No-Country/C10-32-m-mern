@@ -1,44 +1,26 @@
-import { BuildOptions, DataTypes, Model, Sequelize } from "sequelize";
+import { DataTypes, UUIDV4 } from 'sequelize'
+import { sequelize } from '../database/db'
 
-export interface UserAttributes {
-  id: number;
-  name: string;
-  email: string;
-  createdAt?: Date;
-  updatedAt?: Date;
-}
-export interface UserModel extends Model<UserAttributes>, UserAttributes {}
-export class User extends Model<UserModel, UserAttributes> {}
-
-export type UserStatic = typeof Model & {
-  new (values?: object, options?: BuildOptions): UserModel;
-};
-
-export function UserFactory(sequelize: Sequelize): UserStatic {
-  return <UserStatic>sequelize.define("users", {
+export const User = sequelize.define(
+  'users',
+  {
     id: {
-      type: DataTypes.INTEGER,
-      autoIncrement: true,
+      type: DataTypes.UUID,
+      allowNull: false,
       primaryKey: true,
+      defaultValue: UUIDV4,
     },
     email: {
       type: DataTypes.STRING,
       allowNull: false,
       unique: true,
     },
-    name: {
+    password: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    createdAt: {
-      type: DataTypes.DATE,
-      allowNull: false,
-      defaultValue: DataTypes.NOW,
-    },
-    updatedAt: {
-      type: DataTypes.DATE,
-      allowNull: false,
-      defaultValue: DataTypes.NOW,
-    },
-  });
-}
+  },
+  {
+    timestamps: false,
+  }
+)
