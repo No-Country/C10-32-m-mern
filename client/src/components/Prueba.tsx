@@ -1,5 +1,5 @@
 import ButtonNext from "./ButtonNext";
-import Logo from "./Logo";
+import Logo from "../icons/Logo";
 
 export default function Prueba() {
   return (

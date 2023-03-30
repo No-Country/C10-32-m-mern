@@ -1,6 +1,6 @@
 import { format } from "date-fns";
 import { es } from "date-fns/locale";
-import Logo from "./Logo";
+import Logo from "../icons/Logo";
 
 export default function Header() {
   const user = {

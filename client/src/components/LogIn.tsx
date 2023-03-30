@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { ButtonEyeSlash } from "./ButtonEyeSlash";
 import ButtonLogIn from "./ButtonLogIn";
 
-import Lock from "./Lock";
-import MailIcon from "./MailIcon";
+import Lock from "../icons/Lock";
+import MailIcon from "../icons/MailIcon";
 
 interface LogInProps {
   onLogIn: (email: string, password: string) => void;
