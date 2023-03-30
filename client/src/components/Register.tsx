@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import { ButtonEyeSlash } from "./ButtonEyeSlash";
 
 import ButtonLogIn from "./ButtonLogIn";
-import IconDni from "./IconDni";
-import Lock from "./Lock";
-import MailIcon from "./MailIcon";
+import IconDni from "../icons/IconDni";
+import Lock from "../icons/Lock";
+import MailIcon from "../icons/MailIcon";
 
 interface RegisterProps {
   onRegister: (

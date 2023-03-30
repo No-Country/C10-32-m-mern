@@ -16,7 +16,7 @@ const Home = () =>{
                     <p className="text-center text-[22px] leading-6">Agenda tu turno</p>
 
                 </Link>
-                <Link to="#" className="flex justify-between items-center bg-lightBlue text-[#FFFFFF] rounded-2xl h-[100px] my-8 px-8">
+                <Link to="/specialists" className="flex justify-between items-center bg-lightBlue text-[#FFFFFF] rounded-2xl h-[100px] my-8 px-8">
                     <img src="https://icongr.am/feather/user.svg?size=63&color=ffffff" alt="" />
                     <p className="text-center text-[22px] leading-6">Especialistas</p>
                 </Link>

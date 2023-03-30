@@ -4,12 +4,13 @@ import {
   Route,
 } from "react-router-dom";
 import Header from "./components/Header";
-import AppoinmentOptions from "./pages/appointment/AppointmentOptions";
+import AppointmentOptions from "./pages/appointment/AppointmentOptions";
 import Home from "./pages/home/Home";
 import LoginRegister from "./pages/login/LoginRegister";
 import NewAppoitment from "./pages/appointment/NewAppointment";
 import { Profiler } from "react";
 import ProgramedApointment from "./pages/appointment/ProgramedApointment";
+import Specialists from "./pages/specialists/Specialists";
 
 const App = () => {
   return (
@@ -27,7 +28,7 @@ const App = () => {
           />
           <Route
             path="/appointment"
-            element={<AppoinmentOptions/>}
+            element={<AppointmentOptions/>}
           />
           <Route
             path="/newAppointment"
@@ -37,6 +38,9 @@ const App = () => {
             path="/programedAppointment"
             element={<ProgramedApointment/>}
           />
+          <Route
+            path="/specialists"
+            element={<Specialists />}/>
         </Routes>
 
       </main>
