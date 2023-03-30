@@ -7,12 +7,15 @@ import Header from "./components/Header";
 import AppoinmentOptions from "./pages/appointment/AppointmentOptions";
 import Home from "./pages/home/Home";
 import LoginRegister from "./pages/login/LoginRegister";
+import NewAppoitment from "./pages/appointment/NewAppointment";
+import { Profiler } from "react";
+import ProgramedApointment from "./pages/appointment/ProgramedApointment";
 
 const App = () => {
   return (
-    <div className="flex flex-col items-center justify-center">
+    <div className=" flex-col items-center justify-center">
       <Header />
-      <main className="pt-8 ">
+      <main className="pt-8 px-6">
         <Routes>
           <Route
             path="/"
@@ -25,6 +28,14 @@ const App = () => {
           <Route
             path="/appointment"
             element={<AppoinmentOptions/>}
+          />
+          <Route
+            path="/newAppointment"
+            element={<NewAppoitment/>}
+          />
+          <Route
+            path="/programedAppointment"
+            element={<ProgramedApointment/>}
           />
         </Routes>
 
