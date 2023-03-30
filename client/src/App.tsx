@@ -7,6 +7,7 @@ import Header from "./components/Header";
 import AppoinmentOptions from "./pages/appointment/AppointmentOptions";
 import Home from "./pages/home/Home";
 import LoginRegister from "./pages/login/LoginRegister";
+import Specialists from "./pages/specialists/Specialists";
 
 const App = () => {
   return (
@@ -25,6 +26,10 @@ const App = () => {
           <Route
             path="/appointment"
             element={<AppoinmentOptions/>}
+          />
+          <Route
+            path="/specialists"
+            element={<Specialists />}
           />
         </Routes>
 

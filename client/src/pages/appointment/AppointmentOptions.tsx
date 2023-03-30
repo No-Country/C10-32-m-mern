@@ -4,7 +4,10 @@ const AppoinmentOptions = () =>{
     return (
 
         <div>
-            <Title/>
+            <Title 
+                title={"Agenda tu cita"}
+                color={"bg-[#76D9D5]"}
+            />
         </div>
     )
 }
