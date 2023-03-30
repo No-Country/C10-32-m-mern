@@ -1,6 +1,7 @@
 import React, { useState } from "react";
+import { ButtonEyeSlash } from "./ButtonEyeSlash";
 import ButtonLogIn from "./ButtonLogIn";
-import EyeSlash from "./EyeSlash";
+
 import Lock from "./Lock";
 import MailIcon from "./MailIcon";
 
@@ -49,7 +50,7 @@ const LogIn = ({ onLogIn }: LogInProps) => {
           className="relative w-full border-[.5px] border-buttonBg rounded-md pl-7"
         />
         <Lock />
-        <EyeSlash />
+        <ButtonEyeSlash />
       </div>
       <ButtonLogIn className="mt-[3rem]">
         Iniciar Sesion
