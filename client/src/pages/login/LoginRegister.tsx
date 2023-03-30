@@ -6,6 +6,7 @@ import ButtonBack from "../../components/ButtonBack";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 interface User {
+  dni?: number | string;
   email: string;
   password: string;
 }
@@ -23,12 +24,13 @@ const LoginRegister = () => {
   };
 
   const handleRegister = (
+    dni: number | string,
     email: string,
     password: string
   ) => {
     // Aquí debería hacer una petición al servidor para crear un nuevo usuario
     // y almacenar el token de autenticación en el estado de la aplicación.
-    setUser({ email, password });
+    setUser({ dni, email, password });
   };
 
   const handleRenderLogIn = () => {
