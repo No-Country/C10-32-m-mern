@@ -10,12 +10,29 @@ exports.User = db_1.sequelize.define('users', {
         primaryKey: true,
         defaultValue: sequelize_1.UUIDV4,
     },
+    name: {
+        type: sequelize_1.DataTypes.STRING,
+        allowNull: false,
+    },
+    secondname: {
+        type: sequelize_1.DataTypes.STRING,
+        allowNull: false,
+    },
+    document: {
+        type: sequelize_1.DataTypes.STRING,
+        allowNull: false,
+        unique: true,
+    },
     email: {
         type: sequelize_1.DataTypes.STRING,
         allowNull: false,
         unique: true,
     },
     password: {
+        type: sequelize_1.DataTypes.STRING,
+        allowNull: false,
+    },
+    phone: {
         type: sequelize_1.DataTypes.STRING,
         allowNull: false,
     },

@@ -14,17 +14,27 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.signin = exports.signup = void 0;
 const user_model_1 = require("../models/user.model");
+const asociado_model_1 = require("../models/asociado.model");
 const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
 const bcrypt = require('bcrypt');
 //Registro usuario. 
 const signup = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const { body } = req;
-    // chequear que el usuario exista en la BD de asociados
-    //registrando usuario//
     try {
-        //const newUser = await User.create(body);
+        // chequear que el usuario exista en la BD de asociados
+        const validateuser = yield asociado_model_1.Asociado.findOne({ where: { document: body.document } });
+        if (validateuser === null)
+            return res.status(400).json('El DNI ingresado no pertenece a un asociado');
+        //registrando usuario//
         const hashpass = yield bcrypt.hash(body.password, 10);
-        const newUser = yield user_model_1.User.create({ email: body.email, password: hashpass });
+        const newUser = yield user_model_1.User.create({
+            name: body.name,
+            secondname: body.secondname,
+            document: body.document,
+            email: body.email,
+            password: hashpass,
+            phone: body.phone,
+        });
         // creo token
         const token = jsonwebtoken_1.default.sign({ _id: newUser.dataValues.id }, process.env.TOKEN_SECRET || 'tokenalternativo');
         res.header('auth-token', token).json(newUser);

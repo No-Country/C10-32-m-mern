@@ -17,6 +17,7 @@ dotenv_1.default.config();
 const app_1 = __importDefault(require("./app"));
 const db_1 = require("./database/db");
 require("./models/user.model");
+require("./models/asociado.model");
 function main() {
     return __awaiter(this, void 0, void 0, function* () {
         yield db_1.sequelize.sync({ force: false });

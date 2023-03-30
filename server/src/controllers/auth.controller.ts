@@ -1,6 +1,7 @@
 
 import { Request, Response } from "express";
 import {User} from "../models/user.model";
+import { Asociado } from "../models/asociado.model"; 
 import jwt from 'jsonwebtoken';
 
 const bcrypt = require('bcrypt');
@@ -13,15 +14,24 @@ export const signup = async (req : Request,res : Response)=> {
     
     const {body} = req;
    
-    // chequear que el usuario exista en la BD de asociados
-
-    //registrando usuario//
     try {
-         //const newUser = await User.create(body);
+        // chequear que el usuario exista en la BD de asociados
+        const validateuser = await Asociado.findOne({ where: { document: body.document } })
+        if (validateuser === null) return res.status(400).json('El DNI ingresado no pertenece a un asociado') 
+        
+        
+        //registrando usuario//
         const hashpass = await  bcrypt.hash(body.password, 10)
         
         
-         const newUser = await User.create({email: body.email, password: hashpass});
+         const newUser = await User.create({
+            name: body.name,
+            secondname: body.secondname,
+            document: body.document,
+            email: body.email,
+            password: hashpass,
+            phone: body.phone,
+        });
          // creo token
          const token : string = jwt.sign({_id: newUser.dataValues.id}, process.env.TOKEN_SECRET || 'tokenalternativo')      
         res.header('auth-token', token).json(newUser);        
