@@ -9,7 +9,7 @@ const bcrypt = require('bcrypt');
 
 
 
-//Registro usuario. 
+//REGISTER 
 export const signup = async (req : Request,res : Response)=> {
     
     const {body} = req;
@@ -19,11 +19,10 @@ export const signup = async (req : Request,res : Response)=> {
         const validateuser = await Asociado.findOne({ where: { document: body.document } })
         if (validateuser === null) return res.status(400).json('El DNI ingresado no pertenece a un asociado') 
         
+        //hash password
+        const hashpass = await  bcrypt.hash(body.password, 10)        
         
         //registrando usuario//
-        const hashpass = await  bcrypt.hash(body.password, 10)
-        
-        
          const newUser = await User.create({
             name: body.name,
             secondname: body.secondname,
@@ -31,6 +30,7 @@ export const signup = async (req : Request,res : Response)=> {
             email: body.email,
             password: hashpass,
             phone: body.phone,
+            obrasocialeId: body.obrasocialId
         });
          // creo token
          const token : string = jwt.sign({_id: newUser.dataValues.id}, process.env.TOKEN_SECRET || 'tokenalternativo')      
@@ -42,9 +42,7 @@ export const signup = async (req : Request,res : Response)=> {
 };
 
 
-
-
-//login
+//LOGIN
 export const signin = async (req : Request,res : Response)=> {
     try {
         const loginuser = await User.findAll({  where: {email : req.body.email} })

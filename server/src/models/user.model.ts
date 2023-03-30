@@ -1,5 +1,6 @@
 import { DataTypes, UUIDV4 } from 'sequelize'
 import { sequelize } from '../database/db'
+import { ObraSocial } from './obrasocial.model'
 
 export const User = sequelize.define(
   'users',
@@ -36,8 +37,13 @@ export const User = sequelize.define(
         type: DataTypes.STRING,
         allowNull: false,        
       },
+
+    
   },
   {
     timestamps: false,
   }
+  
 )
+
+User.belongsTo(ObraSocial)

@@ -3,6 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.User = void 0;
 const sequelize_1 = require("sequelize");
 const db_1 = require("../database/db");
+const obrasocial_model_1 = require("./obrasocial.model");
 exports.User = db_1.sequelize.define('users', {
     id: {
         type: sequelize_1.DataTypes.UUID,
@@ -39,4 +40,5 @@ exports.User = db_1.sequelize.define('users', {
 }, {
     timestamps: false,
 });
+exports.User.belongsTo(obrasocial_model_1.ObraSocial);
 //# sourceMappingURL=user.model.js.map

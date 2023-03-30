@@ -18,11 +18,12 @@ const app_1 = __importDefault(require("./app"));
 const db_1 = require("./database/db");
 require("./models/user.model");
 require("./models/asociado.model");
+require("./models/obrasocial.model");
 function main() {
     return __awaiter(this, void 0, void 0, function* () {
-        yield db_1.sequelize.sync({ force: false });
+        yield db_1.sequelize.sync({ force: true });
         app_1.default.listen(3000);
-        console.log('Server on port 4000');
+        console.log('Server on port 3000');
     });
 }
 main();
