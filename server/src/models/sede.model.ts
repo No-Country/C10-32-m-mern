@@ -1,20 +1,22 @@
 import { DataTypes, UUIDV4 } from 'sequelize'
 import { sequelize } from '../database/db'
 
-export const Asociado = sequelize.define(
-  'asociados',
+
+export const Sede = sequelize.define(
+  'sedes',
   {
     id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
-      autoIncrement:true,
+      autoIncrement: true,
+     
     },
   
-    document: {
+    name: {
         type: DataTypes.STRING,
         allowNull: false,
-        unique: true,       
+        unique: false,       
       }
     },
   {
