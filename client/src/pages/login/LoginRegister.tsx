@@ -3,7 +3,6 @@ import ButtonLogIn from "../../components/ButtonLogIn";
 import LogIn from "../../components/LogIn";
 import Register from "../../components/Register";
 import ButtonBack from "../../components/ButtonBack";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 interface User {
   dni?: number | string;
