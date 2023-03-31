@@ -7,6 +7,7 @@ import { sequelize } from './database/db';
 import './models/user.model';
 import './models/asociado.model';
 import './models/obrasocial.model';
+import './models/sede.model';
 
 async function main() {
   await sequelize.sync({ force: true })
