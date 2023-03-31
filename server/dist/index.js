@@ -12,22 +12,18 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+const dotenv_1 = __importDefault(require("dotenv"));
+dotenv_1.default.config();
 const app_1 = __importDefault(require("./app"));
 const db_1 = require("./database/db");
 require("./models/user.model");
+require("./models/asociado.model");
+require("./models/obrasocial.model");
 function main() {
     return __awaiter(this, void 0, void 0, function* () {
-        app_1.default.listen(app_1.default.get('port'));
-        try {
-            yield db_1.sequelize.sync();
-            console.log('Base de datos conectada');
-            app_1.default.listen(3000);
-        }
-        catch (error) {
-            console.log(error);
-            console.log('Error al conectarse a la base de datos');
-        }
-        console.log('Server on port', app_1.default.get('port'));
+        yield db_1.sequelize.sync({ force: true });
+        app_1.default.listen(3000);
+        console.log('Server on port 3000');
     });
 }
 main();
