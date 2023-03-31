@@ -8,24 +8,19 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
-const dotenv_1 = __importDefault(require("dotenv"));
-dotenv_1.default.config();
-const app_1 = __importDefault(require("./app"));
-const db_1 = require("./database/db");
-require("./models/user.model");
-require("./models/asociado.model");
-require("./models/obrasocial.model");
-require("./models/sede.model");
-function main() {
-    return __awaiter(this, void 0, void 0, function* () {
-        yield db_1.sequelize.sync({ force: true });
-        app_1.default.listen(3000);
-        console.log('Server on port 3000');
-    });
-}
-main();
-//# sourceMappingURL=index.js.map
+exports.getsedes = void 0;
+const sede_model_1 = require("../models/sede.model");
+const getsedes = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const sedes = yield sede_model_1.Sede.findAll();
+        if (sedes.length == 0)
+            return res.status(400).json('No existen datos');
+        res.status(200).json(sedes);
+    }
+    catch (error) {
+        res.status(400).json(error);
+    }
+});
+exports.getsedes = getsedes;
+//# sourceMappingURL=sede.controller.js.map
