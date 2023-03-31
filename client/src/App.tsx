@@ -11,6 +11,8 @@ import NewAppoitment from "./pages/appointment/NewAppointment";
 import { Profiler } from "react";
 import ProgramedApointment from "./pages/appointment/ProgramedApointment";
 import Specialists from "./pages/specialists/Specialists";
+import Notifications from "./pages/notifications/Notifications";
+import Profile from "./pages/profile/Profile";
 
 const App = () => {
   return (
@@ -41,6 +43,14 @@ const App = () => {
           <Route
             path="/specialists"
             element={<Specialists />}
+          />
+          <Route
+            path="/notifications"
+            element={<Notifications />}
+          />
+          <Route
+            path="/profile"
+            element={<Profile />}
           />
         </Routes>
       </main>
