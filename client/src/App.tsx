@@ -28,21 +28,21 @@ const App = () => {
           />
           <Route
             path="/appointment"
-            element={<AppointmentOptions/>}
+            element={<AppointmentOptions />}
           />
           <Route
             path="/newAppointment"
-            element={<NewAppoitment/>}
+            element={<NewAppoitment />}
           />
           <Route
             path="/programedAppointment"
-            element={<ProgramedApointment/>}
+            element={<ProgramedApointment />}
           />
           <Route
             path="/specialists"
-            element={<Specialists />}/>
+            element={<Specialists />}
+          />
         </Routes>
-
       </main>
     </div>
   );

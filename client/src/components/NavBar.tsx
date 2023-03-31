@@ -1,4 +1,12 @@
 import React, { useState } from "react";
+import Logo from "../icons/Logo";
+import Header from "./Header";
+import Link from "react-router";
+import { NavLink } from "react-router-dom";
+import Notification from "../icons/Notification";
+import Profile from "../icons/Profile";
+import Calendar from "../icons/Calendar";
+import LogOut from "../icons/LogOut";
 
 const NavBar = () => {
   const [nav, setNav] = useState(false);
@@ -10,77 +18,59 @@ const NavBar = () => {
   return (
     <div>
       <i
-        className="fa-solid fa-bars absolute top-4 right-4 z-[99] cursor-pointer border p-1 rounded"
+        className="fa-solid fa-bars absolute top-6 right-6 z-[99] cursor-pointer p-5 text-[30px] text-fontNav rounded-full bg-white"
         onClick={handleNav}
       />
       {nav ? (
-        <div className="fixed w-full h-screen bg-white/ flex flex-col justify-center items-center z-20">
-          <a
+        <div className="fixed top-0 right-0 w-screen h-screen bg-bgNav flex flex-col justify-center items-center z-20 px-8 mt-10">
+          <div className="fixed top-0 flex flex-col items-center justify-center w-full h-[11rem] bg-gradient-to-b from-primary-start to-primary-end">
+            <Logo />
+            <div className="lg:absolute lg:top-[7rem] font-semibold flex items-center justify-center mt-[2.5rem] h-[.1rem] w-screen bg-secondary"></div>
+          </div>
+          <NavLink
+            to="/notifications"
+            className="w-full flex justify-start items-center gap-8 bg-white text-[#FFFFFF] drop-shadow rounded-2xl h-[5rem] my-5 px-8"
             onClick={handleNav}
-            href="#main"
-            className="w-[75%] flex justify-center items-center rounded-full shadow-lg bg-gray-100 shadpw-gray-400 m-2 p-4 cursor-pointer hover:scale-110 ease-in duration-100"
           >
-            <span className="pl-4">Home</span>
-          </a>
-          <a
+            <Notification />
+            <p className="text-center text-[30px] text-fontNav leading-6">
+              Notificaciones
+            </p>
+          </NavLink>
+          <NavLink
+            to="/profile"
+            className="w-full flex justify-start items-center gap-8 bg-white text-[#FFFFFF] drop-shadow rounded-2xl h-[5rem] my-5 px-8"
             onClick={handleNav}
-            href="#work"
-            className="w-[75%] flex justify-center items-center rounded-full shadow-lg bg-gray-100 shadpw-gray-400 m-2 p-4 cursor-pointer hover:scale-110 ease-in duration-100"
           >
-            <span className="pl-4">Work</span>
-          </a>
-          <a
+            <Profile />
+            <p className="text-center text-[30px] text-fontNav leading-6">
+              Mi Perfil
+            </p>
+          </NavLink>
+          <NavLink
+            to="/programedAppointment"
+            className="w-full flex justify-start items-center gap-8 bg-white text-[#FFFFFF] drop-shadow rounded-2xl h-[5rem] my-5 px-8"
             onClick={handleNav}
-            href="#projects"
-            className="w-[75%] flex justify-center items-center rounded-full shadow-lg bg-gray-100 shadpw-gray-400 m-2 p-4 cursor-pointer hover:scale-110 ease-in duration-100"
           >
-            <span className="pl-4">Projects</span>
-          </a>
-          <a
+            <Calendar />
+            <p className="text-center text-[30px] text-fontNav leading-6">
+              Turnos Agendados
+            </p>
+          </NavLink>
+          <NavLink
+            to="/notifications"
+            className="w-full flex justify-start items-center gap-8 bg-white text-[#FFFFFF] drop-shadow rounded-2xl h-[5rem] my-5 px-8"
             onClick={handleNav}
-            href="#main"
-            className="w-[75%] flex justify-center items-center rounded-full shadow-lg bg-gray-100 shadpw-gray-400 m-2 p-4 cursor-pointer hover:scale-110 ease-in duration-100"
           >
-            <span className="pl-4">Resume</span>
-          </a>
-          <a
-            onClick={handleNav}
-            href="#contact"
-            className="w-[75%] flex justify-center items-center rounded-full shadow-lg bg-gray-100 shadpw-gray-400 m-2 p-4 cursor-pointer hover:scale-110 ease-in duration-100"
-          >
-            <span className="pl-4">Contact me</span>
-          </a>
+            <LogOut />
+            <p className="text-center text-[30px] text-fontNav leading-6">
+              Cerrar Sesión
+            </p>
+          </NavLink>
         </div>
       ) : (
         ""
       )}
-      <div className="fixed top-[25%] left-4 z-10">
-        <div
-          className="flex flex-col"
-          data-aos="flip-up"
-        >
-          <a
-            href="#main"
-            className="rounded-full shadow-lg bg-gray-100 shadow-gray-400 m-2 p-4 cursor-pointer hover:scale-110 ease-in duration-100"
-          ></a>
-          <a
-            href="#work"
-            className="rounded-full shadow-lg bg-gray-100 shadow-gray-400 m-2 p-4 cursor-pointer hover:scale-110 ease-in duration-100"
-          ></a>
-          <a
-            href="#projects"
-            className="rounded-full shadow-lg bg-gray-100 shadow-gray-400 m-2 p-4 cursor-pointer hover:scale-110 ease-in duration-100"
-          ></a>
-          <a
-            href="#main"
-            className="rounded-full shadow-lg bg-gray-100 shadow-gray-400 m-2 p-4 cursor-pointer hover:scale-110 ease-in duration-100"
-          ></a>
-          <a
-            href="#contact"
-            className="rounded-full shadow-lg bg-gray-100 shadow-gray-400 m-2 p-4 cursor-pointer hover:scale-110 ease-in duration-100"
-          ></a>
-        </div>
-      </div>
     </div>
   );
 };
