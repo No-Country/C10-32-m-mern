@@ -37,9 +37,9 @@ export const signup = async (req: Request, res: Response) => {
 			{ _id: newUser.dataValues.id },
 			process.env.TOKEN_SECRET || 'tokenalternativo'
 		);
-		res.header('auth-token', token).json(newUser);
-	} catch (error) {
-		res.status(400).json(error);
+		res.header('auth-token', token).json({ user: newUser });
+	} catch (error: any) {
+		res.status(400).json({ error: error.messagge });
 	}
 };
 
