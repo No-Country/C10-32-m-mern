@@ -1,5 +1,9 @@
 import { Link } from "react-router-dom";
 import NavBar from "../../components/NavBar";
+import iconCalendarHome from "../../assets/iconCalendarHome.svg"
+import iconSpecialistHome from "../../assets/iconSpecialistHome.svg"
+import iconHeartHome from "../../assets/iconHeartHome.svg"
+
 
 const Home = () => {
 
@@ -18,16 +22,17 @@ const Home = () => {
             </select>
             <div className="">
                 <Link to="/appointment" className="flex justify-between items-center bg-lightGreen text-[#FFFFFF] rounded-2xl h-[100px] my-8 px-8">
-                    <img src="https://icongr.am/feather/calendar.svg?size=63&color=ffffff" alt="" />
+                  
+                    <img src={iconCalendarHome} alt="" />
                     <p className="text-center text-[22px] leading-6">Agenda tu turno</p>
 
                 </Link>
                 <Link to="/specialists" className="flex justify-between items-center bg-lightBlue text-[#FFFFFF] rounded-2xl h-[100px] my-8 px-8">
-                    <img src="https://icongr.am/feather/user.svg?size=63&color=ffffff" alt="" />
+                    <img src={iconSpecialistHome} alt="" />
                     <p className="text-center text-[22px] leading-6">Especialistas</p>
                 </Link>
                 <Link to="#" className="flex justify-between items-center bg-lightYellow text-[#FFFFFF] rounded-2xl h-[100px] my-8 px-8">
-                    <img src="https://icongr.am/feather/heart.svg?size=63&color=ffffff" alt="" />
+                    <img src={iconHeartHome} alt="" />
                     <p className="text-center text-[22px] leading-6">Esp. Médicas</p>
                 </Link>
             </div>

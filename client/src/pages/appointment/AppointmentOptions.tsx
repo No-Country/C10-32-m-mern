@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom"
 import Title from "../../components/Title"
-import Appointment from "../../icons/Appointment"
+import iconCalendarSmall from "../../assets/iconCalendarSmall.svg"
+import iconCheckCalendar from "../../assets/iconCheckCalendarSmall.svg"
 
 const AppointmentOptions = () =>{
     return (
@@ -13,13 +14,13 @@ const AppointmentOptions = () =>{
             <div className="flex flex-col items-center">
         
                 <Link to="/newAppointment" className="flex flex-col justify-center items-center bg-lightGreen text-[#FFFFFF] rounded-2xl h-[100px] w-[202px] my-8 px-8">
-                    <img src="https://icongr.am/feather/calendar.svg?size=33&color=ffffff" alt="" />
+                    <img src={iconCalendarSmall} alt="" />
                     <p className="text-center text-[22px] leading-6 mt-[7px]">Agendar nueva cita</p>
                     
 
                 </Link>
                 <Link to="/programedAppointment" className="flex flex-col justify-center items-center bg-lightBlue text-[#FFFFFF] rounded-2xl h-[100px] w-[202px] my-8 px-8">
-                    <img src="https://icongr.am/feather/check-square.svg?size=33&color=ffffff" alt="" />
+                    <img src={iconCheckCalendar} alt="" />
                     <p className="text-center text-[22px] leading-6 mt-[7px]">Citas programadas</p>
 
                 </Link>
