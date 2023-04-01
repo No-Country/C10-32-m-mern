@@ -12,8 +12,9 @@ import ProgramedApointment from "./pages/appointment/ProgramedApointment";
 import Specialists from "./pages/specialists/Specialists";
 import Notifications from "./pages/notifications/Notifications";
 import Profile from "./pages/profile/Profile";
-import Login from "./pages/login/Login";
 import Register from "./pages/register/Register";
+import Login from "./pages/login/Login";
+import Search from "./pages/search/Search";
 
 const App = () => {
   return (
@@ -56,6 +57,10 @@ const App = () => {
           <Route
             path="/profile"
             element={<Profile />}
+          />
+          <Route
+            path="/search"
+            element={<Search />}
           />
         </Routes>
       </main>
