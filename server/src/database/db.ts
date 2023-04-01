@@ -1,11 +1,12 @@
-import { Sequelize } from 'sequelize'
+import { Sequelize } from 'sequelize';
+import { DB_USER, DB_NAME, DB_PASSWORD, DB_HOST } from '../config/config';
 
 export const sequelize = new Sequelize(
-  'C10-32-m-mern', // db name,
-  'postgres', // username
-  'nico', // password
-  {
-    host: 'localhost',
-    dialect: 'postgres',
-  }
-)
+	DB_NAME!, // db name,
+	DB_USER!, // username
+	DB_PASSWORD, // password
+	{
+		host: DB_HOST,
+		dialect: 'postgres',
+	}
+);
