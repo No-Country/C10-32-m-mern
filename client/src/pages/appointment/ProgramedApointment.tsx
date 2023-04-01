@@ -1,14 +1,19 @@
 import { Link } from "react-router-dom"
 import Title from "../../components/Title"
+import Text from "../../components/Text"
 
 const ProgramedApointment = () =>{
     return (
 
         <div className="">
-            <Title/>
-            <p className="mt-6 text-[18px]">Hola, Nombre Usuario.</p>
-            <p className="mt-6 text-[18px]">Tienes Citas programadas</p>
-            <p className="mt-6 text-[18px]">Escoge el especialista y el horario:</p>
+            <Title
+                title={"Agenda tu turno"}
+            />
+            <Text
+                first={"Hola, Nombre Usuario."}
+                second={"Tienes Citas programadas"}
+                third={"Escoge el especialista y el horario:"}
+            />
             <div className="flex-col items-center">
 
             </div>
