@@ -2,10 +2,14 @@ import { Link } from "react-router-dom";
 
 const Home = () =>{
 
+    const handleChoose = (e: any) => {
+        console.log(e.target.value)
+    }
+
     return(
         <div className="flex-col justify-center">
-            <select name="select" className="w-full mt-8 h-10 bg-transparent border-2 border-borders rounded-[3px] text-sm px-2">
-                <option selected>Selecciona la sede</option>
+            <select onChange={handleChoose} name="select" className="w-full mt-8 h-10 bg-transparent border-2 border-borders rounded-[3px] text-sm px-2">
+                <option>Selecciona la sede</option>
                 <option value="norte">Sede Norte</option>
                 <option value="sur">Sede Sur</option>
                 <option value="oeste">Sede Oeste</option>
