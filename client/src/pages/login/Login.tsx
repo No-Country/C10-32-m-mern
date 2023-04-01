@@ -14,9 +14,13 @@ const Login = () => {
 
   const submit = async (e: SyntheticEvent) => {
     e.preventDefault();
-    await fetch("", {
+    await fetch("http://localhost:3000/api/signin", {
       method: "POST",
-      headers: { "Content-Type": "aplication/json" },
+      headers: {
+        "Content-Type": "application/json",
+        "auth-token":
+          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI5YjlhZGZlMS0wZGY5LTQzMzMtOWJjYy01MTA5NmFmZjg0YjEiLCJpYXQiOjE2ODAzODE4NzV9.hRBvJpKVHsh8bS1Pq5xqEpbjoPZj5fJuJbKkVqxlRZk",
+      },
       credentials: "include",
       body: JSON.stringify({
         email,

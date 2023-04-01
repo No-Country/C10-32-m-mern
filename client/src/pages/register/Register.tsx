@@ -7,7 +7,7 @@ import Lock from "../../icons/Lock";
 import MailIcon from "../../icons/MailIcon";
 
 const Register = () => {
-  const [dni, setDni] = useState("");
+  const [document, setDocument] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -16,13 +16,17 @@ const Register = () => {
 
   const submit = async (e: SyntheticEvent) => {
     e.preventDefault();
-    await fetch("", {
+    await fetch("http://localhost:3000/api/signup", {
       method: "POST",
-      headers: { "Content-Type": "aplication/json" },
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        dni,
-        email,
-        password,
+        name: "name",
+        secondname: "asd",
+        document: "5678",
+        email: "matiass@algo.com.ar",
+        password: "1234",
+        phone: "12345678",
+        obrasocialId: 1,
       }),
     });
     setRedirection(true);
@@ -43,9 +47,9 @@ const Register = () => {
           <input
             placeholder="Numero de Documento"
             type="number"
-            id="dni"
-            value={dni}
-            onChange={(e) => setDni(e.target.value)}
+            id="document"
+            value={document}
+            onChange={(e) => setDocument(e.target.value)}
             required
             className="relative w-full border-[.5px] border-buttonBg rounded-md pl-7"
           />
