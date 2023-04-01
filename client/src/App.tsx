@@ -59,7 +59,7 @@ const App = () => {
             element={<Profile />}
           />
           <Route
-            path="/search"
+            path="/search/:category"
             element={<Search />}
           />
         </Routes>

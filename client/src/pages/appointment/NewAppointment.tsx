@@ -19,14 +19,14 @@ const NewAppoitment = () =>{
                 third={"Escoge una opción"}
             />
             <div className="flex-col items-center">
-            <Link to="/search" className="flex justify-around items-center bg-gray text-[#4A4A4A] rounded-2xl h-[54px] my-8 px-8 shadow-md">
+            <Link to="/search/specialists" className="flex justify-around items-center bg-gray text-[#4A4A4A] rounded-2xl h-[54px] my-8 px-8 shadow-md">
                     <img src={iconSpecialistSmall} alt="" />
                     <p className="text-center text-[22px] leading-6">Por Especialistas</p>
                     <ButtonRight
                         color={"bg-lightBlue"}
                     />
                 </Link>
-                <Link to="/search" className="flex justify-around items-center bg-gray text-[#4A4A4A] rounded-2xl h-[54px] my-8 px-8 shadow-md">
+                <Link to="/search/specialities" className="flex justify-around items-center bg-gray text-[#4A4A4A] rounded-2xl h-[54px] my-8 px-8 shadow-md">
                     <img src={iconHeartSmall} alt="" />
                     <p className="text-center text-[22px] leading-6">Por Esp. Médicas</p>
                     <ButtonRight
