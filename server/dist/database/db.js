@@ -2,11 +2,12 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.sequelize = void 0;
 const sequelize_1 = require("sequelize");
-exports.sequelize = new sequelize_1.Sequelize('C10-32-m-mern', // db name,
-'postgres', // username
-'nico', // password
+const config_1 = require("../config/config");
+exports.sequelize = new sequelize_1.Sequelize(config_1.DB_NAME, // db name,
+config_1.DB_USER, // username
+config_1.DB_PASSWORD, // password
 {
-    host: 'localhost',
+    host: config_1.DB_HOST,
     dialect: 'postgres',
 });
 //# sourceMappingURL=db.js.map
