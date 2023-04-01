@@ -1,31 +1,41 @@
-import React, { useState } from "react";
-import { ButtonEyeSlash } from "./ButtonEyeSlash";
-import ButtonLogIn from "./ButtonLogIn";
+import React, { SyntheticEvent, useState } from "react";
+import { useNavigate } from "react-router";
+import { ButtonEyeSlash } from "../../components/ButtonEyeSlash";
+import ButtonLogIn from "../../components/ButtonLogIn";
+import Lock from "../../icons/Lock";
+import MailIcon from "../../icons/MailIcon";
 
-import Lock from "../icons/Lock";
-import MailIcon from "../icons/MailIcon";
-
-interface LogInProps {
-  onLogIn: (email: string, password: string) => void;
-}
-
-const LogIn = ({ onLogIn }: LogInProps) => {
+const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleSubmit = (
-    e: React.FormEvent<HTMLFormElement>
-  ) => {
+  const navigate = useNavigate();
+  const [redirection, setRedirection] = useState(false);
+
+  const submit = async (e: SyntheticEvent) => {
     e.preventDefault();
-    onLogIn(email, password);
+    await fetch("", {
+      method: "POST",
+      headers: { "Content-Type": "aplication/json" },
+      credentials: "include",
+      body: JSON.stringify({
+        email,
+        password,
+      }),
+    });
+    setRedirection(true);
   };
+
+  if (redirection) {
+    navigate("/");
+  }
 
   return (
     <form
-      className="h-[100%] mt-[3rem] flex flex-col items-center justify-between"
-      onSubmit={handleSubmit}
+      className="h-[100%] w-[19rem] mt-[3rem] flex flex-col items-center justify-center"
+      onSubmit={submit}
     >
-      <div className="w-full">
+      <div className="w-full h-[50px]">
         <label htmlFor="email" />
         <input
           placeholder="Correo Electronico"
@@ -38,7 +48,7 @@ const LogIn = ({ onLogIn }: LogInProps) => {
         />
         <MailIcon />
       </div>
-      <div className="w-full">
+      <div className="w-full h-[50px]">
         <label htmlFor="password" />
         <input
           placeholder="Contraseña"
@@ -59,4 +69,4 @@ const LogIn = ({ onLogIn }: LogInProps) => {
   );
 };
 
-export default LogIn;
+export default Login;

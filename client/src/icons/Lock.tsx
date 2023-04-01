@@ -2,7 +2,7 @@ import React from "react";
 
 const Lock = () => {
   return (
-    <div className="relative left-[.4rem] bottom-[1.4rem] z-50">
+    <div className="relative w-[1rem] left-[.4rem] bottom-[1.4rem] z-50">
       <svg
         width="12"
         height="19"
