@@ -43,10 +43,10 @@ const signup = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
         });
         // creo token
         const token = jsonwebtoken_1.default.sign({ _id: newUser.dataValues.id }, process.env.TOKEN_SECRET || 'tokenalternativo');
-        res.header('auth-token', token).json(newUser);
+        res.header('auth-token', token).json({ user: newUser });
     }
     catch (error) {
-        res.status(400).json(error);
+        res.status(400).json({ error: error.messagge });
     }
 });
 exports.signup = signup;

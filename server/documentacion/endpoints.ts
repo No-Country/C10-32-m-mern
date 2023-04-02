@@ -120,7 +120,7 @@ DEVUELVE LA INFO EN EL SIGUIENTE FORMATO (EJEMPLO)
 
 
 
-GET localhost:3000/api/specialistbysede?idsede=
+GET ocalhost:3000/api/specialistbysede?idsede=
 
 enviar por  QUERY la id de la sede 
 
@@ -168,5 +168,41 @@ DEVUELVE LA INFO EN EL SIGUIENTE FORMATO (EJEMPLO)
 
 NOTA: la especialidad luego va a ser un id cuando relacione esta tabla
 
+*******************OBTENER LAS ESPECIALIDADES DE UNA SEDE  ************************
+
+GET localhost:3000/api/specialiestbysede?idsede=
+
+enviar por  QUERY la id de la sede 
+
+DEVUELVE LA INFO EN EL SIGUIENTE FORMATO (EJEMPLO)
+
+[
+    {
+        "id": 2,
+        "name": "SUR",
+        "specialties": [
+            {
+                "id": 1,
+                "description": "Cardiología",
+                "Speciality_sede": {
+                    "createdAt": "2023-04-02T03:00:00.000Z",
+                    "updatedAt": "2023-04-02T03:00:00.000Z",
+                    "specialtyId": 1,
+                    "sedeId": 2
+                }
+            },
+            {
+                "id": 2,
+                "description": "Nutricionista",
+                "Speciality_sede": {
+                    "createdAt": "2023-04-02T03:00:00.000Z",
+                    "updatedAt": "2023-04-02T03:00:00.000Z",
+                    "specialtyId": 2,
+                    "sedeId": 2
+                }
+            }
+        ]
+    }
+]
 
 */
