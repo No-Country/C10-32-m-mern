@@ -1,5 +1,7 @@
 import { DataTypes } from 'sequelize';
 import { sequelize } from '../database/db';
+import {Sede} from './sede.model'
+
 
 export const Specialist = sequelize.define(
 	'specialist',
@@ -28,12 +30,12 @@ export const Specialist = sequelize.define(
 		},
 
 		phone: {
-			type: DataTypes.NUMBER,
+			type: DataTypes.STRING,
 			allowNull: false,
 		},
 
 		tuition: {
-			type: DataTypes.NUMBER,
+			type: DataTypes.STRING,
 			allowNull: false,
 		},
 
@@ -46,3 +48,6 @@ export const Specialist = sequelize.define(
 		timestamps: false,
 	}
 );
+
+     Specialist.belongsToMany(Sede, {through:'Specialist_sede'})
+     Sede.belongsToMany(Specialist, {through:'Specialist_sede'})

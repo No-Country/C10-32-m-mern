@@ -2,6 +2,7 @@ import { DataTypes, UUIDV4 } from 'sequelize'
 import { sequelize } from '../database/db'
 
 
+
 export const Sede = sequelize.define(
   'sedes',
   {
@@ -23,3 +24,4 @@ export const Sede = sequelize.define(
     timestamps: false,
   }
 )
+
