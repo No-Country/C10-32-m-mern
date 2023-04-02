@@ -15,7 +15,7 @@ export default function Header() {
   );
 
   return (
-    <div className="flex flex-col items-center justify-center w-full h-[13rem] bg-gradient-to-b from-primary-start to-primary-end">
+    <div className="absolute top-0 right-0 flex flex-col items-center justify-center w-screen h-[13rem] bg-gradient-to-b from-primary-start to-primary-end">
       <Logo />
       <div className="lg:absolute lg:top-[7rem] font-semibold flex items-center justify-center mt-[2.5rem] h-[2rem] w-screen bg-secondary">
         <h2>Hola, {user.name}</h2>
