@@ -1,18 +1,25 @@
-import { DataType } from 'sequelize-typescript';
+import { DataTypes } from 'sequelize';
 import { sequelize } from '../database/db';
-import { Specialist } from './specialist.model';
+import { Sede } from './sede.model';
 
-export const Speciality = sequelize.define('speciality', {
+export const Speciality = sequelize.define('specialties', {
 	id: {
-		type: DataType.INTEGER,
+		type: DataTypes.INTEGER,
 		allowNull: false,
 		primaryKey: true,
 		autoIncrement: true,
 	},
 	description: {
-		type: DataType.STRING,
+		type: DataTypes.STRING,
+		allowNull: false
 	},
-});
+
+}, {
+		timestamps: false,
+	});
 
 // Speciality.belongsToMany(Specialist)
 // Specialist.belongsToMany(Speciality)
+
+Speciality.belongsToMany(Sede, {through:'Speciality_sede'})
+Sede.belongsToMany(Speciality, {through:'Speciality_sede'})

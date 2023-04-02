@@ -10,4 +10,11 @@ config_1.DB_PASSWORD, // password
     host: config_1.DB_HOST,
     dialect: 'postgres',
 });
+// En sequelize.models están todos los modelos importados como propiedades
+// Para relacionarlos hacemos un destructuring
+//const { Specialist, Sede } = sequelize.models;
+// Aca vendrian las relaciones
+// Product.hasMany(Reviews);
+// Specialist.belongsToMany(Sede, {through:'Specialist_sede'});
+// Sede.belongsToMany(Specialist, {through:'Specialist_sede'})
 //# sourceMappingURL=db.js.map

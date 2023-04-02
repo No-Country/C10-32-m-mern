@@ -6,9 +6,12 @@ import './models/user.model';
 import './models/asociado.model';
 import './models/obrasocial.model';
 import './models/sede.model';
+import './models/specialist.model';
+import './models/speciality.model'
+
 
 async function main() {
-	await sequelize.sync({ force: true });
+	await sequelize.sync({ force: false });
 	app.listen(PORT);
 	console.log(`Server on port ${PORT}`);
 }
