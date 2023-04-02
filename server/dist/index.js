@@ -12,19 +12,19 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const dotenv_1 = __importDefault(require("dotenv"));
-dotenv_1.default.config();
 const app_1 = __importDefault(require("./app"));
+const config_1 = require("./config/config");
 const db_1 = require("./database/db");
 require("./models/user.model");
 require("./models/asociado.model");
 require("./models/obrasocial.model");
 require("./models/sede.model");
+require("./models/specialist.model");
 function main() {
     return __awaiter(this, void 0, void 0, function* () {
-        yield db_1.sequelize.sync({ force: true });
-        app_1.default.listen(3000);
-        console.log('Server on port 3000');
+        yield db_1.sequelize.sync({ force: false });
+        app_1.default.listen(config_1.PORT);
+        console.log(`Server on port ${config_1.PORT}`);
     });
 }
 main();

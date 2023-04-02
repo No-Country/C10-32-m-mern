@@ -16,17 +16,21 @@ exports.signin = exports.signup = void 0;
 const user_model_1 = require("../models/user.model");
 const asociado_model_1 = require("../models/asociado.model");
 const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
-const bcrypt = require('bcrypt');
-//REGISTER 
+const bcrypt_1 = __importDefault(require("bcrypt"));
+//REGISTER
 const signup = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const { body } = req;
     try {
         // chequear que el usuario exista en la BD de asociados
-        const validateuser = yield asociado_model_1.Asociado.findOne({ where: { document: body.document } });
+        const validateuser = yield asociado_model_1.Asociado.findOne({
+            where: { document: body.document },
+        });
         if (validateuser === null)
-            return res.status(400).json('El DNI ingresado no pertenece a un asociado');
+            return res
+                .status(400)
+                .json('El DNI ingresado no pertenece a un asociado');
         //hash password
-        const hashpass = yield bcrypt.hash(body.password, 10);
+        const hashpass = yield bcrypt_1.default.hash(body.password, 10);
         //registrando usuario//
         const newUser = yield user_model_1.User.create({
             name: body.name,
@@ -35,7 +39,7 @@ const signup = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
             email: body.email,
             password: hashpass,
             phone: body.phone,
-            obrasocialeId: body.obrasocialId
+            obrasocialeId: body.obrasocialId,
         });
         // creo token
         const token = jsonwebtoken_1.default.sign({ _id: newUser.dataValues.id }, process.env.TOKEN_SECRET || 'tokenalternativo');
@@ -52,7 +56,7 @@ const signin = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
         const loginuser = yield user_model_1.User.findAll({ where: { email: req.body.email } });
         if (!loginuser)
             return res.status(400).json('your credentials are not valid');
-        if (!bcrypt.compareSync(req.body.password, loginuser[0].dataValues.password))
+        if (!bcrypt_1.default.compareSync(req.body.password, loginuser[0].dataValues.password))
             return res.status(400).json('your credentials are not valid');
         const token = jsonwebtoken_1.default.sign({ _id: loginuser[0].dataValues.id }, process.env.TOKEN_SECRET || 'tokenalternativo');
         res.header('auth-token', token).json(loginuser);
