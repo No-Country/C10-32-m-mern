@@ -6,17 +6,19 @@ import {
 import Header from "./components/Header";
 import AppointmentOptions from "./pages/appointment/AppointmentOptions";
 import Home from "./pages/home/Home";
-import LoginRegister from "./pages/login/LoginRegister";
 import NewAppoitment from "./pages/appointment/NewAppointment";
 import { Profiler } from "react";
 import ProgramedApointment from "./pages/appointment/ProgramedApointment";
 import Specialists from "./pages/specialists/Specialists";
 import Notifications from "./pages/notifications/Notifications";
 import Profile from "./pages/profile/Profile";
+import Register from "./pages/register/Register";
+import Login from "./pages/login/Login";
+import Search from "./pages/search/Search";
 
 const App = () => {
   return (
-    <div className=" flex-col items-center justify-center">
+    <div className="flex flex-col items-center justify-center">
       <Header />
       <main className="pt-8 px-6">
         <Routes>
@@ -25,8 +27,12 @@ const App = () => {
             element={<Home />}
           />
           <Route
-            path="/login-register"
-            element={<LoginRegister />}
+            path="/login"
+            element={<Login />}
+          />
+          <Route
+            path="/register"
+            element={<Register />}
           />
           <Route
             path="/appointment"
@@ -51,6 +57,10 @@ const App = () => {
           <Route
             path="/profile"
             element={<Profile />}
+          />
+          <Route
+            path="/search/:category"
+            element={<Search />}
           />
         </Routes>
       </main>

@@ -17,7 +17,9 @@ module.exports = {
       buttonBg: '#1C1B1F',
       bgNav: '#E9F3FF',
       fontNav: '#2381f9',
-      white: '#f0f0f0'
+      white: '#f0f0f0',
+      gray: '#FFFBFE'
+      
     },
     screens: {
       '2xl': { 'max': '1535px' },

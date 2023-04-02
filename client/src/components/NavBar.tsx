@@ -27,7 +27,7 @@ const NavBar = () => {
             className="w-full flex justify-start items-center gap-8 bg-white text-[#FFFFFF] drop-shadow rounded-2xl h-[5rem] my-5 px-8"
             onClick={handleNav}
           >
-            <Notification />
+            <Notification active={true} />
             <p className="text-center text-[30px] text-fontNav leading-6">
               Notificaciones
             </p>

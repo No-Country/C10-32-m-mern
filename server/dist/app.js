@@ -11,15 +11,15 @@ const auth_routes_1 = __importDefault(require("./routes/auth.routes"));
 const user_routes_1 = __importDefault(require("./routes/user.routes"));
 const obrasocial_routes_1 = __importDefault(require("./routes/obrasocial.routes"));
 const sede_routes_1 = __importDefault(require("./routes/sede.routes"));
-const specialist_routes_1 = __importDefault(require("./routes/specialist.routes"));
-const config_1 = require("./config/config");
-require('./models/associations');
+
+
+
 //settings
 app.set('port', config_1.PORT);
 //midleware
 app.use((0, morgan_1.default)('dev'));
 app.use(express_1.default.json());
-app.use((0, cors_1.default)());
+
 //routes
 app.use('/api', auth_routes_1.default);
 app.use('/api', obrasocial_routes_1.default);
