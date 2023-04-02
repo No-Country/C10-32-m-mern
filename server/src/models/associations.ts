@@ -4,7 +4,7 @@ const User = require('./user.model');
 const ObraSocial = require('./obrasocial.model');
 
 
-
+/*****POR AHORA NO LO USO**********/
 
     // 1aN
     
