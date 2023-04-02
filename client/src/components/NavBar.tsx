@@ -20,11 +20,11 @@ const NavBar = () => {
         onClick={handleNav}
       />
       {nav ? (
-        <nav className="fixed top-0 right-0 w-screen h-screen bg-bgNav flex flex-col justify-center items-center z-20 px-8 mt-10">
+        <nav className="absolute top-0 right-0 w-screen h-screen bg-bgNav flex flex-col justify-center items-center z-20 px-8">
           <HeaderSm />
           <NavLink
             to="/notifications"
-            className="w-full flex justify-start items-center gap-8 bg-white text-[#FFFFFF] drop-shadow rounded-2xl h-[5rem] my-5 px-8"
+            className="w-full flex justify-start items-center gap-8 bg-white text-[#FFFFFF] drop-shadow rounded-2xl h-[5rem] mt-16 my-5 px-8"
             onClick={handleNav}
           >
             <Notification active={true} />

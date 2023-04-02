@@ -19,7 +19,7 @@ import Search from "./pages/search/Search";
 const App = () => {
   return (
     <div className="flex flex-col items-center justify-center">
-      <main className="mt-[13rem] pt-8 px-6">
+      <main className="w-screen mt-[12rem] pt-8 px-6">
         <Routes>
           <Route
             path="/"

@@ -20,7 +20,7 @@ export default function Header() {
       <div className="lg:absolute lg:top-[7rem] font-semibold flex items-center justify-center mt-[2.5rem] h-[2rem] w-screen bg-secondary">
         <h2>Hola, {user.name}</h2>
       </div>
-      <p className="lg:absolute lg:top-[11.5rem]">
+      <p className="lg:absolute lg:top-[11.5rem] text-white">
         {newDate}
       </p>
     </div>
