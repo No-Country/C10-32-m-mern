@@ -23,3 +23,4 @@ export const Speciality = sequelize.define('specialties', {
 
 Speciality.belongsToMany(Sede, {through:'Speciality_sede'})
 Sede.belongsToMany(Speciality, {through:'Speciality_sede'})
+

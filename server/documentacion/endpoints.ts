@@ -144,7 +144,29 @@ DEVUELVE LA INFO EN EL SIGUIENTE FORMATO (EJEMPLO)
                     "updatedAt": "2023-04-01T03:00:00.000Z",
                     "specialistId": 2,
                     "sedeId": 2
-                }
+                },
+                "specialties": [
+                    {
+                        "id": 1,
+                        "description": "Cardiología",
+                        "Specialist_Speciality": {
+                            "createdAt": "2023-04-03T03:00:00.000Z",
+                            "updatedAt": "2023-04-03T03:00:00.000Z",
+                            "specialistId": 2,
+                            "specialtyId": 1
+                        }
+                    },
+                    {
+                        "id": 2,
+                        "description": "Nutricionista",
+                        "Specialist_Speciality": {
+                            "createdAt": "2023-04-03T03:00:00.000Z",
+                            "updatedAt": "2023-04-03T03:00:00.000Z",
+                            "specialistId": 2,
+                            "specialtyId": 2
+                        }
+                    }
+                ]
             },
             {
                 "id": 3,
@@ -159,14 +181,36 @@ DEVUELVE LA INFO EN EL SIGUIENTE FORMATO (EJEMPLO)
                     "updatedAt": "2023-04-01T03:00:00.000Z",
                     "specialistId": 3,
                     "sedeId": 2
-                }
+                },
+                "specialties": [
+                    {
+                        "id": 4,
+                        "description": "Oftalmología",
+                        "Specialist_Speciality": {
+                            "createdAt": "2023-04-03T03:00:00.000Z",
+                            "updatedAt": "2023-04-03T03:00:00.000Z",
+                            "specialistId": 3,
+                            "specialtyId": 4
+                        }
+                    },
+                    {
+                        "id": 5,
+                        "description": "Pediatría",
+                        "Specialist_Speciality": {
+                            "createdAt": "2023-04-03T03:00:00.000Z",
+                            "updatedAt": "2023-04-03T03:00:00.000Z",
+                            "specialistId": 3,
+                            "specialtyId": 5
+                        }
+                    }
+                ]
             }
         ]
     }
 ]
 
 
-NOTA: la especialidad luego va a ser un id cuando relacione esta tabla
+
 
 *******************OBTENER LAS ESPECIALIDADES DE UNA SEDE  ************************
 
@@ -212,7 +256,7 @@ GET localhost:3000/api/specialistdetails/2
 
 enviar por paramas el id del medico
 
-DEVUELVE LA INFO EN EL SIGUIENTE FORMATO (EJEMPLO)
+DEVUELVE LA INFO EN EL SIGUIENTE FORMATO (EJEMPLO) en este caso el especista tiene dos especialidades 
 
 {
     "id": 2,
@@ -221,9 +265,50 @@ DEVUELVE LA INFO EN EL SIGUIENTE FORMATO (EJEMPLO)
     "adress": "direccion 213",
     "phone": "14433654",
     "tuition": "c15654",
-    "consultingRoom": "109"
+    "consultingRoom": "109",
+    "specialties": [
+        {
+            "id": 1,
+            "description": "Cardiología",
+            "Specialist_Speciality": {
+                "createdAt": "2023-04-03T03:00:00.000Z",
+                "updatedAt": "2023-04-03T03:00:00.000Z",
+                "specialistId": 2,
+                "specialtyId": 1
+            }
+        },
+        {
+            "id": 2,
+            "description": "Nutricionista",
+            "Specialist_Speciality": {
+                "createdAt": "2023-04-03T03:00:00.000Z",
+                "updatedAt": "2023-04-03T03:00:00.000Z",
+                "specialistId": 2,
+                "specialtyId": 2
+            }
+        }
+    ]
 }
 
+***********************************OBTENER MEDICOS QUE COMIENCEN CON UNA LETRA ***************************
+
+GET ocalhost:3000/api/specialistbfl?letter=
+
+enviar por QUERY la letra.
+
+DEVUELVE LA INFO EN EL SIGUIENTE FORMATO (EJEMPLO) 
+
+[
+    {
+        "id": 2,
+        "name": "Perez Juan",
+        "speciality": "Clinico",
+        "adress": "direccion 213",
+        "phone": "14433654",
+        "tuition": "c15654",
+        "consultingRoom": "109"
+    }
+]
 
 
 */
