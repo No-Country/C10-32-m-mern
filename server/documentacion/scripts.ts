@@ -54,7 +54,35 @@ SE LLENAN TODAS MENOS USUARIOS QUE SE PUEDE CREAR YA DESDE EL FRONT.
 
 
 
-
+INSERT INTO public."Specialist_Speciality"(
+	"createdAt", "updatedAt", "specialistId", "specialtyId")
+	VALUES ('2023-04-03', '2023-04-03', 1, 1);
+    
+    INSERT INTO public."Specialist_Speciality"(
+	"createdAt", "updatedAt", "specialistId", "specialtyId")
+	VALUES ('2023-04-03', '2023-04-03', 1, 2);
+    
+    INSERT INTO public."Specialist_Speciality"(
+	"createdAt", "updatedAt", "specialistId", "specialtyId")
+	VALUES ('2023-04-03', '2023-04-03', 1, 6);
+    
+    INSERT INTO public."Specialist_Speciality"(
+	"createdAt", "updatedAt", "specialistId", "specialtyId")
+	VALUES ('2023-04-03', '2023-04-03', 2, 1);
+    
+    
+    INSERT INTO public."Specialist_Speciality"(
+	"createdAt", "updatedAt", "specialistId", "specialtyId")
+	VALUES ('2023-04-03', '2023-04-03', 2,2);
+    
+    
+    INSERT INTO public."Specialist_Speciality"(
+	"createdAt", "updatedAt", "specialistId", "specialtyId")
+	VALUES ('2023-04-03', '2023-04-03', 3, 5);
+    
+    INSERT INTO public."Specialist_Speciality"(
+	"createdAt", "updatedAt", "specialistId", "specialtyId")
+	VALUES ('2023-04-03', '2023-04-03', 3, 4);
 
 
 
