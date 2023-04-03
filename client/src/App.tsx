@@ -50,6 +50,10 @@ const App = () => {
             element={<Specialists />}
           />
           <Route
+            path="/specialists/:specialistId"
+            element={<Specialists />}
+          />
+          <Route
             path="/notifications"
             element={<Notifications />}
           />
