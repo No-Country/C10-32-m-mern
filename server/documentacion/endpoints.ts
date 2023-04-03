@@ -205,4 +205,25 @@ DEVUELVE LA INFO EN EL SIGUIENTE FORMATO (EJEMPLO)
     }
 ]
 
+
+************************OBTENER DETALLES DE MEDICO *******************************
+
+GET localhost:3000/api/specialistdetails/2
+
+enviar por paramas el id del medico
+
+DEVUELVE LA INFO EN EL SIGUIENTE FORMATO (EJEMPLO)
+
+{
+    "id": 2,
+    "name": "Perez Juan",
+    "speciality": "Clinico",
+    "adress": "direccion 213",
+    "phone": "14433654",
+    "tuition": "c15654",
+    "consultingRoom": "109"
+}
+
+
+
 */

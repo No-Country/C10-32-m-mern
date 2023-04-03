@@ -31,3 +31,19 @@ export const getspecialistbysede = async (req : Request,res : Response)=> {
 
   
 };
+
+
+export const  getspecialistdetails = async (req : Request,res : Response)=> {
+    const idspecialist = req.params.id
+    console.log(idspecialist)
+    try {
+        const specialistdetails = await Specialist.findByPk(idspecialist)
+        if (!specialistdetails) return res.status(200).send('No existe especialista con el id enviado.')
+        res.status(200).send(specialistdetails)
+
+    } catch (error) {
+        res.status(400).send(error);
+    }
+
+
+}

@@ -9,7 +9,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getspecialistbysede = void 0;
+exports.getspecialistdetails = exports.getspecialistbysede = void 0;
 const specialist_model_1 = require("../models/specialist.model");
 const sede_model_1 = require("../models/sede.model");
 // Obtiene los especialistas de la sede enviada por query. 
@@ -34,4 +34,18 @@ const getspecialistbysede = (req, res) => __awaiter(void 0, void 0, void 0, func
     }
 });
 exports.getspecialistbysede = getspecialistbysede;
+const getspecialistdetails = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    const idspecialist = req.params.id;
+    console.log(idspecialist);
+    try {
+        const specialistdetails = yield specialist_model_1.Specialist.findByPk(idspecialist);
+        if (!specialistdetails)
+            return res.status(200).send('No existe especialista con el id enviado.');
+        res.status(200).send(specialistdetails);
+    }
+    catch (error) {
+        res.status(400).send(error);
+    }
+});
+exports.getspecialistdetails = getspecialistdetails;
 //# sourceMappingURL=specialist.controller.js.map
