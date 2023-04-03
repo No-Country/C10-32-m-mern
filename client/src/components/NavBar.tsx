@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import Notification from "../icons/Notification";
-import Profile from "../icons/Profile";
+import IconProfile from "../icons/IconProfile";
 import Calendar from "../icons/Calendar";
 import LogOut from "../icons/LogOut";
 import HeaderSm from "./HeaderSm";
@@ -27,7 +27,7 @@ const NavBar = () => {
             className="w-full flex justify-start items-center gap-8 bg-white text-[#FFFFFF] drop-shadow rounded-2xl h-[5rem] mt-16 my-5 px-8"
             onClick={handleNav}
           >
-            <Notification active={true} />
+            <Notification active={false} />
             <p className="text-center text-[30px] text-fontNav leading-6">
               Notificaciones
             </p>
@@ -37,7 +37,7 @@ const NavBar = () => {
             className="w-full flex justify-start items-center gap-8 bg-white text-[#FFFFFF] drop-shadow rounded-2xl h-[5rem] my-5 px-8"
             onClick={handleNav}
           >
-            <Profile />
+            <IconProfile active={false} />
             <p className="text-center text-[30px] text-fontNav leading-6">
               Mi Perfil
             </p>

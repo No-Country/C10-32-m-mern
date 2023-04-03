@@ -1,9 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}"
-  ],
+  content: [ "./src/**/*.{js,jsx,ts,tsx}", "./node_modules/react-tailwindcss-datepicker/dist/index.esm.js" ],
   theme: {
     extend: {},
     colors: {
@@ -18,8 +15,9 @@ module.exports = {
       bgNav: '#E9F3FF',
       fontNav: '#2381f9',
       white: '#f0f0f0',
-      gray: '#FFFBFE'
-      
+      gray: '#FFFBFE',
+      actionButtonBg: '#6750A4'
+
     },
     screens: {
       '2xl': { 'max': '1535px' },
