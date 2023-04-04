@@ -1,8 +1,7 @@
 import { DataTypes } from 'sequelize';
 import { sequelize } from '../database/db';
-import {Sede} from './sede.model'
+import { Sede } from './sede.model';
 import { Speciality } from './speciality.model';
-
 
 export const Specialist = sequelize.define(
 	'specialist',
@@ -47,11 +46,12 @@ export const Specialist = sequelize.define(
 	},
 	{
 		timestamps: false,
+		tableName: 'specialist',
 	}
 );
 
-     Specialist.belongsToMany(Sede, {through:'Specialist_sede'})
-     Sede.belongsToMany(Specialist, {through:'Specialist_sede'})
+Specialist.belongsToMany(Sede, { through: 'Specialist_sede' });
+Sede.belongsToMany(Specialist, { through: 'Specialist_sede' });
 
-	 Specialist.belongsToMany(Speciality, { through:'Specialist_Speciality'})
-	 Speciality.belongsToMany(Specialist, { through:'Specialist_Speciality'})
+Specialist.belongsToMany(Speciality, { through: 'Specialist_Speciality' });
+Speciality.belongsToMany(Specialist, { through: 'Specialist_Speciality' });
