@@ -3,7 +3,6 @@ import { useNavigate } from "react-router";
 import { ButtonEyeSlash } from "../../components/ButtonEyeSlash";
 import ButtonLogIn from "../../components/ButtonLogIn";
 import HeaderSm from "../../components/HeaderSm";
-import NavBar from "../../components/NavBar";
 
 const Register = () => {
   const [name, setName] = useState("");
@@ -11,6 +10,7 @@ const Register = () => {
   const [document, setDocument] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
   const [phone, setPhone] = useState("");
   const [obrasocialId, setObrasocialId] = useState("");
 
@@ -37,21 +37,31 @@ const Register = () => {
   const [redirection, setRedirection] = useState(false);
 
   const submit = async (e: SyntheticEvent) => {
-    e.preventDefault();
-    await fetch("http://localhost:3000/api/signup", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        name,
-        secondname,
-        document,
-        email,
-        password,
-        phone,
-        obrasocialId,
-      }),
-    });
-    setRedirection(true);
+    if (password === confirmPassword) {
+      if (name && secondname && document && email && password && phone && obrasocialId) {
+        e.preventDefault();
+        await fetch("http://localhost:3000/api/signup", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            name,
+            secondname,
+            document,
+            email,
+            password,
+            phone,
+            obrasocialId,
+          }),
+        });
+        setRedirection(true);
+      } else {
+        e.preventDefault();
+        alert("Quedan campos sin completar");
+      }
+    } else {
+      e.preventDefault();
+      alert("Las contraseñas no coinciden");
+    }
   };
 
   if (redirection) {
@@ -111,6 +121,7 @@ const Register = () => {
         <select
           name="marital-status"
           className="border border-borders rounded-md w-full h-[2.5rem] px-2"
+          onChange={(e) => setObrasocialId(e.target.value)}
         >
           <option>Seleccione su obra social</option>
           {obraSocial.map((name) => (
@@ -131,11 +142,11 @@ const Register = () => {
         </div>
         <div className="w-full h-[2.5rem]">
           <input
-            placeholder="Contraseña"
+            placeholder=" Confirme su contraseña"
             type="password"
-            id="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
+            id="confirm-password"
+            value={confirmPassword}
+            onChange={(e) => setConfirmPassword(e.target.value)}
             required
             className="relative w-full h-[2.5rem] border-[.5px] border-borders rounded-md pl-2"
           />

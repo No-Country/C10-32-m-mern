@@ -28,9 +28,7 @@ const NavBar = () => {
             onClick={handleNav}
           >
             <Notification active={false} />
-            <p className="text-center text-[30px] text-fontNav leading-6">
-              Notificaciones
-            </p>
+            <p className="text-center text-[30px] text-fontNav leading-6">Notificaciones</p>
           </NavLink>
           <NavLink
             to="/profile"
@@ -38,19 +36,15 @@ const NavBar = () => {
             onClick={handleNav}
           >
             <IconProfile active={false} />
-            <p className="text-center text-[30px] text-fontNav leading-6">
-              Mi Perfil
-            </p>
+            <p className="text-center text-[30px] text-fontNav leading-6">Mi Perfil</p>
           </NavLink>
           <NavLink
-            to="/programedAppointment"
+            to="/scheduledsshifts"
             className="w-full flex justify-start items-center gap-8 bg-white text-[#FFFFFF] drop-shadow rounded-2xl h-[5rem] my-5 px-8"
             onClick={handleNav}
           >
-            <Calendar />
-            <p className="text-center text-[30px] text-fontNav leading-6">
-              Turnos Agendados
-            </p>
+            <Calendar active={false} />
+            <p className="text-center text-[30px] text-fontNav leading-6">Turnos Agendados</p>
           </NavLink>
           <NavLink
             to="/"
@@ -58,9 +52,7 @@ const NavBar = () => {
             onClick={handleNav}
           >
             <LogOut />
-            <p className="text-center text-[30px] text-fontNav leading-6">
-              Cerrar Sesión
-            </p>
+            <p className="text-center text-[30px] text-fontNav leading-6">Cerrar Sesión</p>
           </NavLink>
         </nav>
       ) : (

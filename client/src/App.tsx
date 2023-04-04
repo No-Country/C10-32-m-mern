@@ -1,8 +1,4 @@
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-} from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import AppointmentOptions from "./pages/appointment/AppointmentOptions";
 import Home from "./pages/home/Home";
@@ -15,6 +11,7 @@ import Profile from "./pages/profile/Profile";
 import Register from "./pages/register/Register";
 import Login from "./pages/login/Login";
 import Search from "./pages/search/Search";
+import ScheduledsShifts from "./pages/scheduledShifts/ScheduledsShifts";
 
 const App = () => {
   return (
@@ -60,6 +57,10 @@ const App = () => {
           <Route
             path="/profile"
             element={<Profile />}
+          />
+          <Route
+            path="/scheduledsshifts"
+            element={<ScheduledsShifts />}
           />
           <Route
             path="/search/:category"
