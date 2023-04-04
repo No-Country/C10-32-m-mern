@@ -8,4 +8,4 @@ const Text = ({first, second, third}:any) =>{
     )
 }
 
-export default Text
+export default Text;

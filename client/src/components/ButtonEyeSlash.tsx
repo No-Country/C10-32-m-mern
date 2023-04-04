@@ -1,16 +1,11 @@
 import React, { FC } from "react";
-interface IActionButton
-  extends React.ComponentPropsWithoutRef<"button"> {}
+interface IActionButton extends React.ComponentPropsWithoutRef<"button"> {}
 
-export const ButtonEyeSlash: FC<IActionButton> = ({
-  children,
-  className,
-  ...buttonProps
-}) => {
+export const ButtonEyeSlash: FC<IActionButton> = ({ children, className, ...buttonProps }) => {
   return (
     <button
       type="button"
-      className={`relative w-[1rem] left-[17.5rem] bottom-[2.65rem] z-50 ${className}`}
+      className={`relative w-[1rem] left-[25.5rem] bottom-[2rem] z-50 ${className}`}
       {...buttonProps}
     >
       <svg

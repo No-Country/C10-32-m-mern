@@ -20,7 +20,7 @@ const Login = () => {
       headers: {
         "Content-Type": "application/json",
         "auth-token":
-          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI5YjlhZGZlMS0wZGY5LTQzMzMtOWJjYy01MTA5NmFmZjg0YjEiLCJpYXQiOjE2ODAzODE4NzV9.hRBvJpKVHsh8bS1Pq5xqEpbjoPZj5fJuJbKkVqxlRZk",
+          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiJjMDMyYjdkNi0zZTMwLTQ4MzItODk2OC00NTRhYTlmZDY2YWEiLCJpYXQiOjE2ODA2MTQ0Mzd9.muQX0rVZEOkd-CFCj5CzmMUz5HVIoJqoiwGWdiKqffc",
       },
       credentials: "include",
       body: JSON.stringify({
@@ -36,7 +36,7 @@ const Login = () => {
   }
 
   return (
-    <>
+    <div className="flex flex-col justify-center items-center">
       <HeaderSm />
       <form
         className="h-[100%] w-[19rem] mt-[3rem] flex flex-col items-center justify-center"
@@ -69,11 +69,9 @@ const Login = () => {
           <Lock />
           <ButtonEyeSlash />
         </div>
-        <ButtonLogIn className="mt-[3rem]">
-          Iniciar Sesion
-        </ButtonLogIn>
+        <ButtonLogIn className="mt-[3rem]">Iniciar Sesion</ButtonLogIn>
       </form>
-    </>
+    </div>
   );
 };
 

@@ -12,9 +12,7 @@ const Profile = () => {
       <NavBar />
       <div className="w-full flex justify-start items-center gap-8 bg-fontNav drop-shadow rounded-2xl h-[5rem] px-8">
         <IconProfile active={true} />
-        <p className="text-center text-[30px] text-white leading-6">
-          Mi Perfil
-        </p>
+        <p className="text-center text-[30px] text-white leading-6">Mi Perfil</p>
       </div>
       <form
         action=""
@@ -46,9 +44,7 @@ const Profile = () => {
             <option defaultValue={"Genero"}>Genero</option>
             <option value="male">Masculino</option>
             <option value="female">Femenino</option>
-            <option value="undefined">
-              No especificado
-            </option>
+            <option value="undefined">No especificado</option>
           </select>
         </div>
         <input
@@ -97,7 +93,12 @@ const Profile = () => {
           <option value="widower">Viudo/a</option>
         </select>
       </form>
-      <ButtonAction className="mt-2">ACEPTAR</ButtonAction>
+      <ButtonAction
+        type="submit"
+        className="mt-2"
+      >
+        ACEPTAR
+      </ButtonAction>
     </div>
   );
 };

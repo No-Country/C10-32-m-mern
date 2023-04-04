@@ -7,8 +7,7 @@ import './models/asociado.model';
 import './models/obrasocial.model';
 import './models/sede.model';
 import './models/specialist.model';
-import './models/speciality.model'
-
+import './models/speciality.model';
 
 async function main() {
 	await sequelize.sync({ force: false });
