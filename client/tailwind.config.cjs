@@ -19,6 +19,9 @@ module.exports = {
       actionButtonBg: '#6750A4'
 
     },
+    fontFamily: {
+      montserrat: ['Montserrat']
+    },
     screens: {
       '2xl': { 'max': '1535px' },
       'xl': { 'max': '1279px' },

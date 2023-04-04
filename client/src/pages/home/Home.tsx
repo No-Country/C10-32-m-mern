@@ -27,37 +27,40 @@ const Home = () => {
       <div className="">
         <Link
           to="/appointment"
-          className="flex justify-between items-center bg-lightGreen text-[#FFFFFF] rounded-2xl h-[100px] my-8 px-8"
+          className="flex justify-center items-center bg-lightGreen text-[#FFFFFF] rounded-2xl h-[100px] my-8 px-8"
         >
           <img
             src={iconCalendarHome}
             alt=""
+            className="mr-4"
           />
-          <p className="text-center text-[22px] leading-6">
+          <p className="font-montserrat font-semibold text-center text-[22px] leading-6">
             Agenda tu turno
           </p>
         </Link>
         <Link
           to="/specialists"
-          className="flex justify-between items-center bg-lightBlue text-[#FFFFFF] rounded-2xl h-[100px] my-8 px-8"
+          className="flex justify-center items-center bg-lightBlue text-[#FFFFFF] rounded-2xl h-[100px] my-8 px-8"
         >
           <img
             src={iconSpecialistHome}
             alt=""
+            className="mr-4"
           />
-          <p className="text-center text-[22px] leading-6">
+          <p className="font-montserrat font-semibold text-center text-[22px] leading-6">
             Especialistas
           </p>
         </Link>
         <Link
           to="#"
-          className="flex justify-between items-center bg-lightYellow text-[#FFFFFF] rounded-2xl h-[100px] my-8 px-8"
+          className="flex justify-center items-center bg-lightYellow text-[#FFFFFF] rounded-2xl h-[100px] my-8 px-8"
         >
           <img
             src={iconHeartHome}
             alt=""
+            className="mr-4"
           />
-          <p className="text-center text-[22px] leading-6">
+          <p className="font-montserrat font-semibold text-center text-[22px] leading-6">
             Esp. Médicas
           </p>
         </Link>

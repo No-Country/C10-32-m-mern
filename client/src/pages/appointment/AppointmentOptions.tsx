@@ -15,13 +15,13 @@ const AppointmentOptions = () =>{
         
                 <Link to="/newAppointment" className="flex flex-col justify-center items-center bg-lightGreen text-[#FFFFFF] rounded-2xl h-[100px] w-[202px] my-8 px-8">
                     <img src={iconCalendarSmall} alt="" />
-                    <p className="text-center text-[22px] leading-6 mt-[7px]">Agendar nueva cita</p>
+                    <p className="font-montserrat font-semibold tracking-tight text-center text-[22px] leading-6 mt-[7px]">Agendar nueva cita</p>
                     
 
                 </Link>
                 <Link to="/programedAppointment" className="flex flex-col justify-center items-center bg-lightBlue text-[#FFFFFF] rounded-2xl h-[100px] w-[202px] my-8 px-8">
                     <img src={iconCheckCalendar} alt="" />
-                    <p className="text-center text-[22px] leading-6 mt-[7px]">Citas programadas</p>
+                    <p className="font-montserrat font-semibold tracking-tight text-center text-[22px] leading-6 mt-[7px]">Citas programadas</p>
 
                 </Link>
             </div>
