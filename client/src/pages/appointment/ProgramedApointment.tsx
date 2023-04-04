@@ -15,7 +15,12 @@ const ProgramedApointment = () => {
         second={"Tienes Citas programadas"}
         third={"Escoge el especialista y el horario:"}
       />
-      <div className="flex-col items-center"></div>
+      <div className="flex-col items-center">
+        <select name="" id="">
+          
+        </select>
+      </div>
+
     </div>
   );
 };
