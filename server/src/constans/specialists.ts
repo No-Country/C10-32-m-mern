@@ -1,7 +1,13 @@
+'use strict';
+
+const speciality = require('./speciality.ts');
+
+console.log(speciality);
+
 module.exports = [
 	{
 		name: 'Horacio Guaraní',
-		speciality: 'Cardiología',
+		speciality: speciality[0].description,
 		adress: 'Av.Francia 2942',
 		phone: 2323241412,
 		tuition: 23414212,
@@ -9,7 +15,7 @@ module.exports = [
 	},
 	{
 		name: 'Homero Simpson',
-		speciality: 'Traumatologo',
+		speciality: speciality[1].description,
 		adress: 'Av.Siempre Viva 145',
 		phone: 41772,
 		tuition: 5675679,
@@ -17,7 +23,7 @@ module.exports = [
 	},
 	{
 		name: 'Marge Simpson',
-		speciality: 'Pediatría',
+		speciality: speciality[2].description,
 		adress: 'Green hills 2312',
 		phone: 222444777,
 		tuition: 794933,
@@ -25,10 +31,18 @@ module.exports = [
 	},
 	{
 		name: 'Lionel Messi',
-		speciality: 'Kinesiología',
+		speciality: speciality[3].description,
 		adress: 'Israel 2324',
 		phone: 101010,
 		tuition: 231831231,
 		consultingRoom: 10,
+	},
+	{
+		name: 'Lisa Simpson',
+		speciality: speciality[4].description,
+		adress: 'Sarmiento 2832',
+		phone: 4662719,
+		tuition: 42342243,
+		consultingRoom: 7,
 	},
 ];

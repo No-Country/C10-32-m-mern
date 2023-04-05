@@ -1,6 +1,6 @@
 'use strict';
 
-const specialistData = require('../src/constans/specialists');
+const specialistData = require('../src/constans/specialists.ts');
 
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
