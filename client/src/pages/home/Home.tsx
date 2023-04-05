@@ -6,6 +6,7 @@ import iconHeartHome from "../../assets/iconHeartHome.svg";
 import Header from "../../components/Header";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import FloatingChat from "../../components/FloatingChat";
 
 const Home = () => {
   const [sedes, setSedes] = useState([]);
@@ -62,6 +63,7 @@ const Home = () => {
           </p>
         </Link>
       </div>
+      <FloatingChat />
     </div>
   );
 };

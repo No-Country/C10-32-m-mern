@@ -10,7 +10,7 @@ import './models/specialist.model';
 import './models/speciality.model';
 
 async function main() {
-	await sequelize.sync({ force: false });
+	await sequelize.sync({ force: true });
 	app.listen(PORT);
 	console.log(`Server on port ${PORT}`);
 }
