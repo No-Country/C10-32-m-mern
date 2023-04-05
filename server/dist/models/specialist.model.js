@@ -39,6 +39,7 @@ exports.Specialist = db_1.sequelize.define('specialist', {
     },
 }, {
     timestamps: false,
+    tableName: 'specialist',
 });
 exports.Specialist.belongsToMany(sede_model_1.Sede, { through: 'Specialist_sede' });
 sede_model_1.Sede.belongsToMany(exports.Specialist, { through: 'Specialist_sede' });

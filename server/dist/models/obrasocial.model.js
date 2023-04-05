@@ -14,9 +14,10 @@ exports.ObraSocial = db_1.sequelize.define('obrasociales', {
         type: sequelize_1.DataTypes.STRING,
         allowNull: false,
         unique: false,
-    }
+    },
 }, {
     timestamps: false,
+    tableName: 'obrasociales',
 });
 //ObraSocial.hasMany(User)
 //ObraSocial.hasOne(User)

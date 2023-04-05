@@ -14,8 +14,9 @@ exports.Sede = db_1.sequelize.define('sedes', {
         type: sequelize_1.DataTypes.STRING,
         allowNull: false,
         unique: false,
-    }
+    },
 }, {
     timestamps: false,
+    tableName: 'sedes',
 });
 //# sourceMappingURL=sede.model.js.map

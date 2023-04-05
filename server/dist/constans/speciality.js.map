@@ -1,0 +1,1 @@
+{"version":3,"file":"speciality.js","sourceRoot":"","sources":["../../src/constans/speciality.ts"],"names":[],"mappings":";AAAA,MAAM,CAAC,OAAO,GAAG;IAChB;QACC,WAAW,EAAE,aAAa;KAC1B;IACD;QACC,WAAW,EAAE,eAAe;KAC5B;IACD;QACC,WAAW,EAAE,cAAc;KAC3B;IACD;QACC,WAAW,EAAE,WAAW;KACxB;IACD;QACC,WAAW,EAAE,0BAA0B;KACvC;CACD,CAAC"}

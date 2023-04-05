@@ -19,6 +19,6 @@ export const Sede = sequelize.define(
 	},
 	{
 		timestamps: false,
-		tableName: 'sede',
+		tableName: 'sedes',
 	}
 );
