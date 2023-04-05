@@ -56,7 +56,6 @@ const SpecialistModal = ({setModal, modal, medico, especialidad, valoracion, img
         </div>
       </div>
     </div>
-
   )
 }
 
