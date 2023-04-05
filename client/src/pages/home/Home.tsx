@@ -4,6 +4,7 @@ import iconCalendarHome from "../../assets/iconCalendarHome.svg";
 import iconSpecialistHome from "../../assets/iconSpecialistHome.svg";
 import iconHeartHome from "../../assets/iconHeartHome.svg";
 import Header from "../../components/Header";
+import FloatingChat from "../../components/FloatingChat";
 
 const Home = () => {
   const handleChoose = (e: any) => {
@@ -65,6 +66,7 @@ const Home = () => {
           </p>
         </Link>
       </div>
+      <FloatingChat/>
     </div>
   );
 };

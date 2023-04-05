@@ -3,10 +3,10 @@ import Title from "../../components/Title";
 import Text from "../../components/Text";
 import HeaderSm from "../../components/HeaderSm";
 import NavBar from "../../components/NavBar";
-import Accordion from 'react-bootstrap/Accordion';
-import AllCollapseExample from "../../components/Accordion";
-import Form from 'react-bootstrap/Form';
-import Button from 'react-bootstrap/Button';
+// import Accordion from 'react-bootstrap/Accordion';
+// import AllCollapseExample from "../../components/Accordion";
+// import Form from 'react-bootstrap/Form';
+// import Button from 'react-bootstrap/Button';
 
 const ProgramedApointment = () => {
 
