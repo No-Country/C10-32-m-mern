@@ -11,7 +11,7 @@ import Profile from "./pages/profile/Profile";
 import Register from "./pages/register/Register";
 import Login from "./pages/login/Login";
 import Search from "./pages/search/Search";
-import ScheduledsShifts from "./pages/scheduledShifts/ScheduledsShifts";
+import ScheduledsShifts from "./pages/turnosagendados/ScheduledsShifts";
 
 const App = () => {
   return (

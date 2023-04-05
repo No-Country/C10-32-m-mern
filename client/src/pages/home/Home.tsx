@@ -4,8 +4,17 @@ import iconCalendarHome from "../../assets/iconCalendarHome.svg";
 import iconSpecialistHome from "../../assets/iconSpecialistHome.svg";
 import iconHeartHome from "../../assets/iconHeartHome.svg";
 import Header from "../../components/Header";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 const Home = () => {
+  const [sedes, setSedes] = useState([]);
+
+  useEffect(() => {
+    axios.get("http://localhost:3000/api/sede").then((res) => console.log(res.data));
+    console.log(sedes);
+  }, []);
+
   const handleChoose = (e: any) => {
     console.log(e.target.value);
   };
@@ -29,11 +38,7 @@ const Home = () => {
           to="/appointment"
           className="flex justify-center items-center bg-lightGreen text-[#FFFFFF] rounded-2xl h-[100px] my-8 px-8"
         >
-          <img
-            src={iconCalendarHome}
-            alt=""
-            className="mr-4"
-          />
+          <img src={iconCalendarHome} alt="" className="mr-4" />
           <p className="font-montserrat font-semibold text-center text-[22px] leading-6">
             Agenda tu turno
           </p>
@@ -42,11 +47,7 @@ const Home = () => {
           to="/specialists"
           className="flex justify-center items-center bg-lightBlue text-[#FFFFFF] rounded-2xl h-[100px] my-8 px-8"
         >
-          <img
-            src={iconSpecialistHome}
-            alt=""
-            className="mr-4"
-          />
+          <img src={iconSpecialistHome} alt="" className="mr-4" />
           <p className="font-montserrat font-semibold text-center text-[22px] leading-6">
             Especialistas
           </p>
@@ -55,11 +56,7 @@ const Home = () => {
           to="#"
           className="flex justify-center items-center bg-lightYellow text-[#FFFFFF] rounded-2xl h-[100px] my-8 px-8"
         >
-          <img
-            src={iconHeartHome}
-            alt=""
-            className="mr-4"
-          />
+          <img src={iconHeartHome} alt="" className="mr-4" />
           <p className="font-montserrat font-semibold text-center text-[22px] leading-6">
             Esp. Médicas
           </p>

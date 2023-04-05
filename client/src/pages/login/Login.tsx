@@ -19,10 +19,10 @@ const Login = () => {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "auth-token":
-          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiJjMDMyYjdkNi0zZTMwLTQ4MzItODk2OC00NTRhYTlmZDY2YWEiLCJpYXQiOjE2ODA2MTQ0Mzd9.muQX0rVZEOkd-CFCj5CzmMUz5HVIoJqoiwGWdiKqffc",
+        // "auth-token":
+        //   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiJjMDMyYjdkNi0zZTMwLTQ4MzItODk2OC00NTRhYTlmZDY2YWEiLCJpYXQiOjE2ODA2MTQ0Mzd9.muQX0rVZEOkd-CFCj5CzmMUz5HVIoJqoiwGWdiKqffc",
       },
-      credentials: "include",
+      // credentials: "include",
       body: JSON.stringify({
         email,
         password,

@@ -1,8 +1,9 @@
-import React, { SyntheticEvent, useState } from "react";
+import React, { SyntheticEvent, useEffect, useState } from "react";
 import { useNavigate } from "react-router";
 import { ButtonEyeSlash } from "../../components/ButtonEyeSlash";
 import ButtonLogIn from "../../components/ButtonLogIn";
 import HeaderSm from "../../components/HeaderSm";
+import axios from "axios";
 
 const Register = () => {
   const [name, setName] = useState("");
@@ -14,24 +15,11 @@ const Register = () => {
   const [phone, setPhone] = useState("");
   const [obrasocialId, setObrasocialId] = useState("");
 
-  const obraSocial = [
-    {
-      id: 1,
-      name: "PAMI",
-    },
-    {
-      id: 2,
-      name: "IOMA",
-    },
-    {
-      id: 3,
-      name: "OSDE",
-    },
-    {
-      id: 4,
-      name: "OBRASOCIAL3",
-    },
-  ];
+  const [obraSocial, setObraSocial] = useState([]);
+
+  useEffect(() => {
+    axios.get("http://localhost:3000/api/obrasocial").then((res) => setObraSocial(res.data));
+  }, []);
 
   const navigate = useNavigate();
   const [redirection, setRedirection] = useState(false);
@@ -152,10 +140,7 @@ const Register = () => {
           />
           <ButtonEyeSlash />
         </div>
-        <ButtonLogIn
-          className="mt-[3rem]"
-          type="submit"
-        >
+        <ButtonLogIn className="mt-[3rem]" type="submit">
           Register
         </ButtonLogIn>
       </form>
