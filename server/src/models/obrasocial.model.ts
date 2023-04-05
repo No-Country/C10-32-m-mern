@@ -19,7 +19,7 @@ export const ObraSocial = sequelize.define(
 	},
 	{
 		timestamps: false,
-		tableName: 'obrasocial',
+		tableName: 'obrasociales',
 	}
 );
 

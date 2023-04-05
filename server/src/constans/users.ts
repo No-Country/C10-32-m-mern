@@ -6,7 +6,6 @@ console.log(obraSocial);
 
 module.exports = [
 	{
-		id: 1,
 		name: 'Juliana',
 		secondname: 'Gomez',
 		document: '35838225',
@@ -16,7 +15,6 @@ module.exports = [
 		// obrasocialId: obraSocial[0].id,
 	},
 	{
-		id: 2,
 		name: 'Juan',
 		secondname: 'Perez',
 		document: '26838331',
@@ -26,7 +24,6 @@ module.exports = [
 		obrasocialId: obraSocial[1].id,
 	},
 	{
-		id: 3,
 		name: 'Julian',
 		secondname: 'Ballestero',
 		document: '4262722',
@@ -36,7 +33,6 @@ module.exports = [
 		obrasocialId: obraSocial[2].id,
 	},
 	{
-		id: 4,
 		name: 'Mia',
 		secondname: 'OConner',
 		document: '312421',
@@ -46,7 +42,6 @@ module.exports = [
 		obrasocialId: obraSocial[3].id,
 	},
 	{
-		id: 5,
 		name: 'Stephen',
 		secondname: 'King',
 		document: '22421341',
