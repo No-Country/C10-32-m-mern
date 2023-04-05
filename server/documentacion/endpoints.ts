@@ -1,4 +1,3 @@
-
 /*
 A TODAS LAS RUTAS cuando la llamen desde el fron agregar http://
 

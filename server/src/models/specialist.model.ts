@@ -4,7 +4,7 @@ import { Sede } from './sede.model';
 import { Speciality } from './speciality.model';
 
 export const Specialist = sequelize.define(
-	'specialist',
+	'specialists',
 	{
 		id: {
 			type: DataTypes.INTEGER,
@@ -46,7 +46,7 @@ export const Specialist = sequelize.define(
 	},
 	{
 		timestamps: false,
-		tableName: 'specialist',
+		tableName: 'specialists',
 	}
 );
 
