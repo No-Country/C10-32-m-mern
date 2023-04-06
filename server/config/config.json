@@ -1,9 +1,0 @@
-{
-	"development": {
-		"username": "postgres",
-		"password": "matimati",
-		"database": "C10-32-m-mern",
-		"host": "localhost",
-		"dialect": "postgres"
-	}
-}
