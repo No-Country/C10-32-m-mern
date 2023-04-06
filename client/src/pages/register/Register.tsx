@@ -15,6 +15,9 @@ const Register = () => {
   const [phone, setPhone] = useState("");
   const [obrasocialId, setObrasocialId] = useState("");
 
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+
   const [obraSocial, setObraSocial] = useState([]);
 
   useEffect(() => {
@@ -119,26 +122,26 @@ const Register = () => {
         <div className="w-full h-[2.5rem]">
           <input
             placeholder="Contraseña"
-            type="password"
+            type={showPassword ? "text" : "password"}
             id="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
             className="relative w-full h-[2.5rem] border-[.5px] border-borders rounded-md pl-2"
           />
-          <ButtonEyeSlash />
+          <ButtonEyeSlash onClick={() => setShowPassword(!showPassword)} />
         </div>
         <div className="w-full h-[2.5rem]">
           <input
             placeholder=" Confirme su contraseña"
-            type="password"
+            type={showConfirmPassword ? "text" : "password"}
             id="confirm-password"
             value={confirmPassword}
             onChange={(e) => setConfirmPassword(e.target.value)}
             required
             className="relative w-full h-[2.5rem] border-[.5px] border-borders rounded-md pl-2"
           />
-          <ButtonEyeSlash />
+          <ButtonEyeSlash onClick={() => setShowConfirmPassword(!showConfirmPassword)} />
         </div>
         <ButtonLogIn className="mt-[3rem]" type="submit">
           Register
