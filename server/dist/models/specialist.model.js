@@ -15,11 +15,9 @@ exports.Specialist = db_1.sequelize.define('specialists', {
     name: {
         type: sequelize_1.DataTypes.STRING,
         allowNull: false,
-        unique: true,
     },
     speciality: {
         type: sequelize_1.DataTypes.STRING,
-        allowNull: false,
     },
     adress: {
         type: sequelize_1.DataTypes.STRING,
@@ -30,7 +28,7 @@ exports.Specialist = db_1.sequelize.define('specialists', {
         allowNull: false,
     },
     tuition: {
-        type: sequelize_1.DataTypes.STRING,
+        type: sequelize_1.DataTypes.STRING({ length: 5 }),
         allowNull: false,
     },
     consultingRoom: {

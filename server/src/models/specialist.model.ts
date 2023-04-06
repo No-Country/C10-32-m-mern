@@ -16,12 +16,10 @@ export const Specialist = sequelize.define(
 		name: {
 			type: DataTypes.STRING,
 			allowNull: false,
-			unique: true,
 		},
 
 		speciality: {
 			type: DataTypes.STRING,
-			allowNull: false,
 		},
 
 		adress: {
@@ -35,7 +33,7 @@ export const Specialist = sequelize.define(
 		},
 
 		tuition: {
-			type: DataTypes.STRING,
+			type: DataTypes.STRING({ length: 5 }),
 			allowNull: false,
 		},
 
