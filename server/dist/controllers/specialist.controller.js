@@ -14,7 +14,7 @@ const specialist_model_1 = require("../models/specialist.model");
 const sede_model_1 = require("../models/sede.model");
 const sequelize_1 = require("sequelize");
 const speciality_model_1 = require("../models/speciality.model");
-// Obtiene los especialistas de la sede enviada por query. 
+// Obtiene los especialistas de la sede enviada por query.
 const getspecialistbysede = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const idsede = req.query.idsede;
     console.log(idsede);
@@ -23,17 +23,21 @@ const getspecialistbysede = (req, res) => __awaiter(void 0, void 0, void 0, func
     try {
         const sede = yield sede_model_1.Sede.findAll({
             where: { id: idsede },
-            include: [{
+            include: [
+                {
                     model: specialist_model_1.Specialist,
-                    include: [{
-                            model: speciality_model_1.Speciality
-                        }
-                    ]
+                    include: [
+                        {
+                            model: speciality_model_1.Speciality,
+                        },
+                    ],
                 },
             ],
         });
         if (!sede.length)
-            return res.status(200).send('No hay especialistas para la sede seleccionada.');
+            return res
+                .status(200)
+                .send('No hay especialistas para la sede seleccionada.');
         res.status(200).send(sede);
     }
     catch (error) {
@@ -46,10 +50,11 @@ const getspecialistdetails = (req, res) => __awaiter(void 0, void 0, void 0, fun
     console.log(idspecialist);
     try {
         const specialistdetails = yield specialist_model_1.Specialist.findByPk(idspecialist, {
-            include: [{
-                    model: speciality_model_1.Speciality
-                }
-            ]
+            include: [
+                {
+                    model: speciality_model_1.Speciality,
+                },
+            ],
         });
         if (!specialistdetails)
             return res.status(200).send('No existe especialista con el id enviado.');
@@ -62,14 +67,14 @@ const getspecialistdetails = (req, res) => __awaiter(void 0, void 0, void 0, fun
 exports.getspecialistdetails = getspecialistdetails;
 const getspecialistbyfirstletter = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const letter = req.query.letter;
-    const condition = letter + "%";
+    const condition = letter + '%';
     try {
         const result = yield specialist_model_1.Specialist.findAll({
             where: {
                 name: {
-                    [sequelize_1.Op.iLike]: condition
-                }
-            }
+                    [sequelize_1.Op.iLike]: condition,
+                },
+            },
         });
         if (!result.length)
             return res.status(200).send('No existen especialistas');

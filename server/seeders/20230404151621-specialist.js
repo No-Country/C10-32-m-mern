@@ -5,10 +5,10 @@ const specialistData = require('../src/constans/specialists.ts');
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
 	async up(queryInterface, Sequelize) {
-		await queryInterface.bulkInsert('specialist', specialistData);
+		await queryInterface.bulkInsert('specialists', specialistData);
 	},
 
 	async down(queryInterface, Sequelize) {
-		await queryInterface.bulkDelete('specialist', null, {});
+		await queryInterface.bulkDelete('specialists', null, {});
 	},
 };
