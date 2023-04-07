@@ -21,6 +21,8 @@ require("./models/obrasocial.model");
 require("./models/sede.model");
 require("./models/specialist.model");
 require("./models/speciality.model");
+require("./models/Specialist_Sede.model");
+require("./models/shift.model");
 function main() {
     return __awaiter(this, void 0, void 0, function* () {
         yield db_1.sequelize.sync({ force: true });
