@@ -48,8 +48,5 @@ export const Specialist = sequelize.define(
 	}
 );
 
-Specialist.belongsToMany(Sede, { through: 'Specialist_sede' });
-Sede.belongsToMany(Specialist, { through: 'Specialist_sede' });
-
 Specialist.belongsToMany(Speciality, { through: 'Specialist_Speciality' });
 Speciality.belongsToMany(Specialist, { through: 'Specialist_Speciality' });

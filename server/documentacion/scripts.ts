@@ -34,14 +34,10 @@ SE LLENAN TODAS MENOS USUARIOS QUE SE PUEDE CREAR YA DESDE EL FRONT.
 
     INSERT INTO public.specialists(name, speciality, adress, phone, tuition, "consultingRoom")	VALUES ( 'Simpson Homero', 'Neumonologo','direccion 111', '1253434', 'd43er55', '308');
 
-
-    INSERT INTO public."Specialist_sede"("createdAt", "updatedAt", "specialistId", "sedeId") VALUES ('2023-04-01', '2023-04-01', 2, 2);
-        
-    INSERT INTO public."Specialist_sede"("createdAt", "updatedAt", "specialistId", "sedeId") VALUES ('2023-04-01', '2023-04-01', 2, 3);
-        
-    INSERT INTO public."Specialist_sede"("createdAt", "updatedAt", "specialistId", "sedeId") VALUES ('2023-04-01', '2023-04-01', 3, 2);
-        
-    INSERT INTO public."Specialist_sede"("createdAt", "updatedAt", "specialistId", "sedeId") VALUES ('2023-04-01', '2023-04-01', 3, 4);
+    
+    INSERT INTO public."Specialist_sede"(
+	mondayini, mondayend, mondaytotal, tuesdayini, tuesdayend, tuesdaytotal, wednesdayini, wednesdayend, wednesdaytotal, thursdayini, thursdayend, thursdaytotal, fridayini, fridayend, fridaytotal, "specialistId", "sedeId")
+	VALUES ('09:00', '10:00', 2,'09:00', '10:00', 2,'09:00', '10:00', 2,'09:00', '10:00', 2,'09:00', '10:00', 2,  1, 1);
 
 
     INSERT INTO public."Speciality_sede"("createdAt", "updatedAt", "specialtyId", "sedeId")	VALUES ('2023-04-02', '2023-04-02', 1, 1);
