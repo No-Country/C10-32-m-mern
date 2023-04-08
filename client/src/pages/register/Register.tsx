@@ -6,6 +6,7 @@ import HeaderSm from "../../components/HeaderSm";
 import axios from "axios";
 
 const Register = () => {
+  // estados del usuario
   const [name, setName] = useState("");
   const [secondname, setSecondname] = useState("");
   const [document, setDocument] = useState("");
@@ -15,15 +16,19 @@ const Register = () => {
   const [phone, setPhone] = useState("");
   const [obrasocialId, setObrasocialId] = useState("");
 
+  // estados para mostrar y ocultar contraseñas
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
+  // estado con la lista de las obras sociales
   const [obraSocial, setObraSocial] = useState([]);
 
+  // consumo del endpoint que trae la lista de las obras sociales
   useEffect(() => {
     axios.get("http://localhost:3000/api/obrasocial").then((res) => setObraSocial(res.data));
   }, []);
 
+  // estado para redireccionar la pagina hacia el login cuando el formulario quede validado
   const navigate = useNavigate();
   const [redirection, setRedirection] = useState(false);
 
@@ -41,7 +46,7 @@ const Register = () => {
             email,
             password,
             phone,
-            obrasocialId,
+            obrasocialId: 1,
           }),
         });
         setRedirection(true);
@@ -63,7 +68,7 @@ const Register = () => {
     <div className="flex flex-col justify-center items-center">
       <HeaderSm />
       <form
-        className="h-[100%] w-full flex flex-col gap-[1rem] items-center justify-between"
+        className="h-[100%] w-[400px] flex flex-col gap-[1rem] items-center justify-between"
         onSubmit={submit}
       >
         <input
@@ -118,6 +123,7 @@ const Register = () => {
           {obraSocial.map((name) => (
             <option value={name.id}>{name.name}</option>
           ))}
+          <option>pami</option>
         </select>
         <div className="w-full h-[2.5rem]">
           <input

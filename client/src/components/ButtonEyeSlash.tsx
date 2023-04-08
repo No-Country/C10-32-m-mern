@@ -5,7 +5,7 @@ export const ButtonEyeSlash: FC<IActionButton> = ({ children, className, ...butt
   return (
     <button
       type="button"
-      className={`relative w-[1rem] left-[25.5rem] bottom-[2rem] z-50 ${className}`}
+      className={`relative w-[1rem] left-[23.5rem] bottom-[2rem] z-50 ${className}`}
       {...buttonProps}
     >
       <svg
