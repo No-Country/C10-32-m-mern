@@ -4,6 +4,7 @@ import { Sede } from '../models/sede.model';
 import { Op } from 'sequelize';
 import { Speciality } from '../models/speciality.model';
 import { log } from 'console';
+import { Specialist_sede } from '../models/Specialist_Sede.model';
 
 // Obtiene los especialistas de la sede enviada por query.
 
@@ -43,7 +44,10 @@ export const getspecialistdetails = async (req: Request, res: Response) => {
 		const specialistdetails = await Specialist.findByPk(idspecialist, {
 			include: [
 				{
-					model: Speciality,
+					model: Sede,
+					include:[{
+						model:Speciality,
+					}]
 				},
 			],
 		});
