@@ -6,7 +6,7 @@ import HeaderSm from "../../components/HeaderSm";
 import Lock from "../../icons/Lock";
 import MailIcon from "../../icons/MailIcon";
 import { useCustomSelector, useCustomDispatch } from "../../hooks/redux";
-import { login } from "../../redux/slices/auth";
+// import { login } from "../../redux/slices/auth";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -25,13 +25,13 @@ const Login = () => {
 
   const submit = async (e: SyntheticEvent) => {
     e.preventDefault();
-    dispatch(
-      login({
-        email,
-        password,
-      })
-    );
-    setRedirection(true);
+    // dispatch(
+    //   login({
+    //     email,
+    //     password,
+    //   })
+    // );
+    // setRedirection(true);
   };
 
   if (redirection) {
