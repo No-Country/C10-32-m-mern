@@ -52,7 +52,10 @@ const getspecialistdetails = (req, res) => __awaiter(void 0, void 0, void 0, fun
         const specialistdetails = yield specialist_model_1.Specialist.findByPk(idspecialist, {
             include: [
                 {
-                    model: speciality_model_1.Speciality,
+                    model: sede_model_1.Sede,
+                    include: [{
+                            model: speciality_model_1.Speciality,
+                        }]
                 },
             ],
         });

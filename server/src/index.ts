@@ -12,7 +12,7 @@ import './models/Specialist_Sede.model';
 import './models/shift.model'
 
 async function main() {
-	await sequelize.sync({ force: true });
+	await sequelize.sync({ force: false });
 	app.listen(PORT);
 	console.log(`Server on port ${PORT}`);
 }
