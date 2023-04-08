@@ -7,13 +7,18 @@ import Header from "../../components/Header";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import FloatingChat from "../../components/FloatingChat";
+import { useCustomSelector } from "../../hooks/redux";
 
 const Home = () => {
   const [sedes, setSedes] = useState([]);
 
+  const { user } = useCustomSelector((state) => state);
+
   useEffect(() => {
-    axios.get("http://localhost:3000/api/sede").then((res) => console.log(res.data));
-    console.log(sedes);
+    axios.get("http://localhost:3000/api/sede").then((res) => {
+      console.log(res.data);
+      setSedes(res.data);
+    });
   }, []);
 
   const handleChoose = (e: any) => {
@@ -23,16 +28,16 @@ const Home = () => {
   return (
     <div className="flex-col justify-center">
       <NavBar />
-      <Header />
+      <Header name={user.name} lastName={user.secondname} />
       <select
         onChange={handleChoose}
         name="select"
         className="w-full mt-8 h-10 bg-transparent border-2 border-borders rounded-[3px] text-sm px-2"
       >
         <option>Selecciona la sede</option>
-        <option value="norte">Sede Norte</option>
-        <option value="sur">Sede Sur</option>
-        <option value="oeste">Sede Oeste</option>
+        {sedes.map((sede) => (
+          <option value={sede.name}>{sede.name}</option>
+        ))}
       </select>
       <div className="">
         <Link

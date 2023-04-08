@@ -77,7 +77,7 @@ const Login = () => {
         </div>
         <ButtonLogIn className="mt-[3rem]">Iniciar Sesion</ButtonLogIn>
       </form>
-      {/* {isLoading && "cargando..."} */}
+      {isLoading && "cargando..."}
     </div>
   );
 };
