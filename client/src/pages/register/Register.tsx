@@ -3,6 +3,8 @@ import { useNavigate } from "react-router";
 import { ButtonEyeSlash } from "../../components/ButtonEyeSlash";
 import ButtonLogIn from "../../components/ButtonLogIn";
 import HeaderSm from "../../components/HeaderSm";
+import { register } from "../../redux/slices/user";
+import { useCustomDispatch, useCustomSelector } from "../../hooks/redux";
 import axios from "axios";
 
 const Register = () => {
@@ -14,7 +16,7 @@ const Register = () => {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [phone, setPhone] = useState("");
-  const [obrasocialId, setObrasocialId] = useState("");
+  const [obrasocialId, setObrasocialId] = useState(null);
 
   // estados para mostrar y ocultar contraseñas
   const [showPassword, setShowPassword] = useState(false);
@@ -32,23 +34,27 @@ const Register = () => {
   const navigate = useNavigate();
   const [redirection, setRedirection] = useState(false);
 
+  // estado del usuario global
+  const { user } = useCustomSelector((state) => state);
+  const dispatch = useCustomDispatch();
+
   const submit = async (e: SyntheticEvent) => {
     if (password === confirmPassword) {
       if (name && secondname && document && email && password && phone && obrasocialId) {
         e.preventDefault();
-        await fetch("http://localhost:3000/api/signup", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
+        dispatch(
+          register({
             name,
             secondname,
             document,
             email,
             password,
             phone,
-            obrasocialId: 1,
-          }),
-        });
+            obrasocialId,
+          })
+        );
+        console.log(user);
+
         setRedirection(true);
       } else {
         e.preventDefault();

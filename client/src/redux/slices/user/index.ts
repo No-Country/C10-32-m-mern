@@ -1,4 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import axios, { AxiosError, AxiosResponse } from "axios";
+import { Thunk } from "../../store";
 
 export interface UserState {
   name: string;
@@ -11,8 +13,8 @@ export interface UserState {
 }
 
 const initialState: UserState = {
-  name: "matias",
-  secondname: "barengo",
+  name: "",
+  secondname: "",
   document: "",
   email: "",
   password: "",
@@ -42,10 +44,38 @@ const userSlice = createSlice({
     setPhone: (state, action: PayloadAction<string>) => {
       state.phone = action.payload;
     },
-    setObraSocialId: (state, action: PayloadAction<number | null>) => {
+    setObrasocialId: (state, action: PayloadAction<number | null>) => {
       state.obrasocialId = action.payload;
     },
   },
 });
 
+export const {
+  setName,
+  setSecondName,
+  setDocument,
+  setEmail,
+  setPassword,
+  setPhone,
+  setObrasocialId,
+} = userSlice.actions;
+
 export default userSlice.reducer;
+
+export const register =
+  (data: UserState): Thunk =>
+  async (dispatch): Promise<AxiosResponse | AxiosError> => {
+    try {
+      const response: AxiosResponse = await axios.post("http://localhost:3000/api/signup", data);
+      dispatch(setName(response.data.name));
+      dispatch(setSecondName(response.data.secondname));
+      dispatch(setDocument(response.data.document));
+      dispatch(setEmail(response.data.email));
+      dispatch(setPassword(response.data.password));
+      dispatch(setPhone(response.data.phone));
+      dispatch(setObrasocialId(response.data.obrasocialId));
+      return response;
+    } catch (error) {
+      return error as AxiosError;
+    }
+  };
