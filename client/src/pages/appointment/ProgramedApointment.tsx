@@ -82,7 +82,7 @@ const ProgramedApointment = () => {
       <div style={{ display: "flex", alignItems: "center", flexDirection: "column" }}>
         {citas?.map((cita) => {
           return (
-            <Accordion defaultActiveKey="0">
+            <Accordion defaultActiveKey="0" className="w-full">
               <Accordion.Item eventKey="0">
                 <Accordion.Header>{cita.estudio}</Accordion.Header>
                 <Accordion.Body>
@@ -102,7 +102,52 @@ const ProgramedApointment = () => {
         })}
         {pedidos.map((estudio) => {
           return (
-            <Accordion className="my-5">
+            <>
+            <div className="mx-auto max-w-lg w-full">
+              <div className="divide-y divide-gray-100 overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm">
+                <details className="group" open>
+                  <summary className="flex cursor-pointer list-none items-center justify-between p-4 text-lg font-medium text-secondary-900 group-open:bg-gray-50">
+                    Accordion item 01
+                    <div className="text-secondary-500">
+                      {/* <p>Agendar</p> */}
+                      {/* <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="block h-5 w-5 transition-all duration-300 group-open:rotate-180">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                      </svg> */}
+                    </div>
+                  </summary>
+                  <div className="mx-auto max-w-xs p-4 border-t border-t-gray-100">
+                    <select name="" className="block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-300 focus:ring focus:ring-primary-200 focus:ring-opacity-50 disabled:cursor-not-allowed disabled:bg-gray-50">
+                      <option value="">English</option>
+                      <option value="">Japanese</option>
+                      <option value="">Chinese</option>
+                    </select>
+                  </div>
+                </details>
+                <details className="group">
+                  <summary className="flex cursor-pointer list-none items-center justify-between p-4 text-lg font-medium text-secondary-900 group-open:bg-gray-50">
+                    Accordion item 02
+                    <div className="text-secondary-500">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="block h-5 w-5 transition-all duration-300 group-open:rotate-180">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                      </svg>
+                    </div>
+                  </summary>
+                  <div className="border-t border-t-gray-100 p-4 text-secondary-500">This is the second item's accordion body.</div>
+                </details>
+                <details className="group">
+                  <summary className="flex cursor-pointer list-none items-center justify-between p-4 text-lg font-medium text-secondary-900 group-open:bg-gray-50">
+                    Accordion item 03
+                    <div className="text-secondary-500">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="block h-5 w-5 transition-all duration-300 group-open:rotate-180">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                      </svg>
+                    </div>
+                  </summary>
+                  <div className="border-t border-t-gray-100 p-4 text-secondary-500">This is the third item's accordion body.</div>
+                </details>
+              </div>
+            </div>
+            <Accordion className="my-5 w-full">
               <Accordion.Item eventKey="0">
                 <Accordion.Header>{estudio.estudio}</Accordion.Header>
                 <Accordion.Body>
@@ -140,6 +185,7 @@ const ProgramedApointment = () => {
                 </Accordion.Body>
               </Accordion.Item>
             </Accordion>
+            </>
           );
         })}
       </div>
