@@ -9,10 +9,10 @@ import './models/sede.model';
 import './models/specialist.model';
 import './models/speciality.model';
 import './models/Specialist_Sede.model';
-import './models/shift.model'
+import './models/shift.model';
 
 async function main() {
-	await sequelize.sync({ force: false });
+	await sequelize.sync({ force: true });
 	app.listen(PORT);
 	console.log(`Server on port ${PORT}`);
 }
