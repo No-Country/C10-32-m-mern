@@ -3,8 +3,13 @@ import HeaderSm from "../../components/HeaderSm";
 import NavBar from "../../components/NavBar";
 import Calendar from "../../icons/Calendar";
 import ButtonAction from "../../components/ButtonAction";
+import { useCustomSelector } from "../../hooks/redux";
 
 const ScheduledsShifts = () => {
+  const {
+    user: { name, secondname },
+  } = useCustomSelector((state) => state);
+
   const turnosAgendados = [
     {
       name: "Hemograma completo",
@@ -34,7 +39,9 @@ const ScheduledsShifts = () => {
         <Calendar active={true} />
         <p className="text-center text-[30px] text-white leading-6">Turnos agendados</p>
       </div>
-      <h2 className="text-xl font-bold mt-6">Hola, {"Pepito Perez"}.</h2>
+      <h2 className="text-xl font-bold mt-6">
+        Hola, {name} {secondname}.
+      </h2>
       <p className="text-lg">Estas son las citas y fechas que tienes programadas</p>
       {turnosAgendados.map((turno) => (
         <div className="border border-borders rounded-md bg-white my-6">

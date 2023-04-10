@@ -52,14 +52,14 @@ export const login =
     try {
       const response: AxiosResponse = await axios.post("http:/localhost:3000/api/signin", { data });
       dispatch(setAccessToken(response.data.AUTH_TOKEN));
-      dispatch(setId(response.data.id));
-      dispatch(setName(response.data.name));
-      dispatch(setSecondName(response.data.secondname));
-      dispatch(setDocument(response.data.document));
-      dispatch(setEmail(response.data.email));
-      dispatch(setPassword(response.data.password));
-      dispatch(setPhone(response.data.phone));
-      dispatch(setObrasocialId(response.data.obrasocialId));
+      dispatch(setId(response.data[0].id));
+      dispatch(setName(response.data[0].name));
+      dispatch(setSecondName(response.data[0].secondname));
+      dispatch(setDocument(response.data[0].document));
+      dispatch(setEmail(response.data[0].email));
+      dispatch(setPassword(response.data[0].password));
+      dispatch(setPhone(response.data[0].phone));
+      dispatch(setObrasocialId(response.data[0].obrasocialId));
       return response;
     } catch (error) {
       return error as AxiosError;

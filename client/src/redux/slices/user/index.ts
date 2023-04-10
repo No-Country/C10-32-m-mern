@@ -13,8 +13,8 @@ export interface UserState {
 
 const initialState: UserState = {
   id: "",
-  name: "",
-  secondname: "",
+  name: "matias",
+  secondname: "barengo",
   document: "",
   email: "",
   password: "",
