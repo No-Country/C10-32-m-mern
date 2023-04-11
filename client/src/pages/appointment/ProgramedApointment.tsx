@@ -69,6 +69,7 @@ const ProgramedApointment = () => {
     },
   ];
 
+  // style={{ display: "flex", alignItems: "center", flexDirection: "column" }}
   return (
     <div className="">
       <HeaderSm />
@@ -79,12 +80,12 @@ const ProgramedApointment = () => {
         second={`Tienes ${citas.length} Citas programadas`}
         third={"Escoge el especialista y el horario:"}
       />
-      <div style={{ display: "flex", alignItems: "center", flexDirection: "column" }}>
+      <div className="flex lg:flex-col flex-wrap gap-8" >
         {citas?.map((cita) => {
           return (
-            <div className="mx-auto max-w-lg w-full my-6 ">
+            <div className="mx-auto max-w-lg lg:w-full w-1/3 my-6 ">
               <div className="divide-y divide-gray-100 overflow-hidden rounded-[3px] border border-gray-200 bg-white shadow-sm">
-                <details className="group" open>
+                <details className="group" >
                   <summary className="flex cursor-pointer list-none items-center justify-between p-4 text-[13px] font-bold  group-open:border-b group-open:border-b-gray-100 bg-lightBlue">
                     {cita.estudio}
                     <div className="text-secondary-500">
@@ -106,9 +107,12 @@ const ProgramedApointment = () => {
                     </p>
 
                   </div>
-                  <button className="w-full bg-[red] h-[45px] rounded-[4px] text-[13px] text-white font-bold">
+                  <div className="flex">
+                  <button className="w-1/2 bg-[red] h-[45px] my-6 mx-auto rounded-[4px] text-[13px] text-white font-bold">
                       CANCELAR
                     </button>
+
+                  </div>
                 </details>
               </div>
             </div>
@@ -117,7 +121,7 @@ const ProgramedApointment = () => {
         {pedidos.map((estudio) => {
           return (
             <>
-            <div className="mx-auto max-w-lg w-full my-6">
+            <div className="mx-auto max-w-lg lg:w-full w-1/3 my-6">
               <div className="divide-y divide-gray-100 overflow-hidden rounded-[3px] border border-gray-200 bg-white shadow-sm">
                 <details className="group text-[13px]" >
                   <summary className="flex cursor-pointer list-none items-center justify-between p-4  font-bold group-open:border-b group-open:border-b-gray-100 bg-lightPurple">

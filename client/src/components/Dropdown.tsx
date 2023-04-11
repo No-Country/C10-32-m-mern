@@ -12,7 +12,7 @@ function Dropdown({header, }:any) {
     
   }, []);
   return (
-    <div className="mx-auto max-w-lg w-full my-6">
+    <div className="mx-auto max-w-lg lg:w-full w-1/3 my-6">
               <div className="divide-y divide-gray-100 overflow-hidden rounded-[3px] border border-gray-200 bg-white shadow-sm">
                 <details className="group text-[13px]" >
                   <summary className="flex cursor-pointer list-none items-center justify-between p-4  font-bold group-open:border-b group-open:border-b-gray-100 bg-lightPurple">

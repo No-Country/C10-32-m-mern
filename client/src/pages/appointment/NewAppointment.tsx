@@ -18,15 +18,15 @@ const NewAppoitment = () =>{
                 second={"Agenda tu nueva cita"}
                 third={"Escoge una opción"}
             />
-            <div className="flex-col items-center">
-            <Link to="/search/specialists" className="flex justify-around items-center bg-gray text-[#4A4A4A] rounded-2xl h-[54px] my-8 px-6 shadow-md">
+            <div className="flex lg:flex-col items-center justify-around">
+            <Link to="/search/specialists" className="flex lg:flex-row lg:justify-around flex-col justify-center items-center bg-gray text-[#4A4A4A] rounded-2xl lg:h-[54px] h-[250px] w-[250px] my-8 px-6 shadow-md">
                     <img src={iconSpecialistSmall} alt="" />
                     <p className="font-montserrat font-semibold text-center text-[18px] leading-6">Por Especialistas</p>
                     <ButtonRight
                         color={"bg-lightBlue"}
                     />
                 </Link>
-                <Link to="/search/specialities" className="flex justify-around items-center bg-gray text-[#4A4A4A] rounded-2xl h-[54px] my-8 px-6 shadow-md">
+                <Link to="/search/specialities" className="flex lg:flex-row lg:justify-around flex-col justify-center items-center bg-gray text-[#4A4A4A] rounded-2xl lg:h-[54px] h-[250px] w-[250px] my-8 px-6 shadow-md">
                     <img src={iconHeartSmall} alt="" />
                     <p className="font-montserrat font-semibold text-center text-[18px] leading-6">Por Esp. Médicas</p>
                     <ButtonRight
