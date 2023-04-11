@@ -58,7 +58,7 @@ const Login = () => {
           />
           <MailIcon />
         </div>
-        <div className="w-full h-[50px]">
+        <div className="abolute w-full h-[50px]">
           <label htmlFor="password" />
           <input
             placeholder="Contraseña"
