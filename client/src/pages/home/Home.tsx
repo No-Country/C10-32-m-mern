@@ -26,23 +26,23 @@ const Home = () => {
   };
 
   return (
-    <div className="flex-col justify-center">
+    <div className="flex flex-col justify-center">
       <NavBar />
       <Header name={user.name} lastName={user.secondname} />
       <select
         onChange={handleChoose}
         name="select"
-        className="w-full mt-8 h-10 bg-transparent border-2 border-borders rounded-[3px] text-sm px-2"
+        className="lg:w-full mt-8 lg:h-10 w-1/2 h-12 m-auto bg-transparent border-2 border-borders rounded-[3px] text-sm px-2"
       >
         <option>Selecciona la sede</option>
         {sedes.map((sede) => (
           <option value={sede.name}>{sede.name}</option>
         ))}
       </select>
-      <div className="">
+      <div className="flex flex-wrap gap-8 justify-center lg:block">
         <Link
           to="/appointment"
-          className="flex justify-center items-center bg-lightGreen text-[#FFFFFF] rounded-2xl h-[100px] my-8 px-8"
+          className="flex justify-center items-center bg-lightGreen text-[#FFFFFF] rounded-2xl lg:h-[100px] lg:w-full h-[250px] w-[250px] my-8 px-8"
         >
           <img src={iconCalendarHome} alt="" className="mr-4" />
           <p className="font-montserrat font-semibold text-center text-[22px] leading-6">
@@ -51,7 +51,7 @@ const Home = () => {
         </Link>
         <Link
           to="/specialists"
-          className="flex justify-center items-center bg-lightBlue text-[#FFFFFF] rounded-2xl h-[100px] my-8 px-8"
+          className="flex justify-center items-center bg-lightBlue text-[#FFFFFF] rounded-2xl lg:h-[100px] lg:w-full h-[250px] w-[250px] my-8 px-8"
         >
           <img src={iconSpecialistHome} alt="" className="mr-4" />
           <p className="font-montserrat font-semibold text-center text-[22px] leading-6">
@@ -60,7 +60,7 @@ const Home = () => {
         </Link>
         <Link
           to="#"
-          className="flex justify-center items-center bg-lightYellow text-[#FFFFFF] rounded-2xl h-[100px] my-8 px-8"
+          className="flex justify-center items-center bg-lightYellow text-[#FFFFFF] rounded-2xl lg:h-[100px] lg:w-full h-[250px] w-[250px] my-8 px-8"
         >
           <img src={iconHeartHome} alt="" className="mr-4" />
           <p className="font-montserrat font-semibold text-center text-[22px] leading-6">

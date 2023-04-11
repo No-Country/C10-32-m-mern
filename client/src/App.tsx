@@ -16,7 +16,7 @@ import ScheduledsShifts from "./pages/turnosagendados/ScheduledsShifts";
 const App = () => {
   return (
     <div className="flex flex-col items-center justify-center">
-      <main className="w-screen mt-[12rem] pt-8 px-6">
+      <main className="w-screen mt-[12rem] pt-8 lg:px-6 px-[100px]">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
