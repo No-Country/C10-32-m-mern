@@ -366,7 +366,7 @@ DEVUELVE LA INFO EN EL SIGUIENTE FORMATO (EJEMPLO)
 
 ***********************************OBTENER TURNOS DISPONIBLES ***************************
 
-esta ruta devuelve los turnos disponibles 
+esta ruta devuelve los turnos disponibles, 
 
 GET localhost:3000/api/getshifts
 
