@@ -25,12 +25,7 @@ const Login = () => {
 
   const submit = async (e: SyntheticEvent) => {
     e.preventDefault();
-    dispatch(
-      login({
-        email,
-        password,
-      })
-    );
+    dispatch(login({ email, password }));
     setRedirection(true);
   };
 
