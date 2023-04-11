@@ -364,4 +364,76 @@ DEVUELVE LA INFO EN EL SIGUIENTE FORMATO (EJEMPLO)
 ]
 
 
+***********************************OBTENER TURNOS DISPONIBLES ***************************
+
+esta ruta devuelve los turnos disponibles 
+
+GET localhost:3000/api/getshifts
+
+info a enviar por BODY, EJEMPLO 
+
+{
+    "idspecialist" : 1,
+    "idsede":1,
+     "idspeciality":1,
+     "days": 4
+}
+
+nota: days es la cantidad de dias que queres que traiga la info, como es un combo para seleccionar si le ponemos 30 dias nose si va a quedar
+bien, por lo cual le puse este parametro para ir probando. 
+
+
+DEVUELVE LA INFO EN EL SIGUIENTE FORMATO (EJEMPLO) 
+
+[
+    "2023-4-11",
+    [
+        {
+            "ini": "09:00",
+            "fin:": "09:30"
+        },
+        {
+            "ini": "09:30",
+            "fin:": "10:00"
+        }
+    ],
+    "2023-4-12",
+    [
+        {
+            "ini": "09:00",
+            "fin:": "09:30"
+        },
+        {
+            "ini": "09:30",
+            "fin:": "10:00"
+        }
+    ],
+    "2023-4-13",
+    [
+        {
+            "ini": "09:00",
+            "fin:": "09:30"
+        },
+        {
+            "ini": "09:30",
+            "fin:": "10:00"
+        },
+        {
+            "ini": "10:30",
+            "fin:": "11:00"
+        }
+    ],
+    "2023-4-14",
+    [
+        {
+            "ini": "09:00",
+            "fin:": "09:30"
+        },
+        {
+            "ini": "09:30",
+            "fin:": "10:00"
+        }
+    ]
+]
+
 */
