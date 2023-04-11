@@ -84,7 +84,14 @@ INSERT INTO public."Specialist_Speciality"(
 	"createdAt", "updatedAt", "specialistId", "specialtyId")
 	VALUES ('2023-04-03', '2023-04-03', 3, 4);
 
-
+INSERT INTO public.shifts(
+	state, date, hour, "createdAt", "updatedAt", "specialistId", "userId", "sedeId", "specialtyId")
+	VALUES ( 'Tomado', '2023-04-11', '9:30', '2023-04-07' , '2023-04-07', 2, 1, 1, 1);
+    
+    
+ INSERT INTO public.shifts(
+	 state, date, hour, "createdAt", "updatedAt", "specialistId", "userId", "sedeId", "specialtyId")
+	VALUES ( 'Tomado','2023-04-12', '9:00', '2023-04-07' , '2023-04-07', 2, 1, 1, 1);
 
 
 
