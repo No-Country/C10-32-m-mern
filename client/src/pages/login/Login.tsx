@@ -66,7 +66,7 @@ const Login = () => {
           />
           <Lock />
           <ButtonEyeSlash
-            className="left-[280px] bottom-[2.7rem]"
+            className="left-[280px] bottom-[43px]"
             onClick={() => setShowPassword(!showPassword)}
           />
         </div>
