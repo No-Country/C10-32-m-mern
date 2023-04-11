@@ -86,16 +86,19 @@ let citas: Array<cita> = [
           
           citas?.map((cita) => {
             return(
-              <Accordion defaultActiveKey="0" >
-                <Accordion.Item eventKey="0" >
-                  <Accordion.Header>{cita.estudio}</Accordion.Header>
-                  <Accordion.Body>
-                    <p>Especialista: <span>{cita.especialista}</span></p>
-                    <p>Fecha: <span>{cita.fecha}</span></p>
-                    <p>Horario: <span>{cita.horario}</span></p>
-                  </Accordion.Body>
-                </Accordion.Item>
-              </Accordion>
+              <>
+                <Accordion defaultActiveKey="0" >
+                  <Accordion.Item eventKey="0" >
+                    <Accordion.Header>{cita.estudio}</Accordion.Header>
+                    <Accordion.Body>
+                      <p>Especialista: <span>{cita.especialista}</span></p>
+                      <p>Fecha: <span>{cita.fecha}</span></p>
+                      <p>Horario: <span>{cita.horario}</span></p>
+                    </Accordion.Body>
+                  </Accordion.Item>
+                </Accordion>
+                
+              </>
             )
           }) 
         }
