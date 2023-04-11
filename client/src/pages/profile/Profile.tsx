@@ -18,6 +18,7 @@ const Profile = () => {
           <IconProfile active={true} />
           <p className="text-center text-[30px] text-white leading-6">Mi Perfil</p>
         </div>
+        {fullData}
         <form action="" className="flex flex-col justify-center items gap-5 my-5">
           <input
             className="border border-borders rounded-md h-[2.5rem] px-2"
@@ -100,12 +101,14 @@ const Profile = () => {
       </div>
     );
   } else {
-    <div>
+    return (
       <div>
-        <p>Datos</p>
-        <IconPencil />
+        <div>
+          <p>Datos</p>
+          <IconPencil />
+        </div>
       </div>
-    </div>;
+    );
   }
 };
 

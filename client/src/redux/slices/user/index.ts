@@ -8,18 +8,18 @@ export interface UserState {
   email: string;
   password: string;
   phone: string;
-  obrasocialId: number | null;
+  obrasocialeId: number | null;
 }
 
 const initialState: UserState = {
   id: "",
-  name: "matias",
-  secondname: "barengo",
+  name: "",
+  secondname: "",
   document: "",
   email: "",
   password: "",
   phone: "",
-  obrasocialId: null,
+  obrasocialeId: null,
 };
 
 const userSlice = createSlice({
@@ -47,8 +47,8 @@ const userSlice = createSlice({
     setPhone: (state, action: PayloadAction<string>) => {
       state.phone = action.payload;
     },
-    setObrasocialId: (state, action: PayloadAction<number | null>) => {
-      state.obrasocialId = action.payload;
+    setObrasocialeId: (state, action: PayloadAction<number | null>) => {
+      state.obrasocialeId = action.payload;
     },
   },
 });
@@ -61,7 +61,7 @@ export const {
   setEmail,
   setPassword,
   setPhone,
-  setObrasocialId,
+  setObrasocialeId,
 } = userSlice.actions;
 
 export default userSlice.reducer;
