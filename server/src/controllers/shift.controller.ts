@@ -1,12 +1,9 @@
 import { Request, Response } from 'express';
-import { sequelize } from '../database/db'
+import { sequelize } from '../database/db';
 import moment from 'moment';
 
-
-
-
 export const getavailableshifts = async (req: Request, res: Response) => {
-
+	/*
     const { idspecialist, idsede, idspeciality , days} = req.body
 
 
@@ -109,5 +106,5 @@ export const getavailableshifts = async (req: Request, res: Response) => {
         res.status(404).send(error)
 
     }
-
-}
+ */
+};
