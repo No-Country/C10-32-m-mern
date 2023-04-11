@@ -14,7 +14,7 @@ const Register = () => {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [phone, setPhone] = useState("");
-  const [obrasocialId, setObrasocialId] = useState("");
+  const [obrasocialeId, setObrasocialeId] = useState("");
 
   // estados para mostrar y ocultar contraseñas
   const [showPassword, setShowPassword] = useState(false);
@@ -34,7 +34,7 @@ const Register = () => {
 
   const submit = async (e: SyntheticEvent) => {
     if (password === confirmPassword) {
-      if (name && secondname && document && email && password && phone && obrasocialId) {
+      if (name && secondname && document && email && password && phone && obrasocialeId) {
         e.preventDefault();
         await fetch("http://localhost:3000/api/signup", {
           method: "POST",
@@ -46,7 +46,7 @@ const Register = () => {
             email,
             password,
             phone,
-            obrasocialId: 1,
+            obrasocialeId,
           }),
         });
         setRedirection(true);
@@ -117,7 +117,7 @@ const Register = () => {
         <select
           name="marital-status"
           className="border border-borders rounded-md w-full h-[2.5rem] px-2"
-          onChange={(e) => setObrasocialId(e.target.value)}
+          onChange={(e) => setObrasocialeId(e.target.value)}
         >
           <option>Seleccione su obra social</option>
           {obraSocial.map((name) => (

@@ -3,6 +3,8 @@ import Text from "../../components/Text";
 import Title from "../../components/Title";
 import axios from "axios";
 import SpecialistsCard from "./SpecialistsCard";
+import HeaderSm from "../../components/HeaderSm";
+import NavBar from "../../components/NavBar";
 
 const Specialists = () => {
   const [search, setSearch] = useState("");
@@ -89,6 +91,8 @@ const Specialists = () => {
 
   return (
     <div>
+      <HeaderSm />
+      <NavBar />
       <Title title={"Especialistas"} />
       <Text
         first={`Hola ${name} `}

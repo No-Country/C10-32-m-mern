@@ -7,7 +7,7 @@ import {
   setEmail,
   setId,
   setName,
-  setObrasocialId,
+  setObrasocialeId,
   setPassword,
   setPhone,
   setSecondName,
@@ -50,7 +50,9 @@ export const login =
   async (dispatch): Promise<AxiosResponse | AxiosError> => {
     dispatch(setIsLoading(true));
     try {
-      const response: AxiosResponse = await axios.post("http:/localhost:3000/api/signin", { data });
+      const response: AxiosResponse = await axios.post("http://localhost:3000/api/signin", {
+        data,
+      });
       dispatch(setAccessToken(response.data.AUTH_TOKEN));
       dispatch(setId(response.data[0].id));
       dispatch(setName(response.data[0].name));
@@ -59,7 +61,7 @@ export const login =
       dispatch(setEmail(response.data[0].email));
       dispatch(setPassword(response.data[0].password));
       dispatch(setPhone(response.data[0].phone));
-      dispatch(setObrasocialId(response.data[0].obrasocialId));
+      dispatch(setObrasocialeId(response.data[0].obrasocialeId));
       return response;
     } catch (error) {
       return error as AxiosError;
