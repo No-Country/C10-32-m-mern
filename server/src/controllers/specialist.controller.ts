@@ -3,8 +3,7 @@ import { Specialist } from '../models/specialist.model';
 import { Sede } from '../models/sede.model';
 import { Op } from 'sequelize';
 import { Speciality } from '../models/speciality.model';
-import { log } from 'console';
-import { Specialist_sede } from '../models/Specialist_Sede.model';
+
 
 // Obtiene los especialistas de la sede enviada por query.
 

@@ -10,6 +10,7 @@ import obrasocialRoutes from './routes/obrasocial.routes';
 import sedeRoutes from './routes/sede.routes';
 import specialistRoutes from './routes/specialist.routes';
 import specialityRoutes from './routes/speciality.routes';
+import shiftRoutes from './routes/shift.routes';
 
 import { PORT } from './config/config';
 require('./models/associations');
@@ -26,6 +27,7 @@ app.use('/api', obrasocialRoutes);
 app.use('/api', sedeRoutes);
 app.use('/api', specialistRoutes);
 app.use('/api', specialityRoutes);
+app.use('/api', shiftRoutes);
 
 app.use('/users', userRoutes);
 
