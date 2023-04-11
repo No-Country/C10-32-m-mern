@@ -17,7 +17,7 @@ export const signup = async (req: Request, res: Response) => {
 		if (validateuser === null)
 			return res
 				.status(400)
-				.json('El DNI ingresado no pertenece a un asociado');
+				.json({ messagge: 'El DNI ingresado no pertenece a un asociado' });
 
 		//hash password
 		const hashpass = await bcrypt.hash(body.password, 10);
@@ -48,19 +48,33 @@ export const signin = async (req: Request, res: Response) => {
 	try {
 		const loginuser = await User.findAll({ where: { email: req.body.email } });
 		if (!loginuser)
-			return res.status(400).json('your credentials are not valid');
+			return res
+				.status(400)
+				.json({ messagge: 'your credentials are not valid' });
 
 		if (
 			!bcrypt.compareSync(req.body.password, loginuser[0].dataValues.password)
 		)
-			return res.status(400).json('your credentials are not valid');
+			return res
+				.status(400)
+				.json({ messagge: 'your credentials are not valid' });
 
 		const token: string = jwt.sign(
 			{ _id: loginuser[0].dataValues.id },
 			process.env.TOKEN_SECRET || 'tokenalternativo'
 		);
-		res.header('auth-token', token).json(loginuser);
-	} catch (error) {
-		res.status(404).json(error);
+		res.header('auth-token', token).json({ user: loginuser, token });
+	} catch (error: any) {
+		res.status(404).json({ messagge: error.messagge });
+	}
+};
+
+export const logout = async (req: Request, res: Response) => {
+	try {
+		return res
+			.header('auth-token', '')
+			.json({ message: 'Se ha cerrado sesión correctamente.' });
+	} catch (error: any) {
+		return res.status(400).json({ error: error.messagge });
 	}
 };
