@@ -46,14 +46,15 @@ export const { setAccessToken, setIsLoading } = authSlice.actions;
 export default authSlice.reducer;
 
 export const login =
-  (data: Login): Thunk =>
+  ({ email, password }: Login): Thunk =>
   async (dispatch): Promise<AxiosResponse | AxiosError> => {
     dispatch(setIsLoading(true));
     try {
       const response: AxiosResponse = await axios.post("http://localhost:3000/api/signin", {
-        data,
+        email,
+        password,
       });
-      dispatch(setAccessToken(response.data.AUTH_TOKEN));
+      dispatch(setAccessToken(response.headers.AUTH_TOKEN));
       dispatch(setId(response.data[0].id));
       dispatch(setName(response.data[0].name));
       dispatch(setSecondName(response.data[0].secondname));
