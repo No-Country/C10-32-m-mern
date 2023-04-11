@@ -5,6 +5,7 @@ import IconProfile from "../icons/IconProfile";
 import Calendar from "../icons/Calendar";
 import LogOut from "../icons/LogOut";
 import HeaderSm from "./HeaderSm";
+import { useCustomDispatch, useCustomSelector } from "../hooks/redux";
 
 const NavBar = () => {
   const [nav, setNav] = useState(false);
@@ -13,14 +14,22 @@ const NavBar = () => {
     console.log("state changed");
   };
 
+  const { user } = useCustomSelector((state) => state);
+  const dispatch = useCustomDispatch();
+
+  const logOut = () => {
+    handleNav();
+    dispatch;
+  };
+
   return (
     <div>
       <i
-        className="fa-solid fa-bars absolute top-6 right-6 z-[99] cursor-pointer p-4 text-[30px] text-fontNav rounded-full bg-white"
+        className="fixed fa-solid fa-bars top-6 right-6 z-[99] cursor-pointer p-4 text-[30px] text-fontNav rounded-full bg-white"
         onClick={handleNav}
       />
       {nav ? (
-        <nav className="absolute top-0 right-0 w-screen h-screen bg-bgNav flex flex-col justify-center items-center z-20 px-8">
+        <nav className="fixed top-0 right-0 w-screen h-screen bg-bgNav flex flex-col justify-center items-center z-20 px-8">
           <HeaderSm />
           <NavLink
             to="/notifications"
@@ -47,9 +56,9 @@ const NavBar = () => {
             <p className="text-center text-[30px] text-fontNav leading-6">Turnos Agendados</p>
           </NavLink>
           <NavLink
-            to="/"
+            to="/login"
             className="w-full flex justify-start items-center gap-8 bg-white text-[#FFFFFF] drop-shadow rounded-2xl h-[5rem] my-5 px-8"
-            onClick={handleNav}
+            onClick={logOut}
           >
             <LogOut />
             <p className="text-center text-[30px] text-fontNav leading-6">Cerrar Sesión</p>

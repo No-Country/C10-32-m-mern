@@ -13,6 +13,7 @@ const obrasocial_routes_1 = __importDefault(require("./routes/obrasocial.routes"
 const sede_routes_1 = __importDefault(require("./routes/sede.routes"));
 const specialist_routes_1 = __importDefault(require("./routes/specialist.routes"));
 const speciality_routes_1 = __importDefault(require("./routes/speciality.routes"));
+const shift_routes_1 = __importDefault(require("./routes/shift.routes"));
 const config_1 = require("./config/config");
 require('./models/associations');
 //settings
@@ -27,6 +28,7 @@ app.use('/api', obrasocial_routes_1.default);
 app.use('/api', sede_routes_1.default);
 app.use('/api', specialist_routes_1.default);
 app.use('/api', speciality_routes_1.default);
+app.use('/api', shift_routes_1.default);
 app.use('/users', user_routes_1.default);
 exports.default = app;
 //# sourceMappingURL=app.js.map

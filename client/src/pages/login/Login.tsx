@@ -5,29 +5,32 @@ import ButtonLogIn from "../../components/ButtonLogIn";
 import HeaderSm from "../../components/HeaderSm";
 import Lock from "../../icons/Lock";
 import MailIcon from "../../icons/MailIcon";
+import { useCustomSelector, useCustomDispatch } from "../../hooks/redux";
+import { login } from "../../redux/slices/auth";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  const [showPassword, setShowPassword] = useState(true);
+
   const navigate = useNavigate();
   const [redirection, setRedirection] = useState(false);
 
+  const {
+    auth: { accessToken, isLoading },
+  } = useCustomSelector((state) => state);
+  const dispatch = useCustomDispatch();
+  console.log(accessToken);
+
   const submit = async (e: SyntheticEvent) => {
     e.preventDefault();
-    await fetch("http://localhost:3000/api/signin", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "auth-token":
-          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiJjMDMyYjdkNi0zZTMwLTQ4MzItODk2OC00NTRhYTlmZDY2YWEiLCJpYXQiOjE2ODA2MTQ0Mzd9.muQX0rVZEOkd-CFCj5CzmMUz5HVIoJqoiwGWdiKqffc",
-      },
-      credentials: "include",
-      body: JSON.stringify({
+    dispatch(
+      login({
         email,
         password,
-      }),
-    });
+      })
+    );
     setRedirection(true);
   };
 
@@ -59,7 +62,7 @@ const Login = () => {
           <label htmlFor="password" />
           <input
             placeholder="Contraseña"
-            type="password"
+            type={showPassword ? "password" : "text"}
             id="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
@@ -67,10 +70,14 @@ const Login = () => {
             className="relative w-full border-[.5px] border-buttonBg rounded-md pl-7"
           />
           <Lock />
-          <ButtonEyeSlash />
+          <ButtonEyeSlash
+            className="left-[280px] bottom-[2.7rem]"
+            onClick={() => setShowPassword(!showPassword)}
+          />
         </div>
         <ButtonLogIn className="mt-[3rem]">Iniciar Sesion</ButtonLogIn>
       </form>
+      {isLoading && "cargando..."}
     </div>
   );
 };

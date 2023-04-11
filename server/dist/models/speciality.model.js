@@ -13,10 +13,11 @@ exports.Speciality = db_1.sequelize.define('specialties', {
     },
     description: {
         type: sequelize_1.DataTypes.STRING,
-        allowNull: false
+        allowNull: false,
     },
 }, {
     timestamps: false,
+    tableName: 'specialities',
 });
 // Speciality.belongsToMany(Specialist)
 // Specialist.belongsToMany(Speciality)

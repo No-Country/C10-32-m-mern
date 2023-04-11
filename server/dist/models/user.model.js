@@ -6,10 +6,10 @@ const db_1 = require("../database/db");
 const obrasocial_model_1 = require("./obrasocial.model");
 exports.User = db_1.sequelize.define('users', {
     id: {
-        type: sequelize_1.DataTypes.UUID,
+        type: sequelize_1.DataTypes.INTEGER,
         allowNull: false,
         primaryKey: true,
-        defaultValue: sequelize_1.UUIDV4,
+        autoIncrement: true,
     },
     name: {
         type: sequelize_1.DataTypes.STRING,
@@ -37,8 +37,12 @@ exports.User = db_1.sequelize.define('users', {
         type: sequelize_1.DataTypes.STRING,
         allowNull: false,
     },
+    obrasocialId: {
+        type: sequelize_1.DataTypes.INTEGER,
+    },
 }, {
     timestamps: false,
+    tableName: 'users',
 });
 exports.User.belongsTo(obrasocial_model_1.ObraSocial);
 //# sourceMappingURL=user.model.js.map

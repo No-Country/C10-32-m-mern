@@ -1,4 +1,3 @@
-
 /*
 A TODAS LAS RUTAS cuando la llamen desde el fron agregar http://
 
@@ -126,23 +125,35 @@ enviar por  QUERY la id de la sede
 
 DEVUELVE LA INFO EN EL SIGUIENTE FORMATO (EJEMPLO)
 
-[
-    {
+ {
         "id": 2,
         "name": "SUR",
         "specialists": [
             {
-                "id": 2,
-                "name": "Perez Juan",
-                "speciality": "Clinico",
-                "adress": "direccion 213",
-                "phone": "14433654",
-                "tuition": "c15654",
-                "consultingRoom": "109",
+                "id": 1,
+                "name": "Gonzalez Pedro",
+                "speciality": "Cardilogo",
+                "adress": "direccion 211",
+                "phone": "14433434",
+                "tuition": "c3er5",
+                "consultingRoom": "108",
                 "Specialist_sede": {
-                    "createdAt": "2023-04-01T03:00:00.000Z",
-                    "updatedAt": "2023-04-01T03:00:00.000Z",
-                    "specialistId": 2,
+                    "mondayini": "13:00:00",
+                    "mondayend": "15:00:00",
+                    "mondaytotal": 4,
+                    "tuesdayini": "13:00:00",
+                    "tuesdayend": "15:00:00",
+                    "tuesdaytotal": 4,
+                    "wednesdayini": "13:00:00",
+                    "wednesdayend": "15:00:00",
+                    "wednesdaytotal": 4,
+                    "thursdayini": "13:00:00",
+                    "thursdayend": "15:00:00",
+                    "thursdaytotal": 4,
+                    "fridayini": null,
+                    "fridayend": null,
+                    "fridaytotal": null,
+                    "specialistId": 1,
                     "sedeId": 2
                 },
                 "specialties": [
@@ -152,7 +163,7 @@ DEVUELVE LA INFO EN EL SIGUIENTE FORMATO (EJEMPLO)
                         "Specialist_Speciality": {
                             "createdAt": "2023-04-03T03:00:00.000Z",
                             "updatedAt": "2023-04-03T03:00:00.000Z",
-                            "specialistId": 2,
+                            "specialistId": 1,
                             "specialtyId": 1
                         }
                     },
@@ -162,45 +173,18 @@ DEVUELVE LA INFO EN EL SIGUIENTE FORMATO (EJEMPLO)
                         "Specialist_Speciality": {
                             "createdAt": "2023-04-03T03:00:00.000Z",
                             "updatedAt": "2023-04-03T03:00:00.000Z",
-                            "specialistId": 2,
+                            "specialistId": 1,
                             "specialtyId": 2
-                        }
-                    }
-                ]
-            },
-            {
-                "id": 3,
-                "name": "Simpson Homero",
-                "speciality": "Neumonologo",
-                "adress": "direccion 111",
-                "phone": "1253434",
-                "tuition": "d43er55",
-                "consultingRoom": "308",
-                "Specialist_sede": {
-                    "createdAt": "2023-04-01T03:00:00.000Z",
-                    "updatedAt": "2023-04-01T03:00:00.000Z",
-                    "specialistId": 3,
-                    "sedeId": 2
-                },
-                "specialties": [
-                    {
-                        "id": 4,
-                        "description": "Oftalmología",
-                        "Specialist_Speciality": {
-                            "createdAt": "2023-04-03T03:00:00.000Z",
-                            "updatedAt": "2023-04-03T03:00:00.000Z",
-                            "specialistId": 3,
-                            "specialtyId": 4
                         }
                     },
                     {
-                        "id": 5,
-                        "description": "Pediatría",
+                        "id": 6,
+                        "description": "Medico Clínico",
                         "Specialist_Speciality": {
                             "createdAt": "2023-04-03T03:00:00.000Z",
                             "updatedAt": "2023-04-03T03:00:00.000Z",
-                            "specialistId": 3,
-                            "specialtyId": 5
+                            "specialistId": 1,
+                            "specialtyId": 6
                         }
                     }
                 ]
@@ -208,7 +192,6 @@ DEVUELVE LA INFO EN EL SIGUIENTE FORMATO (EJEMPLO)
         ]
     }
 ]
-
 
 
 
@@ -259,33 +242,103 @@ enviar por paramas el id del medico
 DEVUELVE LA INFO EN EL SIGUIENTE FORMATO (EJEMPLO) en este caso el especista tiene dos especialidades 
 
 {
-    "id": 2,
-    "name": "Perez Juan",
-    "speciality": "Clinico",
-    "adress": "direccion 213",
-    "phone": "14433654",
-    "tuition": "c15654",
-    "consultingRoom": "109",
-    "specialties": [
+    "id": 1,
+    "name": "Gonzalez Pedro",
+    "speciality": "Cardilogo",
+    "adress": "direccion 211",
+    "phone": "14433434",
+    "tuition": "c3er5",
+    "consultingRoom": "108",
+    "sedes": [
         {
             "id": 1,
-            "description": "Cardiología",
-            "Specialist_Speciality": {
-                "createdAt": "2023-04-03T03:00:00.000Z",
-                "updatedAt": "2023-04-03T03:00:00.000Z",
-                "specialistId": 2,
-                "specialtyId": 1
-            }
+            "name": "NORTE",
+            "Specialist_sede": {
+                "mondayini": "09:00:00",
+                "mondayend": "10:00:00",
+                "mondaytotal": 2,
+                "tuesdayini": "09:00:00",
+                "tuesdayend": "10:00:00",
+                "tuesdaytotal": 2,
+                "wednesdayini": "09:00:00",
+                "wednesdayend": "10:00:00",
+                "wednesdaytotal": 2,
+                "thursdayini": "09:00:00",
+                "thursdayend": "10:00:00",
+                "thursdaytotal": 2,
+                "fridayini": "09:00:00",
+                "fridayend": "10:00:00",
+                "fridaytotal": 2,
+                "specialistId": 1,
+                "sedeId": 1
+            },
+            "specialties": [
+                {
+                    "id": 1,
+                    "description": "Cardiología",
+                    "Speciality_sede": {
+                        "createdAt": "2023-04-02T03:00:00.000Z",
+                        "updatedAt": "2023-04-02T03:00:00.000Z",
+                        "specialtyId": 1,
+                        "sedeId": 1
+                    }
+                },
+                {
+                    "id": 2,
+                    "description": "Nutricionista",
+                    "Speciality_sede": {
+                        "createdAt": "2023-04-02T03:00:00.000Z",
+                        "updatedAt": "2023-04-02T03:00:00.000Z",
+                        "specialtyId": 2,
+                        "sedeId": 1
+                    }
+                }
+            ]
         },
         {
             "id": 2,
-            "description": "Nutricionista",
-            "Specialist_Speciality": {
-                "createdAt": "2023-04-03T03:00:00.000Z",
-                "updatedAt": "2023-04-03T03:00:00.000Z",
-                "specialistId": 2,
-                "specialtyId": 2
-            }
+            "name": "SUR",
+            "Specialist_sede": {
+                "mondayini": "13:00:00",
+                "mondayend": "15:00:00",
+                "mondaytotal": 4,
+                "tuesdayini": "13:00:00",
+                "tuesdayend": "15:00:00",
+                "tuesdaytotal": 4,
+                "wednesdayini": "13:00:00",
+                "wednesdayend": "15:00:00",
+                "wednesdaytotal": 4,
+                "thursdayini": "13:00:00",
+                "thursdayend": "15:00:00",
+                "thursdaytotal": 4,
+                "fridayini": null,
+                "fridayend": null,
+                "fridaytotal": null,
+                "specialistId": 1,
+                "sedeId": 2
+            },
+            "specialties": [
+                {
+                    "id": 1,
+                    "description": "Cardiología",
+                    "Speciality_sede": {
+                        "createdAt": "2023-04-02T03:00:00.000Z",
+                        "updatedAt": "2023-04-02T03:00:00.000Z",
+                        "specialtyId": 1,
+                        "sedeId": 2
+                    }
+                },
+                {
+                    "id": 2,
+                    "description": "Nutricionista",
+                    "Speciality_sede": {
+                        "createdAt": "2023-04-02T03:00:00.000Z",
+                        "updatedAt": "2023-04-02T03:00:00.000Z",
+                        "specialtyId": 2,
+                        "sedeId": 2
+                    }
+                }
+            ]
         }
     ]
 }
@@ -310,5 +363,77 @@ DEVUELVE LA INFO EN EL SIGUIENTE FORMATO (EJEMPLO)
     }
 ]
 
+
+***********************************OBTENER TURNOS DISPONIBLES ***************************
+
+esta ruta devuelve los turnos disponibles, 
+
+GET localhost:3000/api/getshifts
+
+info a enviar por BODY, EJEMPLO 
+
+{
+    "idspecialist" : 1,
+    "idsede":1,
+     "idspeciality":1,
+     "days": 4
+}
+
+nota: days es la cantidad de dias que queres que traiga la info, como es un combo para seleccionar si le ponemos 30 dias nose si va a quedar
+bien, por lo cual le puse este parametro para ir probando. 
+
+
+DEVUELVE LA INFO EN EL SIGUIENTE FORMATO (EJEMPLO) 
+
+[
+    "2023-4-11",
+    [
+        {
+            "ini": "09:00",
+            "fin:": "09:30"
+        },
+        {
+            "ini": "09:30",
+            "fin:": "10:00"
+        }
+    ],
+    "2023-4-12",
+    [
+        {
+            "ini": "09:00",
+            "fin:": "09:30"
+        },
+        {
+            "ini": "09:30",
+            "fin:": "10:00"
+        }
+    ],
+    "2023-4-13",
+    [
+        {
+            "ini": "09:00",
+            "fin:": "09:30"
+        },
+        {
+            "ini": "09:30",
+            "fin:": "10:00"
+        },
+        {
+            "ini": "10:30",
+            "fin:": "11:00"
+        }
+    ],
+    "2023-4-14",
+    [
+        {
+            "ini": "09:00",
+            "fin:": "09:30"
+        },
+        {
+            "ini": "09:30",
+            "fin:": "10:00"
+        }
+    ]
+]
 
 */

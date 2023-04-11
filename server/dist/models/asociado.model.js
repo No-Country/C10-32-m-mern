@@ -14,8 +14,9 @@ exports.Asociado = db_1.sequelize.define('asociados', {
         type: sequelize_1.DataTypes.STRING,
         allowNull: false,
         unique: true,
-    }
+    },
 }, {
     timestamps: false,
+    tableName: 'asociados',
 });
 //# sourceMappingURL=asociado.model.js.map

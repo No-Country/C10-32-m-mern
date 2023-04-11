@@ -8,13 +8,12 @@ import authRoutes from './routes/auth.routes';
 import userRoutes from './routes/user.routes';
 import obrasocialRoutes from './routes/obrasocial.routes';
 import sedeRoutes from './routes/sede.routes';
-import specialistRoutes  from './routes/specialist.routes';
-import specialityRoutes  from './routes/speciality.routes'
+import specialistRoutes from './routes/specialist.routes';
+import specialityRoutes from './routes/speciality.routes';
+import shiftRoutes from './routes/shift.routes';
 
 import { PORT } from './config/config';
-require ('./models/associations')
-
-
+require('./models/associations');
 
 //settings
 app.set('port', PORT);
@@ -28,11 +27,8 @@ app.use('/api', obrasocialRoutes);
 app.use('/api', sedeRoutes);
 app.use('/api', specialistRoutes);
 app.use('/api', specialityRoutes);
+app.use('/api', shiftRoutes);
 
 app.use('/users', userRoutes);
-
-
-
-
 
 export default app;
