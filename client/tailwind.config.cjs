@@ -11,6 +11,8 @@ module.exports = {
       lightGreen: '#76D9D5',
       lightBlue: '#7BB5FF',
       lightYellow: '#E8D633',
+      lightPurple: '#F3EDF7',
+      darkPurple: '#6750A4',
       buttonBg: '#1C1B1F',
       bgNav: '#E9F3FF',
       fontNav: '#2381f9',
