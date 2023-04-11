@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import Text from "../../components/Text";
 import Title from "../../components/Title";
 import iconSearchSmall from "../../assets/iconSearchSmall.svg";
+import Dropdown from "../../components/Dropdown";
 
 
 const Search = () =>{
@@ -35,6 +36,7 @@ const Search = () =>{
                             </button>
                         </div> */}
                         <input className="w-full h-[44px] px-2 border-2 border-borders rounded-[3px] text-[13px]" type="search" placeholder="Escribe el nombre del especialista"/>
+                        <Dropdown />
                         
                        
                        </>
