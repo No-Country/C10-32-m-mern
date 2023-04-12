@@ -1,9 +1,10 @@
 import { Request, Response } from 'express';
 import { sequelize } from '../database/db';
 import moment from 'moment';
+import { Shift } from '../models/shift.model';
 
 export const getavailableshifts = async (req: Request, res: Response) => {
-	/*
+	
     const { idspecialist, idsede, idspeciality , days} = req.body
 
 
@@ -17,6 +18,8 @@ export const getavailableshifts = async (req: Request, res: Response) => {
     var today = new Date();
     var now = new Date();
     var maxday = sumarDias(now, days) // me permite establecer la cantidad de dias de las que voy a traer informacion. 
+
+    console.log('TODAY**********', today)
 
     const infoturno = await sequelize.query('SELECT mondayini, mondayend, mondaytotal, tuesdayini, tuesdayend, tuesdaytotal, wednesdayini, wednesdayend, wednesdaytotal, thursdayini, thursdayend, thursdaytotal, fridayini, fridayend, fridaytotal, "specialistId", "sedeId" FROM "Specialist_sede"  where "specialistId" =' + idspecialist + 'AND "sedeId" =' + idsede + ';')
 
@@ -106,5 +109,35 @@ export const getavailableshifts = async (req: Request, res: Response) => {
         res.status(404).send(error)
 
     }
- */
+ 
 };
+
+
+export const scheduleshift = async (req: Request, res: Response) => {
+
+    const { body } = req;
+
+	 try {
+		
+
+		//registrando turno//
+		const newShift = await Shift.create({
+			state: body.state,
+			date: body.date,
+			hour: body.hour,
+			specialistId: body.specialistId,
+			userId: body.userId,
+			sedeId: body.sedeId,
+			specialtyId: body.specialtyId,
+		});
+
+		
+		res.status(200).json({ Shift: newShift });
+       
+	} catch (error: any) {
+		res.status(400).json({ error: error.messagge });
+	}
+
+
+
+}

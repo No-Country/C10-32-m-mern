@@ -32,6 +32,8 @@ export const signup = async (req: Request, res: Response) => {
 			phone: body.phone,
 			obrasocialeId: body.obrasocialId,
 		});
+
+		console.log(newUser)
 		// creo token
 		const token: string = jwt.sign(
 			{ _id: newUser.dataValues.id },

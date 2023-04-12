@@ -12,9 +12,10 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getavailableshifts = void 0;
+exports.scheduleshift = exports.getavailableshifts = void 0;
 const db_1 = require("../database/db");
 const moment_1 = __importDefault(require("moment"));
+const shift_model_1 = require("../models/shift.model");
 const getavailableshifts = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t;
     const { idspecialist, idsede, idspeciality, days } = req.body;
@@ -26,6 +27,7 @@ const getavailableshifts = (req, res) => __awaiter(void 0, void 0, void 0, funct
     var today = new Date();
     var now = new Date();
     var maxday = sumarDias(now, days); // me permite establecer la cantidad de dias de las que voy a traer informacion. 
+    console.log('TODAY**********', today);
     const infoturno = yield db_1.sequelize.query('SELECT mondayini, mondayend, mondaytotal, tuesdayini, tuesdayend, tuesdaytotal, wednesdayini, wednesdayend, wednesdaytotal, thursdayini, thursdayend, thursdaytotal, fridayini, fridayend, fridaytotal, "specialistId", "sedeId" FROM "Specialist_sede"  where "specialistId" =' + idspecialist + 'AND "sedeId" =' + idsede + ';');
     try {
         while (today <= maxday) {
@@ -90,4 +92,24 @@ const getavailableshifts = (req, res) => __awaiter(void 0, void 0, void 0, funct
     }
 });
 exports.getavailableshifts = getavailableshifts;
+const scheduleshift = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    const { body } = req;
+    try {
+        //registrando turno//
+        const newShift = yield shift_model_1.Shift.create({
+            state: body.state,
+            date: body.date,
+            hour: body.hour,
+            specialistId: body.specialistId,
+            userId: body.userId,
+            sedeId: body.sedeId,
+            specialtyId: body.specialtyId,
+        });
+        res.status(200).json({ Shift: newShift });
+    }
+    catch (error) {
+        res.status(400).json({ error: error.messagge });
+    }
+});
+exports.scheduleshift = scheduleshift;
 //# sourceMappingURL=shift.controller.js.map
