@@ -34,7 +34,7 @@ const Login = () => {
   }
 
   return (
-    <div className="flex flex-col justify-center items-center">
+    <div className="flex flex-col justify-center items-center mb-[10rem]">
       <HeaderSm />
       <form
         className="h-[100%] w-[19rem] mt-[3rem] flex flex-col items-center justify-center"

@@ -54,7 +54,8 @@ export const login =
         email,
         password,
       });
-      dispatch(setAccessToken(response.headers.AUTH_TOKEN));
+      dispatch(setAccessToken(response.data.token));
+      console.log(response);
       dispatch(setId(response.data[0].id));
       dispatch(setName(response.data[0].name));
       dispatch(setSecondName(response.data[0].secondname));
