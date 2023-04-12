@@ -41,6 +41,7 @@ const signup = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
             phone: body.phone,
             obrasocialeId: body.obrasocialId,
         });
+        console.log(newUser);
         // creo token
         const token = jsonwebtoken_1.default.sign({ _id: newUser.dataValues.id }, process.env.TOKEN_SECRET || 'tokenalternativo');
         res.header('auth-token', token).json({ user: newUser });

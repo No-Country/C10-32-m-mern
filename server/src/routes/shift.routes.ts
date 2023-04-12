@@ -1,9 +1,10 @@
 import { Router } from 'express';
-import { getavailableshifts } from '../controllers/shift.controller';
+import { getavailableshifts, scheduleshift } from '../controllers/shift.controller';
 
 const router: Router = Router();
 
 router.get('/getshifts', getavailableshifts);
+router.post('/scheduleshifts', scheduleshift);
 
 
 
