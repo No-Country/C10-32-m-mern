@@ -39,6 +39,27 @@ const ProgramedApointment = () => {
       fecha: ["26 de Abril", "27 de Abril", "28 de Abril"],
       horarios: ["09:00", "10:30", "11:00"],
     },
+    {
+      estudio: "Electrocardiograma",
+      especialidad: "Cardiologia",
+      especialistas: ["Dr. Pedro Pascal", "Dr. Strange"],
+      fecha: ["26 de Abril", "27 de Abril", "28 de Abril"],
+      horarios: ["09:00", "10:30", "11:00"],
+    },
+    {
+      estudio: "Colonoscopia",
+      especialidad: "Gastroenterologia",
+      especialistas: ["Dr. Bruno Diaz", "Dra. Martinez"],
+      fecha: ["26 de Abril", "27 de Abril", "28 de Abril"],
+      horarios: ["09:00", "10:30", "11:00"],
+    },
+    {
+      estudio: "Espirometria",
+      especialidad: "Neumonologia",
+      especialistas: ["Dr. Pedro Pascal", "Dr. Strange"],
+      fecha: ["26 de Abril", "27 de Abril", "28 de Abril"],
+      horarios: ["09:00", "10:30", "11:00"],
+    },
   ];
 
   interface turno {
@@ -80,7 +101,7 @@ const ProgramedApointment = () => {
         second={`Tienes ${citas.length} Citas programadas`}
         third={"Escoge el especialista y el horario:"}
       />
-      <div className="flex lg:flex-col flex-wrap gap-8" >
+      <div className="flex lg:flex-col flex-wrap gap-8 pb-10" >
         {citas?.map((cita) => {
           return (
             <div className="mx-auto max-w-lg lg:w-full w-1/3 my-6 ">

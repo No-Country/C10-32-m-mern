@@ -12,11 +12,12 @@ import Register from "./pages/register/Register";
 import Login from "./pages/login/Login";
 import Search from "./pages/search/Search";
 import ScheduledsShifts from "./pages/turnosagendados/ScheduledsShifts";
+import Footer from "./components/Footer";
 
 const App = () => {
   return (
     <div className="flex flex-col items-center justify-center">
-      <main className="w-screen mt-[12rem] pt-8 lg:px-6 px-[100px]">
+      <main className="w-screen mt-[12rem] pt-8 lg:px-6 px-28 ">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
@@ -32,6 +33,7 @@ const App = () => {
           <Route path="/search/:category" element={<Search />} />
         </Routes>
       </main>
+      <Footer/>
     </div>
   );
 };

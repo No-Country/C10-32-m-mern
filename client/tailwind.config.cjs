@@ -22,7 +22,8 @@ module.exports = {
 
     },
     fontFamily: {
-      montserrat: [ 'Montserrat' ]
+      montserrat: [ 'Montserrat' ],
+      inter: ['Inter']
     },
     screens: {
       '2xl': { 'max': '1535px' },
