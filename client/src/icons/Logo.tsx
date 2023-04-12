@@ -1,6 +1,9 @@
 const Logo = () => {
+  // lg:absolute lg:top-[4rem]
+
+  
     return (
-      <div className="lg:absolute lg:top-[4rem]">
+      <div >
         <svg
           width="200"
           height="80"
