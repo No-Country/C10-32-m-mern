@@ -18,7 +18,7 @@ const Notifications = () => {
   };
 
   return (
-    <>
+    <div className="flex flex-col">
       <HeaderSm />
       <NavBar />
       <div className="w-full flex justify-start items-center gap-8 bg-fontNav drop-shadow rounded-2xl h-[5rem] px-8">
@@ -31,7 +31,7 @@ const Notifications = () => {
         {<NotificationsDetail data={data} />}
         {<NotificationsDetail data={data} />}
       </section>
-    </>
+    </div>
   );
 };
 

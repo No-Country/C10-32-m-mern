@@ -12,7 +12,7 @@ interface Data {
 
 const NotificationsDetail = ({ data }: Data) => {
   return (
-    <div className="flex flex-col w-full h-full border border-borders rounded-xl bg-white my-8 overflow-hidden">
+    <div className="flex flex-col w-full h-fit border border-borders rounded-xl bg-white my-8 overflow-hidden">
       <div className="flex justify-center items-center border-b border-borders w-full pt-2">
         <p className="font-bold px-4">
           Hola, {data.name} {data.secondname}, recuerda tu cita de {data.date}
