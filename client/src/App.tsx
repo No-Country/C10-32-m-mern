@@ -13,13 +13,15 @@ import Login from "./pages/login/Login";
 import Search from "./pages/search/Search";
 import ScheduledsShifts from "./pages/turnosagendados/ScheduledsShifts";
 import Footer from "./components/Footer";
+import Landing from "./pages/landing/Landing";
 
 const App = () => {
   return (
     <div className="flex flex-col items-center justify-center">
       <main className="flex justify-center w-screen mt-[12rem] pt-8 lg:px-6 px-28 ">
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Landing />} />
+          <Route path="/home" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/appointment" element={<AppointmentOptions />} />

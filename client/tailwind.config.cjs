@@ -13,12 +13,16 @@ module.exports = {
       lightYellow: '#E8D633',
       lightPurple: '#F3EDF7',
       darkPurple: '#6750A4',
+      darkBlue: '#1A60B9',
       buttonBg: '#1C1B1F',
       bgNav: '#E9F3FF',
       fontNav: '#2381f9',
       white: '#ffffff',
+      black: '#000000',
       gray: '#FFFBFE',
-      actionButtonBg: '#6750A4'
+      actionButtonBg: '#6750A4',
+      textWhite: '#FFFBFE',
+
 
     },
     fontFamily: {
