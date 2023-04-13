@@ -4,13 +4,9 @@ import Logo from "../icons/Logo";
 import { Link } from "react-router-dom";
 import Profile from "../icons/IconProfile";
 import { useCustomSelector } from "../hooks/redux";
+import NavBarDesktop from "./NavBarDesktop";
 
-interface UserName {
-  name: string;
-  lastName: string;
-}
-
-export default function Header({ name, lastName }: UserName) {
+export default function Header() {
   const { user } = useCustomSelector((state) => state);
 
   const date = new Date();
@@ -19,6 +15,7 @@ export default function Header({ name, lastName }: UserName) {
   return (
     <div className="fixed z-10 top-0 right-0 flex flex-col items-center justify-center w-full h-[12.5rem] bg-gradient-to-b from-primary-start to-primary-end">
       <div className="flex">
+        <NavBarDesktop />
         <Logo />
         <Link
           to={"/login"}
