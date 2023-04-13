@@ -33,7 +33,7 @@ const Login = () => {
   };
 
   if (redirection) {
-    navigate("/");
+    navigate("/home");
   }
 
   return (
