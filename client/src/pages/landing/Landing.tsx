@@ -1,15 +1,14 @@
 import ButtonAction from "../../components/ButtonAction";
 import Map from "../../assets/Mapsicle Map.jpg";
-import Bg from "../../assets/Mask group.png";
-import ImgDoc from "../../assets/Rectangle 1741.png"
+import Bg from "../../assets/landingBg.svg";
+import IconLanding from "../../icons/IconLanding";
+
 
 const Landing = () =>{
     return(
         <div>
             <section className="py-6">
-                <div style={{backgroundImage:`url(${Bg})`}} className="">
-                    <img src={ImgDoc} alt="" />
-                </div>
+                {/* <IconLanding/> */}
                 <div className="text-center">
                     <p className="font-montserrat font-extrabold text-center text-[16px] leading-[50px] tracking-widest text-darkBlue py-4">AHORRA TU TIEMPO Y ORGANIZA TUS TURNOS MEDICOS DE FORMA FÁCIL Y RÁPIDA</p>
                 </div>
