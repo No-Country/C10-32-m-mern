@@ -6,7 +6,12 @@ import Profile from "../icons/IconProfile";
 import { useCustomSelector } from "../hooks/redux";
 import NavBarDesktop from "./NavBarDesktop";
 
-export default function Header() {
+interface User {
+  name: string;
+  lastName: string;
+}
+
+export default function Header({ name, lastName }: User) {
   const { user } = useCustomSelector((state) => state);
 
   const date = new Date();

@@ -1,8 +1,7 @@
 import ButtonAction from "../../components/ButtonAction";
 import Map from "../../assets/Mapsicle Map.jpg";
-import Bg from "../../assets/landingBg.svg";
 import IconLanding from "../../icons/IconLanding";
-import { Navigate, useNavigate } from "react-router";
+import { useNavigate } from "react-router";
 
 const Landing = () => {
   const navigate = useNavigate();
