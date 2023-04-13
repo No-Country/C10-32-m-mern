@@ -39,31 +39,32 @@ const Home = () => {
           <option value={sede.name}>{sede.name}</option>
         ))}
       </select>
+      
       <div className="flex flex-wrap gap-8 justify-center lg:block">
         <Link
           to="/appointment"
-          className="flex justify-center items-center bg-lightGreen text-[#FFFFFF] rounded-2xl lg:h-[100px] lg:w-full h-[250px] w-[250px] my-8 px-8"
+          className="flex items-center bg-lightGreen text-[#FFFFFF] rounded-2xl lg:h-[100px] lg:w-full h-[250px] w-[250px] my-8 px-[43px]"
         >
-          <img src={iconCalendarHome} alt="" className="mr-4" />
-          <p className="font-montserrat font-semibold text-center text-[22px] leading-6">
+          <img src={iconCalendarHome} alt="" />
+          <p className="font-montserrat font-semibold text-start text-[22px] leading-6 px-[23px] lg:w-1/2">
             Agenda tu turno
           </p>
         </Link>
         <Link
           to="/specialists"
-          className="flex justify-center items-center bg-lightBlue text-[#FFFFFF] rounded-2xl lg:h-[100px] lg:w-full h-[250px] w-[250px] my-8 px-8"
+          className="flex  items-center bg-lightBlue text-[#FFFFFF] rounded-2xl lg:h-[100px] lg:w-full h-[250px] w-[250px] my-8 px-[43px]"
         >
-          <img src={iconSpecialistHome} alt="" className="mr-4" />
-          <p className="font-montserrat font-semibold text-center text-[22px] leading-6">
+          <img src={iconSpecialistHome} alt="" />
+          <p className="font-montserrat font-semibold text-start text-[22px] leading-6 px-[23px]">
             Especialistas
           </p>
         </Link>
         <Link
           to="#"
-          className="flex justify-center items-center bg-lightYellow text-[#FFFFFF] rounded-2xl lg:h-[100px] lg:w-full h-[250px] w-[250px] my-8 px-8"
+          className="flex items-center bg-lightYellow text-[#FFFFFF] rounded-2xl lg:h-[100px] lg:w-full h-[250px] w-[250px] my-8 px-[43px]"
         >
-          <img src={iconHeartHome} alt="" className="mr-4" />
-          <p className="font-montserrat font-semibold text-center text-[22px] leading-6">
+          <img src={iconHeartHome} alt=""  />
+          <p className="font-montserrat font-semibold text-start text-[22px] leading-6 px-[23px]">
             Esp. Médicas
           </p>
         </Link>

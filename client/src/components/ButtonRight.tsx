@@ -2,6 +2,8 @@ import React, { FC } from "react";
 interface IActionButton
   extends React.ComponentPropsWithoutRef<"button"> {}
 
+import RightArrow from "../assets/chevron-right.svg"
+
 export const ButtonRight: FC<IActionButton> = ({
   children,
   className,
@@ -11,10 +13,10 @@ export const ButtonRight: FC<IActionButton> = ({
   return (
     <button
       type="submit"
-      className={`${color} text-secondary text-md w-[2.5rem] h-[2.5rem] rounded-full mt-[7rem]${className}`}
+      className={`${color} text-secondary text-md w-12 h-12 rounded-full mt-[7rem]${className}`}
       {...buttonProps}
     >
-      <i className="fa-solid fa-arrow-right"></i>
+      <img src={RightArrow} alt="" className="m-auto" />
     </button>
   );
 };
