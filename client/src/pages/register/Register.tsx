@@ -68,13 +68,14 @@ const Register = () => {
     <div>
       <HeaderSm />
       <div className="flex flex-col justify-center items-center">
-        <div className="w-[23rem]">
+        <div className="w-[23rem] bg-white p-4 mb-[3rem] rounded-xl">
+          <h2 className="mb-[2rem] text-xl">Completa tus datos:</h2>
           <form
             className="h-[100%] w-full flex flex-col gap-[1rem] items-center justify-between"
             onSubmit={submit}
           >
             <input
-              className="relative w-full max-w-[320px] h-[2.5rem] border-[.5px] border-borders rounded-md pl-2"
+              className="relative w-full h-[2.5rem] border-[.5px] border-borders rounded-md pl-2"
               type="text"
               id="name"
               value={name}
@@ -82,7 +83,7 @@ const Register = () => {
               placeholder="Nombre"
             />
             <input
-              className="relative w-full max-w-[320px] h-[2.5rem] border-[.5px] border-borders rounded-md pl-2"
+              className="relative w-full h-[2.5rem] border-[.5px] border-borders rounded-md pl-2"
               type="text"
               id="secondname"
               value={secondname}
@@ -96,7 +97,7 @@ const Register = () => {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
-              className="relative  w-full max-w-[320px] h-[2.5rem] border-[.5px] border-borders rounded-md pl-2"
+              className="relative  w-full h-[2.5rem] border-[.5px] border-borders rounded-md pl-2"
             />
             <input
               placeholder="Numero de Documento"
@@ -105,7 +106,7 @@ const Register = () => {
               value={document}
               onChange={(e) => setDocument(e.target.value)}
               required
-              className="relative  w-full max-w-[320px] h-[2.5rem] border-[.5px] border-borders rounded-md pl-2"
+              className="relative  w-full h-[2.5rem] border-[.5px] border-borders rounded-md pl-2"
             />
             <input
               placeholder="Telefono de contacto"
@@ -114,11 +115,11 @@ const Register = () => {
               value={phone}
               onChange={(e) => setPhone(e.target.value)}
               required
-              className="relative  w-full max-w-[320px] h-[2.5rem] border-[.5px] border-borders rounded-md pl-2"
+              className="relative  w-full h-[2.5rem] border-[.5px] border-borders rounded-md pl-2"
             />
             <select
               name="marital-status"
-              className="border border-borders rounded-md  w-full max-w-[320px] h-[2.5rem] px-2"
+              className="border border-borders rounded-md  w-full h-[2.5rem] px-2"
               onChange={(e) => setObrasocialeId(e.target.value)}
             >
               <option>Seleccione su obra social</option>
@@ -127,7 +128,7 @@ const Register = () => {
               ))}
               <option>pami</option>
             </select>
-            <div className=" w-full max-w-[320px] h-[2.5rem]">
+            <div className=" w-full h-[2.5rem]">
               <input
                 placeholder="Contraseña"
                 type={showPassword ? "text" : "password"}
@@ -135,11 +136,14 @@ const Register = () => {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required
-                className="relative  w-full max-w-[320px] h-[2.5rem] border-[.5px] border-borders rounded-md pl-2"
+                className="relative  w-full h-[2.5rem] border-[.5px] border-borders rounded-md pl-2"
               />
-              <ButtonEyeSlash className="bottom-8" onClick={() => setShowPassword(!showPassword)} />
+              <ButtonEyeSlash
+                className="bottom-[2rem] left-[19.5rem]"
+                onClick={() => setShowPassword(!showPassword)}
+              />
             </div>
-            <div className=" w-full max-w-[320px] h-[2.5rem]">
+            <div className=" w-full h-[2.5rem]">
               <input
                 placeholder=" Confirme su contraseña"
                 type={showConfirmPassword ? "text" : "password"}
@@ -147,14 +151,14 @@ const Register = () => {
                 value={confirmPassword}
                 onChange={(e) => setConfirmPassword(e.target.value)}
                 required
-                className="relative  w-full max-w-[320px] h-[2.5rem] border-[.5px] border-borders rounded-md pl-2"
+                className="relative  w-full h-[2.5rem] border-[.5px] border-borders rounded-md pl-2"
               />
               <ButtonEyeSlash
-                className="bottom-8"
+                className="bottom-[2rem] left-[19.5rem]"
                 onClick={() => setShowConfirmPassword(!showConfirmPassword)}
               />
             </div>
-            <ButtonLogIn className="my-[3rem] bg-primary-start" type="submit">
+            <ButtonLogIn className="mt-[3rem] bg-primary-start" type="submit">
               CREAR CUENTA
             </ButtonLogIn>
           </form>
