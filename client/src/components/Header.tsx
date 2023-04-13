@@ -48,9 +48,7 @@ export default function Header({ name, lastName }: User) {
         </Link>
       </div>
       <div className="absolute top-[9rem] font-semibold flex items-center justify-center h-[2rem] w-screen bg-secondary">
-        <h2>
-          Hola, {user.name} {user.secondname}
-        </h2>
+        <h2>Hola, {user.name} ¿Estás listo para organizar tu agenda médica?</h2>
       </div>
       <p className="absolute top-[11rem] text-white">{newDate}</p>
     </div>
