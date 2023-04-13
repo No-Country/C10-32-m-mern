@@ -17,7 +17,7 @@ import Footer from "./components/Footer";
 const App = () => {
   return (
     <div className="flex flex-col items-center justify-center">
-      <main className="w-screen mt-[12rem] pt-8 lg:px-6 px-28 ">
+      <main className="flex justify-center w-screen mt-[12rem] pt-8 lg:px-6 px-28 ">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
@@ -33,7 +33,7 @@ const App = () => {
           <Route path="/search/:category" element={<Search />} />
         </Routes>
       </main>
-      <Footer/>
+      <Footer className={""} />
     </div>
   );
 };

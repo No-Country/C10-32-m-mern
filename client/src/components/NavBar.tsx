@@ -23,7 +23,7 @@ const NavBar = () => {
   };
 
   return (
-    <div>
+    <div className="hidden lg:inline-block">
       <i
         className="fixed fa-solid fa-bars top-6 right-6 z-[99] cursor-pointer p-4 text-[30px] text-fontNav rounded-full bg-white"
         onClick={handleNav}

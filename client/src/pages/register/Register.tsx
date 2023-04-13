@@ -65,94 +65,101 @@ const Register = () => {
   }
 
   return (
-    <div className="flex flex-col justify-center items-center">
+    <div>
       <HeaderSm />
-      <form
-        className="h-[100%] w-full flex flex-col gap-[1rem] items-center justify-between"
-        onSubmit={submit}
-      >
-        <input
-          className="relative w-full max-w-[320px] h-[2.5rem] border-[.5px] border-borders rounded-md pl-2"
-          type="text"
-          id="name"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          placeholder="Nombre"
-        />
-        <input
-          className="relative w-full max-w-[320px] h-[2.5rem] border-[.5px] border-borders rounded-md pl-2"
-          type="text"
-          id="secondname"
-          value={secondname}
-          onChange={(e) => setSecondname(e.target.value)}
-          placeholder="Apellido"
-        />
-        <input
-          placeholder="Correo Electronico"
-          type="email"
-          id="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-          className="relative  w-full max-w-[320px] h-[2.5rem] border-[.5px] border-borders rounded-md pl-2"
-        />
-        <input
-          placeholder="Numero de Documento"
-          type="number"
-          id="document"
-          value={document}
-          onChange={(e) => setDocument(e.target.value)}
-          required
-          className="relative  w-full max-w-[320px] h-[2.5rem] border-[.5px] border-borders rounded-md pl-2"
-        />
-        <input
-          placeholder="Telefono de contacto"
-          type="number"
-          id="phone"
-          value={phone}
-          onChange={(e) => setPhone(e.target.value)}
-          required
-          className="relative  w-full max-w-[320px] h-[2.5rem] border-[.5px] border-borders rounded-md pl-2"
-        />
-        <select
-          name="marital-status"
-          className="border border-borders rounded-md  w-full max-w-[320px] h-[2.5rem] px-2"
-          onChange={(e) => setObrasocialeId(e.target.value)}
-        >
-          <option>Seleccione su obra social</option>
-          {obraSocial.map((name) => (
-            <option value={name.id}>{name.name}</option>
-          ))}
-          <option>pami</option>
-        </select>
-        <div className=" w-full max-w-[320px] h-[2.5rem]">
-          <input
-            placeholder="Contraseña"
-            type={showPassword ? "text" : "password"}
-            id="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-            className="relative  w-full max-w-[320px] h-[2.5rem] border-[.5px] border-borders rounded-md pl-2"
-          />
-          <ButtonEyeSlash onClick={() => setShowPassword(!showPassword)} />
+      <div className="flex flex-col justify-center items-center">
+        <div className="w-[23rem]">
+          <form
+            className="h-[100%] w-full flex flex-col gap-[1rem] items-center justify-between"
+            onSubmit={submit}
+          >
+            <input
+              className="relative w-full max-w-[320px] h-[2.5rem] border-[.5px] border-borders rounded-md pl-2"
+              type="text"
+              id="name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              placeholder="Nombre"
+            />
+            <input
+              className="relative w-full max-w-[320px] h-[2.5rem] border-[.5px] border-borders rounded-md pl-2"
+              type="text"
+              id="secondname"
+              value={secondname}
+              onChange={(e) => setSecondname(e.target.value)}
+              placeholder="Apellido"
+            />
+            <input
+              placeholder="Correo Electronico"
+              type="email"
+              id="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+              className="relative  w-full max-w-[320px] h-[2.5rem] border-[.5px] border-borders rounded-md pl-2"
+            />
+            <input
+              placeholder="Numero de Documento"
+              type="number"
+              id="document"
+              value={document}
+              onChange={(e) => setDocument(e.target.value)}
+              required
+              className="relative  w-full max-w-[320px] h-[2.5rem] border-[.5px] border-borders rounded-md pl-2"
+            />
+            <input
+              placeholder="Telefono de contacto"
+              type="number"
+              id="phone"
+              value={phone}
+              onChange={(e) => setPhone(e.target.value)}
+              required
+              className="relative  w-full max-w-[320px] h-[2.5rem] border-[.5px] border-borders rounded-md pl-2"
+            />
+            <select
+              name="marital-status"
+              className="border border-borders rounded-md  w-full max-w-[320px] h-[2.5rem] px-2"
+              onChange={(e) => setObrasocialeId(e.target.value)}
+            >
+              <option>Seleccione su obra social</option>
+              {obraSocial.map((name) => (
+                <option value={name.id}>{name.name}</option>
+              ))}
+              <option>pami</option>
+            </select>
+            <div className=" w-full max-w-[320px] h-[2.5rem]">
+              <input
+                placeholder="Contraseña"
+                type={showPassword ? "text" : "password"}
+                id="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+                className="relative  w-full max-w-[320px] h-[2.5rem] border-[.5px] border-borders rounded-md pl-2"
+              />
+              <ButtonEyeSlash className="bottom-8" onClick={() => setShowPassword(!showPassword)} />
+            </div>
+            <div className=" w-full max-w-[320px] h-[2.5rem]">
+              <input
+                placeholder=" Confirme su contraseña"
+                type={showConfirmPassword ? "text" : "password"}
+                id="confirm-password"
+                value={confirmPassword}
+                onChange={(e) => setConfirmPassword(e.target.value)}
+                required
+                className="relative  w-full max-w-[320px] h-[2.5rem] border-[.5px] border-borders rounded-md pl-2"
+              />
+              <ButtonEyeSlash
+                className="bottom-8"
+                onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+              />
+            </div>
+            <ButtonLogIn className="my-[3rem] bg-primary-start" type="submit">
+              CREAR CUENTA
+            </ButtonLogIn>
+          </form>
         </div>
-        <div className=" w-full max-w-[320px] h-[2.5rem]">
-          <input
-            placeholder=" Confirme su contraseña"
-            type={showConfirmPassword ? "text" : "password"}
-            id="confirm-password"
-            value={confirmPassword}
-            onChange={(e) => setConfirmPassword(e.target.value)}
-            required
-            className="relative  w-full max-w-[320px] h-[2.5rem] border-[.5px] border-borders rounded-md pl-2"
-          />
-          <ButtonEyeSlash onClick={() => setShowConfirmPassword(!showConfirmPassword)} />
-        </div>
-        <ButtonLogIn className="mt-[3rem]" type="submit">
-          Register
-        </ButtonLogIn>
-      </form>
+      </div>
     </div>
   );
 };

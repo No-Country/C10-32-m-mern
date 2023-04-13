@@ -42,6 +42,20 @@ SE LLENAN TODAS MENOS USUARIOS QUE SE PUEDE CREAR YA DESDE EL FRONT.
 	mondayini, mondayend, mondaytotal, tuesdayini, tuesdayend, tuesdaytotal, wednesdayini, wednesdayend, wednesdaytotal, thursdayini, thursdayend, thursdaytotal, fridayini, fridayend, fridaytotal, "specialistId", "sedeId")
 	VALUES ('13:00', '15:00', 4,'13:00', '15:00', 4,'13:00', '15:00', 4,'13:00', '15:00', 4,null, null, null,  1, 2);
 
+        INSERT INTO public."Specialist_sede"(
+	mondayini, mondayend, mondaytotal, tuesdayini, tuesdayend, tuesdaytotal, wednesdayini, wednesdayend, wednesdaytotal, thursdayini, thursdayend, thursdaytotal, fridayini, fridayend, fridaytotal, "specialistId", "sedeId")
+	VALUES ('08:00', '12:00', 8,'08:00', '12:00', 8,'08:00', '12:00', 8,null, null, null,'08:00', '12:00', 8,  2, 1);
+
+
+   INSERT INTO public."Specialist_sede"(
+	mondayini, mondayend, mondaytotal, tuesdayini, tuesdayend, tuesdaytotal, wednesdayini, wednesdayend, wednesdaytotal, thursdayini, thursdayend, thursdaytotal, fridayini, fridayend, fridaytotal, "specialistId", "sedeId")
+	VALUES ('08:00', '12:00', 8,'08:00', '12:00', 8,'08:00', '12:00', 8,null, null, null,'08:00', '12:00', 8,  3, 1);
+
+     INSERT INTO public."Specialist_sede"(
+	mondayini, mondayend, mondaytotal, tuesdayini, tuesdayend, tuesdaytotal, wednesdayini, wednesdayend, wednesdaytotal, thursdayini, thursdayend, thursdaytotal, fridayini, fridayend, fridaytotal, "specialistId", "sedeId")
+	VALUES ('13:00', '16:00', 6,'13:00', '15:00', 4,'13:00', '15:00', 4,'13:00', '15:00', 4,null, null, null,  3, 2);
+    
+
 
 
     INSERT INTO public."Speciality_sede"("createdAt", "updatedAt", "specialtyId", "sedeId")	VALUES ('2023-04-02', '2023-04-02', 1, 1);
@@ -92,6 +106,15 @@ INSERT INTO public.shifts(
  INSERT INTO public.shifts(
 	 state, date, hour, "createdAt", "updatedAt", "specialistId", "userId", "sedeId", "specialtyId")
 	VALUES ( 'Tomado','2023-04-12', '9:00', '2023-04-07' , '2023-04-07', 2, 1, 1, 1);
+
+    INSERT INTO public.shifts(
+	state, date, hour, "createdAt", "updatedAt", "specialistId", "userId", "sedeId", "specialtyId")
+	VALUES ( 'Tomado', '2023-04-14', '9:30', '2023-04-07' , '2023-04-07', 3, 2, 2, 1);
+    
+    
+ INSERT INTO public.shifts(
+	 state, date, hour, "createdAt", "updatedAt", "specialistId", "userId", "sedeId", "specialtyId")
+	VALUES ( 'Tomado','2023-04-13', '14:00', '2023-04-07' , '2023-04-07', 1, 2, 2, 1);
 
 
 

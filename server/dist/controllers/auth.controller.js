@@ -12,7 +12,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.signin = exports.signup = void 0;
+exports.logout = exports.signin = exports.signup = void 0;
 const user_model_1 = require("../models/user.model");
 const asociado_model_1 = require("../models/asociado.model");
 const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
@@ -28,7 +28,7 @@ const signup = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
         if (validateuser === null)
             return res
                 .status(400)
-                .json('El DNI ingresado no pertenece a un asociado');
+                .json({ messagge: 'El DNI ingresado no pertenece a un asociado' });
         //hash password
         const hashpass = yield bcrypt_1.default.hash(body.password, 10);
         //registrando usuario//
@@ -41,6 +41,7 @@ const signup = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
             phone: body.phone,
             obrasocialeId: body.obrasocialId,
         });
+        console.log(newUser);
         // creo token
         const token = jsonwebtoken_1.default.sign({ _id: newUser.dataValues.id }, process.env.TOKEN_SECRET || 'tokenalternativo');
         res.header('auth-token', token).json({ user: newUser });
@@ -55,15 +56,30 @@ const signin = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const loginuser = yield user_model_1.User.findAll({ where: { email: req.body.email } });
         if (!loginuser)
-            return res.status(400).json('your credentials are not valid');
+            return res
+                .status(400)
+                .json({ messagge: 'your credentials are not valid' });
         if (!bcrypt_1.default.compareSync(req.body.password, loginuser[0].dataValues.password))
-            return res.status(400).json('your credentials are not valid');
+            return res
+                .status(400)
+                .json({ messagge: 'your credentials are not valid' });
         const token = jsonwebtoken_1.default.sign({ _id: loginuser[0].dataValues.id }, process.env.TOKEN_SECRET || 'tokenalternativo');
-        res.header('auth-token', token).json(loginuser);
+        res.header('auth-token', token).json({ user: loginuser, token });
     }
     catch (error) {
-        res.status(404).json(error);
+        res.status(404).json({ messagge: error.messagge });
     }
 });
 exports.signin = signin;
+const logout = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        return res
+            .header('auth-token', '')
+            .json({ message: 'Se ha cerrado sesión correctamente.' });
+    }
+    catch (error) {
+        return res.status(400).json({ error: error.messagge });
+    }
+});
+exports.logout = logout;
 //# sourceMappingURL=auth.controller.js.map
