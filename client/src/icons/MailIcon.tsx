@@ -2,7 +2,7 @@ import React from "react";
 
 const MailIcon = () => {
   return (
-    <div className="relative w-[1rem] left-[.3rem] bottom-[1.8rem] z-50">
+    <div className="relative w-[1rem] left-[.3rem] bottom-[1.8rem]">
       <svg
         width="19"
         height="17"

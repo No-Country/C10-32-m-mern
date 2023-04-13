@@ -38,6 +38,7 @@ const Login = () => {
 
   return (
     <div className="flex">
+      <HeaderSm />
       <div className=" flex flex-col justify-between h-[32rem] w-[38rem] bg-gradient-to-b from-primary-start to-primary-end rounded-l-xl p-[2.25rem] lg:hidden">
         <Logo />
         <h1 className="text-4xl text-white font-extrabold">
@@ -56,8 +57,7 @@ const Login = () => {
           </p>
         </div>
       </div>
-      <div className="w-[23rem] h-[32rem] bg-white flex flex-col justify-center items-center mb-[5rem] rounded-r-xl lg:rounded-xl">
-        <HeaderSm />
+      <div className="w-[23rem] sm:w-[22rem] h-[32rem] bg-white flex flex-col justify-center items-center mb-[5rem] rounded-r-xl lg:rounded-xl">
         <h2 className="text-xl">Ingresa a Citas Medicas a un Click</h2>
         <form
           className="h-fit w-[19rem] mt-[3rem] flex flex-col items-start justify-center gap"
@@ -74,7 +74,7 @@ const Login = () => {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
-                className="relative w-full border-[.5px] h-[2.5rem] border-buttonBg rounded-md pl-7"
+                className="relative w-full border-[.5px] h-[2.5rem] border-borders rounded-md pl-7"
               />
               <MailIcon />
             </div>
@@ -88,7 +88,7 @@ const Login = () => {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required
-                className="relative w-full h-[2.5rem] border-[.5px] border-buttonBg rounded-md pl-7"
+                className="relative w-full h-[2.5rem] border-[.5px] border-borders rounded-md pl-7"
               />
               <Lock />
               <ButtonEyeSlash

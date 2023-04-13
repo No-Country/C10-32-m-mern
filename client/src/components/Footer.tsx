@@ -2,7 +2,7 @@ import Logo from "../icons/Logo";
 
 export default function Footer({ className }) {
   return (
-    <div className="flex flex-col items-center  w-full bg-gradient-to-b from-primary-start to-primary-end px-28 py-6 lg:px-10 lg:py-5 lg:h-52 lg:justify-center">
+    <div className="flex flex-col items-center w-full bg-gradient-to-b from-primary-start to-primary-end px-28 py-6 lg:px-10 lg:py-5 lg:h-52 lg:justify-center">
       <Logo />
       <ul
         className={`flex justify-between w-full text-sm text-white my-2 lg:flex-wrap lg:gap-4 lg:justify-center ${className}`}
