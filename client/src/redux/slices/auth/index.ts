@@ -2,7 +2,7 @@ import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 import { AxiosResponse, AxiosError } from "axios";
 import { Thunk } from "../../store";
-import {
+import user, {
   setDocument,
   setEmail,
   setId,
@@ -55,15 +55,14 @@ export const login =
         password,
       });
       dispatch(setAccessToken(response.data.token));
-      console.log(response);
-      dispatch(setId(response.data[0].id));
-      dispatch(setName(response.data[0].name));
-      dispatch(setSecondName(response.data[0].secondname));
-      dispatch(setDocument(response.data[0].document));
-      dispatch(setEmail(response.data[0].email));
-      dispatch(setPassword(response.data[0].password));
-      dispatch(setPhone(response.data[0].phone));
-      dispatch(setObrasocialeId(response.data[0].obrasocialeId));
+      dispatch(setId(response.data.user[0].id));
+      dispatch(setName(response.data.user[0].name));
+      dispatch(setSecondName(response.data.user[0].secondname));
+      dispatch(setDocument(response.data.user[0].document));
+      dispatch(setEmail(response.data.user[0].email));
+      dispatch(setPassword(response.data.user[0].password));
+      dispatch(setPhone(response.data.user[0].phone));
+      dispatch(setObrasocialeId(response.data.user[0].obrasocialeId));
       return response;
     } catch (error) {
       return error as AxiosError;

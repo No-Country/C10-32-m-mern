@@ -1,8 +1,10 @@
+import { Link } from "react-router-dom";
+
 const Logo = () => {
   // lg:absolute lg:top-[4rem]
 
   return (
-    <div>
+    <Link to={"/"}>
       <svg
         width="200"
         height="80"
@@ -124,7 +126,7 @@ const Logo = () => {
           </linearGradient>
         </defs>
       </svg>
-    </div>
+    </Link>
   );
 };
 
