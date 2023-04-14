@@ -15,6 +15,8 @@ module.exports = {
       darkPurple: '#6750A4',
       darkBlue: '#1A60B9',
       buttonBg: '#1C1B1F',
+      buttonBlue: '#1C64F2',
+      buttonGray: '#DEDEDE',
       bgNav: '#E9F3FF',
       fontNav: '#2381f9',
       white: '#ffffff',

@@ -16,8 +16,8 @@ const Landing = () => {
           </p>
         </div>
         <div className="flex flex-col items-center py-7">
-          <ButtonAction onClick={() => navigate("/register")} children="SOY USUARIO NUEVO" />
-          <ButtonAction onClick={() => navigate("/login")} children="INICIAR SESION" />
+          <ButtonAction className="my-3 bg-buttonBlue text-secondary" onClick={() => navigate("/register")} children="SOY USUARIO NUEVO" />
+          <ButtonAction className="my-3 bg-buttonGray text-black" onClick={() => navigate("/login")} children="INICIAR SESION" />
         </div>
       </section>
       <section className="bg-gradient-to-b from-primary-start to-primary-end py-6">
@@ -31,17 +31,16 @@ const Landing = () => {
             Horarios de Atención
           </h2>
           <div>
-            <div className="lg:flex lg:justify-between py-4">
-              <p>Lunes a Viernes</p>
-              <p>06:00 am - 20:30 pm</p>
+            <div className="py-4 font-montserrat">
+              <p>Lunes a viernes 06:00 am - 20:30 pm</p>
             </div>
-            <div className="lg:flex lg:justify-between py-4">
-              <p>Sabados</p>
-              <p>08:00 am - 16:00 pm</p>
+            <div className="py-4 font-montserrat">
+              <p>Sábados 08:00 am - 16:00 pm</p>
+
             </div>
-            <div className="lg:flex lg:justify-between py-4">
-              <p>Domingos y Feriados</p>
-              <p>Cerrado</p>
+            <div className="py-4 font-montserrat">
+              <p>Domingos y feriados cerrado</p>
+
             </div>
           </div>
         </div>

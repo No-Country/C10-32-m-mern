@@ -18,7 +18,7 @@ import Landing from "./pages/landing/Landing";
 const App = () => {
   return (
     <div className="flex flex-col items-center justify-center">
-      <main className="flex justify-center w-screen mt-[12rem] pt-8 lg:px-6 px-28 ">
+      <main className="flex flex-col w-screen mt-[12rem] pt-8 lg:px-6 px-28 ">
         <Routes>
           <Route path="/" element={<Landing />} />
           <Route path="/home" element={<Home />} />

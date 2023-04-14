@@ -90,7 +90,6 @@ const ProgramedApointment = () => {
     },
   ];
 
-  // style={{ display: "flex", alignItems: "center", flexDirection: "column" }}
   return (
     <div className="">
       <HeaderSm />
@@ -129,7 +128,7 @@ const ProgramedApointment = () => {
 
                   </div>
                   <div className="flex">
-                  <button className="w-1/2 bg-[red] h-[45px] my-6 mx-auto rounded-[4px] text-[13px] text-white font-bold">
+                  <button className="w-1/2 bg-[#F75E5E] h-[45px] my-6 mx-auto rounded-[4px] text-[13px] text-white font-bold hover:drop-shadow-md hover:-translate-y-1 transition duration-200 ease-in-out">
                       CANCELAR
                     </button>
 
@@ -145,7 +144,7 @@ const ProgramedApointment = () => {
             <div className="mx-auto max-w-lg lg:w-full w-1/3 my-6">
               <div className="divide-y divide-gray-100 overflow-hidden rounded-[3px] border border-gray-200 bg-white shadow-sm">
                 <details className="group text-[13px]" >
-                  <summary className="flex cursor-pointer list-none items-center justify-between p-4  font-bold group-open:border-b group-open:border-b-gray-100 bg-lightPurple">
+                  <summary className="flex cursor-pointer list-none items-center justify-between p-4  font-bold group-open:border-b group-open:border-b-gray-100 bg-white">
                     {estudio.estudio}
                     <div className="text-secondary-500">
                       {/* <p>Agendar</p> */}
@@ -175,7 +174,7 @@ const ProgramedApointment = () => {
                       <option value="" className="bg-lightPurple ">{i}</option>
                     ))}
                     </select>
-                    <button className="w-full bg-darkPurple h-[45px] rounded-[4px] text-[13px] text-white font-bold">
+                    <button className="w-full bg-darkPurple h-[45px] rounded-[4px] text-[13px] text-white font-bold hover:drop-shadow-md hover:-translate-y-1 transition duration-200 ease-in-out">
                       AGENDAR
                     </button>
                   </div>
