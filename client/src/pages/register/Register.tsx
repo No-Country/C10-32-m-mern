@@ -139,7 +139,7 @@ const Register = () => {
                 className="relative  w-full h-[2.5rem] border-[.5px] border-borders rounded-md pl-2"
               />
               <ButtonEyeSlash
-                className="bottom-[2rem] left-[19.5rem]"
+                className="bottom-8 left-[19.5rem]"
                 onClick={() => setShowPassword(!showPassword)}
               />
             </div>
@@ -154,7 +154,7 @@ const Register = () => {
                 className="relative  w-full h-[2.5rem] border-[.5px] border-borders rounded-md pl-2"
               />
               <ButtonEyeSlash
-                className="bottom-[2rem] left-[19.5rem]"
+                className="bottom-8 left-[19.5rem]"
                 onClick={() => setShowConfirmPassword(!showConfirmPassword)}
               />
             </div>

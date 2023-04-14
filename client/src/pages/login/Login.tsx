@@ -37,9 +37,9 @@ const Login = () => {
   }
 
   return (
-    <div className="flex">
+    <div className="flex justify-center">
       <HeaderSm />
-      <div className=" flex flex-col justify-between h-[32rem] w-[38rem] bg-gradient-to-b from-primary-start to-primary-end rounded-l-xl p-[2.25rem] lg:hidden">
+      <div className=" flex flex-col justify-between h-[32rem] w-[38rem] min-w-[38rem] bg-gradient-to-b from-primary-start to-primary-end rounded-l-xl p-[2.25rem] lg:hidden">
         <Logo />
         <h1 className="text-4xl text-white font-extrabold">
           La plataforma que te ayuda hacer tus consultas medicas de una forma más rapida.
@@ -57,7 +57,7 @@ const Login = () => {
           </p>
         </div>
       </div>
-      <div className="w-[23rem] sm:w-[22rem] h-[32rem] bg-white flex flex-col justify-center items-center mb-[5rem] rounded-r-xl lg:rounded-xl">
+      <div className="w-[23rem] min-w-[22rem] sm:w-[22rem] h-[32rem] bg-white flex flex-col justify-center items-center mb-[5rem] rounded-r-xl lg:rounded-xl">
         <h2 className="text-xl">Ingresa a Citas Medicas a un Click</h2>
         <form
           className="h-fit w-[19rem] mt-[3rem] flex flex-col items-start justify-center gap"
