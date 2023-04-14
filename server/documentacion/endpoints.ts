@@ -347,22 +347,151 @@ DEVUELVE LA INFO EN EL SIGUIENTE FORMATO (EJEMPLO) en este caso el especista tie
 
 GET ocalhost:3000/api/specialistbfl?letter=
 
-enviar por QUERY la letra.
+enviar por QUERY la letra. SI ES VACIO TRAE TODOS LOS SPECIALISTAS
 
 DEVUELVE LA INFO EN EL SIGUIENTE FORMATO (EJEMPLO) 
 
 [
+    {
+        "id": 3,
+        "name": "Simpson Homero",
+        "speciality": "Neumonologo",
+        "adress": "direccion 111",
+        "phone": "1253434",
+        "tuition": "d43r1",
+        "consultingRoom": "308",
+        "specialties": [
+            {
+                "id": 5,
+                "description": "Pediatría",
+                "Specialist_Speciality": {
+                    "createdAt": "2023-04-03T03:00:00.000Z",
+                    "updatedAt": "2023-04-03T03:00:00.000Z",
+                    "specialistId": 3,
+                    "specialtyId": 5
+                }
+            },
+            {
+                "id": 4,
+                "description": "Oftalmología",
+                "Specialist_Speciality": {
+                    "createdAt": "2023-04-03T03:00:00.000Z",
+                    "updatedAt": "2023-04-03T03:00:00.000Z",
+                    "specialistId": 3,
+                    "specialtyId": 4
+                }
+            }
+        ]
+    }
+]
+
+SI NO ENVIAMOS NADA TRAE TODOS LOS MEDICOS EN EL SIGUIETNE FORMATO
+
+[
+    {
+        "id": 1,
+        "name": "Gonzalez Pedro",
+        "speciality": "Cardilogo",
+        "adress": "direccion 211",
+        "phone": "14433434",
+        "tuition": "c3er5",
+        "consultingRoom": "108",
+        "specialties": [
+            {
+                "id": 1,
+                "description": "Cardiología",
+                "Specialist_Speciality": {
+                    "createdAt": "2023-04-03T03:00:00.000Z",
+                    "updatedAt": "2023-04-03T03:00:00.000Z",
+                    "specialistId": 1,
+                    "specialtyId": 1
+                }
+            },
+            {
+                "id": 2,
+                "description": "Nutricionista",
+                "Specialist_Speciality": {
+                    "createdAt": "2023-04-03T03:00:00.000Z",
+                    "updatedAt": "2023-04-03T03:00:00.000Z",
+                    "specialistId": 1,
+                    "specialtyId": 2
+                }
+            },
+            {
+                "id": 6,
+                "description": "Medico Clínico",
+                "Specialist_Speciality": {
+                    "createdAt": "2023-04-03T03:00:00.000Z",
+                    "updatedAt": "2023-04-03T03:00:00.000Z",
+                    "specialistId": 1,
+                    "specialtyId": 6
+                }
+            }
+        ]
+    },
     {
         "id": 2,
         "name": "Perez Juan",
         "speciality": "Clinico",
         "adress": "direccion 213",
         "phone": "14433654",
-        "tuition": "c15654",
-        "consultingRoom": "109"
+        "tuition": "c1565",
+        "consultingRoom": "109",
+        "specialties": [
+            {
+                "id": 1,
+                "description": "Cardiología",
+                "Specialist_Speciality": {
+                    "createdAt": "2023-04-03T03:00:00.000Z",
+                    "updatedAt": "2023-04-03T03:00:00.000Z",
+                    "specialistId": 2,
+                    "specialtyId": 1
+                }
+            },
+            {
+                "id": 2,
+                "description": "Nutricionista",
+                "Specialist_Speciality": {
+                    "createdAt": "2023-04-03T03:00:00.000Z",
+                    "updatedAt": "2023-04-03T03:00:00.000Z",
+                    "specialistId": 2,
+                    "specialtyId": 2
+                }
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "name": "Simpson Homero",
+        "speciality": "Neumonologo",
+        "adress": "direccion 111",
+        "phone": "1253434",
+        "tuition": "d43r1",
+        "consultingRoom": "308",
+        "specialties": [
+            {
+                "id": 5,
+                "description": "Pediatría",
+                "Specialist_Speciality": {
+                    "createdAt": "2023-04-03T03:00:00.000Z",
+                    "updatedAt": "2023-04-03T03:00:00.000Z",
+                    "specialistId": 3,
+                    "specialtyId": 5
+                }
+            },
+            {
+                "id": 4,
+                "description": "Oftalmología",
+                "Specialist_Speciality": {
+                    "createdAt": "2023-04-03T03:00:00.000Z",
+                    "updatedAt": "2023-04-03T03:00:00.000Z",
+                    "specialistId": 3,
+                    "specialtyId": 4
+                }
+            }
+        ]
     }
 ]
-
 
 ***********************************OBTENER TURNOS DISPONIBLES ***************************
 
