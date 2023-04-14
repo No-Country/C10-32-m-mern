@@ -2,6 +2,9 @@ import { Request, Response } from 'express';
 import { sequelize } from '../database/db';
 import moment from 'moment';
 import { Shift } from '../models/shift.model';
+import { Speciality } from '../models/speciality.model';
+import { Specialist } from '../models/specialist.model';
+import { Sede } from '../models/sede.model';
 
 export const getavailableshifts = async (req: Request, res: Response) => {
 	const { idspecialist, idsede, idspeciality, days } = req.body;
@@ -177,3 +180,31 @@ export const scheduleshift = async (req: Request, res: Response) => {
 		res.status(400).json({ error: error.messagge });
 	}
 };
+
+export const getshiftbyuser = async (req: Request, res: Response) => {
+
+    const userid = req.params.id;
+    try {
+        const shiftbyuser = await Shift.findAll(
+            {
+                where: { userId: userid },
+                include: [
+                    {
+                        model: Specialist,
+                        include: [
+                            {
+                                model: Sede,
+                                include:[{model: Speciality}]
+                            },
+                        ],
+                    },
+                ],
+            }
+        )
+        res.status(202).send(shiftbyuser)
+    } catch (error) {
+        res.status(404).send(error)
+        
+    }
+
+}

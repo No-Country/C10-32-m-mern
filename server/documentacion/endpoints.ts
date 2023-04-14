@@ -436,4 +436,199 @@ DEVUELVE LA INFO EN EL SIGUIENTE FORMATO (EJEMPLO)
     ]
 ]
 
+
+
+***********************************GRABAR  TURNO ***************************
+
+esta ruta devuelve los turnos disponibles, 
+
+POST localhost:3000/api/scheduleshifts
+
+info a enviar por BODY, EJEMPLO 
+{
+	"state": "TOMADO",
+	"date": "2023-04-14",
+	"hour": "9:00",
+	"specialistId": 3,
+	"userId": 2,
+	"sedeId": 1,
+	"specialtyId": 1
+
+}
+
+El campo STATE serian diferentes estados, hasta el momento idenficito 3
+
+TOMADO: Cuando se toma el turno.
+LIBERADO: Cuando se cancela y que libre nuevamente
+FINALIZADO: Cuando finaliza la atencion. 
+
+
+
+DEVUELVE LA INFO EN EL SIGUIENTE FORMATO (EJEMPLO) 
+
+{
+    "Shift": {
+        "id": 8,
+        "state": "TOMADO",
+        "date": "2023-04-14",
+        "hour": "09:00:00",
+        "specialistId": 3,
+        "userId": 2,
+        "sedeId": 1,
+        "specialtyId": 1,
+        "updatedAt": "2023-04-12T14:30:53.573Z",
+        "createdAt": "2023-04-12T14:30:53.573Z"
+    }
+}
+
+***********************************Obtener turnos de un usuario ***************************
+
+este endpoint devuelve los turnos de un usuario. 
+
+GET localhost:3000/api/shiftbyuser/1
+
+enviar por params el id del usuario. 
+
+Devuelve la info en el siguiente formato. 
+
+[
+    {
+        "id": 2,
+        "state": "Tomado",
+        "date": "2023-04-11",
+        "hour": "09:30:00",
+        "createdAt": "2023-04-07T03:00:00.000Z",
+        "updatedAt": "2023-04-07T03:00:00.000Z",
+        "specialistId": 2,
+        "userId": 1,
+        "sedeId": 1,
+        "specialtyId": 1,
+        "specialist": {
+            "id": 2,
+            "name": "Perez Juan",
+            "speciality": "Clinico",
+            "adress": "direccion 213",
+            "phone": "14433654",
+            "tuition": "c1565",
+            "consultingRoom": "109",
+            "sedes": [
+                {
+                    "id": 1,
+                    "name": "NORTE",
+                    "Specialist_sede": {
+                        "mondayini": "08:00:00",
+                        "mondayend": "12:00:00",
+                        "mondaytotal": 8,
+                        "tuesdayini": "08:00:00",
+                        "tuesdayend": "12:00:00",
+                        "tuesdaytotal": 8,
+                        "wednesdayini": "08:00:00",
+                        "wednesdayend": "12:00:00",
+                        "wednesdaytotal": 8,
+                        "thursdayini": null,
+                        "thursdayend": null,
+                        "thursdaytotal": null,
+                        "fridayini": "08:00:00",
+                        "fridayend": "12:00:00",
+                        "fridaytotal": 8,
+                        "specialistId": 2,
+                        "sedeId": 1
+                    },
+                    "specialties": [
+                        {
+                            "id": 1,
+                            "description": "Cardiología",
+                            "Speciality_sede": {
+                                "createdAt": "2023-04-02T03:00:00.000Z",
+                                "updatedAt": "2023-04-02T03:00:00.000Z",
+                                "specialtyId": 1,
+                                "sedeId": 1
+                            }
+                        },
+                        {
+                            "id": 2,
+                            "description": "Nutricionista",
+                            "Speciality_sede": {
+                                "createdAt": "2023-04-02T03:00:00.000Z",
+                                "updatedAt": "2023-04-02T03:00:00.000Z",
+                                "specialtyId": 2,
+                                "sedeId": 1
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "id": 3,
+        "state": "Tomado",
+        "date": "2023-04-12",
+        "hour": "09:00:00",
+        "createdAt": "2023-04-07T03:00:00.000Z",
+        "updatedAt": "2023-04-07T03:00:00.000Z",
+        "specialistId": 2,
+        "userId": 1,
+        "sedeId": 1,
+        "specialtyId": 1,
+        "specialist": {
+            "id": 2,
+            "name": "Perez Juan",
+            "speciality": "Clinico",
+            "adress": "direccion 213",
+            "phone": "14433654",
+            "tuition": "c1565",
+            "consultingRoom": "109",
+            "sedes": [
+                {
+                    "id": 1,
+                    "name": "NORTE",
+                    "Specialist_sede": {
+                        "mondayini": "08:00:00",
+                        "mondayend": "12:00:00",
+                        "mondaytotal": 8,
+                        "tuesdayini": "08:00:00",
+                        "tuesdayend": "12:00:00",
+                        "tuesdaytotal": 8,
+                        "wednesdayini": "08:00:00",
+                        "wednesdayend": "12:00:00",
+                        "wednesdaytotal": 8,
+                        "thursdayini": null,
+                        "thursdayend": null,
+                        "thursdaytotal": null,
+                        "fridayini": "08:00:00",
+                        "fridayend": "12:00:00",
+                        "fridaytotal": 8,
+                        "specialistId": 2,
+                        "sedeId": 1
+                    },
+                    "specialties": [
+                        {
+                            "id": 1,
+                            "description": "Cardiología",
+                            "Speciality_sede": {
+                                "createdAt": "2023-04-02T03:00:00.000Z",
+                                "updatedAt": "2023-04-02T03:00:00.000Z",
+                                "specialtyId": 1,
+                                "sedeId": 1
+                            }
+                        },
+                        {
+                            "id": 2,
+                            "description": "Nutricionista",
+                            "Speciality_sede": {
+                                "createdAt": "2023-04-02T03:00:00.000Z",
+                                "updatedAt": "2023-04-02T03:00:00.000Z",
+                                "specialtyId": 2,
+                                "sedeId": 1
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+]
+
+
 */
