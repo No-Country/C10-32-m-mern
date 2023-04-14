@@ -21,7 +21,7 @@ export const getavailableshifts = async (req: Request, res: Response) => {
 
     console.log('TODAY**********', today)
 
-    const infoturno = await sequelize.query('SELECT mondayini, mondayend, mondaytotal, tuesdayini, tuesdayend, tuesdaytotal, wednesdayini, wednesdayend, wednesdaytotal, thursdayini, thursdayend, thursdaytotal, fridayini, fridayend, fridaytotal, "specialistId", "sedeId" FROM "Specialist_sede"  where "specialistId" =' + idspecialist + 'AND "sedeId" =' + idsede + ';')
+    const infoturno = await sequelize.query('SELECT mondayini, mondayend, mondaytotal, tuesdayini, tuesdayend, tuesdaytotal, wednesdayini, wednesdayend, wednesdaytotal, thursdayini, thursdayend, thursdaytotal, fridayini, fridayend, fridaytotal, "specialistId", "sedeId" FROM "Specialist_sede"  where "specialistId" =' + idspecialist + ' AND "sedeId" =' + idsede + ';')
 
     try {
 

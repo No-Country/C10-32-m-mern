@@ -28,7 +28,7 @@ const getavailableshifts = (req, res) => __awaiter(void 0, void 0, void 0, funct
     var now = new Date();
     var maxday = sumarDias(now, days); // me permite establecer la cantidad de dias de las que voy a traer informacion. 
     console.log('TODAY**********', today);
-    const infoturno = yield db_1.sequelize.query('SELECT mondayini, mondayend, mondaytotal, tuesdayini, tuesdayend, tuesdaytotal, wednesdayini, wednesdayend, wednesdaytotal, thursdayini, thursdayend, thursdaytotal, fridayini, fridayend, fridaytotal, "specialistId", "sedeId" FROM "Specialist_sede"  where "specialistId" =' + idspecialist + 'AND "sedeId" =' + idsede + ';');
+    const infoturno = yield db_1.sequelize.query('SELECT mondayini, mondayend, mondaytotal, tuesdayini, tuesdayend, tuesdaytotal, wednesdayini, wednesdayend, wednesdaytotal, thursdayini, thursdayend, thursdaytotal, fridayini, fridayend, fridaytotal, "specialistId", "sedeId" FROM "Specialist_sede"  where "specialistId" =' + idspecialist + ' AND "sedeId" =' + idsede + ';');
     try {
         while (today <= maxday) {
             const todayquery = today.getFullYear() + "-" + (today.getMonth() + 1) + "-" + today.getDate();
