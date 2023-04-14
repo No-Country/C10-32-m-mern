@@ -6,7 +6,12 @@ import Profile from "../icons/IconProfile";
 import { useCustomSelector } from "../hooks/redux";
 import NavBarDesktop from "./NavBarDesktop";
 
-export default function Header() {
+interface User {
+  name: string;
+  lastName: string;
+}
+
+export default function Header({ name, lastName }: User) {
   const { user } = useCustomSelector((state) => state);
 
   const date = new Date();
@@ -43,9 +48,7 @@ export default function Header() {
         </Link>
       </div>
       <div className="absolute top-[9rem] font-semibold flex items-center justify-center h-[2rem] w-screen bg-secondary">
-        <h2>
-          Hola, {user.name} {user.secondname}
-        </h2>
+        <h2>Hola, {user.name} ¿Estás listo para organizar tu agenda médica?</h2>
       </div>
       <p className="absolute top-[11rem] text-white">{newDate}</p>
     </div>

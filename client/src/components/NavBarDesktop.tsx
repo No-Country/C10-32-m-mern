@@ -4,6 +4,7 @@ import IconClose from "../icons/IconClose";
 import IconNotificationsMini from "../icons/IconNotificationsMini";
 import IconTurnosMini from "../icons/IconTurnosMini";
 import IconProfileMini from "./IconProfileMini";
+import IconLogoutMini from "../icons/IconLogoutMini";
 
 const NavBarDesktop = () => {
   const [nav, setNav] = useState(false);
@@ -37,7 +38,7 @@ const NavBarDesktop = () => {
               className="relative flex justify-start items-center gap-4 top-[4.5rem] left-6 mb-[2rem]"
             >
               <IconProfileMini />
-              <p className="text-primary-start font-medium relative left-[34px]">Mi Perfil</p>
+              <p className="text-primary-start font-medium relative -left-[4px]">Mi Perfil</p>
             </NavLink>
             <NavLink
               to={"/scheduledsshifts"}
@@ -50,8 +51,8 @@ const NavBarDesktop = () => {
               to={"/notifications"}
               className="relative flex justify-start items-center gap-4 top-[4.5rem] left-6 mb-[2rem]"
             >
-              <IconNotificationsMini />
-              <p className="text-primary-start font-medium">Cerrar Sesion</p>
+              <IconLogoutMini />
+              <p className="text-primary-start font-medium relative -left-[6px]">Cerrar Sesion</p>
             </NavLink>
           </div>
         </nav>

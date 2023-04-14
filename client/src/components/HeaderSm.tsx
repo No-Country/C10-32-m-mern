@@ -2,13 +2,15 @@ import React from "react";
 import { format } from "date-fns";
 import { es } from "date-fns/locale";
 import Logo from "../icons/Logo";
-import NavBar from "./NavBar";
 import Profile from "../icons/IconProfile";
 import { Link } from "react-router-dom";
+import { useCustomSelector } from "../hooks/redux";
 
 const HeaderSm = () => {
   const date = new Date();
   const newDate = format(date, "EEEE d 'de' MMMM 'del' yyyy", { locale: es });
+
+  const { user } = useCustomSelector((state) => state);
 
   return (
     <div className="fixed z-10 top-0 right-0 flex flex-col items-center justify-center w-full h-[10rem] bg-gradient-to-b from-primary-start to-primary-end">
@@ -17,7 +19,7 @@ const HeaderSm = () => {
         <div className="lg:hidden absolute right-[2rem] flex justify-center items-center gap-10">
           <Link to={"/login"} className="flex justify-center items-center gap-2">
             <Profile active={true} />
-            <p className="text-white text-md">Ingresar</p>
+            <p className="text-white text-md">{user.name ? user.name : "Ingresa"}</p>
           </Link>
           <input
             type="search"
