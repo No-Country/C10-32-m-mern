@@ -14,6 +14,7 @@ import Search from "./pages/search/Search";
 import ScheduledsShifts from "./pages/turnosagendados/ScheduledsShifts";
 import Footer from "./components/Footer";
 import Landing from "./pages/landing/Landing";
+import Chat from "./components/Chat";
 
 const App = () => {
   return (
@@ -26,13 +27,17 @@ const App = () => {
           <Route path="/register" element={<Register />} />
           <Route path="/appointment" element={<AppointmentOptions />} />
           <Route path="/newAppointment" element={<NewAppoitment />} />
-          <Route path="/programedAppointment" element={<ProgramedApointment />} />
+          <Route
+            path="/programedAppointment"
+            element={<ProgramedApointment />}
+          />
           <Route path="/specialists" element={<Specialists />} />
           <Route path="/specialists/:specialistId" element={<Specialists />} />
           <Route path="/notifications" element={<Notifications />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/scheduledsshifts" element={<ScheduledsShifts />} />
           <Route path="/search/:category" element={<Search />} />
+          <Route path="/chat" element={<Chat />} />
         </Routes>
       </main>
       <Footer className={""} />

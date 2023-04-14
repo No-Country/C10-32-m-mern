@@ -4,7 +4,7 @@ import moment from 'moment';
 import { Shift } from '../models/shift.model';
 
 export const getavailableshifts = async (req: Request, res: Response) => {
-	
+	/*	
     const { idspecialist, idsede, idspeciality , days} = req.body
 
 
@@ -138,6 +138,5 @@ export const scheduleshift = async (req: Request, res: Response) => {
 		res.status(400).json({ error: error.messagge });
 	}
 
-
-
-}
+*/
+};
