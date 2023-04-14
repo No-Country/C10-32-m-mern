@@ -12,10 +12,13 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.scheduleshift = exports.getavailableshifts = void 0;
+exports.getshiftbyuser = exports.scheduleshift = exports.getavailableshifts = void 0;
 const db_1 = require("../database/db");
 const moment_1 = __importDefault(require("moment"));
 const shift_model_1 = require("../models/shift.model");
+const speciality_model_1 = require("../models/speciality.model");
+const specialist_model_1 = require("../models/specialist.model");
+const sede_model_1 = require("../models/sede.model");
 const getavailableshifts = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t;
     const { idspecialist, idsede, idspeciality, days } = req.body;
@@ -166,4 +169,28 @@ const scheduleshift = (req, res) => __awaiter(void 0, void 0, void 0, function* 
     }
 });
 exports.scheduleshift = scheduleshift;
+const getshiftbyuser = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    const userid = req.params.id;
+    try {
+        const shiftbyuser = yield shift_model_1.Shift.findAll({
+            where: { userId: userid },
+            include: [
+                {
+                    model: specialist_model_1.Specialist,
+                    include: [
+                        {
+                            model: sede_model_1.Sede,
+                            include: [{ model: speciality_model_1.Speciality }]
+                        },
+                    ],
+                },
+            ],
+        });
+        res.status(202).send(shiftbyuser);
+    }
+    catch (error) {
+        res.status(404).send(error);
+    }
+});
+exports.getshiftbyuser = getshiftbyuser;
 //# sourceMappingURL=shift.controller.js.map
