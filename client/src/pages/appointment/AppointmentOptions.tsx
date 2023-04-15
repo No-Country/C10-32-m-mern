@@ -6,7 +6,7 @@ import HeaderSm from "../../components/HeaderSm";
 
 const AppointmentOptions = () => {
   return (
-    <div className="">
+    <div className="pb-5">
       <HeaderSm />
       <Title title={"Agenda tu turno"} />
       <p className="mt-6 text-[18px]">Escoge una opcion</p>

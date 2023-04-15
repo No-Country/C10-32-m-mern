@@ -2,6 +2,7 @@ import ButtonAction from "../../components/ButtonAction";
 import Map from "../../assets/Mapsicle Map.jpg";
 import IconLanding from "../../icons/IconLanding";
 import { useNavigate } from "react-router";
+import GridLanding from "../../components/GridLanding";
 
 const Landing = () => {
   const navigate = useNavigate();
@@ -16,7 +17,7 @@ const Landing = () => {
           </p>
         </div>
         <div className="flex flex-col items-center py-7">
-          <ButtonAction className="my-3 bg-buttonBlue text-secondary" onClick={() => navigate("/register")} children="SOY USUARIO NUEVO" />
+          <ButtonAction className="my-3 bg-buttonBlue text-secondary " onClick={() => navigate("/register")} children="SOY USUARIO NUEVO" />
           <ButtonAction className="my-3 bg-buttonGray text-black" onClick={() => navigate("/login")} children="INICIAR SESION" />
         </div>
       </section>
@@ -24,6 +25,9 @@ const Landing = () => {
         <h2 className="font-montserrat font-extrabold text-2xl text-textWhite">
           Nuestros especialistas
         </h2>
+      </section>
+      <section className="py-6">
+        <GridLanding/>
       </section>
       <section className="py-6 flex lg:flex-col justify-between">
         <div className="">
