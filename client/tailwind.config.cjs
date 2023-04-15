@@ -14,9 +14,11 @@ module.exports = {
       lightPurple: '#F3EDF7',
       darkPurple: '#6750A4',
       darkBlue: '#1A60B9',
+      cardBg: '#0C2E5A',
       buttonBg: '#1C1B1F',
       buttonBlue: '#1C64F2',
       buttonGray: '#DEDEDE',
+      buttonCancel: '#F75E5E',
       bgNav: '#E9F3FF',
       fontNav: '#2381f9',
       white: '#ffffff',
@@ -24,8 +26,9 @@ module.exports = {
       gray: '#FFFBFE',
       actionButtonBg: '#6750A4',
       textWhite: '#FFFBFE',
-
-
+      textBlack: '#111928',
+      textGray: '#6B7280',
+      
     },
     fontFamily: {
       montserrat: [ 'Montserrat' ],

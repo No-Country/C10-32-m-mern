@@ -66,12 +66,22 @@ export const getspecialistbyfirstletter = async (
 	const condition = letter + '%';
 
 	try {
+		if (letter === "" ) {
+			const allspecillist = await Specialist.findAll({
+				include:[{model: Speciality}]
+			})
+			
+			return res.status(200).send(allspecillist);
+
+		}
 		const result = await Specialist.findAll({
 			where: {
 				name: {
 					[Op.iLike]: condition,
+					
 				},
 			},
+			include:[{model: Speciality}]
 		});
 		if (!result.length) return res.status(200).send('No existen especialistas');
 		res.status(200).send(result);

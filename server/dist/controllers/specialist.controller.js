@@ -72,12 +72,19 @@ const getspecialistbyfirstletter = (req, res) => __awaiter(void 0, void 0, void 
     const letter = req.query.letter;
     const condition = letter + '%';
     try {
+        if (letter === "") {
+            const allspecillist = yield specialist_model_1.Specialist.findAll({
+                include: [{ model: speciality_model_1.Speciality }]
+            });
+            return res.status(200).send(allspecillist);
+        }
         const result = yield specialist_model_1.Specialist.findAll({
             where: {
                 name: {
                     [sequelize_1.Op.iLike]: condition,
                 },
             },
+            include: [{ model: speciality_model_1.Speciality }]
         });
         if (!result.length)
             return res.status(200).send('No existen especialistas');

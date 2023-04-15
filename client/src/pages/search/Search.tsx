@@ -42,7 +42,7 @@ const Search = () => {
   }, []);
 
   return (
-    <div>
+    <div className="pb-40">
       {category === "specialists" ? (
         <>
           <Title title={"Especialistas"} />
