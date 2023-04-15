@@ -3,6 +3,7 @@ import Map from "../../assets/Mapsicle Map.jpg";
 import IconLanding from "../../icons/IconLanding";
 import { useNavigate } from "react-router";
 import GridLanding from "../../components/GridLanding";
+import SpecialistLandingCard from "../../components/SpecialistLandingCard";
 
 const Landing = () => {
   const navigate = useNavigate();
@@ -21,12 +22,16 @@ const Landing = () => {
           <ButtonAction className="my-3 bg-buttonGray text-black" onClick={() => navigate("/login")} children="INICIAR SESION" />
         </div>
       </section>
-      <section className="bg-gradient-to-b from-primary-start to-primary-end py-6">
+      <section className="bg-gradient-to-b from-primary-start to-primary-end py-16">
         <h2 className="font-montserrat font-extrabold text-2xl text-textWhite">
           Nuestros especialistas
         </h2>
+        <SpecialistLandingCard/>
       </section>
       <section className="py-6">
+        <h2 className="font-montserrat  font-extrabold text-2xl text-black">
+          Nuestros Servicios Médicos
+        </h2>
         <GridLanding/>
       </section>
       <section className="py-6 flex lg:flex-col justify-between">

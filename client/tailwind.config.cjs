@@ -26,8 +26,9 @@ module.exports = {
       gray: '#FFFBFE',
       actionButtonBg: '#6750A4',
       textWhite: '#FFFBFE',
-
-
+      textBlack: '#111928',
+      textGray: '#6B7280',
+      
     },
     fontFamily: {
       montserrat: [ 'Montserrat' ],

@@ -11,8 +11,8 @@ import Neurology from "../assets/gridNeurology.svg";
 const GridLanding = () =>{
     return (
         <div className="flex flex-wrap gap-6">
-            <GridCard source={Stethoscope} title="MÉDICO GENERALISTA"/>
-            <GridCard source={Dentist} title="DENTISTA"/>
+            <GridCard source={Stethoscope} title="MEDICINA GENERAL"/>
+            <GridCard source={Dentist} title="ODONTOLOGÍA"/>
             <GridCard source={Ophtalmology} title="OFTALMOLOGÍA"/>
             <GridCard source={Cardiology} title="CARDIOLOGÍA"/>
             <GridCard source={Dermatology} title="DERMATOLOGÍA"/>
