@@ -60,7 +60,7 @@ const ScheduledsShifts = () => {
             </li>
           </ul>
           <div className="flex justify-center items-center pb-[1.5rem]">
-            <ButtonAction>CANCELAR CITA</ButtonAction>
+            <ButtonAction className="bg-darkPurple text-white">CANCELAR CITA</ButtonAction>
           </div>
         </div>
       ))}

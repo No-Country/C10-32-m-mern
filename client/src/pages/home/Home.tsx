@@ -9,6 +9,8 @@ import axios from "axios";
 import FloatingChat from "../../components/FloatingChat";
 import { useCustomSelector } from "../../hooks/redux";
 import IconLanding from "../../icons/IconLanding";
+import Footer from "../../components/Footer";
+import Slider from "../../components/Slider";
 
 const Home = () => {
   const [sedes, setSedes] = useState([]);
@@ -72,9 +74,9 @@ const Home = () => {
         </Link>
       </div>
       {/* version desktop */}
-      <section className="flex justify-between lg:hidden">
+      <section className="flex justify-center xl:justify-center lg:hidden">
         <IconLanding />
-        <div className="flex flex-col justify-start items-center">
+        <div className="min-w-[700px] flex flex-col justify-start items-center pr-20">
           <h1 className="text-primary-start font-bold text-5xl text-center max-w-[600px] mt-20">
             AHORRA TIEMPO Y ORGANIZA TUS TURNOS MEDICOS DE FORMA FÁCIL Y RÁPIDA
           </h1>
@@ -83,13 +85,15 @@ const Home = () => {
             className="lg:hidden flex items-center bg-lightGreen text-[#FFFFFF] rounded-2xl h-[100px] w-[400px] mt-16 px-[43px]"
           >
             <img src={iconCalendarHome} alt="" />
-            <p className="font-montserrat font-semibold text-start text-[22px] leading-6 px-[23px] lg:w-1/2">
+            <p className="font-montserrat font-semibold text-[22px] leading-6 px-[23px] lg:w-1/2">
               Agenda tu turno
             </p>
           </Link>
         </div>
       </section>
-
+      <section className="lg:hidden flex justify-center bg-gradient-to-b from-primary-start to-primary-end w-[100%] h-[42rem] px-24">
+        <Slider />
+      </section>
       <FloatingChat />
     </div>
   );

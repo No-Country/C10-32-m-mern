@@ -48,7 +48,7 @@ const NavBarDesktop = () => {
               <p className="text-primary-start font-medium relative -left-[6px]">Mis Turnos</p>
             </NavLink>
             <NavLink
-              to={"/notifications"}
+              to={"/login"}
               className="relative flex justify-start items-center gap-4 top-[4.5rem] left-6 mb-[2rem]"
             >
               <IconLogoutMini />

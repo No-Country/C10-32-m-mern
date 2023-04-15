@@ -294,7 +294,7 @@ const Profile = () => {
               <option value="Viudo">Viudo/a</option>
             </select>
           </form>
-          <ButtonAction type="submit" className="mt-2" onClick={submit}>
+          <ButtonAction type="submit" className="mt-2 bg-darkPurple text-white" onClick={submit}>
             ACEPTAR
           </ButtonAction>
         </div>
