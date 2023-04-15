@@ -11,14 +11,14 @@ const Slider = () => {
 
   for (let i = 0; i < 10; i++) {
     slides.push(
-      <SwiperSlide key={`slide-${i}`} className="top-[10px] left-[2.4vw] overflow-hidden">
+      <SwiperSlide key={`slide-${i}`} className="flex justify-center items-center">
         <DoctorSliderCard />
       </SwiperSlide>
     );
   }
 
   return (
-    <div className="relative max-[1024px]:">
+    <div className="relative max-[1024px] flex justify-center items-center">
       <Swiper
         style={{ position: "unset" }}
         slidesPerView={"auto"}
@@ -27,19 +27,19 @@ const Slider = () => {
         spaceBetween={3}
         breakpoints={{
           // when window width is >= 640px
-          0: {
+          639: {
             slidesPerView: 1,
             spaceBetween: 50,
           },
-          600: {
-            slidesPerView: 1,
+          767: {
+            slidesPerView: 1.5,
             spaceBetween: 30,
           },
-          1050: {
-            slidesPerView: 2,
+          1230: {
+            slidesPerView: 2.5,
             spaceBetween: 30,
           },
-          1500: {
+          1535: {
             slidesPerView: 3,
             spaceBetween: 30,
           },
@@ -47,12 +47,8 @@ const Slider = () => {
         onSwiper={(swiper) => console.log(swiper)}
         onSlideChange={() => console.log("slide change")}
       >
-        <div className="absolute top-[50%] -right-20 z-20">
-          <RightArrow />
-        </div>
-        <div className="absolute top-[50%] -left-[2rem] z-20 ">
-          <LeftArrow />
-        </div>
+        <RightArrow />
+        <LeftArrow />
         {slides}
       </Swiper>
     </div>
@@ -64,7 +60,7 @@ export default Slider;
 const RightArrow = () => {
   const swiper = useSwiper();
   return (
-    <button onClick={() => swiper.slideNext()}>
+    <button className="absolute bottom-[21rem] -right-14 z-10" onClick={() => swiper.slideNext()}>
       <svg
         width="48"
         height="49"
@@ -86,7 +82,10 @@ const RightArrow = () => {
 const LeftArrow = () => {
   const swiper = useSwiper();
   return (
-    <button className="rotate-180" onClick={() => swiper.slidePrev()}>
+    <button
+      className="rotate-180 flex justify-end absolute -left-14 bottom-[21rem]"
+      onClick={() => swiper.slidePrev()}
+    >
       <svg
         width="48"
         height="49"

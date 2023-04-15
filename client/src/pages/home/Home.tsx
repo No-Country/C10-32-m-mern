@@ -91,7 +91,7 @@ const Home = () => {
           </Link>
         </div>
       </section>
-      <section className="lg:hidden flex justify-center bg-gradient-to-b from-primary-start to-primary-end w-[100%] h-[42rem] px-24">
+      <section className="lg:hidden flex justify-center bg-gradient-to-b from-primary-start to-primary-end w-[100%] h-[45rem] px-24">
         <Slider />
       </section>
       <FloatingChat />
