@@ -90,7 +90,7 @@ const Slider = () => {
           >
             <Link
               to={"/"}
-              className=" flex flex-col justify-around items-center bg-white w-[15rem] h-[15rem] rounded-2xl "
+              className=" flex flex-col justify-around items-center bg-white border-[3px] border-[#1A60B980] w-[15rem] h-[15rem] rounded-2xl "
             >
               <img src={doctor.img} alt="" className="rounded-full h-28" />
               <p className="font-semibold">Dr. {doctor.name}</p>

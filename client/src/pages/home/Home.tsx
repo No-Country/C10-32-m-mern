@@ -86,7 +86,7 @@ const Home = () => {
           </h1>
           <Link
             to="/appointment"
-            className="lg:hidden flex items-center bg-lightGreen text-[#FFFFFF] rounded-2xl h-[100px] w-[400px] my-16 px-[43px]"
+            className="lg:hidden flex items-center bg-lightGreen text-[#FFFFFF] rounded-2xl h-[100px] w-[400px] my-16 px-[43px] transition duration-300 hover:scale-110"
           >
             <img src={iconCalendarHome} alt="" />
             <p className="font-montserrat font-semibold text-[22px] leading-6 px-[23px] lg:w-1/2">
@@ -101,13 +101,13 @@ const Home = () => {
         </h2>
         <Slider />
         <div className="flex justify-around w-full relative top-[11rem]">
-          <div className="flex justify-center items-center w-[25%] h-[10rem] bg-white border-[3px] border-[#1A60B980] rounded-xl">
+          <div className="flex justify-center items-center min-w-[350px] w-[25%] h-[10rem] bg-white border-[3px] border-[#1A60B980] rounded-xl">
             <IconPlusFast />
           </div>
-          <div className="flex justify-center items-center w-[25%] h-[10rem] bg-white border-[3px] border-[#1A60B980] rounded-xl">
+          <div className="flex justify-center items-center min-w-[350px] w-[25%] h-[10rem] bg-white border-[3px] border-[#1A60B980] rounded-xl">
             <IconPlusEasy />
           </div>
-          <div className="flex justify-center items-center w-[25%] h-[10rem] bg-white border-[3px] border-[#1A60B980] rounded-xl">
+          <div className="flex justify-center items-center min-w-[350px] w-[25%] h-[10rem] bg-white border-[3px] border-[#1A60B980] rounded-xl">
             <IconPlusHome />
           </div>
         </div>
