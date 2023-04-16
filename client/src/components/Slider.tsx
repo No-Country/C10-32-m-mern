@@ -4,39 +4,73 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
-import DoctorSliderCard from "./DoctorSliderCard";
+import { Link } from "react-router-dom";
 
 const Slider = () => {
-  const slides = [];
-
-  for (let i = 0; i < 10; i++) {
-    slides.push(
-      <SwiperSlide key={`slide-${i}`} className="flex justify-center items-center">
-        <DoctorSliderCard />
-      </SwiperSlide>
-    );
-  }
+  const infoDoctors = [
+    {
+      id: 1,
+      name: "Daniel Perez",
+      specialty: "Cardiologo",
+      rating: 45,
+      img: "https://randomuser.me/api/portraits/med/men/57.jpg",
+    },
+    {
+      id: 2,
+      name: "Miguel Sanchez",
+      specialty: "Neurologo",
+      rating: 62,
+      img: "https://randomuser.me/api/portraits/med/men/86.jpg",
+    },
+    {
+      id: 4,
+      name: "Juan Marcuay",
+      specialty: "Otorrino",
+      rating: 80,
+      img: "https://randomuser.me/api/portraits/med/men/99.jpg",
+    },
+    {
+      id: 5,
+      name: "Fernando Loayza",
+      specialty: "Cardiologo",
+      rating: 90,
+      img: "https://randomuser.me/api/portraits/med/men/82.jpg",
+    },
+    {
+      id: 6,
+      name: "Fernaddo Loayza",
+      specialty: "Cardiologo",
+      rating: 90,
+      img: "https://randomuser.me/api/portraits/med/men/85.jpg",
+    },
+    {
+      id: 7,
+      name: "Fernanssdo Loayza",
+      specialty: "Cardiologo",
+      rating: 90,
+      img: "https://randomuser.me/api/portraits/med/men/77.jpg",
+    },
+  ];
 
   return (
     <div className="relative max-[1024px] flex justify-center items-center">
       <Swiper
         style={{ position: "unset" }}
         slidesPerView={"auto"}
-        className="w-[70vw] "
+        className="w-[70vw] h-[110%] mt-[7rem]"
         modules={[Navigation, Pagination, Scrollbar, A11y]}
         spaceBetween={3}
         breakpoints={{
-          // when window width is >= 640px
           639: {
-            slidesPerView: 1,
+            slidesPerView: 2,
             spaceBetween: 50,
           },
           767: {
-            slidesPerView: 1.5,
+            slidesPerView: 2,
             spaceBetween: 30,
           },
           1230: {
-            slidesPerView: 2.5,
+            slidesPerView: 3,
             spaceBetween: 30,
           },
           1535: {
@@ -49,7 +83,23 @@ const Slider = () => {
       >
         <RightArrow />
         <LeftArrow />
-        {slides}
+        {infoDoctors.map((doctor) => (
+          <SwiperSlide
+            key={doctor.id}
+            className="flex justify-center items-center transition duration-300 hover:scale-110"
+          >
+            <Link
+              to={"/"}
+              className=" flex flex-col justify-around items-center bg-white w-[15rem] h-[15rem] rounded-2xl "
+            >
+              <img src={doctor.img} alt="" className="rounded-full h-28" />
+              <p className="font-semibold">Dr. {doctor.name}</p>
+              <div className="flex flex-col justify-center items-center text-borders">
+                <p>{doctor.specialty}</p>
+              </div>
+            </Link>
+          </SwiperSlide>
+        ))}
       </Swiper>
     </div>
   );
@@ -60,7 +110,7 @@ export default Slider;
 const RightArrow = () => {
   const swiper = useSwiper();
   return (
-    <button className="absolute bottom-[21rem] -right-14 z-10" onClick={() => swiper.slideNext()}>
+    <button className="absolute bottom-[6rem] right-12 z-10" onClick={() => swiper.slideNext()}>
       <svg
         width="48"
         height="49"
@@ -83,7 +133,7 @@ const LeftArrow = () => {
   const swiper = useSwiper();
   return (
     <button
-      className="rotate-180 flex justify-end absolute -left-14 bottom-[21rem]"
+      className="rotate-180 flex justify-end absolute left-12 bottom-[6rem]"
       onClick={() => swiper.slidePrev()}
     >
       <svg

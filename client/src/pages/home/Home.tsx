@@ -9,8 +9,12 @@ import axios from "axios";
 import FloatingChat from "../../components/FloatingChat";
 import { useCustomSelector } from "../../hooks/redux";
 import IconLanding from "../../icons/IconLanding";
-import Footer from "../../components/Footer";
 import Slider from "../../components/Slider";
+import GridLanding from "../../components/GridLanding";
+import Map from "../../assets/Mapsicle Map.jpg";
+import IconPlusFast from "../../icons/IconPlusFast";
+import IconPlusEasy from "../../icons/IconPlusEasy";
+import IconPlusHome from "../../icons/IconPlusHome";
 
 const Home = () => {
   const [sedes, setSedes] = useState([]);
@@ -82,7 +86,7 @@ const Home = () => {
           </h1>
           <Link
             to="/appointment"
-            className="lg:hidden flex items-center bg-lightGreen text-[#FFFFFF] rounded-2xl h-[100px] w-[400px] mt-16 px-[43px]"
+            className="lg:hidden flex items-center bg-lightGreen text-[#FFFFFF] rounded-2xl h-[100px] w-[400px] my-16 px-[43px]"
           >
             <img src={iconCalendarHome} alt="" />
             <p className="font-montserrat font-semibold text-[22px] leading-6 px-[23px] lg:w-1/2">
@@ -91,8 +95,54 @@ const Home = () => {
           </Link>
         </div>
       </section>
-      <section className="lg:hidden flex justify-center bg-gradient-to-b from-primary-start to-primary-end w-[100%] h-[45rem] px-24">
+      <section className="lg:hidden flex flex-col justify-center bg-gradient-to-b from-primary-start to-primary-end w-[100%] h-[45rem] px-32">
+        <h2 className="text-2xl font-montserrat font-extrabold text-white absolute top-[51rem] left-[10.5rem]">
+          Nuestros Especialistas
+        </h2>
         <Slider />
+        <div className="flex justify-around w-full relative top-[11rem]">
+          <div className="flex justify-center items-center w-[25%] h-[10rem] bg-white border-[3px] border-[#1A60B980] rounded-xl">
+            <IconPlusFast />
+          </div>
+          <div className="flex justify-center items-center w-[25%] h-[10rem] bg-white border-[3px] border-[#1A60B980] rounded-xl">
+            <IconPlusEasy />
+          </div>
+          <div className="flex justify-center items-center w-[25%] h-[10rem] bg-white border-[3px] border-[#1A60B980] rounded-xl">
+            <IconPlusHome />
+          </div>
+        </div>
+      </section>
+      <section className="px-32 lg:hidden">
+        <h2 className="font-montserrat font-black text-2xl text-black mt-[8rem] mb-[4rem] ml-[3rem]">
+          Nuestros Servicios Médicos
+        </h2>
+        <GridLanding />
+      </section>
+      <section className="lg:hidden px-32 flex justify-around m-20 ">
+        <div className="flex flex-col justify-between">
+          <h2 className="font-montserrat font-extrabold text-2xl text-black py-4">
+            Horarios de Atención
+          </h2>
+          <div className="flex flex-col justify-around h-full text-lg">
+            <div className="py-4 font-montserrat">
+              <p>Lunes a viernes 06:00 am - 20:30 pm</p>
+            </div>
+            <div className="py-4 font-montserrat">
+              <p>Sábados 08:00 am - 16:00 pm</p>
+            </div>
+            <div className="py-4 font-montserrat">
+              <p>Domingos y feriados cerrado</p>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h2 className="font-montserrat font-extrabold text-2xl text-black py-4">
+            Nuestras Sedes
+          </h2>
+          <div>
+            <img src={Map} alt="" />
+          </div>
+        </div>
       </section>
       <FloatingChat />
     </div>
