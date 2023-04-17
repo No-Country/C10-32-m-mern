@@ -31,6 +31,9 @@ const Home = () => {
       console.log(res.data);
       setSedes(res.data);
     });
+    if (user.name != "") {
+      setAlgo(1);
+    }
   }, []);
 
   const handleChoose = (e: any) => {
@@ -88,8 +91,7 @@ const Home = () => {
       ) : (
         <>
           <h1 className="lg:block hidden font-montserrat font-extrabold text-center text-base leading-[50px] tracking-widest text-darkBlue py-8 px-[23px]">
-            AHORRA TU TIEMPO <br /> Y ORGANIZA TUS TURNOS MEDICOS DE FORMA FÁCIL
-            Y RÁPIDA
+            AHORRA TU TIEMPO <br /> Y ORGANIZA TUS TURNOS MEDICOS DE FORMA FÁCIL Y RÁPIDA
           </h1>
           <div className=" hidden lg:flex flex-col items-center py-7">
             <ButtonAction
@@ -211,7 +213,7 @@ const Home = () => {
         </div>
       </section>
       <section className="lg:hidden flex flex-col justify-center bg-gradient-to-b from-primary-start to-primary-end w-[100%] h-[45rem] px-32">
-        <h2 className="text-2xl font-montserrat font-extrabold text-white absolute top-[51rem] left-[10.5rem]">
+        <h2 className="text-2xl font-montserrat font-extrabold text-white lg:relative bottom-[10rem] left-[10.5rem]">
           Nuestros Especialistas
         </h2>
         <Slider />

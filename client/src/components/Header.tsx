@@ -35,6 +35,8 @@ export default function Header({ name, lastName }: User) {
           navigate("/login");
         }
       });
+    } else {
+      navigate("/login");
     }
   };
 
