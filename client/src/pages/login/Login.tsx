@@ -10,6 +10,7 @@ import { login } from "../../redux/slices/auth";
 import Logo from "../../icons/Logo";
 import { AvatarGroup } from "../../icons/AvatarGroup";
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -18,23 +19,41 @@ const Login = () => {
   const [showPassword, setShowPassword] = useState(true);
 
   const navigate = useNavigate();
-  const [redirection, setRedirection] = useState(false);
 
   const {
     auth: { accessToken, isLoading },
   } = useCustomSelector((state) => state);
   const dispatch = useCustomDispatch();
   console.log(accessToken);
+  const { user } = useCustomSelector((state) => state);
 
   const submit = async (e: SyntheticEvent) => {
     e.preventDefault();
     dispatch(login({ email, password }));
-    setRedirection(true);
+    if (user.name != "") {
+      Swal.fire({
+        icon: "success",
+        title: "Se inició sesión correctamente.",
+        showConfirmButton: false,
+        timer: 1500,
+      });
+      navigate("/home");
+    } else {
+      Swal.fire({
+        icon: "error",
+        title: "Ha ocurrido un error",
+        text: "El e-mail o contraseña no corresponden a un usuario registrado",
+        showConfirmButton: true,
+        confirmButtonText: "Registrarme",
+        showCancelButton: true,
+        cancelButtonText: "Volver a intentar",
+      }).then((res) => {
+        if (res.isConfirmed) {
+          navigate("/register");
+        }
+      });
+    }
   };
-
-  if (redirection) {
-    navigate("/home");
-  }
 
   return (
     <div className="flex justify-center">
