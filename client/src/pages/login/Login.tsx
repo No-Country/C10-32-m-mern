@@ -21,7 +21,7 @@ const Login = () => {
   const navigate = useNavigate();
 
   const {
-    auth: { accessToken, isLoading },
+    auth: { accessToken },
   } = useCustomSelector((state) => state);
   const dispatch = useCustomDispatch();
   console.log(accessToken);
@@ -30,15 +30,15 @@ const Login = () => {
   const submit = async (e: SyntheticEvent) => {
     e.preventDefault();
     dispatch(login({ email, password }));
-    if (user.name != "") {
+    if (user.email !== "") {
       Swal.fire({
         icon: "success",
         title: "Se inició sesión correctamente.",
         showConfirmButton: false,
-        timer: 1500,
+        timer: 2000,
       });
       navigate("/home");
-    } else {
+    } else if (user.email === "") {
       Swal.fire({
         icon: "error",
         title: "Ha ocurrido un error",
@@ -130,7 +130,6 @@ const Login = () => {
             </p>
           </div>
         </form>
-        {isLoading && "cargando..."}
       </div>
     </div>
   );

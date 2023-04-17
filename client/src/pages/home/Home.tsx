@@ -199,12 +199,12 @@ const Home = () => {
           ) : (
             <div className="flex flex-col items-center py-7">
               <ButtonAction
-                className="my-3 bg-buttonBlue text-secondary "
+                className="my-3 bg-buttonBlue text-secondary rounded-lg"
                 onClick={() => navigate("/register")}
                 children="SOY USUARIO NUEVO"
               />
               <ButtonAction
-                className="my-3 bg-buttonGray text-black"
+                className="my-3 bg-buttonGray text-black rounded-lg"
                 onClick={() => navigate("/login")}
                 children="INICIAR SESION"
               />

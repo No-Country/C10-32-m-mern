@@ -4,6 +4,7 @@ import { ButtonEyeSlash } from "../../components/ButtonEyeSlash";
 import ButtonLogIn from "../../components/ButtonLogIn";
 import HeaderSm from "../../components/HeaderSm";
 import axios from "axios";
+import Swal from "sweetalert2";
 
 const Register = () => {
   // estados del usuario
@@ -52,11 +53,21 @@ const Register = () => {
         setRedirection(true);
       } else {
         e.preventDefault();
-        alert("Quedan campos sin completar");
+        Swal.fire({
+          icon: "error",
+          title: "Quedan campos sin completar",
+          showConfirmButton: false,
+          timer: 3000,
+        });
       }
     } else {
       e.preventDefault();
-      alert("Las contraseñas no coinciden");
+      Swal.fire({
+        icon: "error",
+        title: "Las contraseñas no coinciden",
+        showConfirmButton: false,
+        timer: 3000,
+      });
     }
   };
 
@@ -139,7 +150,7 @@ const Register = () => {
                 className="relative  w-full h-[2.5rem] border-[.5px] border-borders rounded-md pl-2"
               />
               <ButtonEyeSlash
-                className="bottom-[2rem] left-[19.5rem]"
+                className="bottom-8 left-[19.5rem]"
                 onClick={() => setShowPassword(!showPassword)}
               />
             </div>
@@ -154,7 +165,7 @@ const Register = () => {
                 className="relative  w-full h-[2.5rem] border-[.5px] border-borders rounded-md pl-2"
               />
               <ButtonEyeSlash
-                className="bottom-[2rem] left-[19.5rem]"
+                className="bottom-8 left-[19.5rem]"
                 onClick={() => setShowConfirmPassword(!showConfirmPassword)}
               />
             </div>
