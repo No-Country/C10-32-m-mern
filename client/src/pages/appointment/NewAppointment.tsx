@@ -10,7 +10,7 @@ import iconSmallHeart from "../../assets/iconSmallHeart.svg"
 const NewAppoitment = () =>{
     return (
 
-        <div className="">
+        <div className="px-32 lg:px-8">
             <Title 
                 title={"Agenda tu turno"}
             />
