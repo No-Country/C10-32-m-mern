@@ -133,49 +133,34 @@ const Home = () => {
             </p>
             <SliderSpecialities />
           </div>
+          <section className="px-[23px] lg:flex hidden flex-col justify-around ">
+            <div className="flex flex-col justify-between py-6">
+              <h2 className="font-montserrat font-extrabold text-2xl text-black ">
+                Horarios de Atención
+              </h2>
+              <div className="flex flex-col justify-around h-full text-lg">
+                <div className="py-4 font-montserrat">
+                  <p>Lunes a viernes 06:00 am - 20:30 pm</p>
+                </div>
+                <div className="py-4 font-montserrat">
+                  <p>Sábados 08:00 am - 16:00 pm</p>
+                </div>
+                <div className="py-4 font-montserrat">
+                  <p>Domingos y feriados cerrado</p>
+                </div>
+              </div>
+            </div>
+            <div className="py-6">
+              <h2 className="font-montserrat font-extrabold text-2xl text-black py-4">
+                Nuestras Sedes
+              </h2>
+              <div>
+                <img src={Map} alt="" />
+              </div>
+            </div>
+          </section>
         </>
       )}
-
-      {/* <select
-        onChange={handleChoose}
-        name="select"
-        className="hidden lg:inline-block lg:w-full mt-8 lg:h-10 w-1/2 h-12 m-auto bg-transparent border-2 border-borders rounded-[3px] text-sm px-2"
-      >
-        <option>Selecciona la sede</option>
-        {sedes.map((sede) => (
-          <option value={sede.name}>{sede.name}</option>
-        ))}
-      </select>
-      
-      <div className="flex flex-wrap gap-8 justify-center lg:block">
-        <Link
-          to="/appointment"
-          className="hidden lg:flex items-center bg-lightGreen text-[#FFFFFF] rounded-2xl lg:h-[100px] lg:w-full h-[250px] w-[250px] my-8 px-[43px]"
-        >
-          <img src={iconCalendarHome} alt="" />
-          <p className="font-montserrat font-semibold text-start text-[22px] leading-6 px-[23px] lg:w-1/2">
-            Agenda tu turno
-          </p>
-        </Link>
-        <Link
-          to="/specialists"
-          className="hidden lg:flex  items-center bg-lightBlue text-[#FFFFFF] rounded-2xl lg:h-[100px] lg:w-full h-[250px] w-[250px] my-8 px-[43px]"
-        >
-          <img src={iconSpecialistHome} alt="" />
-          <p className="font-montserrat font-semibold text-start text-[22px] leading-6 px-[23px]">
-            Especialistas
-          </p>
-        </Link>
-        <Link
-          to="#"
-          className="hidden lg:flex items-center bg-lightYellow text-[#FFFFFF] rounded-2xl lg:h-[100px] lg:w-full h-[250px] w-[250px] my-8 px-[43px]"
-        >
-          <img src={iconHeartHome} alt="" />
-          <p className="font-montserrat font-semibold text-start text-[22px] leading-6 px-[23px]">
-            Esp. Médicas
-          </p>
-        </Link>
-      </div> */}
 
       {/* version desktop */}
       <section className="flex justify-center xl:justify-center lg:hidden">
@@ -194,6 +179,7 @@ const Home = () => {
                 Agenda tu turno
               </p>
             </Link>
+            
           ) : (
             <div className="flex flex-col items-center py-7">
               <ButtonAction
@@ -211,7 +197,7 @@ const Home = () => {
         </div>
       </section>
       <section className="lg:hidden flex flex-col justify-center bg-gradient-to-b from-primary-start to-primary-end w-[100%] h-[45rem] px-32">
-        <h2 className="text-2xl font-montserrat font-extrabold text-white absolute top-[51rem] left-[10.5rem]">
+        <h2 className="text-2xl font-montserrat font-extrabold text-white absolute xl:top-[40rem] top-[51rem] left-[10.5rem]">
           Nuestros Especialistas
         </h2>
         <Slider />
@@ -233,6 +219,8 @@ const Home = () => {
         </h2>
         <GridLanding />
       </section>
+      {!algo &&
+      
       <section className="lg:hidden px-32 flex justify-around m-20 ">
         <div className="flex flex-col justify-between">
           <h2 className="font-montserrat font-extrabold text-2xl text-black py-4">
@@ -259,6 +247,7 @@ const Home = () => {
           </div>
         </div>
       </section>
+      }
       <FloatingChat />
     </div>
   );
