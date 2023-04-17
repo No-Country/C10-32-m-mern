@@ -6,98 +6,91 @@ import "swiper/css/scrollbar";
 import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
 import { Link } from "react-router-dom";
 
-const Slider = () => {
-  const infoDoctors = [
+import GridCard from "./GridCard";
+import Stethoscope from "../assets/gridMedical.svg";
+import Dentist from "../assets/gridDentist.svg";
+import Ophtalmology from "../assets/gridOphtalmology.svg";
+import Cardiology from "../assets/gridCardiology.svg";
+import Dermatology from "../assets/gridDermatology.svg";
+import Pediatry from "../assets/gridPediatry.svg";
+import Obstetriscm from "../assets/gridObstetriscm.svg";
+import Neurology from "../assets/gridNeurology.svg";
+
+const SliderSpecialities = () => {
+  const infoSpecialities = [
     {
       id: 1,
-      name: "Daniel Perez",
-      specialty: "Cardiologo",
-      rating: 45,
-      img: "https://randomuser.me/api/portraits/med/men/57.jpg",
+      name: Stethoscope,
+      title: "MEDICINA GENERAL",
     },
     {
       id: 2,
-      name: "Miguel Sanchez",
-      specialty: "Neurologo",
-      rating: 62,
-      img: "https://randomuser.me/api/portraits/med/men/86.jpg",
+      name: Dentist,
+      title: "ODONTOLOGÍA",
+    },
+    {
+      id: 3,
+      name: Ophtalmology,
+      title: "OFTALMOLOGÍA",
     },
     {
       id: 4,
-      name: "Juan Marcuay",
-      specialty: "Otorrino",
-      rating: 80,
-      img: "https://randomuser.me/api/portraits/med/men/99.jpg",
+      name: Cardiology,
+      title: "CARDIOLOGÍA",
     },
     {
       id: 5,
-      name: "Fernando Loayza",
-      specialty: "Cardiologo",
-      rating: 90,
-      img: "https://randomuser.me/api/portraits/med/men/82.jpg",
+      name: Dermatology,
+      title: "DERMATOLOGÍA",
     },
     {
       id: 6,
-      name: "Fernaddo Loayza",
-      specialty: "Cardiologo",
-      rating: 90,
-      img: "https://randomuser.me/api/portraits/med/men/85.jpg",
+      name: Pediatry,
+      title: "PEDIATRÍA",
     },
     {
       id: 7,
-      name: "Fernanssdo Loayza",
-      specialty: "Cardiologo",
-      rating: 90,
-      img: "https://randomuser.me/api/portraits/med/men/77.jpg",
+      name: Obstetriscm,
+      title: "GINECOLOGÍA Y OBSTETRICIA",
     },
+    {
+      id: 8,
+      name: Neurology,
+      title: "NEUROLOGÍA",
+    },
+
   ];
 
   return (
-    <div className="relative max-[1024px] flex justify-center items-center">
+    <div className="relative max-[1024px] lg:flex hidden justify-center items-center">
       <Swiper
         style={{ position: "unset" }}
         slidesPerView={"auto"}
-        className="w-[70vw] h-[110%] mt-[7rem] lg:mt-0 lg:py-7"
+        className="w-[70vw] h-[110%] py-7"
         modules={[Navigation, Pagination, Scrollbar, A11y]}
         spaceBetween={3}
         breakpoints={{
-          639: {
-            slidesPerView: 2,
+        425: {
+            slidesPerView: 1,
             spaceBetween: 50,
-          },
+        },
           767: {
             slidesPerView: 2,
-            spaceBetween: 30,
+            spaceBetween: 5,
           },
-          1230: {
-            slidesPerView: 3,
-            spaceBetween: 30,
-          },
-          1535: {
-            slidesPerView: 3,
-            spaceBetween: 30,
-          },
+
         }}
         onSwiper={(swiper) => console.log(swiper)}
         onSlideChange={() => console.log("slide change")}
       >
         <RightArrow />
         <LeftArrow />
-        {infoDoctors.map((doctor) => (
+        {infoSpecialities.map((item) => (
           <SwiperSlide
-            key={doctor.id}
+            key={item.id}
             className="flex justify-center items-center transition duration-300 hover:scale-110"
           >
-            <Link
-              to={"/"}
-              className=" flex flex-col justify-around items-center bg-white w-[15rem] h-[15rem] rounded-2xl "
-            >
-              <img src={doctor.img} alt="" className="rounded-full h-28" />
-              <p className="font-semibold">Dr. {doctor.name}</p>
-              <div className="flex flex-col justify-center items-center text-borders">
-                <p>{doctor.specialty}</p>
-              </div>
-            </Link>
+            <GridCard source={item.name} title={item.title} />
           </SwiperSlide>
         ))}
       </Swiper>
@@ -105,12 +98,12 @@ const Slider = () => {
   );
 };
 
-export default Slider;
+export default SliderSpecialities;
 
 const RightArrow = () => {
   const swiper = useSwiper();
   return (
-    <button className="absolute bottom-[6rem] right-12 z-10" onClick={() => swiper.slideNext()}>
+    <button className="absolute bottom-[6rem] right-4 z-10" onClick={() => swiper.slideNext()}>
       <svg
         width="48"
         height="49"
@@ -133,7 +126,7 @@ const LeftArrow = () => {
   const swiper = useSwiper();
   return (
     <button
-      className="rotate-180 flex justify-end absolute left-12 bottom-[6rem]"
+      className="rotate-180 flex justify-end absolute left-4 bottom-[6rem]"
       onClick={() => swiper.slidePrev()}
     >
       <svg
