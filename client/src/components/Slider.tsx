@@ -5,52 +5,18 @@ import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
 import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 const Slider = () => {
-  const infoDoctors = [
-    {
-      id: 1,
-      name: "Daniel Perez",
-      specialty: "Cardiologo",
-      rating: 45,
-      img: "https://randomuser.me/api/portraits/med/men/57.jpg",
-    },
-    {
-      id: 2,
-      name: "Miguel Sanchez",
-      specialty: "Neurologo",
-      rating: 62,
-      img: "https://randomuser.me/api/portraits/med/men/86.jpg",
-    },
-    {
-      id: 4,
-      name: "Juan Marcuay",
-      specialty: "Otorrino",
-      rating: 80,
-      img: "https://randomuser.me/api/portraits/med/men/99.jpg",
-    },
-    {
-      id: 5,
-      name: "Fernando Loayza",
-      specialty: "Cardiologo",
-      rating: 90,
-      img: "https://randomuser.me/api/portraits/med/men/82.jpg",
-    },
-    {
-      id: 6,
-      name: "Fernaddo Loayza",
-      specialty: "Cardiologo",
-      rating: 90,
-      img: "https://randomuser.me/api/portraits/med/men/85.jpg",
-    },
-    {
-      id: 7,
-      name: "Fernanssdo Loayza",
-      specialty: "Cardiologo",
-      rating: 90,
-      img: "https://randomuser.me/api/portraits/med/men/77.jpg",
-    },
-  ];
+  const [doctors, setDoctors] = useState([]);
+
+  useEffect(() => {
+    axios.get("http://localhost:3000/api/specialistbfl?letter=").then((res) => {
+      setDoctors(res.data);
+      console.log(res.data);
+    });
+  }, []);
 
   return (
     <div className="relative max-[1024px] flex justify-center items-center">
@@ -83,19 +49,19 @@ const Slider = () => {
       >
         <RightArrow />
         <LeftArrow />
-        {infoDoctors.map((doctor) => (
+        {doctors.map((doctor) => (
           <SwiperSlide
             key={doctor.id}
             className="flex justify-center items-center transition duration-300 hover:scale-110"
           >
             <Link
-              to={"/"}
+              to={"/specialists"}
               className=" flex flex-col justify-around items-center bg-white border-[3px] border-[#1A60B980] w-[15rem] h-[15rem] rounded-2xl "
             >
-              <img src={doctor.img} alt="" className="rounded-full h-28" />
+              <img src="" alt="doctorImg" className="rounded-full h-28" />
               <p className="font-semibold">Dr. {doctor.name}</p>
               <div className="flex flex-col justify-center items-center text-borders">
-                <p>{doctor.specialty}</p>
+                <p>{doctor.speciality}</p>
               </div>
             </Link>
           </SwiperSlide>
@@ -110,10 +76,7 @@ export default Slider;
 const RightArrow = () => {
   const swiper = useSwiper();
   return (
-    <button
-      className="absolute bottom-[6rem] lg:right-4 right-0 z-10"
-      onClick={() => swiper.slideNext()}
-    >
+    <button className="absolute bottom-[6rem] lg:right-4 right-0 z-10" onClick={() => swiper.slideNext()}>
       <svg
         width="48"
         height="49"

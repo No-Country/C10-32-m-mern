@@ -1,9 +1,11 @@
-import Logo from "../icons/Logo";
+import IconLogoFooter from "../icons/IconLogoFooter";
 
 export default function Footer({ className }) {
   return (
     <div className="flex flex-col items-center w-full bg-gradient-to-b from-primary-start to-primary-end px-28 py-6 lg:px-10 lg:py-5 lg:h-fit lg:justify-center">
-      <Logo />
+      <div className="mb-8">
+        <IconLogoFooter />
+      </div>
       <ul
         className={` lg:flex-col lg:items-center flex flex-wrap gap-4 justify-between w-full text-sm text-white my-2 ${className}`}
       >
