@@ -17,6 +17,7 @@ import IconPlusEasy from "../../icons/IconPlusEasy";
 import IconPlusHome from "../../icons/IconPlusHome";
 import ButtonAction from "../../components/ButtonAction";
 import SliderSpecialities from "../../components/SliderSpecilities";
+import IconLandingMobile from "../../icons/IconLandingMobile";
 
 const Home = () => {
   const [sedes, setSedes] = useState([]);
@@ -27,7 +28,7 @@ const Home = () => {
   const { user } = useCustomSelector((state) => state);
 
   useEffect(() => {
-    axios.get("http://localhost:3000/api/sede").then((res) => {
+    axios.get("https://api-c1032mmern.onrender.com/api/sede").then((res) => {
       console.log(res.data);
       setSedes(res.data);
     });
@@ -93,6 +94,7 @@ const Home = () => {
           <h1 className="lg:block hidden font-montserrat font-extrabold text-center text-base leading-[50px] tracking-widest text-darkBlue py-8 px-[23px]">
             AHORRA TU TIEMPO <br /> Y ORGANIZA TUS TURNOS MEDICOS DE FORMA FÁCIL Y RÁPIDA
           </h1>
+          
           <div className=" hidden lg:flex flex-col items-center py-7">
             <ButtonAction
               className="my-3 bg-buttonBlue text-secondary "
@@ -105,6 +107,7 @@ const Home = () => {
               children="INICIAR SESION"
             />
           </div>
+          <IconLandingMobile/>
           <div className="lg:flex hidden flex-col  justify-center ">
             {/* <Link
                 to="/specialists"
@@ -203,14 +206,14 @@ const Home = () => {
           Nuestros Especialistas
         </h2>
         <Slider />
-        <div className="flex justify-around w-full relative top-[11rem]">
-          <div className="flex justify-center items-center min-w-[350px] w-[25%] h-[10rem] bg-white border-[3px] border-[#1A60B980] rounded-xl">
+        <div className="flex xl:justify-between justify-around w-full relative top-[11rem]">
+          <div className="flex justify-center items-center xl:min-w-[250px] min-w-[350px] w-[25%] h-[10rem] bg-white border-[3px] border-[#1A60B980] rounded-xl">
             <IconPlusFast />
           </div>
-          <div className="flex justify-center items-center min-w-[350px] w-[25%] h-[10rem] bg-white border-[3px] border-[#1A60B980] rounded-xl">
+          <div className="flex justify-center items-center xl:min-w-[250px] min-w-[350px] w-[25%] h-[10rem] bg-white border-[3px] border-[#1A60B980] rounded-xl">
             <IconPlusEasy />
           </div>
-          <div className="flex justify-center items-center min-w-[350px] w-[25%] h-[10rem] bg-white border-[3px] border-[#1A60B980] rounded-xl">
+          <div className="flex justify-center items-center xl:min-w-[250px] min-w-[350px] w-[25%] h-[10rem] bg-white border-[3px] border-[#1A60B980] rounded-xl">
             <IconPlusHome />
           </div>
         </div>

@@ -12,7 +12,7 @@ const Slider = () => {
   const [doctors, setDoctors] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:3000/api/specialistbfl?letter=").then((res) => {
+    axios.get("https://api-c1032mmern.onrender.com/api/specialistbfl?letter=").then((res) => {
       setDoctors(res.data);
       console.log(res.data);
     });

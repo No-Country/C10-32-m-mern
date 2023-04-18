@@ -2,7 +2,7 @@ import IconLogoFooter from "../icons/IconLogoFooter";
 
 export default function Footer({ className }) {
   return (
-    <div className="flex flex-col items-center w-full bg-gradient-to-b from-primary-start to-primary-end px-28 py-6 lg:px-10 lg:py-5 lg:h-fit lg:justify-center">
+    <footer className="flex flex-col items-center w-full bg-gradient-to-b from-primary-start to-primary-end px-28 py-6 lg:px-10 lg:py-5 lg:h-fit lg:justify-center">
       <div className="mb-8">
         <IconLogoFooter />
       </div>
@@ -41,6 +41,6 @@ export default function Footer({ className }) {
         </li>
       </ul>
       <p className=" font-inter text-base text-white">© 2022 Flowbite, Inc. All rights reserved.</p>
-    </div>
+    </footer>
   );
 }

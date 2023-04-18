@@ -50,7 +50,7 @@ export const login =
   async (dispatch): Promise<AxiosResponse | AxiosError> => {
     dispatch(setIsLoading(true));
     try {
-      const response: AxiosResponse = await axios.post("http://localhost:3000/api/signin", {
+      const response: AxiosResponse = await axios.post("https://api-c1032mmern.onrender.com/api/signin", {
         email,
         password,
       });

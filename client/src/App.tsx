@@ -20,8 +20,7 @@ const App = () => {
     <div className="flex flex-col items-center justify-center">
       <main className="flex flex-col w-screen mt-[12rem] ">
         <Routes>
-          <Route path="/" element={<Landing />} />
-          <Route path="/home" element={<Home />} />
+          <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/appointment" element={<AppointmentOptions />} />
