@@ -25,7 +25,7 @@ require("./models/Specialist_Sede.model");
 require("./models/shift.model");
 function main() {
     return __awaiter(this, void 0, void 0, function* () {
-        yield db_1.sequelize.sync({ force: false });
+        yield db_1.sequelize.sync({ force: true });
         app_1.default.listen(config_1.PORT);
         console.log(`Server on port ${config_1.PORT}`);
     });
