@@ -91,7 +91,7 @@ const Specialists = () => {
 
   return (
     <div>
-      <HeaderSm />
+      {/* <HeaderSm /> */}
       <NavBar />
       <Title title={"Especialistas"} />
       <Text

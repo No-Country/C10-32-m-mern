@@ -26,7 +26,7 @@ const Register = () => {
 
   // consumo del endpoint que trae la lista de las obras sociales
   useEffect(() => {
-    axios.get("http://localhost:3000/api/obrasocial").then((res) => setObraSocial(res.data));
+    axios.get("https://api-c1032mmern.onrender.com/api/obrasocial").then((res) => setObraSocial(res.data));
   }, []);
 
   // estado para redireccionar la pagina hacia el login cuando el formulario quede validado
@@ -37,7 +37,7 @@ const Register = () => {
     if (password === confirmPassword) {
       if (name && secondname && document && email && password && phone && obrasocialeId) {
         e.preventDefault();
-        await fetch("http://localhost:3000/api/signup", {
+        await fetch("https://api-c1032mmern.onrender.com/api/signup", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({

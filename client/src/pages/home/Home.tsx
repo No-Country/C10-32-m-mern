@@ -43,7 +43,7 @@ const Home = () => {
 
   return (
     <div className="flex flex-col justify-center">
-      <NavBar />
+      {/* <NavBar /> */}
       <Header name={user.name} lastName={user.secondname} />
 
       {algo ? (

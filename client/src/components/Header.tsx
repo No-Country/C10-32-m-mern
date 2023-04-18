@@ -6,6 +6,7 @@ import Profile from "../icons/IconProfile";
 import { useCustomSelector } from "../hooks/redux";
 import NavBarDesktop from "./NavBarDesktop";
 import Swal from "sweetalert2";
+import NavBar from "./NavBar";
 
 interface User {
   name: string;
@@ -43,6 +44,7 @@ export default function Header({ name, lastName }: User) {
   return (
     <div className="fixed z-10 top-0 right-0 flex flex-col items-center justify-center w-full h-[12.5rem] bg-gradient-to-b from-primary-start to-primary-end">
       <div className="flex">
+        <NavBar/>
         <NavBarDesktop />
         <Logo />
         <div className="absolute lg:hidden right-[2rem] flex justify-center items-center gap-[2rem] z-[99]">
