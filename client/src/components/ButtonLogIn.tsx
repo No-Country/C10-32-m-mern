@@ -1,13 +1,16 @@
-import React from "react";
-interface Props {
-  children: string;
-}
+import React, { FC } from "react";
+interface IActionButton extends React.ComponentPropsWithoutRef<"button"> {}
 
-const ButtonLogIn = ({ children }: Props) => {
+export const ButtonLogIn: FC<IActionButton> = ({
+  children,
+  className,
+  ...buttonProps
+}) => {
   return (
     <button
       type="submit"
-      className="bg-buttonBg text-secondary text-md w-[19rem] h-[2.5rem] rounded-md"
+      className={`bg-buttonBg text-secondary text-md w-full h-[2.5rem] rounded-md ${className}`}
+      {...buttonProps}
     >
       {children}
     </button>

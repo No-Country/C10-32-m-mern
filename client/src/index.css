@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;600&display=swap');
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -8,6 +11,12 @@
   box-sizing: border-box;
   font-family: 'Roboto', sans-serif;
 }
-#App{
+
+html {
   background-color: #EEFBFA;
+}
+
+select,
+option {
+  background-color: white;
 }
