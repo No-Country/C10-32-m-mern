@@ -10,7 +10,14 @@ const Search = () => {
   [];
 
   const [turnos, setTurnos] = useState([]);
+  const [doctors, setDoctors] = useState([]);
 
+  useEffect(() => {
+    axios.get("http://localhost:3000/api/specialistbfl?letter=").then((res) => {
+      setDoctors(res.data);
+      console.log(res.data);
+    });
+  }, []);
   // await fetch("http://localhost:3000/api/getshifts", {
   //       method: "GET",
   //       headers: { "Content-Type": "application/json" },
