@@ -1,12 +1,15 @@
-import React, { ChangeEventHandler, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
+
 import HeaderSm from "../../components/HeaderSm";
 import NavBar from "../../components/NavBar";
 import IconProfile from "../../icons/IconProfile";
-import DatePicker from "../../components/DatePicker";
-import ButtonAction from "../../components/ButtonAction";
 import IconPencil from "../../icons/IconPencil";
-import { useCustomDispatch, useCustomSelector } from "../../hooks/redux";
+import ButtonAction from "../../components/ButtonAction";
+
 import axios from "axios";
+
+import { useCustomDispatch, useCustomSelector } from "../../hooks/redux";
+
 import {
   setBirthDate,
   setCode,
@@ -39,27 +42,23 @@ const Profile = () => {
   const [newCountry, setNewCountry] = useState("");
   const [newMaritalState, setNewMaritalState] = useState("");
 
-  // estado para saber si la dara esta completa
   const [fullData, setFullData] = useState<boolean | null>(null);
 
-  // estado para traer obras sociales
   const [obraSocial, setObraSocial] = useState([]);
 
-  // peticion de obras sociales a la base de datos
   useEffect(() => {
-    axios.get("http://localhost:3000/api/obrasocial").then((res) => setObraSocial(res.data));
+    axios
+      .get("http://localhost:3000/api/obrasocial")
+      .then((res) => setObraSocial(res.data));
   }, []);
 
-  // estado global del usuario
   const { user } = useCustomSelector((state) => state);
   const dispatch = useCustomDispatch();
 
-  // funcion para cambiar el estado y renderizar el formulario para completar
   const handleForm = () => {
     setFullData(!fullData);
   };
 
-  // submit para cambiar la informacion delestado del usuario
   const submit = () => {
     setNewBirthDate(`${day}-${month}-${year}`);
     dispatch(setName(newName));
@@ -78,7 +77,6 @@ const Profile = () => {
     setFullData(!fullData);
   };
 
-  // valores para la fecha de nacimiento
   const [day, setDay] = useState("");
   const [month, setMonth] = useState("");
   const [year, setYear] = useState("");
@@ -114,7 +112,9 @@ const Profile = () => {
       <NavBar />
       <div className="w-full max-w-[430px] flex justify-start items-center gap-8 bg-fontNav drop-shadow rounded-2xl h-[5rem] px-8">
         <IconProfile active={true} />
-        <p className="text-center text-[30px] text-white leading-6">Mi Perfil</p>
+        <p className="text-center text-[30px] text-white leading-6">
+          Mi Perfil
+        </p>
       </div>
       {fullData ? (
         <div className="mt-8 bg-white w-full h-fit border border-borders rounded">
@@ -167,7 +167,10 @@ const Profile = () => {
         </div>
       ) : (
         <div className="flex flex-col justify-center items-center mb-16">
-          <form action="" className="flex flex-col justify-center items gap-5 my-5">
+          <form
+            action=""
+            className="flex flex-col justify-center items gap-5 my-5"
+          >
             <input
               onChange={(e) => setNewName(e.target.value)}
               className="border border-borders rounded-md h-[2.5rem] px-2"
@@ -294,7 +297,11 @@ const Profile = () => {
               <option value="Viudo">Viudo/a</option>
             </select>
           </form>
-          <ButtonAction type="submit" className="mt-2 bg-darkPurple text-white" onClick={submit}>
+          <ButtonAction
+            type="submit"
+            className="mt-2 bg-darkPurple text-white"
+            onClick={submit}
+          >
             ACEPTAR
           </ButtonAction>
         </div>

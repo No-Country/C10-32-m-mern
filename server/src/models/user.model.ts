@@ -1,4 +1,4 @@
-import { DataTypes, UUIDV4 } from 'sequelize';
+import { DataTypes } from 'sequelize';
 import { sequelize } from '../database/db';
 import { ObraSocial } from './obrasocial.model';
 

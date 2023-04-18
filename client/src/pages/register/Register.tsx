@@ -1,8 +1,10 @@
-import React, { SyntheticEvent, useEffect, useState } from "react";
+import { SyntheticEvent, useEffect, useState } from "react";
 import { useNavigate } from "react-router";
+
 import { ButtonEyeSlash } from "../../components/ButtonEyeSlash";
 import ButtonLogIn from "../../components/ButtonLogIn";
 import HeaderSm from "../../components/HeaderSm";
+
 import axios from "axios";
 import Swal from "sweetalert2";
 
@@ -26,7 +28,9 @@ const Register = () => {
 
   // consumo del endpoint que trae la lista de las obras sociales
   useEffect(() => {
-    axios.get("http://localhost:3000/api/obrasocial").then((res) => setObraSocial(res.data));
+    axios
+      .get("http://localhost:3000/api/obrasocial")
+      .then((res) => setObraSocial(res.data));
   }, []);
 
   // estado para redireccionar la pagina hacia el login cuando el formulario quede validado
@@ -35,7 +39,15 @@ const Register = () => {
 
   const submit = async (e: SyntheticEvent) => {
     if (password === confirmPassword) {
-      if (name && secondname && document && email && password && phone && obrasocialeId) {
+      if (
+        name &&
+        secondname &&
+        document &&
+        email &&
+        password &&
+        phone &&
+        obrasocialeId
+      ) {
         e.preventDefault();
         await fetch("http://localhost:3000/api/signup", {
           method: "POST",

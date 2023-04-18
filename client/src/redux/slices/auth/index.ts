@@ -1,7 +1,7 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
-import axios from "axios";
-import { AxiosResponse, AxiosError } from "axios";
+import axios, { AxiosResponse, AxiosError } from "axios";
 import { Thunk } from "../../store";
+
 import user, {
   setDocument,
   setEmail,
@@ -50,10 +50,13 @@ export const login =
   async (dispatch): Promise<AxiosResponse | AxiosError> => {
     dispatch(setIsLoading(true));
     try {
-      const response: AxiosResponse = await axios.post("https://api-c1032mmern.onrender.com/api/signin", {
-        email,
-        password,
-      });
+      const response: AxiosResponse = await axios.post(
+        "https://api-c1032mmern.onrender.com/api/signin",
+        {
+          email,
+          password,
+        }
+      );
       dispatch(setAccessToken(response.data.token));
       dispatch(setId(response.data.user[0].id));
       dispatch(setName(response.data.user[0].name));

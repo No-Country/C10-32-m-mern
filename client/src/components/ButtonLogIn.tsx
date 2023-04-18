@@ -1,7 +1,11 @@
 import React, { FC } from "react";
 interface IActionButton extends React.ComponentPropsWithoutRef<"button"> {}
 
-export const ButtonLogIn: FC<IActionButton> = ({ children, className, ...buttonProps }) => {
+export const ButtonLogIn: FC<IActionButton> = ({
+  children,
+  className,
+  ...buttonProps
+}) => {
   return (
     <button
       type="submit"

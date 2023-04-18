@@ -12,7 +12,10 @@ const persistAuthConfig = {
 
 const store = configureStore({
   reducer: {
-    auth: persistReducer<ReturnType<typeof authSlice>>(persistAuthConfig, authSlice),
+    auth: persistReducer<ReturnType<typeof authSlice>>(
+      persistAuthConfig,
+      authSlice
+    ),
     user: userSlice,
   },
   middleware: (defaultMiddleware) =>
@@ -24,7 +27,12 @@ const store = configureStore({
 // types
 export type RootState = ReturnType<typeof store.getState>;
 export type Dispatch = typeof store.dispatch;
-export type Thunk = ThunkAction<Promise<unknown>, RootState, unknown, Action<unknown>>;
+export type Thunk = ThunkAction<
+  Promise<unknown>,
+  RootState,
+  unknown,
+  Action<unknown>
+>;
 
 export const persistor = persistStore(store);
 

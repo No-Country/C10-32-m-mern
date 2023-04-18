@@ -1,10 +1,13 @@
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+
+import axios from "axios";
+
 import Text from "../../components/Text";
 import Title from "../../components/Title";
-import iconSearchSmall from "../../assets/iconSearchSmall.svg";
 import Dropdown from "../../components/Dropdown";
-import { useEffect, useState } from "react";
-import axios from "axios";
+
+import iconSearchSmall from "../../assets/iconSearchSmall.svg";
 
 const Search = () => {
   [];
@@ -18,22 +21,9 @@ const Search = () => {
       console.log(res.data);
     });
   }, []);
-  // await fetch("http://localhost:3000/api/getshifts", {
-  //       method: "GET",
-  //       headers: { "Content-Type": "application/json" },
-  //       body: JSON.stringify({
-  //         name,
-  //         secondname,
-  //         document,
-  //         email,
-  //         password,
-  //         phone,
-  //         obrasocialeId,
-  //       }),
-  //     });
 
   const { category } = useParams();
-  console.log(category);
+
   useEffect(() => {
     axios
       .post<any>("http://localhost:3000/api/getshifts", {
@@ -44,7 +34,6 @@ const Search = () => {
       })
       .then((res) => {
         console.log(res);
-        // setTurnos(res.data);
       });
   }, []);
 
@@ -55,7 +44,9 @@ const Search = () => {
           <Title title={"Especialistas"} />
           <Text
             first={"Hola Nombre Usuario"}
-            second={"Ubica al doctor de tu preferencia y selecciona el horario."}
+            second={
+              "Ubica al doctor de tu preferencia y selecciona el horario."
+            }
           />
 
           <Dropdown header="Primero elige a un Especialista" />
@@ -65,7 +56,9 @@ const Search = () => {
           <Title title={"Espcialidades"} />
           <Text
             first={"Hola Nombre Usuario"}
-            second={"Busque la especialidad y seleccione el especialista y horario"}
+            second={
+              "Busque la especialidad y seleccione el especialista y horario"
+            }
           />
 
           <Dropdown header="Primero elige a una Especialidad" />
@@ -75,12 +68,7 @@ const Search = () => {
               <details className="group text-[13px]">
                 <summary className="flex cursor-pointer list-none items-center justify-between p-4  font-bold group-open:border-b group-open:border-b-gray-100 bg-lightPurple">
                   {estudio.estudio}
-                  <div className="text-secondary-500">
-                    {/* <p>Agendar</p> */}
-                    {/* <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="block h-5 w-5 transition-all duration-300 group-open:rotate-180">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-                                    </svg> */}
-                  </div>
+                  <div className="text-secondary-500"></div>
                 </summary>
                 <div className="p-6">
                   <select

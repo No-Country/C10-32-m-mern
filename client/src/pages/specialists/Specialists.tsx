@@ -1,10 +1,13 @@
 import { useEffect, useState } from "react";
+
+import axios from "axios";
+
 import Text from "../../components/Text";
 import Title from "../../components/Title";
-import axios from "axios";
-import SpecialistsCard from "./SpecialistsCard";
 import HeaderSm from "../../components/HeaderSm";
 import NavBar from "../../components/NavBar";
+
+import SpecialistsCard from "./SpecialistsCard";
 
 const Specialists = () => {
   const [search, setSearch] = useState("");
@@ -15,7 +18,9 @@ const Specialists = () => {
   }, []);
 
   const getDoctors = async () => {
-    const { data } = await axios.get("http://localhost:3000/api/specialistbysede?idsede=4");
+    const { data } = await axios.get(
+      "http://localhost:3000/api/specialistbysede?idsede=4"
+    );
     setDoctors(data.results);
     console.log(doctors);
     console.log(data);
@@ -96,7 +101,9 @@ const Specialists = () => {
       <Title title={"Especialistas"} />
       <Text
         first={`Hola ${name} `}
-        second={"Hola, Pepito Pérez. Ubica al doctor de tu preferencia y selecciona el horario."}
+        second={
+          "Hola, Pepito Pérez. Ubica al doctor de tu preferencia y selecciona el horario."
+        }
       />
       <div>
         <form className="flex items-center">

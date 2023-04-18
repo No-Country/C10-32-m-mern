@@ -1,15 +1,19 @@
-import React, { SyntheticEvent, useState } from "react";
+import { SyntheticEvent, useState } from "react";
 import { useNavigate } from "react-router";
+import { Link } from "react-router-dom";
+
 import { ButtonEyeSlash } from "../../components/ButtonEyeSlash";
 import ButtonLogIn from "../../components/ButtonLogIn";
 import HeaderSm from "../../components/HeaderSm";
+
+import { useCustomSelector, useCustomDispatch } from "../../hooks/redux";
+
 import Lock from "../../icons/Lock";
 import MailIcon from "../../icons/MailIcon";
-import { useCustomSelector, useCustomDispatch } from "../../hooks/redux";
 import { login } from "../../redux/slices/auth";
 import Logo from "../../icons/Logo";
 import { AvatarGroup } from "../../icons/AvatarGroup";
-import { Link } from "react-router-dom";
+
 import Swal from "sweetalert2";
 
 const Login = () => {
@@ -61,18 +65,21 @@ const Login = () => {
       <div className=" flex flex-col justify-between h-[32rem] w-[38rem] min-w-[38rem] bg-gradient-to-b from-primary-start to-primary-end rounded-l-xl p-[2.25rem] lg:hidden">
         <Logo />
         <h1 className="text-4xl text-white font-extrabold">
-          La plataforma que te ayuda hacer tus consultas medicas de una forma más rapida.
+          La plataforma que te ayuda hacer tus consultas medicas de una forma
+          más rapida.
         </h1>
         <p className="text-base text-white">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. A ullam ducimus asperiores modi
-          repellat. Ipsa rem, facilis quia voluptatem enim numquam quos recusandae ipsum! Iste animi
-          fuga reprehenderit id eius.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. A ullam
+          ducimus asperiores modi repellat. Ipsa rem, facilis quia voluptatem
+          enim numquam quos recusandae ipsum! Iste animi fuga reprehenderit id
+          eius.
         </p>
         <div className="flex justify-start items-center gap-5">
           <AvatarGroup />
           <div className="w-[.5px] h-full bg-[#3F83F8]"></div>
           <p className="text-secondary">
-            Rated Best Over <strong className="text-white">15.7k</strong> Reviews
+            Rated Best Over <strong className="text-white">15.7k</strong>{" "}
+            Reviews
           </p>
         </div>
       </div>
@@ -116,7 +123,9 @@ const Login = () => {
               />
             </div>
             <div className="flex justify-end">
-              <p className="text-primary-start text-xs pb-6">¿Olvidaste tu contraseña?</p>
+              <p className="text-primary-start text-xs pb-6">
+                ¿Olvidaste tu contraseña?
+              </p>
             </div>
           </div>
           <ButtonLogIn className="bg-primary-start">INGRESAR</ButtonLogIn>

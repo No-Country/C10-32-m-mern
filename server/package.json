@@ -6,7 +6,6 @@
   "scripts": {
     "sequelize": "sequelize",
     "dev": "concurrently \"tsc -w\"  \"nodemon dist/index.js\"",
-    
     "start": "node dist/index.js",
     "db:seed": "npm run sequelize db:seed:all"
   },

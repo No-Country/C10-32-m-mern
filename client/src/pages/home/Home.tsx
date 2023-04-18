@@ -1,21 +1,23 @@
+import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import NavBar from "../../components/NavBar";
+import axios from "axios";
+
 import iconCalendarHome from "../../assets/iconCalendarHome.svg";
 import iconSpecialistHome from "../../assets/iconSpecialistHome.svg";
 import iconHeartHome from "../../assets/iconHeartHome.svg";
+import Map from "../../assets/Mapsicle Map.jpg";
+
 import Header from "../../components/Header";
-import React, { useEffect, useState } from "react";
-import axios from "axios";
 import FloatingChat from "../../components/FloatingChat";
 import { useCustomSelector } from "../../hooks/redux";
 import IconLanding from "../../icons/IconLanding";
 import Slider from "../../components/Slider";
 import GridLanding from "../../components/GridLanding";
-import Map from "../../assets/Mapsicle Map.jpg";
+import ButtonAction from "../../components/ButtonAction";
+
 import IconPlusFast from "../../icons/IconPlusFast";
 import IconPlusEasy from "../../icons/IconPlusEasy";
 import IconPlusHome from "../../icons/IconPlusHome";
-import ButtonAction from "../../components/ButtonAction";
 import SliderSpecialities from "../../components/SliderSpecilities";
 import IconLandingMobile from "../../icons/IconLandingMobile";
 
@@ -43,7 +45,7 @@ const Home = () => {
 
   return (
     <div className="flex flex-col justify-center">
-      <NavBar />
+      {/* <NavBar /> */}
       <Header name={user.name} lastName={user.secondname} />
 
       {algo ? (
@@ -92,9 +94,10 @@ const Home = () => {
       ) : (
         <>
           <h1 className="lg:block hidden font-montserrat font-extrabold text-center text-base leading-[50px] tracking-widest text-darkBlue py-8 px-[23px]">
-            AHORRA TU TIEMPO <br /> Y ORGANIZA TUS TURNOS MEDICOS DE FORMA FÁCIL Y RÁPIDA
+            AHORRA TU TIEMPO <br /> Y ORGANIZA TUS TURNOS MEDICOS DE FORMA FÁCIL
+            Y RÁPIDA
           </h1>
-          
+
           <div className=" hidden lg:flex flex-col items-center py-7">
             <ButtonAction
               className="my-3 bg-buttonBlue text-secondary "
@@ -107,7 +110,7 @@ const Home = () => {
               children="INICIAR SESION"
             />
           </div>
-          <IconLandingMobile/>
+          <IconLandingMobile />
           <div className="lg:flex hidden flex-col  justify-center ">
             {/* <Link
                 to="/specialists"
@@ -184,7 +187,6 @@ const Home = () => {
                 Agenda tu turno
               </p>
             </Link>
-            
           ) : (
             <div className="flex flex-col items-center py-7">
               <ButtonAction
@@ -224,35 +226,34 @@ const Home = () => {
         </h2>
         <GridLanding />
       </section>
-      {!algo &&
-      
-      <section className="lg:hidden px-32 flex justify-around m-20 ">
-        <div className="flex flex-col justify-between">
-          <h2 className="font-montserrat font-extrabold text-2xl text-black py-4">
-            Horarios de Atención
-          </h2>
-          <div className="flex flex-col justify-around h-full text-lg">
-            <div className="py-4 font-montserrat">
-              <p>Lunes a viernes 06:00 am - 20:30 pm</p>
-            </div>
-            <div className="py-4 font-montserrat">
-              <p>Sábados 08:00 am - 16:00 pm</p>
-            </div>
-            <div className="py-4 font-montserrat">
-              <p>Domingos y feriados cerrado</p>
+      {!algo && (
+        <section className="lg:hidden px-32 flex justify-around m-20 ">
+          <div className="flex flex-col justify-between">
+            <h2 className="font-montserrat font-extrabold text-2xl text-black py-4">
+              Horarios de Atención
+            </h2>
+            <div className="flex flex-col justify-around h-full text-lg">
+              <div className="py-4 font-montserrat">
+                <p>Lunes a viernes 06:00 am - 20:30 pm</p>
+              </div>
+              <div className="py-4 font-montserrat">
+                <p>Sábados 08:00 am - 16:00 pm</p>
+              </div>
+              <div className="py-4 font-montserrat">
+                <p>Domingos y feriados cerrado</p>
+              </div>
             </div>
           </div>
-        </div>
-        <div>
-          <h2 className="font-montserrat font-extrabold text-2xl text-black py-4">
-            Nuestras Sedes
-          </h2>
           <div>
-            <img src={Map} alt="" />
+            <h2 className="font-montserrat font-extrabold text-2xl text-black py-4">
+              Nuestras Sedes
+            </h2>
+            <div>
+              <img src={Map} alt="" />
+            </div>
           </div>
-        </div>
-      </section>
-      }
+        </section>
+      )}
       <FloatingChat />
     </div>
   );
