@@ -92,7 +92,7 @@ const ProgramedApointment = () => {
 
   return (
     <div className="px-32 lg:px-8">
-      <HeaderSm />
+      {/* <HeaderSm /> */}
       <NavBar />
       <Title title={"Agenda tu turno"} />
       <Text

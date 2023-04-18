@@ -41,7 +41,7 @@ const Login = () => {
         showConfirmButton: false,
         timer: 2000,
       });
-      navigate("/home");
+      navigate("/");
     } else if (user.email === "") {
       Swal.fire({
         icon: "error",
@@ -60,8 +60,8 @@ const Login = () => {
   };
 
   return (
-    <div className="flex justify-center">
-      <HeaderSm />
+    <div className="flex justify-center pt-20">
+      {/* <HeaderSm /> */}
       <div className=" flex flex-col justify-between h-[32rem] w-[38rem] min-w-[38rem] bg-gradient-to-b from-primary-start to-primary-end rounded-l-xl p-[2.25rem] lg:hidden">
         <Logo />
         <h1 className="text-4xl text-white font-extrabold">
