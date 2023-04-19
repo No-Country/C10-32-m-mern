@@ -33,4 +33,3 @@ exports.Shift.belongsTo(specialist_model_1.Specialist);
 exports.Shift.belongsTo(user_model_1.User);
 exports.Shift.belongsTo(sede_model_1.Sede);
 exports.Shift.belongsTo(speciality_model_1.Speciality);
-//# sourceMappingURL=shift.model.js.map

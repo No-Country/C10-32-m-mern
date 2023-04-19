@@ -43,4 +43,3 @@ module.exports = [
         name: 'Vitalia',
     },
 ];
-//# sourceMappingURL=sede.js.map

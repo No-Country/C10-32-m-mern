@@ -5,4 +5,3 @@ const router = (0, express_1.Router)();
 const obrasocial_controller_1 = require("../controllers/obrasocial.controller");
 router.get("/obrasocial", obrasocial_controller_1.getobrasociales);
 exports.default = router;
-//# sourceMappingURL=obrasocial.routes.js.map

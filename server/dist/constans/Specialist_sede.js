@@ -267,4 +267,3 @@ module.exports = [
         sedeId: 14,
     },
 ];
-//# sourceMappingURL=Specialist_sede.js.map

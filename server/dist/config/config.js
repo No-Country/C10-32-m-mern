@@ -15,4 +15,3 @@ exports.env = {
     PORT: process.env.PORT || 3000,
 };
 exports.DB_NAME = exports.env.DB_NAME, exports.DB_PASSWORD = exports.env.DB_PASSWORD, exports.DB_HOST = exports.env.DB_HOST, exports.DB_PORT = exports.env.DB_PORT, exports.DB_USER = exports.env.DB_USER, exports.PORT = exports.env.PORT;
-//# sourceMappingURL=config.js.map

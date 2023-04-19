@@ -20,8 +20,7 @@ const getobrasociales = (req, res) => __awaiter(void 0, void 0, void 0, function
         res.status(200).json(obrassociales);
     }
     catch (error) {
-        res.status(400).json(error);
+        res.status(400).json({ error: error.message });
     }
 });
 exports.getobrasociales = getobrasociales;
-//# sourceMappingURL=obrasocial.controller.js.map

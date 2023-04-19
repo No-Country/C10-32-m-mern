@@ -9,4 +9,3 @@ const ObraSocial = require('./obrasocial.model');
 // NaN
 // Specialist.belongsToMany(Sede, {through:'Specialist_sede'})
 // Sede.belongsToMany(Specialist, {through:'Specialist_sede'})
-//# sourceMappingURL=associations.js.map

@@ -31,4 +31,3 @@ module.exports = [
         name: 'Hominis',
     },
 ];
-//# sourceMappingURL=obrasocial.js.map

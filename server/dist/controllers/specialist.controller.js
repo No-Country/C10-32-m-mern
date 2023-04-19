@@ -95,4 +95,3 @@ const getspecialistbyfirstletter = (req, res) => __awaiter(void 0, void 0, void 
     }
 });
 exports.getspecialistbyfirstletter = getspecialistbyfirstletter;
-//# sourceMappingURL=specialist.controller.js.map

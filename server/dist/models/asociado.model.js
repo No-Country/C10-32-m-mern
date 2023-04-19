@@ -19,4 +19,3 @@ exports.Asociado = db_1.sequelize.define('asociados', {
     timestamps: false,
     tableName: 'asociados',
 });
-//# sourceMappingURL=asociado.model.js.map

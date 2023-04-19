@@ -193,4 +193,3 @@ const getshiftbyuser = (req, res) => __awaiter(void 0, void 0, void 0, function*
     }
 });
 exports.getshiftbyuser = getshiftbyuser;
-//# sourceMappingURL=shift.controller.js.map

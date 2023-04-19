@@ -59,4 +59,3 @@ module.exports = [
         consultingRoom: 74,
     },
 ];
-//# sourceMappingURL=specialists.js.map

@@ -23,4 +23,3 @@ const getsedes = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     }
 });
 exports.getsedes = getsedes;
-//# sourceMappingURL=sede.controller.js.map

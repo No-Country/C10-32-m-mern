@@ -40,4 +40,3 @@ exports.Specialist = db_1.sequelize.define('specialists', {
 });
 exports.Specialist.belongsToMany(speciality_model_1.Speciality, { through: 'Specialist_Speciality' });
 speciality_model_1.Speciality.belongsToMany(exports.Specialist, { through: 'Specialist_Speciality' });
-//# sourceMappingURL=specialist.model.js.map

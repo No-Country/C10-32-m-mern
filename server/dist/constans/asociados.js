@@ -67,4 +67,3 @@ module.exports = [
         document: '99999999',
     },
 ];
-//# sourceMappingURL=asociados.js.map

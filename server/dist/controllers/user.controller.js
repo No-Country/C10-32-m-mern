@@ -21,4 +21,3 @@ const findAllUsers = (req, res) => __awaiter(void 0, void 0, void 0, function* (
     }
 });
 exports.findAllUsers = findAllUsers;
-//# sourceMappingURL=user.controller.js.map

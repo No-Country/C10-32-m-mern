@@ -12,6 +12,6 @@ export const getobrasociales = async (req: Request, res: Response) => {
 
 		res.status(200).json(obrassociales);
 	} catch (error) {
-		res.status(400).json(error);
+		res.status(400).json({ error: (error as Error).message });
 	}
 };

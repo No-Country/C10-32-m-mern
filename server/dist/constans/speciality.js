@@ -55,4 +55,3 @@ module.exports = [
         description: 'Instrumentista',
     },
 ];
-//# sourceMappingURL=speciality.js.map

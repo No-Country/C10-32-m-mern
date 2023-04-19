@@ -22,4 +22,3 @@ exports.ObraSocial = db_1.sequelize.define('obrasociales', {
 //ObraSocial.hasMany(User)
 //ObraSocial.hasOne(User)
 //User.hasOne(ObraSocial)
-//# sourceMappingURL=obrasocial.model.js.map

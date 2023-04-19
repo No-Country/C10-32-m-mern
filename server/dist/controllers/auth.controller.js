@@ -82,4 +82,3 @@ const logout = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     }
 });
 exports.logout = logout;
-//# sourceMappingURL=auth.controller.js.map

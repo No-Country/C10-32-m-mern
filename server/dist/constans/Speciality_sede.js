@@ -338,4 +338,3 @@ module.exports = [
         specialtyId: 9,
     },
 ];
-//# sourceMappingURL=Speciality_sede.js.map

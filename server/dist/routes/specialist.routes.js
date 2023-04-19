@@ -7,4 +7,3 @@ router.get('/specialistbysede', specialist_controller_1.getspecialistbysede);
 router.get('/specialistdetails/:id', specialist_controller_1.getspecialistdetails);
 router.get('/specialistbfl', specialist_controller_1.getspecialistbyfirstletter);
 exports.default = router;
-//# sourceMappingURL=specialist.routes.js.map

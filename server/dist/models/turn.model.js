@@ -18,4 +18,3 @@
 // 		allowNull: false,
 // 	},
 // });
-//# sourceMappingURL=turn.model.js.map

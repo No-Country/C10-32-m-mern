@@ -33,4 +33,3 @@ const getspecialiestbysede = (req, res) => __awaiter(void 0, void 0, void 0, fun
     }
 });
 exports.getspecialiestbysede = getspecialiestbysede;
-//# sourceMappingURL=speciality.controller.js.map
