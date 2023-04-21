@@ -1,4 +1,3 @@
-"use strict";
 module.exports = [
     {
         mondayini: '08:00:00',

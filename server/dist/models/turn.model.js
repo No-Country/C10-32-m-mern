@@ -1,4 +1,3 @@
-"use strict";
 // import { DataType } from 'sequelize';
 // import { sequelize } from '../database/db';
 // import { Specialist } from './specialist.model';

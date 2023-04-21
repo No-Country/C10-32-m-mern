@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PORT = exports.DB_USER = exports.DB_PORT = exports.DB_HOST = exports.DB_PASSWORD = exports.DB_NAME = exports.env = void 0;
+exports.PORT = exports.NODEMAILER_PASS = exports.NODEMAILER_EMAIL = exports.DB_USER = exports.DB_PORT = exports.DB_HOST = exports.DB_PASSWORD = exports.DB_NAME = exports.env = void 0;
 const dotenv_1 = __importDefault(require("dotenv"));
 dotenv_1.default.config();
 exports.env = {
@@ -13,5 +13,7 @@ exports.env = {
     DB_NAME: process.env.DB_NAME,
     DB_PASSWORD: process.env.DB_PASSWORD,
     PORT: process.env.PORT || 3000,
+    NODEMAILER_EMAIL: process.env.NODEMAILER_EMAIL,
+    NODEMAILER_PASS: process.env.NODEMAILER_PASS,
 };
-exports.DB_NAME = exports.env.DB_NAME, exports.DB_PASSWORD = exports.env.DB_PASSWORD, exports.DB_HOST = exports.env.DB_HOST, exports.DB_PORT = exports.env.DB_PORT, exports.DB_USER = exports.env.DB_USER, exports.PORT = exports.env.PORT;
+exports.DB_NAME = exports.env.DB_NAME, exports.DB_PASSWORD = exports.env.DB_PASSWORD, exports.DB_HOST = exports.env.DB_HOST, exports.DB_PORT = exports.env.DB_PORT, exports.DB_USER = exports.env.DB_USER, exports.NODEMAILER_EMAIL = exports.env.NODEMAILER_EMAIL, exports.NODEMAILER_PASS = exports.env.NODEMAILER_PASS, exports.PORT = exports.env.PORT;

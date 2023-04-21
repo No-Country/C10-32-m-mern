@@ -1,4 +1,3 @@
-"use strict";
 const Specialist = require('./specialist.model');
 const Sede = require('./sede.model');
 const User = require('./user.model');

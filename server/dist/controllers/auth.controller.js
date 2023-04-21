@@ -17,7 +17,7 @@ const user_model_1 = require("../models/user.model");
 const asociado_model_1 = require("../models/asociado.model");
 const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
 const bcrypt_1 = __importDefault(require("bcrypt"));
-//REGISTER
+const nodemailer_1 = require("../mail/nodemailer");
 const signup = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const { body } = req;
     try {
@@ -41,9 +41,9 @@ const signup = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
             phone: body.phone,
             obrasocialeId: body.obrasocialId,
         });
-        console.log(newUser);
         // creo token
         const token = jsonwebtoken_1.default.sign({ _id: newUser.dataValues.id }, process.env.TOKEN_SECRET || 'tokenalternativo');
+        (0, nodemailer_1.sendEmail)(body.email, body.name);
         res.header('auth-token', token).json({ user: newUser });
     }
     catch (error) {
@@ -67,7 +67,7 @@ const signin = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
         res.header('auth-token', token).json({ user: loginuser, token });
     }
     catch (error) {
-        res.status(404).json({ messagge: error.messagge });
+        res.status(404).json({ messagge: error.message });
     }
 });
 exports.signin = signin;
@@ -78,7 +78,7 @@ const logout = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
             .json({ message: 'Se ha cerrado sesión correctamente.' });
     }
     catch (error) {
-        return res.status(400).json({ error: error.messagge });
+        return res.status(400).json({ error: error.message });
     }
 });
 exports.logout = logout;
