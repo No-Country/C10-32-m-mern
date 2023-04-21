@@ -1,4 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { Thunk } from "../../store";
 
 export interface Specialists {
   specialists: {};

@@ -17,17 +17,17 @@ const Search = () => {
   const [doctors, setDoctors] = useState([]);
   const [specialities, setSpecialities] = useState([]);
 
-  useEffect(() => {
-    axios.get("https://api-c1032mmern.onrender.com/api/specialistbfl?letter=").then((res) => {
-      setDoctors(res.data);
-      console.log(res.data);
-    });
-    axios.get("https://api-c1032mmern.onrender.com/api/specialiestbysede?idsede=2").then((res) => {
-      setSpecialities(res.data[0].specialties);
-      console.log("specialities en search", res.data);
-      console.log(res.data[0].specialties[0].description);
-    });
-  }, []);
+  // useEffect(() => {
+  //   axios.get("https://api-c1032mmern.onrender.com/api/specialistbfl?letter=").then((res) => {
+  //     setDoctors(res.data);
+  //     console.log(res.data);
+  //   });
+  //   axios.get("https://api-c1032mmern.onrender.com/api/specialiestbysede?idsede=2").then((res) => {
+  //     setSpecialities(res.data[0].specialties);
+  //     console.log("specialities en search", res.data);
+  //     console.log(res.data[0].specialties[0].description);
+  //   });
+  // }, []);
 
   const {
     user: { name },
@@ -54,22 +54,25 @@ const Search = () => {
         <>
           <Title title={"Especialistas"} />
           <Text
-            first={`Hola ${name}`}
+            first={`Bienvenido ${name}`}
             second={"Ubica al doctor de tu preferencia y selecciona el horario."}
           />
 
-          <Dropdown header="Primero elige a un Especialista" title="Seleccione un Especialista" />
+          <Dropdown
+            header="Primero elige a un Especialista (Haz click aquí)"
+            title="Seleccione un Especialista"
+          />
         </>
       ) : (
         <>
           <Title title={"Espcialidades"} />
           <Text
-            first={"Hola Nombre Usuario"}
+            first={`Bienvenido ${name}`}
             second={"Busque la especialidad y seleccione el especialista y horario"}
           />
 
           <Dropdown
-            header="Primero elige a una Especialidad"
+            header="Primero elige a una Especialidad (Haz click aquí)"
             title="Seleccione una Especialidad"
             array={specialities}
           />
