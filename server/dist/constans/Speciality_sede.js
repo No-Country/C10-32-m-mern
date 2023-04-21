@@ -1,3 +1,4 @@
+"use strict";
 module.exports = [
     {
         createdAt: '2021-10-28',

@@ -1,3 +1,4 @@
+"use strict";
 'use sctrict';
 const obraSocial = require('./obrasocial.ts');
 console.log(obraSocial);
