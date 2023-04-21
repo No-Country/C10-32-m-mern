@@ -19,7 +19,8 @@ import IconPlusEasy from "../../icons/IconPlusEasy";
 import IconPlusHome from "../../icons/IconPlusHome";
 import SliderSpecialities from "../../components/SliderSpecilities";
 import IconLandingMobile from "../../icons/IconLandingMobile";
-import Map from "../../icons/IconCalendarHome";
+import Map from "../../icons/Map";
+import MapDesktop from "../../assets/Mapsicle Map.jpg";
 
 const Home = () => {
   const [sedes, setSedes] = useState([]);
@@ -47,7 +48,6 @@ const Home = () => {
     <div className="flex flex-col justify-center">
       {/* <NavBar /> */}
       <Header />
-
       {algo ? (
         <div className="px-6">
           <select
@@ -247,9 +247,7 @@ const Home = () => {
             <h2 className="font-montserrat font-extrabold text-2xl text-black py-4">
               Nuestras Sedes
             </h2>
-            <div>
-              <Map />
-            </div>
+            <img src={MapDesktop} />
           </div>
         </section>
       )}

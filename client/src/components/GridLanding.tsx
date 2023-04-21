@@ -1,5 +1,5 @@
 import GridCard from "./GridCard";
-import Stethoscope from "../assets/gridMedical.svg";
+import Stethoscope from "../assets/gridStethoscope.png";
 import Dentist from "../assets/gridDentist.svg";
 import Ophtalmology from "../assets/gridOphtalmology.svg";
 import Cardiology from "../assets/gridCardiology.svg";

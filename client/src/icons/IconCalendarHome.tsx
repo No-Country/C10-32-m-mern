@@ -1,6 +1,6 @@
 import React from "react";
 
-const Map = () => {
+const IconCalendarHome = () => {
   return (
     <svg width="63" height="72" viewBox="0 0 63 72" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path
@@ -27,4 +27,4 @@ const Map = () => {
   );
 };
 
-export default Map;
+export default IconCalendarHome;

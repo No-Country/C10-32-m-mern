@@ -17,7 +17,7 @@ import Landing from "./pages/landing/Landing";
 
 const App = () => {
   return (
-    <div className="flex flex-col items-center justify-center">
+    <div className="flex flex-col items-center justify-center w-100%">
       <Header />
       <main className="flex flex-col justify-center items-center w-screen mt-[12rem] ">
         <Routes>
