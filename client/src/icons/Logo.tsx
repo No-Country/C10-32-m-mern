@@ -4,7 +4,7 @@ const Logo = () => {
   // lg:absolute lg:top-[4rem]
 
   return (
-    <Link to={"/home"}>
+    <Link to={"/"}>
       <svg
         width="200"
         height="80"

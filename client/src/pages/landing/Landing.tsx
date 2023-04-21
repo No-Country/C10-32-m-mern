@@ -5,7 +5,7 @@ import GridLanding from "../../components/GridLanding";
 import Slider from "../../components/Slider";
 import HeaderSm from "../../components/HeaderSm";
 
-import Map from "../../assets/Mapsicle Map.jpg";
+import Map from "../../icons/Map";
 
 const Landing = () => {
   const navigate = useNavigate();
@@ -17,8 +17,7 @@ const Landing = () => {
         {/* <IconLanding/> */}
         <div className="text-center">
           <p className="font-montserrat font-extrabold text-center text-[16px] leading-[50px] tracking-widest text-darkBlue py-4">
-            AHORRA TU TIEMPO Y ORGANIZA TUS TURNOS MEDICOS DE FORMA FÁCIL Y
-            RÁPIDA
+            AHORRA TU TIEMPO Y ORGANIZA TUS TURNOS MEDICOS DE FORMA FÁCIL Y RÁPIDA
           </p>
         </div>
         <div className="flex flex-col items-center py-7">
@@ -45,7 +44,7 @@ const Landing = () => {
           Nuestros Servicios Médicos
         </h2>
 
-        <GridLanding />
+        <ing />
       </section>
       <section className="lg:hidden py-6 flex lg:flex-col justify-between">
         <div className="">
@@ -70,7 +69,7 @@ const Landing = () => {
             Nuestras Sedes
           </h2>
           <div>
-            <img src={Map} alt="" />
+            <Map />
           </div>
         </div>
       </section>

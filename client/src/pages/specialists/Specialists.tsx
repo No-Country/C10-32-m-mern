@@ -19,7 +19,7 @@ const Specialists = () => {
 
   const getDoctors = async () => {
     const { data } = await axios.get(
-      "http://localhost:3000/api/specialistbysede?idsede=4"
+      "https://api-c1032mmern.onrender.com/api/specialistbysede?idsede=4"
     );
     setDoctors(data.results);
     console.log(doctors);
@@ -101,9 +101,7 @@ const Specialists = () => {
       <Title title={"Especialistas"} />
       <Text
         first={`Hola ${name} `}
-        second={
-          "Hola, Pepito Pérez. Ubica al doctor de tu preferencia y selecciona el horario."
-        }
+        second={"Hola, Pepito Pérez. Ubica al doctor de tu preferencia y selecciona el horario."}
       />
       <div>
         <form className="flex items-center">

@@ -29,7 +29,7 @@ const Register = () => {
   // consumo del endpoint que trae la lista de las obras sociales
   useEffect(() => {
     axios
-      .get("http://localhost:3000/api/obrasocial")
+      .get("https://api-c1032mmern.onrender.com/api/obrasocial")
       .then((res) => setObraSocial(res.data));
   }, []);
 
@@ -39,17 +39,9 @@ const Register = () => {
 
   const submit = async (e: SyntheticEvent) => {
     if (password === confirmPassword) {
-      if (
-        name &&
-        secondname &&
-        document &&
-        email &&
-        password &&
-        phone &&
-        obrasocialeId
-      ) {
+      if (name && secondname && document && email && password && phone && obrasocialeId) {
         e.preventDefault();
-        await fetch("http://localhost:3000/api/signup", {
+        await fetch("https://api-c1032mmern.onrender.com/api/signup", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
@@ -89,7 +81,7 @@ const Register = () => {
 
   return (
     <div>
-      <HeaderSm />
+      {/* <HeaderSm /> */}
       <div className="flex flex-col justify-center items-center">
         <div className="w-[23rem] bg-white p-4 mb-[3rem] rounded-xl">
           <h2 className="mb-[2rem] text-xl">Completa tus datos:</h2>

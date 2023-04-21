@@ -7,7 +7,8 @@ import Text from "../../components/Text";
 import Title from "../../components/Title";
 import Dropdown from "../../components/Dropdown";
 
-import iconSearchSmall from "../../assets/iconSearchSmall.svg";
+import IconSearchSmall from "../../icons/IconSearchSmall";
+import { useCustomSelector } from "../../hooks/redux";
 
 const Search = () => {
   [];
@@ -16,17 +17,21 @@ const Search = () => {
   const [doctors, setDoctors] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:3000/api/specialistbfl?letter=").then((res) => {
+    axios.get("https://api-c1032mmern.onrender.com/api/specialistbfl?letter=").then((res) => {
       setDoctors(res.data);
       console.log(res.data);
     });
   }, []);
 
+  const {
+    user: { name },
+  } = useCustomSelector((state) => state);
+
   const { category } = useParams();
 
   useEffect(() => {
     axios
-      .post<any>("http://localhost:3000/api/getshifts", {
+      .post<any>("https://api-c1032mmern.onrender.com/api/getshifts", {
         idspecialist: 2,
         idsede: 5,
         idspeciality: 1,
@@ -43,10 +48,8 @@ const Search = () => {
         <>
           <Title title={"Especialistas"} />
           <Text
-            first={"Hola Nombre Usuario"}
-            second={
-              "Ubica al doctor de tu preferencia y selecciona el horario."
-            }
+            first={`Hola ${name}`}
+            second={"Ubica al doctor de tu preferencia y selecciona el horario."}
           />
 
           <Dropdown header="Primero elige a un Especialista" />
@@ -56,18 +59,16 @@ const Search = () => {
           <Title title={"Espcialidades"} />
           <Text
             first={"Hola Nombre Usuario"}
-            second={
-              "Busque la especialidad y seleccione el especialista y horario"
-            }
+            second={"Busque la especialidad y seleccione el especialista y horario"}
           />
 
           <Dropdown header="Primero elige a una Especialidad" />
 
           <div className="mx-auto max-w-lg lg:w-full w-1/3 my-6">
             <div className="divide-y divide-gray-100 overflow-hidden rounded-[3px] border border-gray-200 bg-white shadow-sm">
-              <details className="group text-[13px]">
+              {/* <details className="group text-[13px]">
                 <summary className="flex cursor-pointer list-none items-center justify-between p-4  font-bold group-open:border-b group-open:border-b-gray-100 bg-lightPurple">
-                  {estudio.estudio}
+                  {turnos.estudio}
                   <div className="text-secondary-500"></div>
                 </summary>
                 <div className="p-6">
@@ -110,7 +111,7 @@ const Search = () => {
                     AGENDAR
                   </button>
                 </div>
-              </details>
+              </details> */}
             </div>
           </div>
         </>

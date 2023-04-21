@@ -48,7 +48,7 @@ const Profile = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3000/api/obrasocial")
+      .get("https://api-c1032mmern.onrender.com/api/obrasocial")
       .then((res) => setObraSocial(res.data));
   }, []);
 
@@ -112,9 +112,7 @@ const Profile = () => {
       <NavBar />
       <div className="w-full max-w-[430px] flex justify-start items-center gap-8 bg-fontNav drop-shadow rounded-2xl h-[5rem] px-8">
         <IconProfile active={true} />
-        <p className="text-center text-[30px] text-white leading-6">
-          Mi Perfil
-        </p>
+        <p className="text-center text-[30px] text-white leading-6">Mi Perfil</p>
       </div>
       {fullData ? (
         <div className="mt-8 bg-white w-full h-fit border border-borders rounded">
@@ -167,10 +165,7 @@ const Profile = () => {
         </div>
       ) : (
         <div className="flex flex-col justify-center items-center mb-16">
-          <form
-            action=""
-            className="flex flex-col justify-center items gap-5 my-5"
-          >
+          <form action="" className="flex flex-col justify-center items gap-5 my-5">
             <input
               onChange={(e) => setNewName(e.target.value)}
               className="border border-borders rounded-md h-[2.5rem] px-2"
@@ -297,11 +292,7 @@ const Profile = () => {
               <option value="Viudo">Viudo/a</option>
             </select>
           </form>
-          <ButtonAction
-            type="submit"
-            className="mt-2 bg-darkPurple text-white"
-            onClick={submit}
-          >
+          <ButtonAction type="submit" className="mt-2 bg-darkPurple text-white" onClick={submit}>
             ACEPTAR
           </ButtonAction>
         </div>

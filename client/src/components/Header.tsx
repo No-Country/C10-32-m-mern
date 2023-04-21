@@ -42,7 +42,7 @@ export default function Header({ name, lastName }: User) {
   };
 
   return (
-    <div className="fixed z-10 top-0 right-0 flex flex-col items-center justify-center w-full h-[12.5rem] bg-gradient-to-b from-primary-start to-primary-end">
+    <div className="fixed z-10 top-0 right-0 flex flex-col items-center justify-center w-full h-[12.5rem] lg:h-[10.5rem] bg-gradient-to-b from-primary-start to-primary-end">
       <div className="flex">
         <NavBar />
         <NavBarDesktop />
@@ -54,9 +54,7 @@ export default function Header({ name, lastName }: User) {
               className="cursor-pointer flex justify-center items-center gap-2"
             >
               <Profile active={true} />
-              <p className="text-white text-md">
-                {user.name ? user.name : "Ingresa"}
-              </p>
+              <p className="text-white text-md">{user.name ? user.name : "Ingresa"}</p>
             </div>
           </div>
           <div className="h-[40px]">
@@ -76,8 +74,11 @@ export default function Header({ name, lastName }: User) {
           </div>
         </div>
       </div>
-      <div className="absolute top-[9rem] font-semibold flex items-center justify-center h-[2rem] w-screen bg-secondary">
-        <h2>Hola, {user.name} ¿Estás listo para organizar tu agenda médica?</h2>
+      <div className=" absolute top-[9rem] font-semibold flex items-center justify-center h-[2rem] w-screen bg-secondary">
+        <h2>
+          Hola {user.name ? "," : ""} {user.name}{" "}
+          <span className="lg:hidden">¿Estás listo para organizar tu agenda médica?</span>
+        </h2>
       </div>
       <p className="absolute top-[11rem] text-white">{newDate}</p>
     </div>

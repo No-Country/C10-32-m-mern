@@ -7,7 +7,7 @@ import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
 import { Link } from "react-router-dom";
 
 import GridCard from "./GridCard";
-import Stethoscope from "../assets/gridMedical.svg";
+import Stethoscope from "../assets/gridDentist.svg";
 import Dentist from "../assets/gridDentist.svg";
 import Ophtalmology from "../assets/gridOphtalmology.svg";
 import Cardiology from "../assets/gridCardiology.svg";
@@ -58,7 +58,6 @@ const SliderSpecialities = () => {
       name: Neurology,
       title: "NEUROLOGÍA",
     },
-
   ];
 
   return (
@@ -70,15 +69,14 @@ const SliderSpecialities = () => {
         modules={[Navigation, Pagination, Scrollbar, A11y]}
         spaceBetween={3}
         breakpoints={{
-        425: {
+          425: {
             slidesPerView: 1,
             spaceBetween: 50,
-        },
+          },
           767: {
             slidesPerView: 2,
             spaceBetween: 5,
           },
-
         }}
         onSwiper={(swiper) => console.log(swiper)}
         onSlideChange={() => console.log("slide change")}

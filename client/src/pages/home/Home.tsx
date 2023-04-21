@@ -2,10 +2,9 @@ import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
-import iconCalendarHome from "../../assets/iconCalendarHome.svg";
-import iconSpecialistHome from "../../assets/iconSpecialistHome.svg";
-import iconHeartHome from "../../assets/iconHeartHome.svg";
-import Map from "../../assets/Mapsicle Map.jpg";
+import IconCalendarHome from "../../icons/IconCalendarHome";
+import IconSpecialistHome from "../../icons//IconSpecialistHome";
+import IconHeartHome from "../../icons/IconHearthHome";
 
 import Header from "../../components/Header";
 import FloatingChat from "../../components/FloatingChat";
@@ -20,10 +19,11 @@ import IconPlusEasy from "../../icons/IconPlusEasy";
 import IconPlusHome from "../../icons/IconPlusHome";
 import SliderSpecialities from "../../components/SliderSpecilities";
 import IconLandingMobile from "../../icons/IconLandingMobile";
+import Map from "../../icons/IconCalendarHome";
 
 const Home = () => {
   const [sedes, setSedes] = useState([]);
-  const [algo, setAlgo] = React.useState(null);
+  const [algo, setAlgo] = React.useState<any>("null");
 
   const navigate = useNavigate();
 
@@ -66,7 +66,7 @@ const Home = () => {
               to="/appointment"
               className="hidden lg:flex items-center bg-lightGreen text-[#FFFFFF] rounded-2xl lg:h-[100px] lg:w-full h-[250px] w-[250px] my-8 px-[43px]"
             >
-              <img src={iconCalendarHome} alt="" />
+              <IconCalendarHome />
               <p className="font-montserrat font-semibold text-start text-[22px] leading-6 px-[23px] lg:w-1/2">
                 Agenda tu turno
               </p>
@@ -75,7 +75,7 @@ const Home = () => {
               to="/specialists"
               className="hidden lg:flex  items-center bg-lightBlue text-[#FFFFFF] rounded-2xl lg:h-[100px] lg:w-full h-[250px] w-[250px] my-8 px-[43px]"
             >
-              <img src={iconSpecialistHome} alt="" />
+              <IconSpecialistHome />
               <p className="font-montserrat font-semibold text-start text-[22px] leading-6 px-[23px]">
                 Especialistas
               </p>
@@ -84,7 +84,7 @@ const Home = () => {
               to="#"
               className="hidden lg:flex items-center bg-lightYellow text-[#FFFFFF] rounded-2xl lg:h-[100px] lg:w-full h-[250px] w-[250px] my-8 px-[43px]"
             >
-              <img src={iconHeartHome} alt="" />
+              <IconHeartHome />
               <p className="font-montserrat font-semibold text-start text-[22px] leading-6 px-[23px]">
                 Esp. Médicas
               </p>
@@ -94,8 +94,7 @@ const Home = () => {
       ) : (
         <>
           <h1 className="lg:block hidden font-montserrat font-extrabold text-center text-base leading-[50px] tracking-widest text-darkBlue py-8 px-[23px]">
-            AHORRA TU TIEMPO <br /> Y ORGANIZA TUS TURNOS MEDICOS DE FORMA FÁCIL
-            Y RÁPIDA
+            AHORRA TU TIEMPO <br /> Y ORGANIZA TUS TURNOS MEDICOS DE FORMA FÁCIL Y RÁPIDA
           </h1>
 
           <div className=" hidden lg:flex flex-col items-center py-7">
@@ -163,7 +162,7 @@ const Home = () => {
                 Nuestras Sedes
               </h2>
               <div>
-                <img src={Map} alt="" />
+                <Map />
               </div>
             </div>
           </section>
@@ -182,7 +181,7 @@ const Home = () => {
               to="/appointment"
               className="lg:hidden flex items-center bg-lightGreen text-[#FFFFFF] rounded-2xl h-[100px] w-[400px] my-16 px-[43px]"
             >
-              <img src={iconCalendarHome} alt="" />
+              <IconCalendarHome />
               <p className="font-montserrat font-semibold text-[22px] leading-6 px-[23px] lg:w-1/2">
                 Agenda tu turno
               </p>
@@ -249,7 +248,7 @@ const Home = () => {
               Nuestras Sedes
             </h2>
             <div>
-              <img src={Map} alt="" />
+              <Map />
             </div>
           </div>
         </section>

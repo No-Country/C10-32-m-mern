@@ -8,7 +8,7 @@ const DoctorSliderCard = () => {
   const [doctors, setDoctors] = useState<any>([]);
 
   useEffect(() => {
-    axios.get("http://localhost:3000/api/specialistbfl?letter=a").then((res) => {
+    axios.get("https://api-c1032mmern.onrender.com/api/specialistbfl?letter=a").then((res) => {
       console.log(res.data[0]);
       setDoctors(res.data[0]);
     });
