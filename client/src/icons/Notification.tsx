@@ -22,11 +22,7 @@ const Notification = ({ active }: IsActive) => {
         </g>
         <defs>
           <clipPath id="clip0_194_4778">
-            <rect
-              width="48"
-              height="48"
-              fill="white"
-            />
+            <rect width="48" height="48" fill="white" />
           </clipPath>
         </defs>
       </svg>

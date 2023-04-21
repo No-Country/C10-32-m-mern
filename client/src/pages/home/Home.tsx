@@ -23,7 +23,7 @@ import Map from "../../icons/IconCalendarHome";
 
 const Home = () => {
   const [sedes, setSedes] = useState([]);
-  const [algo, setAlgo] = React.useState<any>("null");
+  const [algo, setAlgo] = React.useState<any>(null);
 
   const navigate = useNavigate();
 
@@ -46,7 +46,7 @@ const Home = () => {
   return (
     <div className="flex flex-col justify-center">
       {/* <NavBar /> */}
-      <Header name={user.name} lastName={user.secondname} />
+      <Header />
 
       {algo ? (
         <div className="px-6">
@@ -120,7 +120,7 @@ const Home = () => {
                   Especialistas
                 </p>
               </Link> */}
-            <div className="bg-gradient-to-b from-primary-start to-primary-end">
+            <div className="w-screen bg-gradient-to-b from-primary-start to-primary-end">
               <p className="font-montserrat font-semibold text-start text-[22px] text-textWhite leading-6 px-[23px] py-7">
                 Nuestros Especialistas
               </p>
@@ -202,7 +202,7 @@ const Home = () => {
           )}
         </div>
       </section>
-      <section className="lg:hidden flex flex-col justify-center bg-gradient-to-b from-primary-start to-primary-end w-[100%] h-[45rem] px-32">
+      <section className="lg:hidden flex flex-col justify-center bg-gradient-to-b from-primary-start to-primary-end w-screen h-[45rem] px-32">
         <h2 className="text-2xl font-montserrat font-extrabold text-white absolute xl:top-[40rem] top-[51rem] left-[10.5rem]">
           Nuestros Especialistas
         </h2>

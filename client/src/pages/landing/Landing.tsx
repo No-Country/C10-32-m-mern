@@ -43,8 +43,6 @@ const Landing = () => {
         <h2 className="font-montserrat  font-extrabold text-2xl text-black">
           Nuestros Servicios Médicos
         </h2>
-
-        <ing />
       </section>
       <section className="lg:hidden py-6 flex lg:flex-col justify-between">
         <div className="">

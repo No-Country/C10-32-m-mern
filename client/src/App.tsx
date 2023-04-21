@@ -14,13 +14,12 @@ import Search from "./pages/search/Search";
 import ScheduledsShifts from "./pages/turnosagendados/ScheduledsShifts";
 import Footer from "./components/Footer";
 import Landing from "./pages/landing/Landing";
-import HeaderSm from "./components/HeaderSm";
 
 const App = () => {
   return (
     <div className="flex flex-col items-center justify-center">
-      <Header/>
-      <main className="flex flex-col w-screen mt-[12rem] ">
+      <Header />
+      <main className="flex flex-col justify-center items-center w-screen mt-[12rem] ">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />

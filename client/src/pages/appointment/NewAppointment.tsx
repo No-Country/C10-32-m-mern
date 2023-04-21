@@ -4,20 +4,24 @@ import ButtonRight from "../../components/ButtonRight";
 import Text from "../../components/Text";
 import IconSpecialistSmall from "../../icons/IconSpecialiestSmall";
 import IconSmallHeart from "../../icons/IconSmallHearth";
+import { useCustomSelector } from "../../hooks/redux";
 
 const NewAppoitment = () => {
+  const {
+    user: { name },
+  } = useCustomSelector((state) => state);
   return (
-    <div className="px-32 lg:px-8">
+    <div className="px-32 lg:px-8 mt-8">
       <Title title={"Agenda tu turno"} />
       <Text
-        first={"Hola, Nombre Usuario."}
-        second={"Agenda tu nueva cita"}
-        third={"Escoge una opción"}
+        first={`Hola, ${name}.`}
+        second={"Agenda tu nueva cita."}
+        third={"Escoge una opción:"}
       />
-      <div className="flex lg:flex-col items-center justify-around">
+      <div className="flex lg:flex-col items-center justify-center gap-10 mb-40 lg:mb-10">
         <Link
           to="/search/specialists"
-          className="flex lg:flex-row lg:justify-around flex-col justify-center items-center bg-gray text-[#4A4A4A] rounded-2xl lg:h-[106px] lg:w-[311px] h-[250px] w-[250px] my-8 px-6 shadow-md"
+          className="flex lg:flex-row lg:justify-around flex-col justify-center items-center bg-gray text-[#4A4A4A] rounded-2xl lg:h-[106px] lg:w-[311px] h-[10rem] w-[250px] my-8 p-6 shadow-md"
         >
           <IconSpecialistSmall />
           <p className="font-montserrat font-semibold text-center text-[18px] leading-6">
@@ -27,7 +31,7 @@ const NewAppoitment = () => {
         </Link>
         <Link
           to="/search/specialities"
-          className="flex lg:flex-row lg:justify-around flex-col justify-center items-center bg-gray text-[#4A4A4A] rounded-2xl lg:h-[106px] lg:w-[311px] h-[250px] w-[250px] my-8 px-6 shadow-md"
+          className="flex lg:flex-row lg:justify-around flex-col justify-center items-center bg-gray text-[#4A4A4A] rounded-2xl lg:h-[106px] lg:w-[311px] h-[10rem] w-[250px] my-8 p-6 shadow-md"
         >
           <IconSmallHeart />
           <p className="font-montserrat font-semibold text-center text-[18px] leading-6">

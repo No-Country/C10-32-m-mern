@@ -4,7 +4,6 @@ import axios from "axios";
 
 import Text from "../../components/Text";
 import Title from "../../components/Title";
-import HeaderSm from "../../components/HeaderSm";
 import NavBar from "../../components/NavBar";
 
 import SpecialistsCard from "./SpecialistsCard";
@@ -96,7 +95,6 @@ const Specialists = () => {
 
   return (
     <div>
-      <HeaderSm />
       <NavBar />
       <Title title={"Especialistas"} />
       <Text

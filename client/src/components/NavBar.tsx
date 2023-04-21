@@ -4,8 +4,8 @@ import Notification from "../icons/Notification";
 import IconProfile from "../icons/IconProfile";
 import Calendar from "../icons/Calendar";
 import LogOut from "../icons/LogOut";
-import HeaderSm from "./HeaderSm";
 import { useCustomDispatch, useCustomSelector } from "../hooks/redux";
+import Header from "./Header";
 
 const NavBar = () => {
   const [nav, setNav] = useState(false);
@@ -29,8 +29,8 @@ const NavBar = () => {
         onClick={handleNav}
       />
       {nav ? (
-        <nav className="fixed top-0 right-0 w-screen h-screen bg-bgNav flex flex-col justify-center items-center z-20 px-8">
-          <HeaderSm />
+        <nav className="fixed top-0 right-0 w-screen h-screen bg-bgNav flex flex-col justify-center items-center z-20 px-8 mt-10">
+          <Header />
           <NavLink
             to="/notifications"
             className="w-full flex justify-start items-center gap-8 bg-white text-[#FFFFFF] drop-shadow rounded-2xl h-[5rem] mt-16 my-5 px-8"

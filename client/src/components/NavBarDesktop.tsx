@@ -27,6 +27,7 @@ const NavBarDesktop = () => {
               <IconClose />
             </button>
             <NavLink
+              onClick={handleNav}
               to={"/notifications"}
               className="relative flex justify-start items-center gap-4 top-[4.5rem] left-6 mb-[2rem]"
             >
@@ -34,6 +35,7 @@ const NavBarDesktop = () => {
               <p className="text-primary-start font-medium">Notificaciones</p>
             </NavLink>
             <NavLink
+              onClick={handleNav}
               to={"/profile"}
               className="relative flex justify-start items-center gap-4 top-[4.5rem] left-6 mb-[2rem]"
             >
@@ -41,6 +43,7 @@ const NavBarDesktop = () => {
               <p className="text-primary-start font-medium relative -left-[4px]">Mi Perfil</p>
             </NavLink>
             <NavLink
+              onClick={handleNav}
               to={"/scheduledsshifts"}
               className="relative flex justify-start items-center gap-4 top-[4.5rem] left-6 mb-[2rem] "
             >
@@ -48,6 +51,7 @@ const NavBarDesktop = () => {
               <p className="text-primary-start font-medium relative -left-[6px]">Mis Turnos</p>
             </NavLink>
             <NavLink
+              onClick={handleNav}
               to={"/login"}
               className="relative flex justify-start items-center gap-4 top-[4.5rem] left-6 mb-[2rem]"
             >

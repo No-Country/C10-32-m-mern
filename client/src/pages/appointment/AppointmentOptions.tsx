@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import Title from "../../components/Title";
 import IconCalendarSmall from "../../icons/IconCalendarSmall";
 import IconCheckCalendar from "../../icons/IconChechCalendar";
-import HeaderSm from "../../components/HeaderSm";
 import Swal from "sweetalert2";
 
 const AppointmentOptions = () => {
@@ -16,7 +15,6 @@ const AppointmentOptions = () => {
 
   return (
     <div className="pb-5 px-32 lg:px-8">
-      {/* <HeaderSm /> */}
       <Title title={"Agenda tu turno"} />
       <p className="mt-6 text-[18px]">Escoge una opcion</p>
       <div className="flex lg:flex-col items-center justify-around">

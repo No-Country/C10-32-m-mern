@@ -1,5 +1,4 @@
 import React from "react";
-import HeaderSm from "../../components/HeaderSm";
 import NavBar from "../../components/NavBar";
 import NotificationsDetail from "../../components/NotificationsDetail";
 import Notification from "../../icons/Notification";
@@ -18,16 +17,13 @@ const Notifications = () => {
   };
 
   return (
-    <div className="flex flex-col">
-      <HeaderSm />
+    <div className="flex flex-col justify-center items-center">
       <NavBar />
-      <div className="w-full flex justify-start items-center gap-8 bg-fontNav drop-shadow rounded-2xl h-[5rem] px-8">
+      <div className="max-w-[30rem] w-[30rem] lg:w-[90vw] mt-10 flex justify-start items-center gap-8 bg-fontNav drop-shadow rounded-2xl h-[5rem] px-8">
         <Notification active={true} />
-        <p className="text-center text-[30px] text-white leading-6">
-          Notificaciones
-        </p>
+        <p className="text-center text-[30px] text-white leading-6">Notificaciones</p>
       </div>
-      <section>
+      <section className="w-full max-w-[30rem]">
         {<NotificationsDetail data={data} />}
         {<NotificationsDetail data={data} />}
         {<NotificationsDetail data={data} />}

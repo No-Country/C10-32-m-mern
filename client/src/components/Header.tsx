@@ -8,12 +8,7 @@ import NavBarDesktop from "./NavBarDesktop";
 import Swal from "sweetalert2";
 import NavBar from "./NavBar";
 
-interface User {
-  name: string;
-  lastName: string;
-}
-
-export default function Header({ name, lastName }: User) {
+export default function Header() {
   const { user } = useCustomSelector((state) => state);
 
   const date = new Date();
@@ -42,7 +37,7 @@ export default function Header({ name, lastName }: User) {
   };
 
   return (
-    <div className="fixed z-10 top-0 right-0 flex flex-col items-center justify-center w-full h-[12.5rem] lg:h-[10.5rem] bg-gradient-to-b from-primary-start to-primary-end">
+    <div className="fixed z-10 top-0 right-0 flex flex-col items-center justify-center w-full h-[12.5rem] bg-gradient-to-b from-primary-start to-primary-end">
       <div className="flex">
         <NavBar />
         <NavBarDesktop />

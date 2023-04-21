@@ -3,7 +3,6 @@ import { useNavigate } from "react-router";
 
 import { ButtonEyeSlash } from "../../components/ButtonEyeSlash";
 import ButtonLogIn from "../../components/ButtonLogIn";
-import HeaderSm from "../../components/HeaderSm";
 
 import axios from "axios";
 import Swal from "sweetalert2";
@@ -81,8 +80,7 @@ const Register = () => {
 
   return (
     <div>
-      {/* <HeaderSm /> */}
-      <div className="flex flex-col justify-center items-center">
+      <div className=" mt-8 flex flex-col justify-center items-center">
         <div className="w-[23rem] bg-white p-4 mb-[3rem] rounded-xl">
           <h2 className="mb-[2rem] text-xl">Completa tus datos:</h2>
           <form
