@@ -29,9 +29,7 @@ const Search = () => {
   //   });
   // }, []);
 
-  const {
-    user: { name },
-  } = useCustomSelector((state) => state);
+  const { user } = useCustomSelector((state) => state);
 
   const { category } = useParams();
 
@@ -54,7 +52,7 @@ const Search = () => {
         <>
           <Title title={"Especialistas"} />
           <Text
-            first={`Bienvenido ${name}`}
+            first={`Bienvenido ${user.name}`}
             second={"Ubica al doctor de tu preferencia y selecciona el horario."}
           />
 
@@ -67,7 +65,7 @@ const Search = () => {
         <>
           <Title title={"Espcialidades"} />
           <Text
-            first={`Bienvenido ${name}`}
+            first={`Bienvenido ${user.name}`}
             second={"Busque la especialidad y seleccione el especialista y horario"}
           />
 
