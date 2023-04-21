@@ -1,11 +1,13 @@
 import { Request, Response } from 'express';
+
 import { User } from '../models/user.model';
 import { Asociado } from '../models/asociado.model';
-import jwt from 'jsonwebtoken';
 
+import jwt from 'jsonwebtoken';
 import bcrypt from 'bcrypt';
 
-//REGISTER
+import { sendEmail } from '../mail/nodemailer';
+
 export const signup = async (req: Request, res: Response) => {
 	const { body } = req;
 
@@ -33,12 +35,14 @@ export const signup = async (req: Request, res: Response) => {
 			obrasocialeId: body.obrasocialId,
 		});
 
-		console.log(newUser)
 		// creo token
 		const token: string = jwt.sign(
 			{ _id: newUser.dataValues.id },
 			process.env.TOKEN_SECRET || 'tokenalternativo'
 		);
+
+		sendEmail(body.email, body.name);
+
 		res.header('auth-token', token).json({ user: newUser });
 	} catch (error: any) {
 		res.status(400).json({ error: error.messagge });
@@ -66,8 +70,8 @@ export const signin = async (req: Request, res: Response) => {
 			process.env.TOKEN_SECRET || 'tokenalternativo'
 		);
 		res.header('auth-token', token).json({ user: loginuser, token });
-	} catch (error: any) {
-		res.status(404).json({ messagge: error.messagge });
+	} catch (error) {
+		res.status(404).json({ messagge: (error as Error).message });
 	}
 };
 
@@ -76,7 +80,7 @@ export const logout = async (req: Request, res: Response) => {
 		return res
 			.header('auth-token', '')
 			.json({ message: 'Se ha cerrado sesión correctamente.' });
-	} catch (error: any) {
-		return res.status(400).json({ error: error.messagge });
+	} catch (error) {
+		return res.status(400).json({ error: (error as Error).message });
 	}
 };

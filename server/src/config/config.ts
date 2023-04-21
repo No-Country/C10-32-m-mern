@@ -9,6 +9,17 @@ export const env = {
 	DB_NAME: process.env.DB_NAME,
 	DB_PASSWORD: process.env.DB_PASSWORD,
 	PORT: process.env.PORT || 3000,
+	NODEMAILER_EMAIL: process.env.NODEMAILER_EMAIL,
+	NODEMAILER_PASS: process.env.NODEMAILER_PASS,
 };
 
-export const { DB_NAME, DB_PASSWORD, DB_HOST, DB_PORT, DB_USER, PORT } = env;
+export const {
+	DB_NAME,
+	DB_PASSWORD,
+	DB_HOST,
+	DB_PORT,
+	DB_USER,
+	NODEMAILER_EMAIL,
+	NODEMAILER_PASS,
+	PORT,
+} = env;

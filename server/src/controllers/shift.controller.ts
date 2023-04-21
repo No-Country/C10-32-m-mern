@@ -5,6 +5,8 @@ import { Shift } from '../models/shift.model';
 import { Speciality } from '../models/speciality.model';
 import { Specialist } from '../models/specialist.model';
 import { Sede } from '../models/sede.model';
+import { shiftMail } from '../mail/nodemailer';
+import { User } from '../models/user.model';
 
 export const getavailableshifts = async (req: Request, res: Response) => {
 	const { idspecialist, idsede, idspeciality, days } = req.body;
@@ -175,36 +177,60 @@ export const scheduleshift = async (req: Request, res: Response) => {
 			specialtyId: body.specialtyId,
 		});
 
-		res.status(200).json({ Shift: newShift });
-	} catch (error: any) {
-		res.status(400).json({ error: error.messagge });
+		const currentUser = await User.findByPk(body.userId);
+		const currentEmail = currentUser?.dataValues.email;
+
+		console.log('MAIL:', currentUser);
+
+		const shiftData = await Shift.findAll({
+			where: { id: newShift.dataValues.id },
+			include: [
+				{
+					model: Specialist,
+					include: [
+						{
+							model: Sede,
+							include: [{ model: Speciality }],
+						},
+					],
+				},
+			],
+		});
+
+		// Enviar mail
+		shiftMail(
+			currentEmail,
+			shiftData[0].dataValues.specialist.tuition,
+			shiftData[0].dataValues.specialist.name,
+			shiftData[0].dataValues.date,
+			shiftData[0].dataValues.hour
+		);
+
+		res.status(200).json({ Shift: shiftData });
+	} catch (error) {
+		res.status(400).json({ error: (error as Error).message });
 	}
 };
 
 export const getshiftbyuser = async (req: Request, res: Response) => {
-
-    const userid = req.params.id;
-    try {
-        const shiftbyuser = await Shift.findAll(
-            {
-                where: { userId: userid },
-                include: [
-                    {
-                        model: Specialist,
-                        include: [
-                            {
-                                model: Sede,
-                                include:[{model: Speciality}]
-                            },
-                        ],
-                    },
-                ],
-            }
-        )
-        res.status(202).send(shiftbyuser)
-    } catch (error) {
-        res.status(404).send(error)
-        
-    }
-
-}
+	const userid = req.params.id;
+	try {
+		const shiftbyuser = await Shift.findAll({
+			where: { userId: userid },
+			include: [
+				{
+					model: Specialist,
+					include: [
+						{
+							model: Sede,
+							include: [{ model: Speciality }],
+						},
+					],
+				},
+			],
+		});
+		res.status(202).send(shiftbyuser);
+	} catch (error) {
+		res.status(404).send(error);
+	}
+};

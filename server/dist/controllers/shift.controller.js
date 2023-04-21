@@ -19,6 +19,8 @@ const shift_model_1 = require("../models/shift.model");
 const speciality_model_1 = require("../models/speciality.model");
 const specialist_model_1 = require("../models/specialist.model");
 const sede_model_1 = require("../models/sede.model");
+const nodemailer_1 = require("../mail/nodemailer");
+const user_model_1 = require("../models/user.model");
 const getavailableshifts = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t;
     const { idspecialist, idsede, idspeciality, days } = req.body;
@@ -162,10 +164,29 @@ const scheduleshift = (req, res) => __awaiter(void 0, void 0, void 0, function* 
             sedeId: body.sedeId,
             specialtyId: body.specialtyId,
         });
-        res.status(200).json({ Shift: newShift });
+        const currentUser = yield user_model_1.User.findByPk(body.userId);
+        const currentEmail = currentUser === null || currentUser === void 0 ? void 0 : currentUser.dataValues.email;
+        console.log('MAIL:', currentUser);
+        const shiftData = yield shift_model_1.Shift.findAll({
+            where: { id: newShift.dataValues.id },
+            include: [
+                {
+                    model: specialist_model_1.Specialist,
+                    include: [
+                        {
+                            model: sede_model_1.Sede,
+                            include: [{ model: speciality_model_1.Speciality }],
+                        },
+                    ],
+                },
+            ],
+        });
+        // Enviar mail
+        (0, nodemailer_1.shiftMail)(currentEmail, shiftData[0].dataValues.specialist.tuition, shiftData[0].dataValues.specialist.name, shiftData[0].dataValues.date, shiftData[0].dataValues.hour);
+        res.status(200).json({ Shift: shiftData });
     }
     catch (error) {
-        res.status(400).json({ error: error.messagge });
+        res.status(400).json({ error: error.message });
     }
 });
 exports.scheduleshift = scheduleshift;
@@ -180,7 +201,7 @@ const getshiftbyuser = (req, res) => __awaiter(void 0, void 0, void 0, function*
                     include: [
                         {
                             model: sede_model_1.Sede,
-                            include: [{ model: speciality_model_1.Speciality }]
+                            include: [{ model: speciality_model_1.Speciality }],
                         },
                     ],
                 },

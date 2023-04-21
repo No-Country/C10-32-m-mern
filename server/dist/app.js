@@ -22,6 +22,7 @@ app.set('port', config_1.PORT);
 app.use((0, morgan_1.default)('dev'));
 app.use(express_1.default.json());
 app.use((0, cors_1.default)());
+app.use(express_1.default.static('public'));
 //routes
 app.use('/api', auth_routes_1.default);
 app.use('/api', obrasocial_routes_1.default);
