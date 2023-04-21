@@ -104,7 +104,7 @@ const ProgramedApointment = () => {
             <div className="mx-auto max-w-lg lg:w-full w-[40%] my-6 ">
               <div className="divide-y divide-gray-100 overflow-hidden rounded-[3px] border border-gray-200 bg-white shadow-sm">
                 <details className="group">
-                  <summary className="flex cursor-pointer list-none items-center justify-between p-4 text-[13px] font-bold  group-open:border-b group-open:border-b-gray-100 bg-lightBlue">
+                  <summary className="flex cursor-pointer list-none items-center justify-between p-4 text-[13px] font-bold  group-open:border-b group-open:border-b-gray-100 bg-white">
                     {cita.estudio}
                     <div className="text-secondary-500">
                       {/* <p>Agendar</p> */}
