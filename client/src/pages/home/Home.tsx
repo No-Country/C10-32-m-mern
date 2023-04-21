@@ -19,8 +19,7 @@ import IconPlusEasy from "../../icons/IconPlusEasy";
 import IconPlusHome from "../../icons/IconPlusHome";
 import SliderSpecialities from "../../components/SliderSpecilities";
 import IconLandingMobile from "../../icons/IconLandingMobile";
-import Map from "../../icons/Map";
-import MapDesktop from "../../assets/Mapsicle Map.jpg";
+import Mapa from "../../icons/Map";
 
 const Home = () => {
   const [sedes, setSedes] = useState([]);
@@ -161,9 +160,7 @@ const Home = () => {
               <h2 className="font-montserrat font-extrabold text-2xl text-black py-4">
                 Nuestras Sedes
               </h2>
-              <div>
-                <Map />
-              </div>
+              <Mapa />
             </div>
           </section>
         </>
@@ -247,7 +244,7 @@ const Home = () => {
             <h2 className="font-montserrat font-extrabold text-2xl text-black py-4">
               Nuestras Sedes
             </h2>
-            <img src={MapDesktop} />
+            <Mapa />
           </div>
         </section>
       )}

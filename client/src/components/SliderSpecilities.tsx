@@ -7,7 +7,7 @@ import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
 import { Link } from "react-router-dom";
 
 import GridCard from "./GridCard";
-import Stethoscope from "../assets/GridStethoscope.png";
+import Stethoscope from "../assets/gridStethoscope.svg";
 import Dentist from "../assets/gridDentist.svg";
 import Ophtalmology from "../assets/gridOphtalmology.svg";
 import Cardiology from "../assets/gridCardiology.svg";

@@ -3,6 +3,8 @@ import { persistStore, persistReducer } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 import authSlice from "./slices/auth";
 import userSlice from "./slices/user";
+import specialistsSlice from "./slices/specialists";
+import specialitiesSlice from "./slices/specialities";
 
 const persistAuthConfig = {
   key: "auth",
@@ -12,11 +14,10 @@ const persistAuthConfig = {
 
 const store = configureStore({
   reducer: {
-    auth: persistReducer<ReturnType<typeof authSlice>>(
-      persistAuthConfig,
-      authSlice
-    ),
+    auth: persistReducer<ReturnType<typeof authSlice>>(persistAuthConfig, authSlice),
     user: userSlice,
+    specialists: specialistsSlice,
+    specialities: specialitiesSlice,
   },
   middleware: (defaultMiddleware) =>
     defaultMiddleware({
@@ -27,12 +28,7 @@ const store = configureStore({
 // types
 export type RootState = ReturnType<typeof store.getState>;
 export type Dispatch = typeof store.dispatch;
-export type Thunk = ThunkAction<
-  Promise<unknown>,
-  RootState,
-  unknown,
-  Action<unknown>
->;
+export type Thunk = ThunkAction<Promise<unknown>, RootState, unknown, Action<unknown>>;
 
 export const persistor = persistStore(store);
 

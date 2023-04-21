@@ -23,8 +23,9 @@ const Search = () => {
       console.log(res.data);
     });
     axios.get("https://api-c1032mmern.onrender.com/api/specialiestbysede?idsede=2").then((res) => {
-      setSpecialities(res.data);
-      console.log('specialities en search',res.data);
+      setSpecialities(res.data[0].specialties);
+      console.log("specialities en search", res.data);
+      console.log(res.data[0].specialties[0].description);
     });
   }, []);
 
@@ -67,7 +68,11 @@ const Search = () => {
             second={"Busque la especialidad y seleccione el especialista y horario"}
           />
 
-          <Dropdown header="Primero elige a una Especialidad" title="Seleccione una Especialidad" array={specialities}/>
+          <Dropdown
+            header="Primero elige a una Especialidad"
+            title="Seleccione una Especialidad"
+            array={specialities}
+          />
 
           {/* <div className="mx-auto max-w-lg lg:w-full w-1/3 my-6">
             <div className="divide-y divide-gray-100 overflow-hidden rounded-[3px] border border-gray-200 bg-white shadow-sm">
