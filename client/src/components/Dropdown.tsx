@@ -2,13 +2,16 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 
 
-function Dropdown({header, }:any) {
+function Dropdown({header, title, array}:any) {
   const url: string = "https://jsonplaceholder.typicode.com/users";
   const [response, setResp] = useState([]);
 
   useEffect(() => {
-    axios.get('https://jsonplaceholder.typicode.com/users').then((res) => setResp(res.data));
-    console.log(response);
+    // axios.get('https://jsonplaceholder.typicode.com/users').then((res) => setResp(res.data));
+    // console.log(response);
+    setResp(array)
+    console.log('array recibido en dropdown', array);
+    
     
   }, []);
   return (
@@ -26,11 +29,38 @@ function Dropdown({header, }:any) {
                   </summary>
                   <div className="p-6">
                     <select name="" className="block w-full rounded-[3px] mx-auto max-w-xs p-4 my-4 border border-gray-100 shadow-sm focus:border-primary-300 focus:ring focus:ring-primary-200 focus:ring-opacity-50 disabled:cursor-not-allowed disabled:bg-gray-50 focus:bg-lightPurple ">
-                      <option >Seleccione un Especialista</option>
+                      <option >{title}</option>
                       {response?.map((i) => (
-                      <option key={i.id} value="" className="bg-lightPurple">{i.name}</option>
+                        i.specialities?.map((element) =>{
+                          <option key={element.id} value="" className="bg-lightPurple">{element.description}</option>
+                          
+                        })
                     ))}
                     </select>
+
+                    {/* <select
+                        name=""
+                        className="block w-full rounded-[3px] mx-auto max-w-xs p-4 my-4 border border-gray-10 shadow-sm focus:border-primary-300 focus:ring focus:ring-primary-200 focus:ring-opacity-50 disabled:cursor-not-allowed disabled:bg-gray-50 focus:bg-lightPurple"
+                      >
+                        <option>Seleccione el dia</option>
+                        {estudio.fecha.map((i) => (
+                          <option value="" className="bg-lightPurple ">
+                            {i}
+                          </option>
+                        ))}
+                      </select>
+
+                      <select
+                        name=""
+                        className="block w-full rounded-[3px] mx-auto max-w-xs p-4 my-4 border border-gray-10 shadow-sm focus:border-primary-300 focus:ring focus:ring-primary-200 focus:ring-opacity-50 disabled:cursor-not-allowed disabled:bg-gray-50 focus:bg-lightPurple"
+                      >
+                        <option>Seleccione el horario</option>
+                        {estudio.horarios.map((i) => (
+                          <option value="" className="bg-lightPurple ">
+                            {i}
+                          </option>
+                        ))}
+                      </select> */}
 
                     <button className="w-full bg-darkPurple h-[45px] rounded-[4px] text-[13px] text-white font-bold">
                       AGENDAR

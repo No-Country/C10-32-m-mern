@@ -13,13 +13,18 @@ import { useCustomSelector } from "../../hooks/redux";
 const Search = () => {
   [];
 
-  const [turnos, setTurnos] = useState([]);
+  const [shifts, setShifts] = useState([]);
   const [doctors, setDoctors] = useState([]);
+  const [specialities, setSpecialities] = useState([]);
 
   useEffect(() => {
     axios.get("https://api-c1032mmern.onrender.com/api/specialistbfl?letter=").then((res) => {
       setDoctors(res.data);
       console.log(res.data);
+    });
+    axios.get("https://api-c1032mmern.onrender.com/api/specialiestbysede?idsede=2").then((res) => {
+      setSpecialities(res.data);
+      console.log('specialities en search',res.data);
     });
   }, []);
 
@@ -52,7 +57,7 @@ const Search = () => {
             second={"Ubica al doctor de tu preferencia y selecciona el horario."}
           />
 
-          <Dropdown header="Primero elige a un Especialista" />
+          <Dropdown header="Primero elige a un Especialista" title="Seleccione un Especialista" />
         </>
       ) : (
         <>
@@ -62,11 +67,11 @@ const Search = () => {
             second={"Busque la especialidad y seleccione el especialista y horario"}
           />
 
-          <Dropdown header="Primero elige a una Especialidad" />
+          <Dropdown header="Primero elige a una Especialidad" title="Seleccione una Especialidad" array={specialities}/>
 
-          <div className="mx-auto max-w-lg lg:w-full w-1/3 my-6">
+          {/* <div className="mx-auto max-w-lg lg:w-full w-1/3 my-6">
             <div className="divide-y divide-gray-100 overflow-hidden rounded-[3px] border border-gray-200 bg-white shadow-sm">
-              {/* <details className="group text-[13px]">
+              <details className="group text-[13px]">
                 <summary className="flex cursor-pointer list-none items-center justify-between p-4  font-bold group-open:border-b group-open:border-b-gray-100 bg-lightPurple">
                   {turnos.estudio}
                   <div className="text-secondary-500"></div>
@@ -111,9 +116,9 @@ const Search = () => {
                     AGENDAR
                   </button>
                 </div>
-              </details> */}
+              </details>
             </div>
-          </div>
+          </div> */}
         </>
       )}
     </div>
