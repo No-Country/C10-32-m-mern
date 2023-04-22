@@ -44,8 +44,8 @@ export const getspecialistdetails = async (req: Request, res: Response) => {
 			include: [
 				{
 					model: Sede,
-					include:[{
-						model:Speciality,
+					include: [{
+						model: Speciality,
 					}]
 				},
 			],
@@ -66,11 +66,11 @@ export const getspecialistbyfirstletter = async (
 	const condition = letter + '%';
 
 	try {
-		if (letter === "" ) {
+		if (letter === "") {
 			const allspecillist = await Specialist.findAll({
-				include:[{model: Speciality}]
+				include: [{ model: Speciality }]
 			})
-			
+
 			return res.status(200).send(allspecillist);
 
 		}
@@ -78,10 +78,10 @@ export const getspecialistbyfirstletter = async (
 			where: {
 				name: {
 					[Op.iLike]: condition,
-					
+
 				},
 			},
-			include:[{model: Speciality}]
+			include: [{ model: Speciality }]
 		});
 		if (!result.length) return res.status(200).send('No existen especialistas');
 		res.status(200).send(result);
@@ -90,16 +90,16 @@ export const getspecialistbyfirstletter = async (
 	}
 };
 
-export const getspecialistbyspeciality = async (req: Request , res: Response) =>{
+export const getspecialistbyspeciality = async (req: Request, res: Response) => {
 	const idspeciality = req.params.id
 
-	
+
 	try {
 		const specialistbyspeciality = await Speciality.findAll({
 			where: { id: idspeciality },
 			include: [
 				{
-					model: Specialist					
+					model: Specialist
 				},
 			],
 		});
