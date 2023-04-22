@@ -45,24 +45,30 @@ const Home = () => {
   }, []);
 
   const handleChoose = (e: any) => {
+    e.preventDefault();
     console.log(e.target.value);
     dispatch<any>(setSede(e.target.value));
+    console.log("la sede es", sede);
   };
+
+  const { sede } = useCustomSelector((state) => state);
+  console.log("la sede id es ", sede.sede.id);
 
   return (
     <div className="flex flex-col justify-center">
-      {/* <NavBar /> */}
       <Header />
       {algo ? (
         <div className="px-6">
           <select
-            onChange={handleChoose}
+            onChange={(e) => handleChoose(e)}
             name="select"
             className="hidden lg:inline-block lg:w-full mt-8 lg:h-10 w-1/2 h-12 m-auto bg-transparent border-2 border-borders rounded-[3px] text-sm px-2"
           >
             <option>Selecciona la sede</option>
             {sedes.map((sede) => (
-              <option value={sede.name}>{sede.name}</option>
+              <option key={sede.id} value={sede.id}>
+                {sede.name}
+              </option>
             ))}
           </select>
           {/* version mobile */}
@@ -164,7 +170,7 @@ const Home = () => {
               >
                 <option>Selecciona la sede</option>
                 {sedes.map((sede) => (
-                  <option value={sede.name}>{sede.name}</option>
+                  <option value={sede.id}>{sede.name}</option>
                 ))}
               </select>
               <Link

@@ -2,16 +2,24 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { Thunk } from "../../store";
 import axios, { AxiosError, AxiosResponse } from "axios";
 
-export interface Sede {
-  sedeId: number;
-}
-
 export interface Specialists {
-  specialists: {};
+  specialists: [
+    {
+      id: number | null;
+      description: string;
+      specialists: [{ id: number | null; name: string }];
+    }
+  ];
 }
 
 const initialState: Specialists = {
-  specialists: {},
+  specialists: [
+    {
+      id: null,
+      description: "",
+      specialists: [{ id: null, name: "" }],
+    },
+  ],
 };
 
 const specialistsSlice = createSlice({
@@ -29,11 +37,13 @@ export const { setSpecialists } = specialistsSlice.actions;
 export default specialistsSlice.reducer;
 
 export const specialistSeter =
-  ({ sedeId }: Sede): Thunk =>
+  (specialityId: any): Thunk =>
   async (dispatch): Promise<AxiosResponse | AxiosError> => {
     try {
+      console.log("id del slice", specialityId);
+
       const response: AxiosResponse = await axios.get(
-        `https://api-c1032mmern.onrender.com/api/${sedeId}`
+        `https://api-c1032mmern.onrender.com/api/specialistbyspeciality/${specialityId}`
       );
       console.log(response.data);
       dispatch(setSpecialists(response.data));
