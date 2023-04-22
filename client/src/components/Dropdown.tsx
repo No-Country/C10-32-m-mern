@@ -60,7 +60,7 @@ function Dropdown({ header, title }: any) {
   };
 
   const handleDate = () => {
-    console.log("la fecha elegida", date.date[0]);
+    console.log("la fecha elegida", date.date[0][1].aux[0].ini);
   };
 
   return (
@@ -158,13 +158,13 @@ function Dropdown({ header, title }: any) {
                 >
                   <option>Seleccione un Horario</option>
 
-                  {/* {date.date.map((i) => (
+                  {date.date.map((i) => (
                     i[1].aux.map((element) => {
                       
-                      <option>{element.ini} / {element.fin}</option>
+                      <option>{element.ini} {element.fin}</option>
                     })
                   ))}
-                </select> */}
+                </select>
                 {specialistSelect ? (
                   ""
                 ) : (

@@ -12,10 +12,8 @@ export interface Date {
       aux: [
         {
           ini: string;
-        },
-        {
           fin: string;
-        }
+        },
       ],
     }
   ]
@@ -30,11 +28,10 @@ const initialState: Date = {
     {
       aux: [
         {
-          ini: ""
-        },
-        {
+          ini: "",
           fin: ""
-        },
+        }
+
       ],
     }
 
