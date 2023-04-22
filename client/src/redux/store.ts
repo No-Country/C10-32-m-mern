@@ -6,6 +6,7 @@ import userSlice from "./slices/user";
 import specialistsSlice from "./slices/specialists";
 import specialitiesSlice from "./slices/specialities";
 import sedeSlice from "./slices/sede";
+import dateSlice from "./slices/date";
 
 const persistAuthConfig = {
   key: "auth",
@@ -20,6 +21,7 @@ const store = configureStore({
     specialists: specialistsSlice,
     specialities: specialitiesSlice,
     sede: sedeSlice,
+    date: dateSlice,
   },
   middleware: (defaultMiddleware) =>
     defaultMiddleware({

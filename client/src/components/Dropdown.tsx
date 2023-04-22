@@ -4,12 +4,14 @@ import { useDispatch } from "react-redux";
 import { specialitiesSeter } from "../redux/slices/specialities";
 import { useCustomSelector } from "../hooks/redux";
 import { specialistSeter } from "../redux/slices/specialists";
+import { daySeter } from "../redux/slices/date";
 
 function Dropdown({ header, title }: any) {
   const url: string = "https://jsonplaceholder.typicode.com/users";
 
   const [specialitie, setSpecialitie] = useState<String | null>(null);
   const [specialist, setSpecialist] = useState<string | null>(null);
+  const [shiftDate, setShiftDate] = useState("");
 
   const [submitButton, setSubmitButton] = useState(false);
 
@@ -30,6 +32,8 @@ function Dropdown({ header, title }: any) {
     sede: { sede },
   } = useCustomSelector((state) => state);
 
+  const { date } = useCustomSelector((state) => state);
+
   useEffect(() => {
     dispatch<any>(specialitiesSeter({ sede }));
     console.log(sede);
@@ -45,9 +49,13 @@ function Dropdown({ header, title }: any) {
   const handleSpecialist = () => {
     if (specialist !== "Seleccione una Especialista" && specialist !== null) {
       setSpecialistSelect(!specialistSelect);
-      // dispatch<any>(specialistSeter(specialitie));
+      dispatch<any>(daySeter());
       console.log("el especialista seleccionado", specialist);
     }
+  };
+
+  const submit = () => {
+    console.log("la fecha elegida", date);
   };
 
   return (
@@ -114,18 +122,18 @@ function Dropdown({ header, title }: any) {
             {specialitieSelect == true && specialistSelect == true ? (
               <>
                 <select
-                  onChange={(e) => setSpecialist(e.target.value)}
+                  onChange={(e) => setShiftDate(e.target.value)}
                   name=""
                   id=""
                   className="block w-full rounded-[3px] mx-auto max-w-xs p-4 my-4 border border-gray-100 shadow-sm focus:border-primary-300 focus:ring focus:ring-primary-200 focus:ring-opacity-50 disabled:cursor-not-allowed disabled:bg-gray-50 focus:bg-lightPurple "
                 >
                   <option>Seleccione una Fecha</option>
-                  {specialists[0].specialists.map((i) => (
-                    <option value={i.name}>{i.name}</option>
+                  {date.date.map((i) => (
+                    <option value={i[0]}></option>
                   ))}
                 </select>
                 <button
-                  // onClick={submit}
+                  onClick={submit}
                   className="w-full bg-darkPurple h-[45px] rounded-[4px] text-[13px] text-white font-bold"
                 >
                   SUBMIT
