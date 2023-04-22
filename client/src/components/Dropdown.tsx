@@ -119,7 +119,7 @@ function Dropdown({ header, title }: any) {
                   id=""
                   className="block w-full rounded-[3px] mx-auto max-w-xs p-4 my-4 border border-gray-100 shadow-sm focus:border-primary-300 focus:ring focus:ring-primary-200 focus:ring-opacity-50 disabled:cursor-not-allowed disabled:bg-gray-50 focus:bg-lightPurple "
                 >
-                  <option>Seleccione un Especialista</option>
+                  <option>Seleccione una Fecha</option>
                   {specialists[0].specialists.map((i) => (
                     <option value={i.name}>{i.name}</option>
                   ))}
