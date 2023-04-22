@@ -89,3 +89,24 @@ export const getspecialistbyfirstletter = async (
 		res.status(400).send(error);
 	}
 };
+
+export const getspecialistbyspeciality = async (req: Request , res: Response) =>{
+	const idspeciality = req.params.id
+
+	
+	try {
+		const specialistbyspeciality = await Speciality.findAll({
+			where: { id: idspeciality },
+			include: [
+				{
+					model: Specialist					
+				},
+			],
+		});
+		if (!specialistbyspeciality)
+			return res.status(200).send('No existe especialistas para la especialidad seleccionada.');
+		res.status(200).send(specialistbyspeciality);
+	} catch (error) {
+		res.status(400).send(error);
+	}
+}

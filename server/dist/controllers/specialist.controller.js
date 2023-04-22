@@ -9,7 +9,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getspecialistbyfirstletter = exports.getspecialistdetails = exports.getspecialistbysede = void 0;
+exports.getspecialistbyspeciality = exports.getspecialistbyfirstletter = exports.getspecialistdetails = exports.getspecialistbysede = void 0;
 const specialist_model_1 = require("../models/specialist.model");
 const sede_model_1 = require("../models/sede.model");
 const sequelize_1 = require("sequelize");
@@ -95,3 +95,23 @@ const getspecialistbyfirstletter = (req, res) => __awaiter(void 0, void 0, void 
     }
 });
 exports.getspecialistbyfirstletter = getspecialistbyfirstletter;
+const getspecialistbyspeciality = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    const idspeciality = req.params.id;
+    try {
+        const specialistbyspeciality = yield speciality_model_1.Speciality.findAll({
+            where: { id: idspeciality },
+            include: [
+                {
+                    model: specialist_model_1.Specialist
+                },
+            ],
+        });
+        if (!specialistbyspeciality)
+            return res.status(200).send('No existe especialistas para la especialidad seleccionada.');
+        res.status(200).send(specialistbyspeciality);
+    }
+    catch (error) {
+        res.status(400).send(error);
+    }
+});
+exports.getspecialistbyspeciality = getspecialistbyspeciality;
