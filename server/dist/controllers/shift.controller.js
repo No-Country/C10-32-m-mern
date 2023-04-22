@@ -112,7 +112,7 @@ const getavailableshifts = (req, res) => __awaiter(void 0, void 0, void 0, funct
                         if (((_s = itsfree[0][0]) === null || _s === void 0 ? void 0 : _s.count) == 0) {
                             hours = {
                                 ini: init.format('HH:mm'),
-                                'fin:': finturno.format('HH:mm'),
+                                fin: finturno.format('HH:mm'),
                             };
                             aux.push(hours);
                         }
@@ -134,8 +134,8 @@ const getavailableshifts = (req, res) => __awaiter(void 0, void 0, void 0, funct
                         ';');
                     if (((_t = itsfree1[0][0]) === null || _t === void 0 ? void 0 : _t.count) == 0) {
                         hours = {
-                            'ini': init.format('HH:mm'),
-                            'fin': finturno.format('HH:mm'),
+                            ini: init.format('HH:mm'),
+                            fin: finturno.format('HH:mm'),
                         };
                         aux.push(hours);
                     }
