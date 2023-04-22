@@ -158,13 +158,13 @@ function Dropdown({ header, title }: any) {
                 >
                   <option>Seleccione un Horario</option>
 
-                  {date.date.map((i) => (
+                  {/* {date.date.map((i) => (
                     i[1].aux.map((element) => {
                       
-                      <option>{element.ini}</option>
+                      <option>{element.ini} / {element.fin}</option>
                     })
                   ))}
-                </select>
+                </select> */}
                 {specialistSelect ? (
                   ""
                 ) : (
