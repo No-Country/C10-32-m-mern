@@ -143,8 +143,8 @@ export const getavailableshifts = async (req: Request, res: Response) => {
 
 					if (itsfree1[0][0]?.count == 0) {
 						hours = {
-							ini: init.format('HH:mm'),
-							'fin:': finturno.format('HH:mm'),
+							'ini': init.format('HH:mm'),
+							'fin': finturno.format('HH:mm'),
 						};
 
 						aux.push(hours);
@@ -156,6 +156,8 @@ export const getavailableshifts = async (req: Request, res: Response) => {
 
 			sumarDias(today, 1);
 		}
+
+		
 		res.status(200).send(arr);
 	} catch (error) {
 		res.status(404).send(error);
