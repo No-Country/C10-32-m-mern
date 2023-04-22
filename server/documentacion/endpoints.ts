@@ -760,4 +760,65 @@ Devuelve la info en el siguiente formato.
 ]
 
 
+***********************************Obtener los especialiestas de una especialidad ***************************
+
+GET localhost:3000/api/specialistbyspeciality/5
+
+devuelve 
+
+[
+    {
+        "id": 5,
+        "description": "Diagnostico por imagenes",
+        "specialists": [
+            {
+                "id": 1,
+                "name": "Horacio Guaraná",
+                "speciality": "Cardiologia",
+                "adress": "Av.Francia 2942",
+                "phone": "2323241412",
+                "tuition": "24179",
+                "consultingRoom": "3",
+                "Specialist_Speciality": {
+                    "createdAt": "2022-08-13T00:00:00.000Z",
+                    "updatedAt": "2023-04-19T14:55:12.486Z",
+                    "specialistId": 1,
+                    "specialtyId": 5
+                }
+            },
+            {
+                "id": 2,
+                "name": "Carlos Simpson",
+                "speciality": "Traumatologia",
+                "adress": "Av.Siempre Viva 145",
+                "phone": "41772",
+                "tuition": "56756",
+                "consultingRoom": "33",
+                "Specialist_Speciality": {
+                    "createdAt": "2022-08-13T00:00:00.000Z",
+                    "updatedAt": "2023-04-19T14:55:12.486Z",
+                    "specialistId": 2,
+                    "specialtyId": 5
+                }
+            },
+            {
+                "id": 7,
+                "name": "Juan Manuel García",
+                "speciality": "Endoscopía",
+                "adress": "Godoy 7474",
+                "phone": "225584",
+                "tuition": "98013",
+                "consultingRoom": "74",
+                "Specialist_Speciality": {
+                    "createdAt": "2022-08-13T00:00:00.000Z",
+                    "updatedAt": "2023-04-19T14:55:12.486Z",
+                    "specialistId": 7,
+                    "specialtyId": 5
+                }
+            }
+        ]
+    }
+]
+
+
 */

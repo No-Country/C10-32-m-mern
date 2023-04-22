@@ -6,4 +6,5 @@ const router = (0, express_1.Router)();
 router.get('/specialistbysede', specialist_controller_1.getspecialistbysede);
 router.get('/specialistdetails/:id', specialist_controller_1.getspecialistdetails);
 router.get('/specialistbfl', specialist_controller_1.getspecialistbyfirstletter);
+router.get('/specialistbyspeciality/:id', specialist_controller_1.getspecialistbyspeciality);
 exports.default = router;
