@@ -140,7 +140,7 @@ const getavailableshifts = (req, res) => __awaiter(void 0, void 0, void 0, funct
                         aux.push(hours);
                     }
                 }
-                arr.push(todayquery, aux);
+                arr.push(todayquery, { aux });
             }
             sumarDias(today, 1);
         }
