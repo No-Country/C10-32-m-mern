@@ -71,7 +71,8 @@ export default function Header() {
       </div>
       <div className=" absolute top-[9rem] font-semibold flex items-center justify-center h-[2rem] w-screen bg-secondary">
         <h2>
-          Hola {user.name ? "," : ""} {user.name}{" "}
+          ¡Bienvenido{user.name ? " " : ""}
+          {user.name}!{" "}
           <span className="lg:hidden">¿Estás listo para organizar tu agenda médica?</span>
         </h2>
       </div>

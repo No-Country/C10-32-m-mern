@@ -21,7 +21,7 @@ import SliderSpecialities from "../../components/SliderSpecilities";
 import IconLandingMobile from "../../icons/IconLandingMobile";
 import Mapa from "../../icons/Map";
 
-import {setSede} from "../../redux/slices/sede";
+import { setSede } from "../../redux/slices/sede";
 import { useDispatch } from "react-redux";
 // import { useCustomSelector } from "../hooks/redux";
 
@@ -33,7 +33,6 @@ const Home = () => {
   const dispatch = useDispatch();
 
   const { user } = useCustomSelector((state) => state);
-  
 
   useEffect(() => {
     axios.get("https://api-c1032mmern.onrender.com/api/sede").then((res) => {
@@ -100,8 +99,7 @@ const Home = () => {
       ) : (
         <>
           <h1 className="lg:block hidden font-montserrat font-extrabold text-center text-base leading-[50px] tracking-widest text-darkBlue py-8 px-[23px]">
-            AHORRA TU TIEMPO <br /> Y ORGANIZA TUS TURNOS MEDICOS DE FORMA FÁCIL
-            Y RÁPIDA
+            AHORRA TU TIEMPO <br /> Y ORGANIZA TUS TURNOS MEDICOS DE FORMA FÁCIL Y RÁPIDA
           </h1>
 
           <div className=" hidden lg:flex flex-col items-center py-7">
@@ -147,30 +145,6 @@ const Home = () => {
             </p>
             <SliderSpecialities />
           </div>
-          <section className="px-[23px] lg:flex hidden flex-col justify-around ">
-            <div className="flex flex-col justify-between py-6">
-              <h2 className="font-montserrat font-extrabold text-2xl text-black ">
-                Horarios de Atención
-              </h2>
-              <div className="flex flex-col justify-around h-full text-lg">
-                <div className="py-4 font-montserrat">
-                  <p>Lunes a viernes 06:00 am - 20:30 pm</p>
-                </div>
-                <div className="py-4 font-montserrat">
-                  <p>Sábados 08:00 am - 16:00 pm</p>
-                </div>
-                <div className="py-4 font-montserrat">
-                  <p>Domingos y feriados cerrado</p>
-                </div>
-              </div>
-            </div>
-            <div className="py-6">
-              <h2 className="font-montserrat font-extrabold text-2xl text-black py-4">
-                Nuestras Sedes
-              </h2>
-              <Mapa />
-            </div>
-          </section>
         </>
       )}
 
@@ -242,32 +216,6 @@ const Home = () => {
         </h2>
         <GridLanding />
       </section>
-      {!algo && (
-        <section className="lg:hidden px-32 flex justify-around m-20 ">
-          <div className="flex flex-col justify-between">
-            <h2 className="font-montserrat font-extrabold text-2xl text-black py-4">
-              Horarios de Atención
-            </h2>
-            <div className="flex flex-col justify-around h-full text-lg">
-              <div className="py-4 font-montserrat">
-                <p>Lunes a viernes 06:00 am - 20:30 pm</p>
-              </div>
-              <div className="py-4 font-montserrat">
-                <p>Sábados 08:00 am - 16:00 pm</p>
-              </div>
-              <div className="py-4 font-montserrat">
-                <p>Domingos y feriados cerrado</p>
-              </div>
-            </div>
-          </div>
-          <div>
-            <h2 className="font-montserrat font-extrabold text-2xl text-black py-4">
-              Nuestras Sedes
-            </h2>
-            <Mapa />
-          </div>
-        </section>
-      )}
       <FloatingChat />
     </div>
   );

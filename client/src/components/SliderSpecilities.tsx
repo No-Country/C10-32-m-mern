@@ -61,7 +61,7 @@ const SliderSpecialities = () => {
   ];
 
   return (
-    <div className="relative max-[1024px] lg:flex hidden justify-center items-center">
+    <div className="mb-10 relative max-[1024px] lg:flex hidden justify-center items-center">
       <Swiper
         style={{ position: "unset" }}
         slidesPerView={"auto"}
@@ -101,7 +101,7 @@ export default SliderSpecialities;
 const RightArrow = () => {
   const swiper = useSwiper();
   return (
-    <button className="absolute bottom-[6rem] right-4 z-10" onClick={() => swiper.slideNext()}>
+    <button className="absolute bottom-[8rem] right-4 z-10" onClick={() => swiper.slideNext()}>
       <svg
         width="48"
         height="49"
@@ -124,7 +124,7 @@ const LeftArrow = () => {
   const swiper = useSwiper();
   return (
     <button
-      className="rotate-180 flex justify-end absolute left-4 bottom-[6rem]"
+      className="rotate-180 flex justify-end absolute left-4 bottom-[8rem]"
       onClick={() => swiper.slidePrev()}
     >
       <svg

@@ -5,6 +5,7 @@ import authSlice from "./slices/auth";
 import userSlice from "./slices/user";
 import specialistsSlice from "./slices/specialists";
 import specialitiesSlice from "./slices/specialities";
+import sedeSlice from "./slices/sede";
 
 const persistAuthConfig = {
   key: "auth",
@@ -18,6 +19,7 @@ const store = configureStore({
     user: userSlice,
     specialists: specialistsSlice,
     specialities: specialitiesSlice,
+    sede: sedeSlice,
   },
   middleware: (defaultMiddleware) =>
     defaultMiddleware({

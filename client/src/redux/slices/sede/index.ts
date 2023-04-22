@@ -3,11 +3,11 @@ import { Thunk } from "../../store";
 import axios, { AxiosError, AxiosResponse } from "axios";
 
 export interface Sede {
-  sede: {};
+  sede: { id: null | number; name: string };
 }
 
 const initialState: Sede = {
-  sede: {},
+  sede: { id: null, name: "" },
 };
 
 const sedeSlice = createSlice({

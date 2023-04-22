@@ -32,29 +32,34 @@ const Login = () => {
 
   const submit = async (e: SyntheticEvent) => {
     e.preventDefault();
-    dispatch(login({ email, password }));
-    if (user.email !== "") {
-      Swal.fire({
-        icon: "success",
-        title: "Se inició sesión correctamente.",
-        showConfirmButton: false,
-        timer: 2000,
-      });
-      navigate("/");
-    } else if (user.email === "") {
-      Swal.fire({
-        icon: "error",
-        title: "Ha ocurrido un error",
-        text: "El e-mail o contraseña no corresponden a un usuario registrado",
-        showConfirmButton: true,
-        confirmButtonText: "Registrarme",
-        showCancelButton: true,
-        cancelButtonText: "Volver a intentar",
-      }).then((res) => {
-        if (res.isConfirmed) {
-          navigate("/register");
-        }
-      });
+    try {
+      await dispatch(login({ email, password }));
+      if (user.id !== "") {
+        Swal.fire({
+          icon: "success",
+          title: "Se inició sesión correctamente.",
+          showConfirmButton: false,
+          timer: 2000,
+        });
+        navigate("/");
+      } else if (user.email === "") {
+        Swal.fire({
+          icon: "error",
+          title: "Ha ocurrido un error",
+          text: "El e-mail o contraseña no corresponden a un usuario registrado",
+          showConfirmButton: true,
+          confirmButtonText: "Registrarme",
+          confirmButtonColor: "#1C6ACC",
+          showCancelButton: true,
+          cancelButtonText: "Volver a intentar",
+        }).then((res) => {
+          if (res.isConfirmed) {
+            navigate("/register");
+          }
+        });
+      }
+    } catch (error) {
+      console.log(error.message);
     }
   };
 

@@ -76,6 +76,11 @@ const Register = () => {
 
   if (redirection) {
     navigate("/login");
+    Swal.fire({
+      icon: "success",
+      title: "Se ha registrado correctamente",
+      timer: 3000,
+    });
   }
 
   return (

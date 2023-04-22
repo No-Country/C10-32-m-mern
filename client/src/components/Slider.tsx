@@ -76,7 +76,10 @@ export default Slider;
 const RightArrow = () => {
   const swiper = useSwiper();
   return (
-    <button className="absolute bottom-[6rem] lg:right-4 right-0 z-10" onClick={() => swiper.slideNext()}>
+    <button
+      className="absolute bottom-[8rem] lg:right-4 right-0 z-10"
+      onClick={() => swiper.slideNext()}
+    >
       <svg
         width="48"
         height="49"
@@ -99,7 +102,7 @@ const LeftArrow = () => {
   const swiper = useSwiper();
   return (
     <button
-      className="rotate-180 flex justify-end absolute lg:left-4 left-0 bottom-[6rem]"
+      className="rotate-180 flex justify-end absolute lg:left-4 left-0 bottom-[8rem]"
       onClick={() => swiper.slidePrev()}
     >
       <svg

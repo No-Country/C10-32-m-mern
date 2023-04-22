@@ -3,22 +3,34 @@ import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { specialitiesSeter } from "../redux/slices/specialities";
 import { useCustomSelector } from "../hooks/redux";
+import { specialistSeter } from "../redux/slices/specialists";
 
 function Dropdown({ header, title }: any) {
   const url: string = "https://jsonplaceholder.typicode.com/users";
 
   const [specialitie, setSpecialitie] = useState<String | null>(null);
+  const [specialist, setSpecialist] = useState<string | null>(null);
+
+  const [submitButton, setSubmitButton] = useState(false);
 
   const [specialistSelect, setSpecialistSelect] = useState(false);
 
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch<any>(specialitiesSeter());
-  }, []);
-
   const { specialities } = useCustomSelector((state) => state);
   console.log(specialities);
+  const specialityId = specialities.specialities[0].id;
+
+  const { specialists } = useCustomSelector((state) => state);
+  console.log(specialists);
+
+  const { sede } = useCustomSelector((state) => state);
+  const sedeId = sede.sede.id;
+
+  useEffect(() => {
+    dispatch<any>(specialitiesSeter({ sedeId }));
+    dispatch<any>(specialistSeter({ specialityId }));
+  }, []);
 
   const submit = () => {
     if (specialitie !== "Seleccione una Especialidad" && specialitie !== null) {
@@ -84,9 +96,21 @@ function Dropdown({ header, title }: any) {
                 className="block w-full rounded-[3px] mx-auto max-w-xs p-4 my-4 border border-gray-100 shadow-sm focus:border-primary-300 focus:ring focus:ring-primary-200 focus:ring-opacity-50 disabled:cursor-not-allowed disabled:bg-gray-50 focus:bg-lightPurple "
               >
                 <option>Seleccione un Especialista</option>
+                {/* {specialists.map((i) => (
+                  <h1></h1>
+                ))} */}
               </select>
             )}
-
+            {submitButton ? (
+              ""
+            ) : (
+              <button
+                onClick={submit}
+                className="w-full bg-darkPurple h-[45px] rounded-[4px] text-[13px] text-white font-bold"
+              >
+                AGENDAR
+              </button>
+            )}
             <button
               onClick={submit}
               className="w-full bg-darkPurple h-[45px] rounded-[4px] text-[13px] text-white font-bold"
