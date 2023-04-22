@@ -21,13 +21,19 @@ import SliderSpecialities from "../../components/SliderSpecilities";
 import IconLandingMobile from "../../icons/IconLandingMobile";
 import Mapa from "../../icons/Map";
 
+import {setSede} from "../../redux/slices/sede";
+import { useDispatch } from "react-redux";
+// import { useCustomSelector } from "../hooks/redux";
+
 const Home = () => {
   const [sedes, setSedes] = useState([]);
   const [algo, setAlgo] = React.useState<any>(null);
 
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const { user } = useCustomSelector((state) => state);
+  
 
   useEffect(() => {
     axios.get("https://api-c1032mmern.onrender.com/api/sede").then((res) => {
@@ -41,6 +47,7 @@ const Home = () => {
 
   const handleChoose = (e: any) => {
     console.log(e.target.value);
+    dispatch<any>(setSede(e.target.value));
   };
 
   return (
@@ -93,7 +100,8 @@ const Home = () => {
       ) : (
         <>
           <h1 className="lg:block hidden font-montserrat font-extrabold text-center text-base leading-[50px] tracking-widest text-darkBlue py-8 px-[23px]">
-            AHORRA TU TIEMPO <br /> Y ORGANIZA TUS TURNOS MEDICOS DE FORMA FÁCIL Y RÁPIDA
+            AHORRA TU TIEMPO <br /> Y ORGANIZA TUS TURNOS MEDICOS DE FORMA FÁCIL
+            Y RÁPIDA
           </h1>
 
           <div className=" hidden lg:flex flex-col items-center py-7">
@@ -174,15 +182,27 @@ const Home = () => {
             AHORRA TIEMPO Y ORGANIZA TUS TURNOS MEDICOS DE FORMA FÁCIL Y RÁPIDA
           </h1>
           {algo ? (
-            <Link
-              to="/appointment"
-              className="lg:hidden flex items-center bg-lightGreen text-[#FFFFFF] rounded-2xl h-[100px] w-[400px] my-16 px-[43px]"
-            >
-              <IconCalendarHome />
-              <p className="font-montserrat font-semibold text-[22px] leading-6 px-[23px] lg:w-1/2">
-                Agenda tu turno
-              </p>
-            </Link>
+            <>
+              <select
+                onChange={handleChoose}
+                name="select"
+                className=" mt-8 w-3/4 h-12 bg-transparent border-2 border-borders rounded-[3px] text-sm px-2"
+              >
+                <option>Selecciona la sede</option>
+                {sedes.map((sede) => (
+                  <option value={sede.name}>{sede.name}</option>
+                ))}
+              </select>
+              <Link
+                to="/appointment"
+                className="lg:hidden flex items-center bg-lightGreen text-[#FFFFFF] rounded-2xl h-[100px] w-[400px] my-12 px-[43px]"
+              >
+                <IconCalendarHome />
+                <p className="font-montserrat font-semibold text-[22px] leading-6 px-[23px] lg:w-1/2">
+                  Agenda tu turno
+                </p>
+              </Link>
+            </>
           ) : (
             <div className="flex flex-col items-center py-7">
               <ButtonAction
