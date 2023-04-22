@@ -9,11 +9,11 @@ import { daySeter } from "../redux/slices/date";
 function Dropdown({ header, title }: any) {
   const url: string = "https://jsonplaceholder.typicode.com/users";
 
-  const [specialitie, setSpecialitie] = useState<String | null>(null);
+  const [specialitie, setSpecialitie] = useState<String | Number | null>(null);
   const [specialist, setSpecialist] = useState<string | null>(null);
   const [shiftDate, setShiftDate] = useState("");
 
-  const [submitButton, setSubmitButton] = useState(false);
+  const [handleDateButton, sethandleDateButton] = useState(false);
 
   const [specialitieSelect, setSpecialitieSelect] = useState(false);
   const [specialistSelect, setSpecialistSelect] = useState(false);
@@ -43,19 +43,24 @@ function Dropdown({ header, title }: any) {
     if (specialitie !== "Seleccione una Especialidad" && specialitie !== null) {
       setSpecialitieSelect(!specialitieSelect);
       dispatch<any>(specialistSeter(specialitie));
+      console.log("el id de la especialidad elegida", specialitie);
     }
   };
 
   const handleSpecialist = () => {
     if (specialist !== "Seleccione una Especialista" && specialist !== null) {
       setSpecialistSelect(!specialistSelect);
-      dispatch<any>(daySeter());
-      console.log("el especialista seleccionado", specialist);
+      dispatch<any>(daySeter(2, 5, 1));
+      // dispatch<any>(daySeter(parseInt(specialist,1), sede, specialitie));
+      console.log(
+        "el especialista seleccionado",
+        typeof parseInt(specialist, 1)
+      );
     }
   };
 
-  const submit = () => {
-    console.log("la fecha elegida", date.date.map((i) => i));
+  const handleDate = () => {
+    console.log("la fecha elegida", date.date[0]);
   };
 
   return (
@@ -128,19 +133,49 @@ function Dropdown({ header, title }: any) {
                   className="block w-full rounded-[3px] mx-auto max-w-xs p-4 my-4 border border-gray-100 shadow-sm focus:border-primary-300 focus:ring focus:ring-primary-200 focus:ring-opacity-50 disabled:cursor-not-allowed disabled:bg-gray-50 focus:bg-lightPurple "
                 >
                   <option>Seleccione una Fecha</option>
+
                   {date.date.map((i) => (
-                    <option value={i[0]}></option>
+                    <option>{i[0].fecha}</option>
                   ))}
                 </select>
                 <button
-                  onClick={submit}
+                  onClick={handleDate}
                   className="w-full bg-darkPurple h-[45px] rounded-[4px] text-[13px] text-white font-bold"
                 >
-                  SUBMIT
+                  ASIGNAR FECHA
                 </button>
               </>
             ) : (
               ""
+            )}
+            {specialitieSelect && (
+              <>
+                <select
+                  onChange={(e) => setSpecialist(e.target.value)}
+                  name=""
+                  id=""
+                  className="block w-full rounded-[3px] mx-auto max-w-xs p-4 my-4 border border-gray-100 shadow-sm focus:border-primary-300 focus:ring focus:ring-primary-200 focus:ring-opacity-50 disabled:cursor-not-allowed disabled:bg-gray-50 focus:bg-lightPurple "
+                >
+                  <option>Seleccione un Horario</option>
+
+                  {date.date.map((i) => (
+                    i[1].aux.map((element) => {
+                      
+                      <option>{element.ini}</option>
+                    })
+                  ))}
+                </select>
+                {specialistSelect ? (
+                  ""
+                ) : (
+                  <button
+                    onClick={handleSpecialist}
+                    className="w-full bg-darkPurple h-[45px] rounded-[4px] text-[13px] text-white font-bold"
+                  >
+                    AGENDAR HORARIO
+                  </button>
+                )}
+              </>
             )}
           </div>
         </details>

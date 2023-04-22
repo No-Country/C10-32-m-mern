@@ -3,18 +3,42 @@ import { Thunk } from "../../store";
 import axios, { AxiosError, AxiosResponse } from "axios";
 
 export interface Date {
-  date: [
+  date: [[
+    
     {
-      day: string;
+      fecha: string;
+    },
+    {
+      aux: [
+        {
+          ini: string;
+        },
+        {
+          fin: string;
+        }
+      ],
     }
+  ]
   ];
 }
 
 const initialState: Date = {
-  date: [
+  date: [[
     {
-      day: "",
+      fecha: "",
     },
+    {
+      aux: [
+        {
+          ini: ""
+        },
+        {
+          fin: ""
+        },
+      ],
+    }
+
+  ]
   ],
 };
 
@@ -33,15 +57,15 @@ export const { setDate } = dateSlice.actions;
 export default dateSlice.reducer;
 
 export const daySeter =
-  (): Thunk =>
+  (idspecialist, idsede, idspeciality): Thunk =>
   async (dispatch): Promise<AxiosResponse | AxiosError> => {
     try {
       const response: AxiosResponse = await axios.post(
         "https://api-c1032mmern.onrender.com/api/getshifts",
         {
-          idspecialist: 2,
-          idsede: 5,
-          idspeciality: 1,
+          idspecialist,
+          idsede,
+          idspeciality,
           days: 7,
         }
       );
