@@ -33,8 +33,8 @@ module.exports = {
       textGray: "#6B7280",
     },
     fontFamily: {
-      montserrat: ["Montserrat"],
-      inter: ["Inter"],
+      montserrat: [ "Montserrat" ],
+      inter: [ "Inter" ],
     },
     screens: {
       "2xl": { max: "1535px" },

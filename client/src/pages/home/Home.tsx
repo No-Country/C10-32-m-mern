@@ -123,7 +123,7 @@ const Home = () => {
               children="SOY USUARIO NUEVO"
             />
             <ButtonAction
-              className="my-3 bg-buttonGray text-black"
+              className="my-3 bg-lightBlue text-white"
               onClick={() => navigate("/login")}
               children="INICIAR SESION"
             />
@@ -199,7 +199,7 @@ const Home = () => {
                 children="SOY USUARIO NUEVO"
               />
               <ButtonAction
-                className="my-3 bg-buttonGray text-black rounded-lg"
+                className="my-3 bg-lightBlue text-white rounded-lg"
                 onClick={() => navigate("/login")}
                 children="INICIAR SESION"
               />
