@@ -55,7 +55,7 @@ function Dropdown({ header, title }: any) {
   };
 
   const submit = () => {
-    console.log("la fecha elegida", date);
+    console.log("la fecha elegida", date.date.map((i) => i));
   };
 
   return (

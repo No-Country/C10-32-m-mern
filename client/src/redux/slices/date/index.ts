@@ -45,7 +45,7 @@ export const daySeter =
           days: 7,
         }
       );
-      console.log(response);
+      console.log('shifts en dateSlice',response);
       dispatch(setDate(response.data));
     } catch (error) {
       return error as AxiosError;
