@@ -151,7 +151,7 @@ export const getavailableshifts = async (req: Request, res: Response) => {
 					}
 				}
 
-				arr.push(todayquery, {aux});
+				arr.push([{'fecha': todayquery}, {aux}]);
 			}
 
 			sumarDias(today, 1);
