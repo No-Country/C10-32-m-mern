@@ -39,7 +39,7 @@ Descripción del proyecto: Plataforma  para solicitar citas médicas.
 
 ## DEMO
 
-www.proximamente................
+https://c10-32-m-mern.vercel.app/
 
 
 
@@ -77,7 +77,33 @@ Start the client
 
 
 
+## use Aplication
 
+```
+Registrarse con alguno de los siguientes DNI, que validan contra la table de asociados. 
+11223344
+22334455
+33445566
+44556677
+55667788	
+66778899	
+77889900	
+12345678	
+23456789	
+34567890	
+99887766	
+88776655	
+77665544	
+11111111	
+22222222	
+33333333	
+44444444	
+55555555	
+66666666	
+77777777	
+88888888	
+99999999
+```
 
 
 
