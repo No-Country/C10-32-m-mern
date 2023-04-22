@@ -63,7 +63,7 @@ const Search = () => {
         </>
       ) : (
         <>
-          <Title title={"Espcialidades"} />
+          <Title title={"Especialidades"} />
           <Text
             first={`Bienvenido ${user.name}`}
             second={"Busque la especialidad y seleccione el especialista y horario"}

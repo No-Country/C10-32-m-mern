@@ -23,6 +23,7 @@ import Mapa from "../../icons/Map";
 
 import { setSede } from "../../redux/slices/sede";
 import { useDispatch } from "react-redux";
+import Swal from "sweetalert2";
 // import { useCustomSelector } from "../hooks/redux";
 
 const Home = () => {
@@ -53,6 +54,65 @@ const Home = () => {
 
   const { sede } = useCustomSelector((state) => state);
   console.log("la sede id es ", sede.sede.id);
+
+  const alert = () => {
+    Swal.fire({
+      icon: "info",
+      title: "Proximamente",
+    });
+  };
+
+  const infoDoctors = [
+    {
+      id: 1,
+      name: "Daniel Perez",
+      specialty: "Cardiologo",
+      rating: 45,
+      img: "https://randomuser.me/api/portraits/med/men/57.jpg",
+    },
+    {
+      id: 2,
+      name: "Miguel Sanchez",
+      specialty: "Neurologo",
+      rating: 62,
+      img: "https://randomuser.me/api/portraits/med/men/86.jpg",
+    },
+    {
+      id: 3,
+      name: "Pedro Lopez",
+      specialty: "Oftalmologo",
+      rating: 54,
+      img: "https://hips.hearstapps.com/hmg-prod/images/portrait-of-a-happy-young-doctor-in-his-clinic-royalty-free-image-1661432441.jpg?crop=0.66698xw:1xh;center,top&resize=1200:*",
+    },
+    {
+      id: 4,
+      name: "Juan Marcuay",
+      specialty: "Otorrino",
+      rating: 80,
+      img: "https://randomuser.me/api/portraits/med/men/99.jpg",
+    },
+    {
+      id: 5,
+      name: "Fernando Loayza",
+      specialty: "Cardiologo",
+      rating: 90,
+      img: "https://randomuser.me/api/portraits/med/men/82.jpg",
+    },
+    {
+      id: 6,
+      name: "Fernaddo Loayza",
+      specialty: "Cardiologo",
+      rating: 90,
+      img: "https://randomuser.me/api/portraits/med/men/85.jpg",
+    },
+    {
+      id: 7,
+      name: "Fernanssdo Loayza",
+      specialty: "Cardiologo",
+      rating: 90,
+      img: "https://randomuser.me/api/portraits/med/men/77.jpg",
+    },
+  ];
 
   return (
     <div className="flex flex-col justify-center">
@@ -91,15 +151,15 @@ const Home = () => {
                 Especialistas
               </p>
             </Link>
-            <Link
-              to="#"
-              className="hidden lg:flex items-center bg-lightYellow text-[#FFFFFF] rounded-2xl lg:h-[100px] lg:w-full h-[250px] w-[250px] my-8 px-[43px]"
+            <div
+              onClick={alert}
+              className="hover:cursor-pointer hidden lg:flex items-center bg-lightYellow text-[#FFFFFF] rounded-2xl lg:h-[100px] lg:w-full h-[250px] w-[250px] my-8 px-[43px]"
             >
               <IconHeartHome />
               <p className="font-montserrat font-semibold text-start text-[22px] leading-6 px-[23px]">
                 Esp. Médicas
               </p>
-            </Link>
+            </div>
           </div>
         </div>
       ) : (

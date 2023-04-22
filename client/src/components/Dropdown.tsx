@@ -5,6 +5,8 @@ import { specialitiesSeter } from "../redux/slices/specialities";
 import { useCustomSelector } from "../hooks/redux";
 import { specialistSeter } from "../redux/slices/specialists";
 import { daySeter } from "../redux/slices/date";
+import Swal from "sweetalert2";
+import { useNavigate } from "react-router";
 
 function Dropdown({ header, title }: any) {
   const url: string = "https://jsonplaceholder.typicode.com/users";
@@ -12,13 +14,16 @@ function Dropdown({ header, title }: any) {
   const [specialitie, setSpecialitie] = useState<String | Number | null>(null);
   const [specialist, setSpecialist] = useState<string | null>(null);
   const [shiftDate, setShiftDate] = useState("");
+  const [shiftTime, setShiftTime] = useState("");
 
   const [handleDateButton, sethandleDateButton] = useState(false);
 
   const [specialitieSelect, setSpecialitieSelect] = useState(false);
   const [specialistSelect, setSpecialistSelect] = useState(false);
+  const [dateSelect, setDateSelect] = useState(false);
 
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const { specialities } = useCustomSelector((state) => state);
   console.log("especialidades", specialities);
@@ -52,15 +57,24 @@ function Dropdown({ header, title }: any) {
       setSpecialistSelect(!specialistSelect);
       dispatch<any>(daySeter(2, 5, 1));
       // dispatch<any>(daySeter(parseInt(specialist,1), sede, specialitie));
-      console.log(
-        "el especialista seleccionado",
-        typeof parseInt(specialist, 1)
-      );
+      console.log("el especialista seleccionado", typeof parseInt(specialist, 1));
     }
   };
 
   const handleDate = () => {
-    console.log("la fecha elegida", date.date[0][1].aux[0].ini);
+    if (shiftDate !== "Seleccione una Fecha" && shiftDate !== "") {
+      setDateSelect(!dateSelect);
+      console.log("la fecha elegida", date.date[0][1].aux[0].ini);
+    }
+  };
+
+  const submit = () => {
+    Swal.fire({
+      icon: "success",
+      title: "Su turno se agendo con exito",
+      timer: 5000,
+    });
+    navigate("/scheduledsshifts");
   };
 
   return (
@@ -124,7 +138,7 @@ function Dropdown({ header, title }: any) {
                 )}
               </>
             )}
-            {specialitieSelect == true && specialistSelect == true ? (
+            {specialitieSelect == true && specialistSelect == true && (
               <>
                 <select
                   onChange={(e) => setShiftDate(e.target.value)}
@@ -138,42 +152,43 @@ function Dropdown({ header, title }: any) {
                     <option>{i[0].fecha}</option>
                   ))}
                 </select>
-                <button
-                  onClick={handleDate}
-                  className="w-full bg-darkPurple h-[45px] rounded-[4px] text-[13px] text-white font-bold"
-                >
-                  ASIGNAR FECHA
-                </button>
+                {dateSelect ? (
+                  ""
+                ) : (
+                  <button
+                    onClick={handleDate}
+                    className="w-full bg-darkPurple h-[45px] rounded-[4px] text-[13px] text-white font-bold"
+                  >
+                    ASIGNAR FECHA
+                  </button>
+                )}
               </>
-            ) : (
-              ""
             )}
-            {specialitieSelect && (
+            {dateSelect && (
               <>
                 <select
-                  onChange={(e) => setSpecialist(e.target.value)}
+                  onChange={(e) => setShiftTime(e.target.value)}
                   name=""
                   id=""
                   className="block w-full rounded-[3px] mx-auto max-w-xs p-4 my-4 border border-gray-100 shadow-sm focus:border-primary-300 focus:ring focus:ring-primary-200 focus:ring-opacity-50 disabled:cursor-not-allowed disabled:bg-gray-50 focus:bg-lightPurple "
                 >
                   <option>Seleccione un Horario</option>
 
-                  {date.date.map((i) => (
-                    i[1].aux.map((element) => {
-                      
-                      <option>{element.ini} {element.fin}</option>
-                    })
+                  {date.date[0][1].aux.map((i) => (
+                    <option>
+                      {i.ini} / {i.fin}
+                    </option>
                   ))}
                 </select>
-                {specialistSelect ? (
-                  ""
-                ) : (
+                {dateSelect ? (
                   <button
-                    onClick={handleSpecialist}
+                    onClick={submit}
                     className="w-full bg-darkPurple h-[45px] rounded-[4px] text-[13px] text-white font-bold"
                   >
-                    AGENDAR HORARIO
+                    SUBMIT
                   </button>
+                ) : (
+                  ""
                 )}
               </>
             )}

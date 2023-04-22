@@ -11,22 +11,10 @@ const ScheduledsShifts = () => {
 
   const turnosAgendados = [
     {
-      name: "Hemograma completo",
-      doctor: "Dr. Pedro Pascal",
-      date: "Jueves 30 de Marzo",
-      hour: "10:30 - 11:30 am",
-    },
-    {
-      name: "Hemograma completo",
-      doctor: "Dr. Pedro Pascal",
-      date: "Jueves 30 de Marzo",
-      hour: "10:30 - 11:30 am",
-    },
-    {
-      name: "Hemograma completo",
-      doctor: "Dr. Pedro Pascal",
-      date: "Jueves 30 de Marzo",
-      hour: "10:30 - 11:30 am",
+      name: "Diagnostico por imagenes",
+      doctor: "Dr. Horacio Guaraná",
+      date: "2023-4-24",
+      hour: "06:00 - 06:30 am",
     },
   ];
 
